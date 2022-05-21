@@ -3,10 +3,12 @@
 #include <string.h>
 
 int count_letters(string input);
+int count_words(string input);
 
 int main(void)
 {
     string input = get_string("Text: ");
+    count_letters(input);
     count_letters(input);
 }
 
@@ -20,7 +22,20 @@ int count_letters(string input)
             letters++;
         }
     }
-    printf("%i", letters);
+    printf("%i\n", letters);
     return letters;
-    
+}
+
+int count_words(string input)
+{
+    int words = 0;
+    for (int i = 0; i < strlen(input); i++)
+    {
+        if (input[i] == 32)
+        {
+            words++;
+        }
+    }
+    printf("%i\n", words);
+    return words;
 }
