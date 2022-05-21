@@ -9,7 +9,16 @@ int main(void)
     int sideB = get_int("Side B: ");
     int sideC = get_int("Side C: ");
 
-    printf(valid_triangle(sideA,sideB,sideC));
+    bool isTriangle = valid_triangle(sideA,sideB,sideC);
+
+    if (isTriangle)
+    {
+        printf("True\n");
+    }
+    else
+    {
+        printf("False\n");
+    }
 
 
 
