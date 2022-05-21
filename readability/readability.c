@@ -13,9 +13,9 @@ int main(void)
 int count_letters(string input)
 {
     int letters = 0;
-    for (int i = 0, i < strlen(input), i++) //might bring issue wit \0
+    for (int i = 0; i < strlen(input); i++) //might bring issue wit \0
     {
-        if (input[i] > 64 && input[i] < 91 || input[i] > 96 && input[i] < 123) //might bring issue with mixing && and ||
+        if ((input[i] > 64 && input[i] < 91) || (input[i] > 96 && input[i] < 123)) 
         {
             letters++;
         }
