@@ -13,7 +13,7 @@ int main(void)
     int words = count_words(input);
     int sentences = count_sentences(input);
 
-    int index = 0.0588 * (letters/words*100) - 0.296 * (sentences/words*100) - 15.8;
+    int index = 0.0588 * ((float)letters/(float)words*100) - 0.296 * ((float)sentences/(float)words*100) - 15.8;
 
 
     if (index > 15)
