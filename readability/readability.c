@@ -37,5 +37,5 @@ int count_words(string input)
         }
     }
     printf("%i\n", words);
-    return words+1;
+    return words++;
 }
