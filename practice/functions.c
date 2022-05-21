@@ -1,8 +1,17 @@
 #include <stdio.h>
 #include <cs50.h>
 
+bool valid_triangle(int a, int b, int c);
+
 int main(void)
 {
+    int sideA = get_int("Side A: ");
+    int sideB = get_int("Side B: ");
+    int sideC = get_int("Side C: ");
+
+    printf(valid_triangle(sideA,sideB,sideC));
+
+
 
 }
 
@@ -19,5 +28,9 @@ bool valid_triangle(int a, int b, int c)
             return false;
         }
 
+    }
+    else
+    {
+        return false;
     }
 }
