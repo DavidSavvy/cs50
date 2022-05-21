@@ -9,7 +9,7 @@ int main(void)
 {
     string input = get_string("Text: ");
     count_letters(input);
-    count_letters(input);
+    count_words(input);
 }
 
 int count_letters(string input)
@@ -37,5 +37,5 @@ int count_words(string input)
         }
     }
     printf("%i\n", words);
-    return words;
+    return words+1;
 }
