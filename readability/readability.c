@@ -20,6 +20,7 @@ int count_letters(string input)
             letters++;
         }
     }
-    return letters;
     printf("%i", letters);
+    return letters;
+    
 }
