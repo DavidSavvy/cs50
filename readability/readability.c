@@ -39,3 +39,17 @@ int count_words(string input)
     printf("%i\n", words + 1);
     return words + 1;
 }
+
+int count_sentences(string input)
+{
+    int sentences = 0;
+    for (int i = 0; i < strlen(input); i++)
+    {
+        if (input[i] == )
+        {
+            words++;
+        }
+    }
+    printf("%i\n", words + 1);
+    return words + 1;
+}
