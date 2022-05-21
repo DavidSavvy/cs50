@@ -10,5 +10,8 @@ int main(void)
 int count_letters(string input)
 {
     int letters = 0;
-    for (int i = 0, )
+    for (int i = 0, i < strlen(input), i++) //might bring issue wit \0
+    {
+        if 
+    }
 }
