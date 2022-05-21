@@ -4,12 +4,16 @@
 
 int count_letters(string input);
 int count_words(string input);
+int count_sentences(string input);
 
 int main(void)
 {
     string input = get_string("Text: ");
     count_letters(input);
     count_words(input);
+    count_sentences(input);
+
+    
 }
 
 int count_letters(string input)
@@ -45,11 +49,11 @@ int count_sentences(string input)
     int sentences = 0;
     for (int i = 0; i < strlen(input); i++)
     {
-        if (input[i] == )
+        if (input[i] == 33 || input[i] == 46 || input[i] == 63)
         {
-            words++;
+            sentences++;
         }
     }
-    printf("%i\n", words + 1);
-    return words + 1;
+    printf("%i\n", sentences);
+    return sentences;
 }
