@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int count_letters(string input);
 int count_words(string input);
@@ -13,7 +14,7 @@ int main(void)
     int words = count_words(input);
     int sentences = count_sentences(input);
 
-    int index = roundup(0.0588 * ((float)letters/(float)words*100) - 0.296 * ((float)sentences/(float)words*100) - 15.8);
+    int index = round(0.0588 * ((float)letters/(float)words*100) - 0.296 * ((float)sentences/(float)words*100) - 15.8);
 
 
     if (index > 15)
