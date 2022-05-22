@@ -20,10 +20,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-    if (!isalpha(key))
-    {
-        return 1;
-    }
+    
 
     string plainText = get_string("plain text: ");
 
