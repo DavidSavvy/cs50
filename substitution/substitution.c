@@ -14,7 +14,6 @@ int main(int argc, string argv[])
     }
 
     string key = argv[1];
-    //printf("%s", key);
     if (strlen(key) != 26)
     {
         printf("Key must contain 26 characters.\n");
@@ -44,8 +43,6 @@ int main(int argc, string argv[])
         }
     }
 
-
-
     string plainText = get_string("plain text: ");
 
     string cipherText = substitute(key, plainText);
@@ -55,7 +52,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
-string substitute(string key, string plainText) //problem with space and comma
+string substitute(string key, string plainText)
 {
     for (int i = 0; i < strlen(plainText); i++)
     {
@@ -80,15 +77,5 @@ string substitute(string key, string plainText) //problem with space and comma
         }
     }
     return plainText;
-
 }
 
-/*
-
-SUBSTITUTE:
-
--Go through every char in the plaintext string
--Set char
--Case sensitive ciphertext
-
-*/
