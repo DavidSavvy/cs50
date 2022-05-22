@@ -38,11 +38,11 @@ string substitute(string key, string plainText) //problem with space and comma
 
         if (isupper(plainText[i]))
         {
-            plainText[i] = key[i - 65];
+            plainText[i] = key[plainText[i] - 65];
         }
         else
         {
-            plainText[i] = key[i - 97];
+            plainText[i] = key[plainText[i] - 97];
         }
     }
     return plainText;
