@@ -33,6 +33,7 @@ string substitute(string key, string plainText)
         char temp = plainText[i];
 
         
+
     }
 }
 
