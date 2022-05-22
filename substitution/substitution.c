@@ -29,6 +29,11 @@ int main(int argc, string argv[])
         }
     }
 
+    for (int i = 0; i < strlen(key); i++)
+    {
+        
+    }
+
 
 
     string plainText = get_string("plain text: ");
