@@ -18,6 +18,7 @@ int main(int argc, string argv[])
     if (strlen(key) != 26)
     {
         printf("Key must contain 26 characters.\n");
+        return 1;
     }
 
     string plainText = get_string("plain text: ");
@@ -25,6 +26,8 @@ int main(int argc, string argv[])
     string cipherText = substitute(key, plainText);
 
     printf("ciphertext: %s\n", cipherText);
+
+    return 0;
 }
 
 string substitute(string key, string plainText) //problem with space and comma
