@@ -36,6 +36,11 @@ string substitute(string key, string plainText) //problem with space and comma
     {
         char temp = plainText[i];
 
+        if (!isalpha(plainText))
+        {
+            continue;
+        }
+
         if (isupper(plainText[i]))
         {
             plainText[i] = key[plainText[i] - 65];
