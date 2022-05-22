@@ -36,7 +36,7 @@ string substitute(string key, string plainText) //problem with space and comma
     {
         char temp = plainText[i];
 
-        if (!isalpha(plainText))
+        if (!(isalpha(plainText)))
         {
             continue;
         }
