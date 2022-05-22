@@ -32,7 +32,7 @@ string substitute(string key, string plainText)
     {
         char temp = plainText[i];
 
-        
+        if (isupper(plainText[i]))
 
     }
 }
