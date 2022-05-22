@@ -35,9 +35,8 @@ string substitute(string key, string plainText)
 
 SUBSTITUTE:
 
--
-
-
-
+-Go through every char in the plaintext string
+-Set char
+-Case sensitive ciphertext
 
 */
