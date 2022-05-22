@@ -30,6 +30,8 @@ string substitute(string key, string plainText)
 {
     for (int i = 0; i < strlen(plainText); i++)
     {
+        char temp = plainText[i];
+
         
     }
 }
