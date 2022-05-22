@@ -14,7 +14,7 @@ int main(int argc, string argv[])
     }
 
     string key = argv[1];
-    printf("%s", key);
+    //printf("%s", key);
     if (strlen(key) != 26)
     {
         printf("Key must contain 26 characters.\n");
@@ -34,7 +34,7 @@ string substitute(string key, string plainText) //problem with space and comma
 {
     for (int i = 0; i < strlen(plainText); i++)
     {
-        char temp = plainText[i];
+        char temp;
 
         if (!isalpha(plainText[i]))
         {
@@ -43,13 +43,15 @@ string substitute(string key, string plainText) //problem with space and comma
 
         if (isupper(plainText[i]))
         {
-            plainText[i] = key[plainText[i] - 65];
-            toupper(plainText[i]);
+            temp = key[plainText[i] - 65];
+            temp = toupper(temp);
+            plainText[i] = temp;
         }
         else
         {
-            plainText[i] = key[plainText[i] - 97];
-            tolower(plainText[i]);
+            temp = key[plainText[i] - 97];
+            temp = tolower(temp);
+            plainText[i] = temp;
         }
     }
     return plainText;
