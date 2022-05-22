@@ -36,7 +36,7 @@ string substitute(string key, string plainText) //problem with space and comma
     {
         char temp = plainText[i];
 
-        if (!(isalpha(plainText)))
+        if (!isalpha(plainText[i]))
         {
             continue;
         }
@@ -44,10 +44,12 @@ string substitute(string key, string plainText) //problem with space and comma
         if (isupper(plainText[i]))
         {
             plainText[i] = key[plainText[i] - 65];
+            toupper(plainText[i]);
         }
         else
         {
             plainText[i] = key[plainText[i] - 97];
+            tolower(plainText[i]);
         }
     }
     return plainText;
