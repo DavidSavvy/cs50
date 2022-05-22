@@ -28,5 +28,16 @@ int main(int argc, string argv[])
 
 string substitute(string key, string plainText)
 {
-    
+
 }
+
+/*
+
+SUBSTITUTE:
+
+-
+
+
+
+
+*/
