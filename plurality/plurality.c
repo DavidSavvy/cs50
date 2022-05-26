@@ -83,8 +83,18 @@ void print_winner(void)
 {
 
     candidate maxVotes = candidates[0];
+    int switchCount = 0;
+
+    for (int i = 0; i < candidate_count - 1; i++)
+    {
+        if (candidates[i] < candidates[i + 1])
+    }
 
 
+
+
+
+    /*
     for (int i = 1; i < candidate_count; i++)
     {
         if (candidates[i].votes > maxVotes.votes)
@@ -94,7 +104,7 @@ void print_winner(void)
         if (candidates[i].votes == maxVotes.votes)
         {
             candidate multiple[candidate_count];
-            
+
             for (int j = 0; j < 2; j++)
             {
                 multiple[j] = candidates[i]
@@ -118,4 +128,5 @@ void print_winner(void)
     printf("%s\n", maxVotes.name);
     // TODO
     return;
+    */
 }
