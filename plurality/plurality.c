@@ -83,11 +83,11 @@ void print_winner(void)
 {
 
     candidate maxVotes = candidates[0];
-
+    int switchCount;
 
     do
     {
-        int switchCount = 0;
+        switchCount = 0;
         for (int i = 0; i < candidate_count - 1; i++)
         {
             if (candidates[i].votes > candidates[i + 1].votes)
@@ -100,6 +100,11 @@ void print_winner(void)
         }
     }
     while (switchCount != 0);
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%i", candidates[i].votes);
+    }
 
 
 
