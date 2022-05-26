@@ -124,6 +124,10 @@ void record_preferences(int ranks[])
             {
                 continue;
             }
+            else
+            {
+                preferences[i][j]++;
+            }
         }
     }
 
