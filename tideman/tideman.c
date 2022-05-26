@@ -126,7 +126,7 @@ void record_preferences(int ranks[])
             }
             else
             {
-                return;
+                break;
             }
         }
     }
