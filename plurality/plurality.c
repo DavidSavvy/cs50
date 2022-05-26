@@ -101,14 +101,15 @@ void print_winner(void)
         }
     }
     while (switchCount != 0);
-
+    /*
     for (int i = 0; i < candidate_count; i++) //test
     {
         printf("%i ", candidates[i].votes);
     }
+    */
 
     int maxVotes = candidates[candidate_count - 1].votes;
-    printf("Max Votes: %i\n", maxVotes); //test
+    //printf("Max Votes: %i\n", maxVotes); //test
 
     int winnerCount = 0;
     for (int i = 0; i < candidate_count; i++)
