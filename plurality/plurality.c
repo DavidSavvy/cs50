@@ -84,13 +84,13 @@ bool vote(string name)
 void print_winner(void)
 {
 
-    int maxVotes = candidates[0].votes;
+    candidate maxVotes = candidates[0];
 
     for (int i = 1; i < strlen(candidates); i++)
     {
         if (candidate[i].votes > maxVotes)
         {
-            maxVotes = 
+            maxVotes = candidate[i];
         }
     }
     // TODO
