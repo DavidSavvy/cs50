@@ -83,7 +83,7 @@ void print_winner(void)
 {
 
     candidate maxVotes = candidates[0];
-    candidate multiple[2];
+    candidate multiple[candidate_count];
 
     for (int i = 1; i < candidate_count; i++)
     {
@@ -93,6 +93,11 @@ void print_winner(void)
         }
         if (candidates[i].votes == maxVotes.votes)
         {
+            for (int j = 0; j < candidate_count; j++)
+            {
+                multiple[j] = candidates[i]
+            }
+
             multiple[0] = candidates[i];
             multiple[1] = maxVotes;
             maxVotes = candidates[i];
@@ -101,8 +106,10 @@ void print_winner(void)
 
     if (maxVotes.votes == multiple[0].votes)
     {
-        printf("%s\n", multiple[0].name);
-        printf("%s\n", multiple[1].name);
+        for (int i = 0; i < candidate_count; i++)
+        {
+
+        }
         return;
     }
 
