@@ -81,7 +81,7 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    candidate winners[candidate_count]; //might have to find length through for loop
+    //candidate winners[candidate_count]; //might have to find length through for loop
 
 
     int switchCount;
@@ -120,12 +120,11 @@ void print_winner(void)
     }
     candidate winners[winnerCount];
 
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0, j = candidate_count - 1; i < winnerCount; i++)
     {
-        if (candidates[i].votes == maxVotes)
-        {
-            winners[i] = candidates[i];
-        }
+        winners[i] = candidates[j];
+        j--;
+
     }
 
     for (int i = 0; i < candidate_count; i++)
