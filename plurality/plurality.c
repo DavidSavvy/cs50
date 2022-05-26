@@ -110,6 +110,16 @@ void print_winner(void)
     int maxVotes = candidates[candidate_count - 1].votes;
     printf("Max Votes: %i\n", maxVotes); //test
 
+    int winnerCount = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == maxVotes)
+        {
+            winnerCount++;
+        }
+    }
+    candidate winners[winnerCount];
+
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == maxVotes)
