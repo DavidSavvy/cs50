@@ -93,9 +93,19 @@ void print_winner(void)
         }
         if (candidates[i].votes == maxVotes.votes)
         {
+            multiple[0] = candidates[i];
+            multiple[1] = maxVotes;
             maxVotes = candidates[i];
         }
     }
+
+    if (maxVotes.votes == multiple[0].votes)
+    {
+        printf("%s\n", multiple[0].name);
+        printf("%s\n", multiple[1].name);
+        return;
+    }
+
     printf("%s\n", maxVotes.name);
     // TODO
     return;
