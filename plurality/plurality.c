@@ -83,12 +83,23 @@ void print_winner(void)
 {
 
     candidate maxVotes = candidates[0];
-    int switchCount = 0;
 
-    for (int i = 0; i < candidate_count - 1; i++)
+
+    do
     {
-        if (candidates[i] < candidates[i + 1])
+        int switchCount = 0;
+        for (int i = 0; i < candidate_count - 1; i++)
+        {
+            if (candidates[i].votes > candidates[i + 1].votes)
+            {
+                candidate temp = candidates[i];
+                candidates[i] = candidates[i + 1];
+                candidates[i + 1] = temp;
+                switchCount++;
+            }
+        }
     }
+    while (switchCount != 0);
 
 
 
