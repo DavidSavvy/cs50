@@ -81,11 +81,7 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    //candidate winners[candidate_count]; //might have to find length through for loop
-
-
     int switchCount;
-
     do
     {
         switchCount = 0;
@@ -101,16 +97,8 @@ void print_winner(void)
         }
     }
     while (switchCount != 0);
-    /*
-    for (int i = 0; i < candidate_count; i++) //test
-    {
-        printf("%i ", candidates[i].votes);
-    }
-    */
 
     int maxVotes = candidates[candidate_count - 1].votes;
-    //printf("Max Votes: %i\n", maxVotes); //test
-
     int winnerCount = 0;
     for (int i = 0; i < candidate_count; i++)
     {
@@ -119,63 +107,17 @@ void print_winner(void)
             winnerCount++;
         }
     }
-    candidate winners[winnerCount];
 
+    candidate winners[winnerCount];
     for (int i = 0, j = candidate_count - 1; i < winnerCount; i++)
     {
         winners[i] = candidates[j];
         j--;
-
     }
 
     for (int i = 0; i < winnerCount; i++)
     {
         printf("%s\n", winners[i].name);
     }
-    /*
-    for (int i = 0; i < candidate_count; i++)
-    {
-        printf("%i ", candidates[i].votes);
-    }
-    */
 
-
-
-
-
-    /*
-    for (int i = 1; i < candidate_count; i++)
-    {
-        if (candidates[i].votes > maxVotes.votes)
-        {
-            maxVotes = candidates[i];
-        }
-        if (candidates[i].votes == maxVotes.votes)
-        {
-            candidate multiple[candidate_count];
-
-            for (int j = 0; j < 2; j++)
-            {
-                multiple[j] = candidates[i]
-            }
-
-            multiple[0] = candidates[i];
-            multiple[1] = maxVotes;
-            maxVotes = candidates[i];
-        }
-    }
-
-    if (maxVotes.votes == multiple[0].votes)
-    {
-        for (int i = 0; i < candidate_count; i++)
-        {
-
-        }
-        return;
-    }
-
-    printf("%s\n", maxVotes.name);
-    // TODO
-    return;
-    */
 }
