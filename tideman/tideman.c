@@ -308,7 +308,7 @@ void print_winner(void)
         }
         if (trueCount == 0)
         {
-            printf("%s", candidates[i]);
+            printf("%s\n", candidates[i]);
         }
     }
     // TODO
