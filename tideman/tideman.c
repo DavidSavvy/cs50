@@ -236,7 +236,7 @@ void sort_pairs(void)
         switchCount = 0;
         for (int i = 0; i < pair_count - 1; i++)
         {
-            if (preferences[pairs[i].winner] > preferences[pairs[i + 1].winner])
+            if (preferences[pairs[i].winner][pairs[i].loser] > preferences[pairs[i + 1].winner][pairs[i].loser])
             {
                 pair temp = pairs[i];
                 pairs[i] = pairs[i + 1];
