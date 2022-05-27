@@ -9,7 +9,7 @@
     "ms-vsliveshare.vsliveshare-pack", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:21be4a3c50fd74bbab11c9b466e43fa21bcee6cb", 
+  "image": "ghcr.io/cs50/codespace:66c738d8dd6070d79f56ffd6102055a3271b3afc", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 

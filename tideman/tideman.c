@@ -176,6 +176,8 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
+    //TRY IF (I>0) and (J<1) THEN continue;
+    //Maybe try recursion... look at ipad diagram
 
     pair_count++;
     // TODO
