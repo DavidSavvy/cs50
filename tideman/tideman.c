@@ -199,15 +199,17 @@ void add_pairs(void)
                 pairs[x].loser = i;
                 x++;
             }
+            /*
             else
             {
                 continue;
             }
+            */
         }
         j--;
     }
 
-    pair_count++;
+    //pair_count++;
     // TODO
     return;
 }
