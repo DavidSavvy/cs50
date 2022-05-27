@@ -222,7 +222,7 @@ void sort_pairs(void)
     {
         printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
         int tempy = preferences[pairs[i].winner][pairs[i].winner];
-        printf("%i", tempy);
+        printf("%i\n", tempy);
     }
 
 
