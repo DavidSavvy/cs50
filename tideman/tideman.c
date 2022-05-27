@@ -260,13 +260,14 @@ void lock_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
-        for (int i = 0; i < candidate_count; i++)
+        int edgeCount = 0;
+        for (int k = 0; k < candidate_count; k++)
         {
             int trueCount = 0;
 
             for (int j = 0; j < candidate_count; j++)
             {
-                if (locked [j][i] == true)
+                if (locked [j][k] == true)
                 {
                     trueCount++;
                 }
@@ -274,8 +275,12 @@ void lock_pairs(void)
             }
             if (trueCount != 0)
             {
-
+                edgeCount++;
             }
+        }
+        if (edgeCount > candidate_count - 1)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = false;
         }
         locked[pairs[i].winner][pairs[i].loser] = true;
         printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
