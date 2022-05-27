@@ -185,9 +185,9 @@ void add_pairs(void)
 
     for (int i = 0, j = candidate_count - 1; i < candidate_count; i++)
     {
-        for (int k = j; k > i; k--)
+        for (int k = candidate_count - 1; k > j - 1; k--)
         {
-            
+
         }
         j--;
     }
