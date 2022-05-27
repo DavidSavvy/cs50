@@ -258,6 +258,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    /*
 
     for (int i = 0; i < pair_count; i++)
     {
@@ -287,7 +288,37 @@ void lock_pairs(void)
         //locked[pairs[i].winner][pairs[i].loser] = true;
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
+    */
     // TODO
+
+    for (int i = 0; i < pair_count; i++)
+    {
+        //locked[pairs[i].winner][pairs[i].loser] = true;
+        int edgeCount = 0;
+        for (int k = 0; k < candidate_count; k++)
+        {
+            int trueCount = 0;
+
+            for (int j = 0; j < candidate_count; j++)
+            {
+                if (locked [j][k] == true)
+                {
+                    trueCount++;
+                }
+
+            }
+            if (trueCount != 0)
+            {
+                edgeCount++;
+            }
+        }
+        if (edgeCount > candidate_count - 1)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = false;
+        }
+        //locked[pairs[i].winner][pairs[i].loser] = true;
+        //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
+    }
     return;
 }
 
