@@ -279,7 +279,7 @@ void print_winner(void)
         }
         if (trueCount == 0)
         {
-            
+            printf("%s", argv[1 + i]);
         }
     }
     // TODO
