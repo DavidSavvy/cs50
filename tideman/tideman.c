@@ -183,9 +183,9 @@ void add_pairs(void)
     //RECURSION to find pair number
 
     int x = 0;
-    for (int i = 0, j = candidate_count ; i < candidate_count; i++)
+    for (int i = 0, j = candidate_count; i < candidate_count; i++)
     {
-        for (int k = candidate_count - 1; k > candidate_count - j; k--)
+        for (int k = candidate_count - 1; k > candidate_count - j - 1; k--)
         {
             if (preferences[i][k] > preferences[k][i])
             {
