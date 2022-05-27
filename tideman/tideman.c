@@ -277,7 +277,10 @@ void print_winner(void)
             }
 
         }
-        
+        if (trueCount == 0)
+        {
+            
+        }
     }
     // TODO
     return;
