@@ -230,6 +230,7 @@ void sort_pairs(void)
     {
         if (preferences[pairs[i].winner] > preferences[pairs[i + 1].winner])
         {
+            pair temp = pairs[i];
             
         }
     }
