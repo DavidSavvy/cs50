@@ -221,7 +221,11 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
+        int tempy = preferences[pairs[i].winner][pairs[i].winner];
+        printf("%i", tempy);
     }
+
+
     // TODO
     return;
 }
