@@ -318,9 +318,10 @@ void lock_pairs(void)
         }
         if (edgeCount > candidate_count - 1)
         {
-            locked[pairs[i].winner][pairs[i].loser] = false;
+            //locked[pairs[i].winner][pairs[i].loser] = false;
+            continue;
         }
-        //locked[pairs[i].winner][pairs[i].loser] = true;
+        locked[pairs[i].winner][pairs[i].loser] = true;
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
     return;
