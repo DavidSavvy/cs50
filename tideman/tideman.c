@@ -135,6 +135,7 @@ void record_preferences(int ranks[])
             if (i != ranks[j])
             {
                 preferences[i][j]++;
+                printf("%i\n", preferences[i][j])
             }
             else
             {
