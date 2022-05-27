@@ -284,7 +284,7 @@ void lock_pairs(void)
         {
             locked[pairs[i].winner][pairs[i].loser] = false;
         }
-        locked[pairs[i].winner][pairs[i].loser] = true;
+        //locked[pairs[i].winner][pairs[i].loser] = true;
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
     // TODO
