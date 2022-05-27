@@ -180,6 +180,18 @@ void add_pairs(void)
     //Maybe try recursion... look at ipad diagram
     //Find pair number, then go through i loop
 
+    //RECURSION to find pair number
+
+
+    for (int i = 0, j = candidate_count - 1; i < candidate_count; i++)
+    {
+        for (int k = j; k > i; k--)
+        {
+            
+        }
+        j--;
+    }
+
     pair_count++;
     // TODO
     return;
