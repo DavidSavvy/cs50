@@ -182,7 +182,7 @@ void add_pairs(void)
 
     //RECURSION to find pair number
 
-    int x = 0;
+    pair_count = 0;
     for (int i = 0, j = candidate_count; i < candidate_count; i++)
     {
         for (int k = candidate_count - 1; k > candidate_count - j - 1; k--)
@@ -191,13 +191,13 @@ void add_pairs(void)
             {
                 pairs[x].winner = i;
                 pairs[x].loser = k;
-                x++;
+                pair_count++;
             }
             else if (preferences[i][k] < preferences[k][i])
             {
                 pairs[x].winner = k;
                 pairs[x].loser = i;
-                x++;
+                pair_count++;
             }
             /*
             else
