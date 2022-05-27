@@ -102,7 +102,7 @@ int main(int argc, string argv[])
         }
         printf("\n");
     }
-    
+
 
     add_pairs();
     sort_pairs();
@@ -283,7 +283,7 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = false;
         }
         locked[pairs[i].winner][pairs[i].loser] = true;
-        printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
+        //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
     // TODO
     return;
