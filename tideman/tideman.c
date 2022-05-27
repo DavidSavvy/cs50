@@ -178,6 +178,7 @@ void add_pairs(void)
 {
     //TRY IF (I>0) and (J<1) THEN continue;
     //Maybe try recursion... look at ipad diagram
+    //Find pair number, then go through i loop
 
     pair_count++;
     // TODO
