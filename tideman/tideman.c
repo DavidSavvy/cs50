@@ -316,14 +316,15 @@ void lock_pairs(void)
                 edgeCount++;
             }
         }
-        if (edgeCount > candidate_count - 1)
+        if (edgeCount < candidate_count )
         {
+            locked[pairs[i].winner][pairs[i].loser] = true;
             //locked[pairs[i].winner][pairs[i].loser] = false;
 
         }
         else
         {
-            locked[pairs[i].winner][pairs[i].loser] = true;
+            continue;
         }
 
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
