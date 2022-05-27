@@ -225,6 +225,15 @@ void sort_pairs(void)
         printf("%i\n", tempy);
     }
 
+    int switchCount = 0;
+    for (int i = 0; i < pair_count - 1; i++)
+    {
+        if (preferences[pairs[i].winner] > preferences[pairs[i + 1].winner])
+        {
+            
+        }
+    }
+
 
     // TODO
     return;
