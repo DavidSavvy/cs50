@@ -305,6 +305,10 @@ void lock_pairs(void)
                 {
                     trueCount++;
                 }
+                if (j == pairs[i].winner && k == pairs[i].loser)
+                {
+                    trueCount++;
+                }
 
             }
             if (trueCount != 0)
