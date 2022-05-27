@@ -32,7 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-int print_winner(void);
+void print_winner(void);
 
 int main(int argc, string argv[])
 {
@@ -107,8 +107,8 @@ int main(int argc, string argv[])
     add_pairs();
     sort_pairs();
     lock_pairs();
-    int index = print_winner();
-    printf("%s", argv[index]);
+    print_winner();
+
 
     return 0;
 }
@@ -265,7 +265,7 @@ void lock_pairs(void)
 }
 
 // Print the winner of the election
-int print_winner(void)
+void print_winner(void)
 {
 
     for (int i = 0; i < candidate_count; i++)
@@ -281,9 +281,9 @@ int print_winner(void)
         }
         if (trueCount == 0)
         {
-            return 1 + i;
+            printf("%s", candidates[i]);
         }
     }
     // TODO
-    return 0;
+
 }
