@@ -316,20 +316,22 @@ void lock_pairs(void)
                 edgeCount++;
             }
         }
-        /*
+
         if (edgeCount < candidate_count )
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-            //printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
+            printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
             //locked[pairs[i].winner][pairs[i].loser] = false;
 
         }
         else
         {
+            printf("%i - %i skipped \n", pairs[i].winner, pairs[i].loser);
             continue;
         }
-        */
 
+
+       /*
        if (edgeCount > candidate_count - 1)
        {
            continue;
@@ -338,6 +340,7 @@ void lock_pairs(void)
        {
            locked[pairs[i].winner][pairs[i].loser] = true;
        }
+       */
 
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
