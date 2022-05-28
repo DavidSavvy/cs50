@@ -367,7 +367,7 @@ void lock_pairs(void)
 
 bool check_locked(pair[] pairs, bool[] locked)
 {
-    
+    bool lockedTemp[MAX][MAX]
 }
 
 // Print the winner of the election
