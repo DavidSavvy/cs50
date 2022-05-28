@@ -344,7 +344,7 @@ void lock_pairs(void)
 
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
-    return;
+    
 }
 
 // Print the winner of the election
