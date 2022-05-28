@@ -320,13 +320,13 @@ void lock_pairs(void)
         if (edgeCount < candidate_count )
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
+            //printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
             //locked[pairs[i].winner][pairs[i].loser] = false;
 
         }
         else
         {
-            printf("%i - %i skipped \n", pairs[i].winner, pairs[i].loser);
+            //printf("%i - %i skipped \n", pairs[i].winner, pairs[i].loser);
             continue;
         }
 
@@ -344,7 +344,7 @@ void lock_pairs(void)
 
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
-    
+
 }
 
 // Print the winner of the election
