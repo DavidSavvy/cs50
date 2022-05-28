@@ -320,6 +320,7 @@ void lock_pairs(void)
         if (edgeCount < candidate_count )
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
+            printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
             //printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
             //locked[pairs[i].winner][pairs[i].loser] = false;
 
@@ -327,6 +328,7 @@ void lock_pairs(void)
         else
         {
             //printf("%i - %i skipped \n", pairs[i].winner, pairs[i].loser);
+            printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
             continue;
         }
 
