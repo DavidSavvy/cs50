@@ -392,8 +392,10 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
     {
         if (targetPair.loser == lockedPairs[i].winner)
         {
-            //indexChain[indexChainCount] = lockedPairs[i].winner;
-            //indexChainCount++;
+            /*
+            indexChain[indexChainCount] = lockedPairs[i].winner;
+            indexChainCount++;
+            */
             indexChain[indexChainCount + 1] = lockedPairs[i].loser;
             indexChainCount++;
             if (check_cycle(indexChain, indexChainCount))
