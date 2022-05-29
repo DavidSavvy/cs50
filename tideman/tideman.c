@@ -33,6 +33,9 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount);
+bool check_cycle(int indexChain[MAX], int indexChainCount);
+
 
 int main(int argc, string argv[])
 {
@@ -401,6 +404,7 @@ bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairC
     return true; //Means that function is acting on first locked pair, so it adds it
 
 }
+
 bool check_cycle(int indexChain[MAX], int indexChainCount)
 {
     for (int i = 1; i < indexChainCount; i++)
