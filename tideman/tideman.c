@@ -372,12 +372,17 @@ void lock_pairs(void)
 
 bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount)
 {
+    if (indexChainCount == 0)
+    {
+        indexChain[indexChainCount] = targetPair.winner;
+        indexChain[indexChainCount + 1] = targetPair.loser;
+    }
 
     for (int i = 0; i < lockedPairCount; i++)
     {
         if (targetPair.loser == lockedPairs[i].winner)
         {
-            indexChain[indexChainCount] = 
+            indexChain[indexChainCount] =
         }
     }
 
