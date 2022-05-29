@@ -392,8 +392,8 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
     {
         if (targetPair.loser == lockedPairs[i].winner)
         {
-            indexChain[indexChainCount] = lockedPairs[i].winner;
-            indexChainCount++;
+            //indexChain[indexChainCount] = lockedPairs[i].winner;
+            //indexChainCount++;
             indexChain[indexChainCount + 1] = lockedPairs[i].loser;
             indexChainCount++;
             if (check_cycle(indexChain, indexChainCount))
@@ -404,7 +404,7 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
         }
         else
         {
-            return true; //If it cannot find the next step in chain, lock pair
+            continue; //If it cannot find the next step in chain, lock pair
         }
     }
     return true; //Means that function is acting on first locked pair, so it adds it
