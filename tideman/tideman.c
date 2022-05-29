@@ -262,7 +262,7 @@ void lock_pairs(void)
     pair lockedPairs[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        if (check_locked(pairs, lockedPairs))
+        if (check_locked(pairs[i], lockedPairs))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
@@ -367,11 +367,11 @@ void lock_pairs(void)
 
 }
 
-bool check_locked(pair[] pairs, bool[] locked)
+bool check_locked(pair targetPair, bool[] lockedPairs)
 {
 
 
-    pair lockedPairs[MAX][MAX];
+    
 }
 
 // Print the winner of the election
