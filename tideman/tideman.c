@@ -384,16 +384,33 @@ bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairC
         if (targetPair.loser == lockedPairs[i].winner)
         {
             indexChain[indexChainCount] = lockedPairs[i].winner;
+            indexChainCount++;
             indexChain[indexChainCount + 1] = lockedPairs[i].loser;
+            indexChainCount++;
+            if (check_cycle(indexChain, indexChainCount))
+            {
+                return false; //Don't add pair
+            }
             check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount);
         }
+        else
+        {
+            return true; //If it cannot find the next step in chain, lock pair
+        }
     }
-    return true;
+    return true; //Means that function is acting on first locked pair, so it adds it
 
 }
-bool check_cycle()
+bool check_cycle(int indexChain[MAX], int indexChainCount)
 {
-
+    for (int i = 1; i < indexChainCount; i++)
+    {
+        if (indexChain[0] == indexChain[i])
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 // Print the winner of the election
