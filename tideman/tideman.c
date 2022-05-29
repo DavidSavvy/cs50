@@ -385,11 +385,14 @@ bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairC
         {
             indexChain[indexChainCount] = lockedPairs[i].winner;
             indexChain[indexChainCount + 1] = lockedPairs[i].loser;
-            
+            check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount);
         }
     }
     return true;
 
+}
+bool check_cycle()
+{
 
 }
 
