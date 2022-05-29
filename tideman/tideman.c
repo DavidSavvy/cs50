@@ -376,6 +376,7 @@ bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairC
     {
         indexChain[indexChainCount] = targetPair.winner;
         indexChain[indexChainCount + 1] = targetPair.loser;
+        indexChainCount += 2;
     }
 
     for (int i = 0; i < lockedPairCount; i++)
