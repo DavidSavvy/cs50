@@ -33,7 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount);
+bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount);
 bool check_cycle(int indexChain[MAX], int indexChainCount);
 
 
@@ -374,7 +374,7 @@ void lock_pairs(void)
 
 }
 
-bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount)
+bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount)
 {
     if (indexChainCount == 0)
     {
