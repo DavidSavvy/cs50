@@ -383,7 +383,9 @@ bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairC
     {
         if (targetPair.loser == lockedPairs[i].winner)
         {
-            indexChain[indexChainCount] = 
+            indexChain[indexChainCount] = lockedPairs[i].winner;
+            indexChain[indexChainCount + 1] = lockedPairs[i].loser;
+            
         }
     }
     return true;
