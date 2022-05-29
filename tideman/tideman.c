@@ -272,6 +272,7 @@ void lock_pairs(void)
         if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
+            
             lockedPairCount++;
         }
         else
