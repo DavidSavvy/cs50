@@ -264,10 +264,11 @@ void lock_pairs(void)
 
     int lockedPairCount = 0;
     int indexChainCount = 0;
-    int indexChain[MAX];
     pair lockedPairs[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
+        indexChainCount = 0;
+        int indexChain[MAX];
         if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
@@ -367,7 +368,7 @@ void lock_pairs(void)
        {
            locked[pairs[i].winner][pairs[i].loser] = true;
        }
-       
+
 
         //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
     }
