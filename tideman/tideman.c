@@ -260,10 +260,11 @@ void lock_pairs(void)
 {
 
     int lockedPairCount = 0;
+    int indexChainCount = 0;
     pair lockedPairs[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        if (check_locked(pairs[i], lockedPairs, lockedPairCount))
+        if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChainCount))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
             lockedPairCount++;
@@ -369,14 +370,14 @@ void lock_pairs(void)
 
 }
 
-bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX])
+bool check_locked(pair targetPair, bool lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount)
 {
 
     for (int i = 0; i < lockedPairCount; i++)
     {
         if (targetPair.loser == lockedPairs[i].winner)
         {
-            
+            indexChain[indexChainCount] = 
         }
     }
 
