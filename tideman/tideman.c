@@ -263,7 +263,7 @@ void lock_pairs(void)
 {
 
     int lockedPairCount = 0;
-    printf("Pair Count: %i\n", pair_count);
+    //printf("Pair Count: %i\n", pair_count);
 
 
     pair lockedPairs[pair_count];
@@ -277,11 +277,11 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = true;
             lockedPairs[i] = pairs[i];
             lockedPairCount++;
-            printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+            //printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
         }
         else
         {
-            printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+            //printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
             continue;
         }
     }
@@ -425,7 +425,7 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
             */
             indexChain[indexChainCount ] = lockedPairs[i].loser;
             indexChainCount++;
-            
+
             if (check_cycle(indexChain, indexChainCount))
             {
                 return false; //Don't add pair
@@ -485,7 +485,7 @@ void print_winner(void)
             return;
         }
     }
-    printf("FAILED");
+    //printf("FAILED");
 
     // TODO
 
