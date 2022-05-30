@@ -267,7 +267,7 @@ void lock_pairs(void)
 
 
     pair lockedPairs[pair_count];
-    /*
+
     for (int i = 0; i < pair_count; i++)
     {
         int indexChainCount = 0;
@@ -285,8 +285,9 @@ void lock_pairs(void)
             continue;
         }
     }
-    */
 
+
+    /*
     for (int j = 0; j < pair_count; j++)
     {
         for (int i = 0; i < pair_count; i++)
@@ -307,6 +308,7 @@ void lock_pairs(void)
             }
         }
     }
+    */
 
 
 
@@ -478,8 +480,11 @@ void print_winner(void)
         if (trueCount == 0)
         {
             printf("%s\n", candidates[i]);
+            return;
         }
     }
+    printf("FAILED");
+
     // TODO
 
 }
