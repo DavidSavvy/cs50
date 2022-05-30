@@ -406,7 +406,7 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
             */
             if (!(check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount)))
             {
-                
+                return false;
             }
 
         }
