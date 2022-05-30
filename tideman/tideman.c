@@ -33,8 +33,8 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount);
-bool check_cycle(int indexChain[MAX], int indexChainCount);
+bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[pair_count], int indexChainCount);
+bool check_cycle(int indexChain[pair_count], int indexChainCount);
 
 
 int main(int argc, string argv[])
@@ -263,12 +263,13 @@ void lock_pairs(void)
 {
 
     int lockedPairCount = 0;
+    printf("Pair Count: %i\n", pair_count);
 
     pair lockedPairs[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
         int indexChainCount = 0;
-        int indexChain[MAX];
+        int indexChain[pair_count];
         if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
@@ -379,7 +380,7 @@ void lock_pairs(void)
 
 }
 
-bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[MAX], int indexChainCount)
+bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[pair_count], int indexChainCount)
 {
     if (indexChainCount == 0)
     {
@@ -423,7 +424,7 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
 
 }
 
-bool check_cycle(int indexChain[MAX], int indexChainCount)
+bool check_cycle(int indexChain[pair_count], int indexChainCount)
 {
     for (int i = 1; i < indexChainCount; i++)
     {
