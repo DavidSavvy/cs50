@@ -265,7 +265,9 @@ void lock_pairs(void)
     int lockedPairCount = 0;
     printf("Pair Count: %i\n", pair_count);
 
+
     pair lockedPairs[pair_count];
+    /*
     for (int i = 0; i < pair_count; i++)
     {
         int indexChainCount = 0;
@@ -281,6 +283,28 @@ void lock_pairs(void)
         {
             printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
             continue;
+        }
+    }
+    */
+
+    for (int j = 0; j < pair_count; j++)
+    {
+        for (int i = 0; i < pair_count; i++)
+        {
+            int indexChainCount = 0;
+            int indexChain[pair_count];
+            if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))
+            {
+                locked[pairs[i].winner][pairs[i].loser] = true;
+                lockedPairs[i] = pairs[i];
+                lockedPairCount++;
+                printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+            }
+            else
+            {
+                printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+                continue;
+            }
         }
     }
 
