@@ -274,11 +274,11 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = true;
             lockedPairs[i] = pairs[i];
             lockedPairCount++;
-            printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+            //printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
         }
         else
         {
-            printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
+            //printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
             continue;
         }
     }
