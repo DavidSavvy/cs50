@@ -404,7 +404,10 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
                 return false; //Don't add pair
             }
             */
-            check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount);
+            if (!(check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount)))
+            {
+                
+            }
 
         }
         else
