@@ -107,12 +107,10 @@ int main(int argc, string argv[])
     }
     */
 
-
     add_pairs();
     sort_pairs();
     lock_pairs();
     print_winner();
-
 
     return 0;
 }
@@ -144,33 +142,9 @@ void record_preferences(int ranks[])
             if (i != ranks[j])
             {
                 preferences[ranks[j]][i]++;
-
-                /*
-                for (int k = 0; k < candidate_count; k++)
-                {
-                    for (int l = 0; l < candidate_count; l++)
-                        {
-                            printf("%i ", preferences[l][k]);
-                        }
-                        printf("\n");
-                }
-                printf("\n");
-                */
             }
             else
             {
-                /*
-                for (int k = 0; k < candidate_count; k++)
-                {
-                    for (int l = 0; l < candidate_count; l++)
-                        {
-                            printf("%i ", preferences[l][k]);
-                        }
-                        printf("\n");
-                }
-                */
-
-
                 break;
             }
         }
@@ -184,11 +158,6 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    //TRY IF (I>0) and (J<1) THEN continue;
-    //Maybe try recursion... look at ipad diagram
-    //Find pair number, then go through i loop
-
-    //RECURSION to find pair number
 
     pair_count = 0;
     for (int i = 0, j = candidate_count; i < candidate_count; i++)
@@ -207,33 +176,19 @@ void add_pairs(void)
                 pairs[pair_count].loser = i;
                 pair_count++;
             }
-            /*
-            else
-            {
-                continue;
-            }
-            */
+
         }
         j--;
     }
 
-    //pair_count++;
     // TODO
     return;
 }
 
 // Sort pairs in decreasing order by strength of victory
+//Bubble sort used
 void sort_pairs(void)
 {
-    /*
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
-        int tempy = preferences[pairs[i].winner][pairs[i].loser];
-        printf("%i\n", tempy);
-    }
-    */
-
 
     int switchCount;
     do
@@ -252,9 +207,6 @@ void sort_pairs(void)
         }
     }
     while (switchCount != 0);
-
-
-    // TODO
     return;
 }
 
@@ -272,7 +224,7 @@ void lock_pairs(void)
     {
         int indexChainCount = 0;
         int indexChain[pair_count];
-        if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))
+        if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount)) //If given all clear by check_locked, locks pair
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
             lockedPairs[i] = pairs[i];
@@ -287,128 +239,12 @@ void lock_pairs(void)
     }
 
 
-    /*
-    for (int j = 0; j < pair_count; j++)
-    {
-        for (int i = 0; i < pair_count; i++)
-        {
-            int indexChainCount = 0;
-            int indexChain[pair_count];
-            if (check_locked(pairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))
-            {
-                locked[pairs[i].winner][pairs[i].loser] = true;
-                lockedPairs[i] = pairs[i];
-                lockedPairCount++;
-                printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
-            }
-            else
-            {
-                printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
-                continue;
-            }
-        }
-    }
-    */
-
-
-
-    /*
-
-    for (int i = 0; i < pair_count; i++)
-    {
-        locked[pairs[i].winner][pairs[i].loser] = true;
-        int edgeCount = 0;
-        for (int k = 0; k < candidate_count; k++)
-        {
-            int trueCount = 0;
-
-            for (int j = 0; j < candidate_count; j++)
-            {
-                if (locked [j][k] == true)
-                {
-                    trueCount++;
-                }
-
-            }
-            if (trueCount != 0)
-            {
-                edgeCount++;
-            }
-        }
-        if (edgeCount > candidate_count - 1)
-        {
-            locked[pairs[i].winner][pairs[i].loser] = false;
-        }
-        //locked[pairs[i].winner][pairs[i].loser] = true;
-        //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
-    }
-
-    // TODO
-
-
-    for (int i = 0; i < pair_count; i++)
-    {
-        //locked[pairs[i].winner][pairs[i].loser] = true;
-        int edgeCount = 0;
-        for (int k = 0; k < candidate_count; k++)
-        {
-            int trueCount = 0;
-
-            for (int j = 0; j < candidate_count; j++)
-            {
-                if (locked [j][k] == true)
-                {
-                    trueCount++;
-                }
-                if (j == pairs[i].winner && k == pairs[i].loser)
-                {
-                    trueCount++;
-                }
-
-            }
-            if (trueCount != 0)
-            {
-                edgeCount++;
-            }
-        }
-
-        if (edgeCount < candidate_count )
-        {
-            locked[pairs[i].winner][pairs[i].loser] = true;
-            printf("Locked %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
-            //printf("%i - %i\n", pairs[i].winner, pairs[i].loser);
-            //locked[pairs[i].winner][pairs[i].loser] = false;
-
-        }
-        else
-        {
-            //printf("%i - %i skipped \n", pairs[i].winner, pairs[i].loser);
-            printf("Did not lock %s -> %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
-            continue;
-        }
-
-
-
-
-       if (edgeCount > candidate_count - 1)
-       {
-           continue;
-       }
-       else
-       {
-           locked[pairs[i].winner][pairs[i].loser] = true;
-       }
-
-
-        //printf("%i ", locked[pairs[i].winner][pairs[i].loser]);
-    }
-    */
 
 }
 
 bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairCount, int indexChain[pair_count], int indexChainCount)
 {
-    if (indexChainCount == 0)
+    if (indexChainCount == 0) //Sets up first pair in the chain.
     {
         indexChain[indexChainCount] = targetPair.winner;
         indexChain[indexChainCount + 1] = targetPair.loser;
@@ -419,21 +255,18 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
     {
         if (targetPair.loser == lockedPairs[i].winner)
         {
-            /*
-            indexChain[indexChainCount] = lockedPairs[i].winner;
-            indexChainCount++;
-            */
+
             indexChain[indexChainCount ] = lockedPairs[i].loser;
             indexChainCount++;
 
-            if (check_cycle(indexChain, indexChainCount))
+            if (check_cycle(indexChain, indexChainCount)) //Cycle checked every time, not quite necessary, could be at the end
             {
                 return false; //Don't add pair
             }
 
-            if (!(check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount)))
+            if (!(check_locked(lockedPairs[i], lockedPairs, lockedPairCount, indexChain, indexChainCount))) //Attempts to guard against recursion problems by checking return value.
             {
-                return false;
+                return false; //Makes sure the highest level of the function returns false if need be.
             }
 
         }
@@ -452,7 +285,7 @@ bool check_locked(pair targetPair, pair lockedPairs[pair_count], int lockedPairC
 
 }
 
-bool check_cycle(int indexChain[pair_count], int indexChainCount)
+bool check_cycle(int indexChain[pair_count], int indexChainCount) //Searches through chain to see if the first index (target) is repeated or cycled.
 {
     for (int i = 1; i < indexChainCount; i++)
     {
@@ -465,7 +298,7 @@ bool check_cycle(int indexChain[pair_count], int indexChainCount)
 }
 
 // Print the winner of the election
-void print_winner(void)
+void print_winner(void) //Checks for a column with no true values going down to determine source/winner.
 {
 
     for (int i = 0; i < candidate_count; i++)
@@ -485,7 +318,7 @@ void print_winner(void)
             return;
         }
     }
-    //printf("FAILED");
+
 
     // TODO
 
