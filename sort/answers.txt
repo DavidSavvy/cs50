@@ -1,11 +1,11 @@
 sort1 uses: bubble sort
 
-How do you know?: TODO
+How do you know?: The time for each of the random number files, increases at a very large rate from 0.094 seconds to 7.797 seconds. Switching to the sorted number files, the time is significantly less, showcasing the Omega(n) time of bubble sort.
 
 sort2 uses: merge sort
 
-How do you know?: TODO
+How do you know?: The difference between the random number sorts and the sorted number sorts is within reasonable tolerance, implying negligable change between worst and best case scenario. Comparitively to sort3, sort2 takes much less time, which highlights the difference between O(n^2) in selection sort and O(nlogn) in merge sort.
 
 sort3 uses: selection sort
 
-How do you know?: TODO
+How do you know?: The time does not change drastically between the worst and best case scenarios, meaning the Big O and Omega times are the same, which is the case in selection sort. Comparitively to sort2 which shares similar properties, sort3 takes much more time, meaning it is likely in O(n^2) time. Therefore, it is a selection sort.
