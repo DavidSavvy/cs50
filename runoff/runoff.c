@@ -162,7 +162,7 @@ void tabulate(void)
                 {
                     rank++;
                 }
-                preferences[j][rank] = 
+                prefe
             }
         }
     }
