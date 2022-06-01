@@ -157,8 +157,12 @@ void tabulate(void)
         {
             for (int j = 0; j < voter_count; j++)
             {
-                int index = 1;
-                while (preferences[j][rank])
+                int rank = 1;
+                while (candidates[preferences[j][rank]].eliminated)
+                {
+                    rank++;
+                }
+                preferences[j][rank] = 
             }
         }
     }
