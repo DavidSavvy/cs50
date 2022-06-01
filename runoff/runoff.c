@@ -155,7 +155,11 @@ void tabulate(void)
         }
         else
         {
-            
+            for (int j = 0; j < voter_count; j++)
+            {
+                int index = 1;
+                while (preferences[j][rank])
+            }
         }
     }
     return;
