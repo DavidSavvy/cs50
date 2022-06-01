@@ -154,12 +154,12 @@ void tabulate(void)
                 }
             }
         }
-        /*
+
         else
         {
             for (int j = 0; j < voter_count; j++)
             {
-                int rank = 1;
+                int rank = 0;
                 while (candidates[preferences[j][rank]].eliminated)
                 {
                     rank++;
@@ -167,7 +167,7 @@ void tabulate(void)
                 candidates[preferences[j][rank]].votes++;
             }
         }
-        */
+
     }
     return;
 }
@@ -230,6 +230,7 @@ void eliminate(int min)
         if (candidates[i].votes == min)
         {
             candidates[i].eliminated = true;
+            /*
             for (int j = 0; j < voter_count; j++)
             {
                 for (int k = 0; k < candidate_count; k++)
@@ -245,6 +246,7 @@ void eliminate(int min)
 
                 }
             }
+            */
         }
     }
     return;
