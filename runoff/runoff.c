@@ -154,6 +154,7 @@ void tabulate(void)
                 }
             }
         }
+        /*
         else
         {
             for (int j = 0; j < voter_count; j++)
@@ -166,6 +167,7 @@ void tabulate(void)
                 candidates[preferences[j][rank]].votes++;
             }
         }
+        */
     }
     return;
 }
