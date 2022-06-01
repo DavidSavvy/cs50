@@ -232,7 +232,18 @@ void eliminate(int min)
             candidates[i].eliminated = true;
             for (int j = 0; j < voter_count; j++)
             {
-                
+                for (int k = 0; k < candidate_count; k++)
+                {
+                    if (candidates[preferences[j][k]].eliminated)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        preferences[j][0] = preferences[j][k];
+                    }
+
+                }
             }
         }
     }
