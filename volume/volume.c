@@ -46,12 +46,18 @@ int main(int argc, char *argv[])
     uint16_t *pSample = malloc(sizeof(uint16_t));
 
     char ch;
-
-    while (ch = fgetc())
+    while ((ch = fgetc(input)) != EOF)
+    {
+        fread(pSample, sizeof(uint16_t), 1, input);
+        *pSample *= factor;
+        fwrite(pSample, sizeof(uint16_t), 1, output);
+    }
 
     // TODO: Read samples from input file and write updated data to output file
 
     // Close files
+    free(pHeader);
+    free(pSample);
     fclose(input);
     fclose(output);
 }
