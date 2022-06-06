@@ -7,9 +7,10 @@
     "ms-vscode.cpptools", 
     "ms-vscode.hexeditor", 
     "ms-vsliveshare.vsliveshare-pack", 
+    "tomoki1207.pdf", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:769bc973220adfc2537ea1bdc66ae706655a23a8", 
+  "image": "ghcr.io/cs50/codespace:a305c060012d68fbb74bb86abf06a4bceadeef65", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
