@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     uint16_t *p
 
-
+    while ()
 
     // TODO: Read samples from input file and write updated data to output file
 
