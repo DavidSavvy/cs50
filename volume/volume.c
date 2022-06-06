@@ -56,16 +56,17 @@ int main(int argc, char *argv[])
     }
     */
 
-   /*
+
     do
     {
         fread(pSample, sizeof(uint16_t), 1, input);
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
-    while (*pSample != EOF);
-    */
+    while (*pSample != (uint16_t)(EOF));
 
+
+    /*
    while (true)
     {
         fread(pSample, sizeof(uint16_t), 1, input);
@@ -76,6 +77,7 @@ int main(int argc, char *argv[])
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
+    */
 
     // TODO: Read samples from input file and write updated data to output file
 
