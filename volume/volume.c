@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cs50.h>
 
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
    while (true)
     {
         fread(pSample, sizeof(uint16_t), 1, input);
-        if (*pSample == EOF)
+        if (*pSample == (uint16_t)(EOF))
         {
             break;
         }
