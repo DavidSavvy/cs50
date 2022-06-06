@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
 
     uint8_t *pHeader = malloc(HEADER_SIZE);
-    fread(pHeader, HEADER_SIZE, 1, input);
-    fwrite(pHeader, HEADER_SIZE, 1, output);
+    fread(pHeader, sizeof(int), HEADER_SIZE, input);
+    fwrite(pHeader, sizeof(int), HEADER_SIZE, output);
 
-    
+
 
     // TODO: Read samples from input file and write updated data to output file
 
