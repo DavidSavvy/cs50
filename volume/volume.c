@@ -36,8 +36,12 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
 
     uint8_t *pHeader = malloc(HEADER_SIZE);
-    fread(pHeader, sizeof(int), HEADER_SIZE, input);
-    fwrite(pHeader, sizeof(int), HEADER_SIZE, output);
+    fread(pHeader, sizeof(uint8_t), HEADER_SIZE, input);
+    fwrite(pHeader, sizeof(uint8_t), HEADER_SIZE, output);
+
+    //printf("%ld\n", ftell(input));
+
+    uint16_t *p
 
 
 
