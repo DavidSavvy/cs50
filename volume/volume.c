@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
 
     uint16_t *pSample = malloc(sizeof(uint16_t));
 
-    char ch;
-    while ((ch = fgetc(input)) != EOF)
+    uint16_t location;
+    while ((location = fread()) != EOF)
     {
         fread(pSample, sizeof(uint16_t), 1, input);
         *pSample *= factor;
