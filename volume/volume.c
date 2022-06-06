@@ -44,7 +44,8 @@ int main(int argc, char *argv[])
 
     uint16_t sample;
 
-    uint16_t *pSample = malloc(sizeof(uint16_t));
+    //uint16_t *pSample = malloc(sizeof(uint16_t));
+    uint16_t *pSample = &sample;
 
     uint16_t location;
     /*
