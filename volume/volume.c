@@ -43,6 +43,8 @@ int main(int argc, char *argv[])
 
     uint16_t sample;
 
+    uint16_t *pSample = 
+
     char ch;
 
     while (ch = fgetc())
