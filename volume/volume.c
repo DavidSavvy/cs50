@@ -41,9 +41,9 @@ int main(int argc, char *argv[])
 
     //printf("%ld\n", ftell(input));
 
-    uint16_t *p
+    uint16_t sample;
 
-    while ()
+    while (sample = )
 
     // TODO: Read samples from input file and write updated data to output file
 
