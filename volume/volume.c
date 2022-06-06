@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     uint16_t sample;
 
-    while (sample = )
+    while (sample = fread())
 
     // TODO: Read samples from input file and write updated data to output file
 
