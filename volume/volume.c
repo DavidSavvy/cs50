@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
-    while (*pSample != (uint16_t)(EOF));
+    while ((int)sample != (EOF));
 
 
     /*
