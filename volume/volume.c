@@ -67,13 +67,13 @@ int main(int argc, char *argv[])
     }
     do
     {
-        printf("%ld\n", ftell(input));
+        //printf("%ld\n", ftell(input));
 
         fread(pSample, sizeof(uint16_t), 1, input);
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
-    while ((ch = fgetc(input)) != EOF);
+    while (ftell(input) < position);
 
 
     /*
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 
     // Close files
     free(pHeader);
-    free(pSample);
+    //free(pSample);
     fclose(input);
     fclose(output);
 }
