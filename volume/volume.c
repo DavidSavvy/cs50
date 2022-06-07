@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     */
 
 
-    
+   /*
     long start;
     long end;
     while (true)
@@ -78,9 +78,9 @@ int main(int argc, char *argv[])
         *pSample *= factor;
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
+    */
 
 
-    /*
     while (true)
     {
         //start = ftell(input);
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
         //end = ftell(input);
 
 
-        if (*pSample == (int16_t)(EOF))
+        if (*pSample != 0)
         {
             break;
         }
@@ -97,8 +97,7 @@ int main(int argc, char *argv[])
         printf("%hd", *pSample);
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
-    */
-
+    
     /*
    while (true)
     {
