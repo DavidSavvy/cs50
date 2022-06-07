@@ -79,7 +79,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             avgB += image[i][j].rgbtBlue;
             surroundingCount++;
 
-            if (image[i + 1][j] != NULL)
+            if (i + 1 < height)
             {
                 avgB += image[i + 1][j].rgbtBlue;
                 surroundingCount++;
@@ -123,7 +123,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-            
+
         }
     }
     return;
