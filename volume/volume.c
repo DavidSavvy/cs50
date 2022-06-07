@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     */
 
 
-    /*
+    
     long start;
     long end;
     while (true)
@@ -79,8 +79,8 @@ int main(int argc, char *argv[])
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
 
-    */
 
+    /*
     while (true)
     {
         //start = ftell(input);
@@ -97,6 +97,7 @@ int main(int argc, char *argv[])
         printf("%hd", *pSample);
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
+    */
 
     /*
    while (true)
