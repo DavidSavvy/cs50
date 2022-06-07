@@ -87,13 +87,14 @@ int main(int argc, char *argv[])
         fread(pSample, sizeof(int16_t), 1, input);
         //end = ftell(input);
 
-        printf("%hd", *pSample);
+
         if (*pSample == (int16_t)(EOF))
         {
             break;
         }
 
         *pSample *= factor;
+        printf("%hd", *pSample);
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
 
