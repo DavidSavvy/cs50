@@ -42,26 +42,7 @@ int main(int argc, char *argv[])
 
     int16_t sample;
     int16_t *pSample = &sample;
-    /*
-    while ((location = fread()) != EOF)
-    {
-        fread(pSample, sizeof(uint16_t), 1, input);
-        *pSample *= factor;
-        fwrite(pSample, sizeof(uint16_t), 1, output);
-    }
-    */
-    /*
-    char ch;
-    long position;
-    while ( (ch = fgetc(input)) != EOF)
-    {
-        position = ftell(input);
-    }
-    fseek(input, )
-    */
 
-
-   /*
     long start;
     long end;
     while (true)
@@ -78,44 +59,10 @@ int main(int argc, char *argv[])
         *pSample *= factor;
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
-    */
-
-
-    while (true)
-    {
-        printf("%li\n", ftell(input));
-        fread(pSample, sizeof(int16_t), 1, input);
-        //end = ftell(input);
-
-
-        if (*pSample != 0)
-        {
-            break;
-        }
-
-        *pSample *= factor;
-        printf("%hd", *pSample);
-        fwrite(pSample, sizeof(int16_t), 1, output);
-    }
-
-    /*
-   while (true)
-    {
-        fread(pSample, sizeof(uint16_t), 1, input);
-        if (*pSample == (uint16_t)(EOF))
-        {
-            break;
-        }
-        *pSample *= factor;
-        fwrite(pSample, sizeof(uint16_t), 1, output);
-    }
-    */
-
     // TODO: Read samples from input file and write updated data to output file
 
     // Close files
     free(pHeader);
-    //free(pSample);
     fclose(input);
     fclose(output);
 }
