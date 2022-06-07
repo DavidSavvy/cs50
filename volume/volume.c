@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
         //end = ftell(input);
 
         //printf("%i", (int)*pSample);
-        if ((int)*pSample != 0)
+        if (*pSample == (int16_t)(EOF))
         {
             break;
         }
