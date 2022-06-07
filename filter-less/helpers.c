@@ -77,8 +77,45 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
             if (image[i + 1][j] != NULL)
             {
-                
+                avgB += image[i + 1][j].rgbtBlue;
+                surroundingCount++;
             }
+            if (image[i][j + 1] != NULL)
+            {
+                avgB += image[i][j + 1].rgbtBlue;
+                surroundingCount++;
+            }
+            if (image[i - 1][j] != NULL)
+            {
+                avgB += image[i - 1][j].rgbtBlue;
+                surroundingCount++;
+            }
+            if (image[i][j - 1] != NULL)
+            {
+                avgB += image[i][j - 1].rgbtBlue;
+                surroundingCount++;
+            }
+            if (image[i + 1][j + 1] != NULL)
+            {
+                avgB += image[i + 1][j + 1].rgbtBlue;
+                surroundingCount++;
+            }
+            if (image[i - 1][j + 1] != NULL)
+            {
+                avgB += image[i - 1][j + 1].rgbtBlue;
+                surroundingCount++;
+            }
+            if (image[i + 1][j - 1] != NULL)
+            {
+                avgB += image[i + 1][j - 1].rgbtBlue;
+                surroundingCount++;
+            }
+            if (image[i - 1][j - 1] != NULL)
+            {
+                avgB += image[i - 1][j - 1].rgbtBlue;
+                surroundingCount++;
+            }
+            
         }
     }
     return;
