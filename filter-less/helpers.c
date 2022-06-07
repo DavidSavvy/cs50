@@ -1,5 +1,4 @@
 #include "helpers.h"
-#include <bmp.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -64,14 +63,19 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    BYTE avgB = 0;
-    BYTE avgG = 0;
-    BYTE avgR = 0;
-    int surroundingCount = 0;
+    BYTE avgB;
+    BYTE avgG;
+    BYTE avgR;
+    int surroundingCount;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
+            avgB = 0;
+            avgG = 0;
+            avgR = 0;
+            surroundingCount = 0;
+
             avgB += image[i][j].rgbtBlue;
             surroundingCount++;
 
@@ -115,7 +119,83 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 avgB += image[i - 1][j - 1].rgbtBlue;
                 surroundingCount++;
             }
-            
+            image[i][j].rgbtBlue = avgB / surroundingCount;
+
+
+
+            avgG += image[i][j].rgbtGreen;
+
+            if (image[i + 1][j] != NULL)
+            {
+                avgG += image[i + 1][j].rgbtGreen;
+            }
+            if (image[i][j + 1] != NULL)
+            {
+                avgG += image[i][j + 1].rgbtGreen;
+            }
+            if (image[i - 1][j] != NULL)
+            {
+                avgG += image[i - 1][j].rgbtGreen;
+            }
+            if (image[i][j - 1] != NULL)
+            {
+                avgG += image[i][j - 1].rgbtGreen;
+            }
+            if (image[i + 1][j + 1] != NULL)
+            {
+                avgG += image[i + 1][j + 1].rgbtGreen;
+            }
+            if (image[i - 1][j + 1] != NULL)
+            {
+                avgG += image[i - 1][j + 1].rgbtGreen;
+            }
+            if (image[i + 1][j - 1] != NULL)
+            {
+                avgG += image[i + 1][j - 1].rgbtGreen;
+            }
+            if (image[i - 1][j - 1] != NULL)
+            {
+                avgG += image[i - 1][j - 1].rgbtGreen;
+            }
+            image[i][j].rgbtGreen = avgG / surroundingCount;
+
+
+
+            avgG += image[i][j].rgbtRed;
+
+            if (image[i + 1][j] != NULL)
+            {
+                avgR += image[i + 1][j].rgbtRed;
+            }
+            if (image[i][j + 1] != NULL)
+            {
+                avgR += image[i][j + 1].rgbtRed;
+            }
+            if (image[i - 1][j] != NULL)
+            {
+                avgR += image[i - 1][j].rgbtRed;
+            }
+            if (image[i][j - 1] != NULL)
+            {
+                avgR += image[i][j - 1].rgbtRed;
+            }
+            if (image[i + 1][j + 1] != NULL)
+            {
+                avgR += image[i + 1][j + 1].rgbtRed;
+            }
+            if (image[i - 1][j + 1] != NULL)
+            {
+                avgR += image[i - 1][j + 1].rgbtRed;
+            }
+            if (image[i + 1][j - 1] != NULL)
+            {
+                avgR += image[i + 1][j - 1].rgbtRed;
+            }
+            if (image[i - 1][j - 1] != NULL)
+            {
+                avgR += image[i - 1][j - 1].rgbtRed;
+            }
+            image[i][j].rgbtRed = avgR / surroundingCount;
         }
     }
     return;
