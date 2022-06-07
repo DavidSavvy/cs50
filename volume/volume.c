@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     {
         position = ftell(input);
     }
-    
+    fseek(input, )
     do
     {
         printf("%ld\n", ftell(input));
