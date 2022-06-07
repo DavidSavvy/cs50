@@ -57,23 +57,16 @@ int main(int argc, char *argv[])
     }
     */
 
-
-
     char ch;
-    long position;
-    while ((ch = fgetc(input)) != EOF)
-    {
-        position = ftell(input);
-    }
     do
     {
-        //printf("%ld\n", ftell(input));
+        printf("%ld\n", ftell(input));
 
         fread(pSample, sizeof(uint16_t), 1, input);
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
-    while (ftell(input) < position);
+    while ( (ch = fgetc(input)) != EOF);
 
 
     /*
