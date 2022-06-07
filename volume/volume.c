@@ -57,7 +57,14 @@ int main(int argc, char *argv[])
     }
     */
 
+
+
     char ch;
+
+    while ((ch = fgetc(input)) != EOF)
+    {
+        
+    }
     do
     {
         printf("%ld\n", ftell(input));
