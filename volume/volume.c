@@ -87,8 +87,8 @@ int main(int argc, char *argv[])
         fread(pSample, sizeof(int16_t), 1, input);
         //end = ftell(input);
 
-        printf("%i", (int)*pSample);
-        if ((int)*pSample == EOF)
+        //printf("%i", (int)*pSample);
+        if ((int)*pSample != 0)
         {
             break;
         }
