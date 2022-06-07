@@ -120,6 +120,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 surroundingCount++;
             }
             image[i][j].rgbtBlue = avgB / surroundingCount;
+            image[i][j].rgbtGreen = avgG / surroundingCount;
+            image[i][j].rgbtRed = avgB / surroundingCount;
 
 
 
