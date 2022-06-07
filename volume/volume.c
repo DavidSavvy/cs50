@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
     */
-
+    /*
     char ch;
     long position;
     while ( (ch = fgetc(input)) != EOF)
@@ -64,15 +64,23 @@ int main(int argc, char *argv[])
         position = ftell(input);
     }
     fseek(input, )
+    */
+
+    long start;
+    long end;
     do
     {
-        printf("%ld\n", ftell(input));
+        start = ftell(input);
+
+        //printf("%ld\n", ftell(input));
 
         fread(pSample, sizeof(uint16_t), 1, input);
+        end = ftell(input);
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
+
     }
-    while ( (int)*pSample != EOF);
+    while ( start != end);
 
 
     /*
