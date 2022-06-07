@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 
     while (true)
     {
-        //start = ftell(input);
+        printf("%li\n", ftell(input));
         fread(pSample, sizeof(int16_t), 1, input);
         //end = ftell(input);
 
