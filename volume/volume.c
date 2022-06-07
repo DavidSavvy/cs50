@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
         }
 
         *pSample *= factor;
-        //printf("%hd", *pSample);
+        printf("%hd", *pSample);
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
 
