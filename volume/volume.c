@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     }
     */
 
-
+    char ch;
     do
     {
         printf("%ld\n", ftell(input));
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         *pSample *= factor;
         fwrite(pSample, sizeof(uint16_t), 1, output);
     }
-    while ((int)sample != (EOF));
+    while ((ch = fgetc(input)) != EOF);
 
 
     /*
