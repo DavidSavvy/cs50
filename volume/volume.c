@@ -60,10 +60,10 @@ int main(int argc, char *argv[])
 
 
     char ch;
-
+    long position;
     while ((ch = fgetc(input)) != EOF)
     {
-        
+        position = ftell(input);
     }
     do
     {
