@@ -40,14 +40,8 @@ int main(int argc, char *argv[])
     fread(pHeader, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(pHeader, sizeof(uint8_t), HEADER_SIZE, output);
 
-    //printf("%ld\n", ftell(input));
-
     int16_t sample;
-
-    //uint16_t *pSample = malloc(sizeof(uint16_t));
     int16_t *pSample = &sample;
-
-    int16_t location;
     /*
     while ((location = fread()) != EOF)
     {
@@ -66,6 +60,8 @@ int main(int argc, char *argv[])
     fseek(input, )
     */
 
+
+    /*
     long start;
     long end;
     while (true)
@@ -83,6 +79,22 @@ int main(int argc, char *argv[])
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
 
+    */
+
+    while (true)
+    {
+        //start = ftell(input);
+        fread(pSample, sizeof(int16_t), 1, input);
+        //end = ftell(input);
+
+        if ((int)*pSample == EOF)
+        {
+            break;
+        }
+
+        *pSample *= factor;
+        fwrite(pSample, sizeof(int16_t), 1, output);
+    }
 
     /*
    while (true)
