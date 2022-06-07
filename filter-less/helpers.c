@@ -90,9 +90,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    BYTE avgB;
-    BYTE avgG;
-    BYTE avgR;
+    int avgB;
+    int avgG;
+    int avgR;
     int surroundingCount;
 
     RGBTRIPLE imageCopy[height][width];
