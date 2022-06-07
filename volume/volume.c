@@ -42,12 +42,12 @@ int main(int argc, char *argv[])
 
     //printf("%ld\n", ftell(input));
 
-    uint16_t sample;
+    int16_t sample;
 
     //uint16_t *pSample = malloc(sizeof(uint16_t));
-    uint16_t *pSample = &sample;
+    int16_t *pSample = &sample;
 
-    uint16_t location;
+    int16_t location;
     /*
     while ((location = fread()) != EOF)
     {
@@ -90,14 +90,14 @@ int main(int argc, char *argv[])
 
         //printf("%ld\n", ftell(input));
 
-        fread(pSample, sizeof(uint16_t), 1, input);
+        fread(pSample, sizeof(int16_t), 1, input);
         end = ftell(input);
         if (start == end)
         {
             break;
         }
         *pSample *= factor;
-        fwrite(pSample, sizeof(uint16_t), 1, output);
+        fwrite(pSample, sizeof(int16_t), 1, output);
     }
 
 
