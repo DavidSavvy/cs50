@@ -68,34 +68,17 @@ int main(int argc, char *argv[])
 
     long start;
     long end;
-    /*
-    do
-    {
-        start = ftell(input);
-
-        //printf("%ld\n", ftell(input));
-
-        fread(pSample, sizeof(uint16_t), 1, input);
-        end = ftell(input);
-        *pSample *= factor;
-        fwrite(pSample, sizeof(uint16_t), 1, output);
-
-    }
-    while ( start != end);
-    */
-
     while (true)
     {
         start = ftell(input);
-
-        //printf("%ld\n", ftell(input));
-
         fread(pSample, sizeof(int16_t), 1, input);
         end = ftell(input);
+
         if (start == end)
         {
             break;
         }
+
         *pSample *= factor;
         fwrite(pSample, sizeof(int16_t), 1, output);
     }
