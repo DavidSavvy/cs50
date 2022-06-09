@@ -110,7 +110,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                 }
             }
-            sobRed = sqrt((sobxRed^2 + sobyRed^2) * 1.0);
+            sobRed = sobxRed^2 + sobyRed^2;
+            sobRed = sqrt((double)sobRed);
             sobRed = round(sobRed);
             if (sobRed > 255)
             {
@@ -135,7 +136,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = sobBlue;
         }
     }
-    
+
 
 
 
