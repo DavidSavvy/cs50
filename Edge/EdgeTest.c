@@ -4,6 +4,14 @@
 #include <math.h>
 #include <string.h>
 
+typedef struct
+{
+    int  rgbtBlue;
+    int  rgbtGreen;
+    int  rgbtRed;
+}
+RGBTRIPLE;
+
 void grayscale(int height, int width, RGBTRIPLE image[height][width]);
 
 // Reflect image horizontally
@@ -15,13 +23,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width]);
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
 
-typedef struct
-{
-    int  rgbtBlue;
-    int  rgbtGreen;
-    int  rgbtRed;
-}
-RGBTRIPLE;
+
 
 
 int main(int argc, char *argv[])
