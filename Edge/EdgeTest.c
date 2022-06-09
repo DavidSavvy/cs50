@@ -6,7 +6,7 @@
 
 
 
-void blur(int height, int width, RGBTRIPLE image[height][width]);
+void blur(int height, int width, int image[3][3][3]);
 
 
 
