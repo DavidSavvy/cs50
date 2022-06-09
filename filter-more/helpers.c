@@ -36,6 +36,24 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         { 1,  2,  1}
     };
 
+    RGBTRIPLE imageCpy[height][width] = NULL;
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            imageCpy[i][j] = image[i][j];
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+
+        }
+    }
+
 
     for (int i = 0; i < height; i++)
     {
@@ -45,7 +63,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int col = j - 1; col <= i + 1; col++)
                 {
-                    
+
                 }
             }
         }
