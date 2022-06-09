@@ -15,10 +15,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width]);
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
 
+typedef struct
+{
+    BYTE  rgbtBlue;
+    BYTE  rgbtGreen;
+    BYTE  rgbtRed;
+} 
+RGBTRIPLE;
+
 
 int main(int argc, char *argv[])
 {
-    int 
+    int
 }
 
 
