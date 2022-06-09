@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
 
 
     edges(3,3,image);
+    return 0;
 }
 
 
@@ -134,8 +135,8 @@ void edges(int height, int width, int image[3][3][3])
 
 
 
-                        sobxBlue += (imageCpy[row][col] * gx[row - i + 1][col - i + 1]);
-                        sobyBlue += (imageCpy[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
+                        sobxBlue += (imageCpy[row][col][0]* gx[row - i + 1][col - i + 1]);
+                        sobyBlue += (imageCpy[row][col][0] * gy[row - i + 1][col - i + 1]);
 
                     }
 
@@ -161,9 +162,9 @@ void edges(int height, int width, int image[3][3][3])
             {
                 sobBlue = 255;
             }
-            image[i][j].rgbtRed = sobRed;
-            image[i][j].rgbtGreen = sobGreen;
-            image[i][j].rgbtBlue = sobBlue;
+            image[i][j][2] = sobRed;
+            image[i][j][1] = sobGreen;
+            image[i][j][0] = sobBlue;
         }
     }
 
