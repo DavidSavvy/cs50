@@ -23,14 +23,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
 
-    int gx[][] =
+    int gx[3][3] =
     {
         {-1, 0, 1},
         {-2, 0, 2},
         {-1, 0, 1}
     };
 
-    int gy[][] =
+    int gy[3][3] =
     {
         {-1, -2, -1},
         { 0,  0,  0},
@@ -113,8 +113,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                 }
             }
+            imageCpy[i][j].rgbtRed = sobRed;
+            imageCpy[i][j].rgbtGreen = sobGreen;
+            imageCpy[i][j].rgbtBlue = sobBlue;
         }
     }
+    memcpy(image, imageCpy, sizeof(RGBTRIPLE) * (height * width));
 
 
 
