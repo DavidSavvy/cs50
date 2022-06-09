@@ -22,7 +22,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
 
-    
+    int gx[][] =
+    {
+        {-1, 0, 1},
+        {-2, 0, 2},
+        {=1, 0, 1}
+    };
 
 
     for (int i = 0; i < height; i++)
