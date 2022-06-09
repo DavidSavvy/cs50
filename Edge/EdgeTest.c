@@ -18,7 +18,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width]);
 
 int main(int argc, char *argv[])
 {
-    
+    int 
 }
 
 
