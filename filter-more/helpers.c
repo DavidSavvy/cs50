@@ -39,7 +39,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-    RGBTRIPLE imageCpy[height][width] = NULL;
+    RGBTRIPLE imageCpy[height][width];
 
     memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
 
