@@ -11,7 +11,7 @@ void blur(int height, int width, int image[3][3][3]);
 
 
 
-int main(int argc, char *argv[])
+int main(void)
 {
     int image[3][3][3] =
     {
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     };
 
 
-    edges(3,3,image);
+    
     return 0;
 }
 
