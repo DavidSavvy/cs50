@@ -52,7 +52,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     */
-
+    int sobRed;
+    int sobGreen;
+    int sobBlue;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -63,7 +65,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (row > -1 && row < height && col > -1 && col < width)
                     {
-                        imageCpy[row][col].red = image[row][col].red 
+                        sobRed = image[row][col] 
+                        imageCpy[row][col].red = sobRed;
                     }
                     else
                     {
