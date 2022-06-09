@@ -84,15 +84,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         sobxRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1].rgbtRed);
                         sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1].rgbtRed);
-                        sobRed = sobxRed^2 + sobyRed^2;
+                        sobRed = sqrt(sobxRed^2 + sobyRed^2);
+                        round(sobRed);
 
                         sobxGreen += (image[row][col].rgbtGreen * gx[row - i + 1][col - i + 1].rgbtGreen);
                         sobyGreen += (image[row][col].rgbtGreen * gy[row - i + 1][col - i + 1].rgbtGreen);
-                        sobGreen = sobxGreen^2 + sobyGreen^2;
+                        sobGreen = sqrt(sobxGreen^2 + sobyGreen^2);
+                        round(sobGreen);
 
                         sobxBlue += (image[row][col].rgbtBlue * gx[row - i + 1][col - i + 1].rgbtBlue);
                         sobyBlue += (image[row][col].rgbtBlue * gy[row - i + 1][col - i + 1].rgbtBlue);
-                        sobBlue = sobxBlue^2 + sobyBlue^2;
+                        sobBlue = sqrt(sobxBlue^2 + sobyBlue^2);
+                        round(sobBlue);
 
                     }
 
