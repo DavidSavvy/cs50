@@ -86,14 +86,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1].rgbtRed);
                         sobRed = sobxRed^2 + sobyRed^2;
 
-                        
 
 
-                    }
-                    else
-                    {
 
                     }
+                    
                 }
             }
         }
