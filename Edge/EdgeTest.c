@@ -4,23 +4,8 @@
 #include <math.h>
 #include <string.h>
 
-typedef struct
-{
-    int  rgbtBlue;
-    int  rgbtGreen;
-    int  rgbtRed;
-}
-RGBTRIPLE;
 
-void grayscale(int height, int width, RGBTRIPLE image[height][width]);
 
-// Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width]);
-
-// Detect edges
-void edges(int height, int width, RGBTRIPLE image[height][width]);
-
-// Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
 
 
@@ -28,55 +13,43 @@ void blur(int height, int width, RGBTRIPLE image[height][width]);
 
 int main(int argc, char *argv[])
 {
-    RGBTRIPLE image[3][3][3] =
+    int image[3][3][3] =
     {
         {
             {
-                
+                255, 0, 0
+            },
+            {
+                128, 0, 128
+            },
+            {
+                0, 0, 255
             }
         },
         {
-
+            {
+                255, 0, 0
+            },
+            {
+                128, 0, 128
+            },
+            {
+                0, 0, 255
+            }
         },
         {
-
+            {
+                255, 0, 0
+            },
+            {
+                128, 0, 128
+            },
+            {
+                0, 0, 255
+            }
         }
     };
-    image[0][0].rgbtBlue = 255;
-    image[0][0].rgbtGreen = 0;
-    image[0][0].rgbtRed = 0;
 
-    image[0][1].rgbtBlue = 128;
-    image[0][1].rgbtGreen = 0;
-    image[0][1].rgbtRed = 128;
-
-    image[0][2].rgbtBlue = 0;
-    image[0][2].rgbtGreen = 0;
-    image[0][2].rgbtRed = 255;
-
-    image[1][0].rgbtBlue = 255;
-    image[1][0].rgbtGreen = 0;
-    image[1][0].rgbtRed = 0;
-
-    image[1][1].rgbtBlue = 128;
-    image[1][1].rgbtGreen = 0;
-    image[1][1].rgbtRed = 128;
-
-    image[1][2].rgbtBlue = 0;
-    image[1][2].rgbtGreen = 0;
-    image[1][2].rgbtRed = 255;
-
-    image[2][0].rgbtBlue = 255;
-    image[2][0].rgbtGreen = 0;
-    image[2][0].rgbtRed = 0;
-
-    image[2][1].rgbtBlue = 128;
-    image[2][1].rgbtGreen = 0;
-    image[2][1].rgbtRed = 128;
-
-    image[2][2].rgbtBlue = 0;
-    image[2][2].rgbtGreen = 0;
-    image[2][2].rgbtRed = 255;
 
     edges(3,3,image);
 }
@@ -86,27 +59,10 @@ int main(int argc, char *argv[])
 
 
 
-// Convert image to grayscale
-void grayscale(int height, int width, RGBTRIPLE image[height][width])
-{
 
-    return;
-}
-
-// Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width])
-{
-    return;
-}
-
-// Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width])
-{
-    return;
-}
 
 // Detect edges
-void edges(int height, int width, RGBTRIPLE image[height][width])
+void edges(int height, int width, int image[3][3][3])
 {
 
     int gx[3][3] =
@@ -125,7 +81,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-    RGBTRIPLE imageCpy[height][width];
+    int imageCpy[height][width][3];
 
     //memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
 
@@ -134,7 +90,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            imageCpy[i][j] = image[i][j];
+            imageCpy[i][j][0] = image[i][j][0];
+            imageCpy[i][j][1] = image[i][j][1];
+            imageCpy[i][j][2] = image[i][j][2];
         }
     }
 
