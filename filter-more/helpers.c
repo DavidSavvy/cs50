@@ -59,13 +59,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            sobRed = 0;
+            sobGreen = 0;
+            sobBlue = 0;
             for (int row = i - 1; row <= i + 1; row++)
             {
                 for (int col = j - 1; col <= i + 1; col++)
                 {
-                    sobRed = 0;
-                    sobGreen = 0;
-                    sobBlue = 0;
                     if (row > -1 && row < height && col > -1 && col < width)
                     {
                         sobRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1].rgbtRed);
