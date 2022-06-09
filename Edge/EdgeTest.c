@@ -126,15 +126,15 @@ void edges(int height, int width, int image[3][3][3])
                 {
                     if (row > -1 && row < height && col > -1 && col < width)
                     {
-                        sobxRed += (imageCpy[row][col].rgbtRed * gx[row - i + 1][col - i + 1]);
-                        sobyRed += (imageCpy[row][col].rgbtRed * gy[row - i + 1][col - i + 1]);
+                        sobxRed += (imageCpy[row][col][2] * gx[row - i + 1][col - i + 1]);
+                        sobyRed += (imageCpy[row][col][2] * gy[row - i + 1][col - i + 1]);
 
-                        sobxGreen += (imageCpy[row][col].rgbtGreen * gx[row - i + 1][col - i + 1]);
-                        sobyGreen += (imageCpy[row][col].rgbtGreen * gy[row - i + 1][col - i + 1]);
+                        sobxGreen += (imageCpy[row][col][1] * gx[row - i + 1][col - i + 1]);
+                        sobyGreen += (imageCpy[row][col][1] * gy[row - i + 1][col - i + 1]);
 
 
 
-                        sobxBlue += (imageCpy[row][col].rgbtBlue * gx[row - i + 1][col - i + 1]);
+                        sobxBlue += (imageCpy[row][col] * gx[row - i + 1][col - i + 1]);
                         sobyBlue += (imageCpy[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
 
                     }
