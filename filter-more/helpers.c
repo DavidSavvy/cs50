@@ -97,34 +97,38 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         sobxRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1]);
                         sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1]);
-                        sobRed = sqrt((double)(sobxRed^2 + sobyRed^2));
-                        sobRed = round(sobRed);
-                        if (sobRed > 255)
-                        {
-                            sobRed = 255;
-                        }
 
                         sobxGreen += (image[row][col].rgbtGreen * gx[row - i + 1][col - i + 1]);
                         sobyGreen += (image[row][col].rgbtGreen * gy[row - i + 1][col - i + 1]);
-                        sobGreen = sqrt((double)(sobxGreen^2 + sobyGreen^2));
-                        sobGreen = round(sobGreen);
-                        if (sobGreen > 255)
-                        {
-                            sobGreen = 255;
-                        }
+                        
+
 
                         sobxBlue += (image[row][col].rgbtBlue * gx[row - i + 1][col - i + 1]);
                         sobyBlue += (image[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
-                        sobBlue = sqrt((double)(sobxBlue^2 + sobyBlue^2));
-                        sobBlue = round(sobBlue);
-                        if (sobBlue > 255)
-                        {
-                            sobBlue = 255;
-                        }
 
                     }
 
                 }
+            }
+            sobRed = sqrt((double)(sobxRed^2 + sobyRed^2));
+            sobRed = round(sobRed);
+            if (sobRed > 255)
+            {
+                sobRed = 255;
+            }
+
+            sobGreen = sqrt((double)(sobxGreen^2 + sobyGreen^2));
+            sobGreen = round(sobGreen);
+            if (sobGreen > 255)
+            {
+                sobGreen = 255;
+            }
+
+            sobBlue = sqrt((double)(sobxBlue^2 + sobyBlue^2));
+            sobBlue = round(sobBlue);
+            if (sobBlue > 255)
+            {
+                sobBlue = 255;
             }
             imageCpy[i][j].rgbtRed = sobRed;
             imageCpy[i][j].rgbtGreen = sobGreen;
