@@ -65,7 +65,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (row > -1 && row < height && col > -1 && col < width)
                     {
-                        sobRed = image[row][col] 
+                        sobRed = image[row][col] * gx[row ]
                         imageCpy[row][col].red = sobRed;
                     }
                     else
