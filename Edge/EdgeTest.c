@@ -28,7 +28,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width]);
 
 int main(int argc, char *argv[])
 {
-    RGBTRIPLE image[3][3];
+    RGBTRIPLE image[3][3][3] =
+    {
+        {
+            {
+                
+            }
+        },
+        {
+
+        },
+        {
+
+        }
+    };
     image[0][0].rgbtBlue = 255;
     image[0][0].rgbtGreen = 0;
     image[0][0].rgbtRed = 0;
