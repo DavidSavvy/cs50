@@ -111,8 +111,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             sobRed = pow(sobxRed, 2) + pow(sobyRed, 2);
-            sobRed = sqrt((double)sobRed);
-            sobRed = round(sobRed);
+            sobRed = round(sqrt((double)sobRed));
             if (sobRed > 255)
             {
                 sobRed = 255;
