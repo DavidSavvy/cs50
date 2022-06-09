@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <string.h>
+#include <math.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -82,28 +83,28 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (row > -1 && row < height && col > -1 && col < width)
                     {
-                        sobxRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1].rgbtRed);
-                        sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1].rgbtRed);
+                        sobxRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1]);
+                        sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1]);
                         sobRed = sqrt(sobxRed^2 + sobyRed^2);
-                        round(sobRed);
+                        sobRed = round(sobRed);
                         if (sobRed > 255)
                         {
                             sobRed = 255;
                         }
 
-                        sobxGreen += (image[row][col].rgbtGreen * gx[row - i + 1][col - i + 1].rgbtGreen);
-                        sobyGreen += (image[row][col].rgbtGreen * gy[row - i + 1][col - i + 1].rgbtGreen);
+                        sobxGreen += (image[row][col].rgbtGreen * gx[row - i + 1][col - i + 1]);
+                        sobyGreen += (image[row][col].rgbtGreen * gy[row - i + 1][col - i + 1]);
                         sobGreen = sqrt(sobxGreen^2 + sobyGreen^2);
-                        round(sobGreen);
+                        sobGreen = round(sobGreen);
                         if (sobGreen > 255)
                         {
                             sobGreen = 255;
                         }
 
-                        sobxBlue += (image[row][col].rgbtBlue * gx[row - i + 1][col - i + 1].rgbtBlue);
-                        sobyBlue += (image[row][col].rgbtBlue * gy[row - i + 1][col - i + 1].rgbtBlue);
+                        sobxBlue += (image[row][col].rgbtBlue * gx[row - i + 1][col - i + 1]);
+                        sobyBlue += (image[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
                         sobBlue = sqrt(sobxBlue^2 + sobyBlue^2);
-                        round(sobBlue);
+                        sobBlue = round(sobBlue);
                         if (sobBlue > 255)
                         {
                             sobBlue = 255;
