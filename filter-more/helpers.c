@@ -55,9 +55,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int sobxRed ;
     int sobxGreen;
     int sobxBlue;
+
     int sobyRed ;
     int sobyGreen;
     int sobyBlue;
+
+    int sobRed;
+    int sobGreen;
+    int sobBlue;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -68,6 +73,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             sobyRed = 0;
             sobyGreen = 0;
             sobyBlue = 0;
+            sobRed = 0;
+            sobGreen = 0;
+            sobBlue = 0;
             for (int row = i - 1; row <= i + 1; row++)
             {
                 for (int col = j - 1; col <= i + 1; col++)
