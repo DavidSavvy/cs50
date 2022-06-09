@@ -95,16 +95,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (row > -1 && row < height && col > -1 && col < width)
                     {
-                        sobxRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1]);
-                        sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1]);
+                        sobxRed += (imageCpy[row][col].rgbtRed * gx[row - i + 1][col - i + 1]);
+                        sobyRed += (imageCpy[row][col].rgbtRed * gy[row - i + 1][col - i + 1]);
 
-                        sobxGreen += (image[row][col].rgbtGreen * gx[row - i + 1][col - i + 1]);
-                        sobyGreen += (image[row][col].rgbtGreen * gy[row - i + 1][col - i + 1]);
+                        sobxGreen += (imageCpy[row][col].rgbtGreen * gx[row - i + 1][col - i + 1]);
+                        sobyGreen += (imageCpy[row][col].rgbtGreen * gy[row - i + 1][col - i + 1]);
 
 
 
-                        sobxBlue += (image[row][col].rgbtBlue * gx[row - i + 1][col - i + 1]);
-                        sobyBlue += (image[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
+                        sobxBlue += (imageCpy[row][col].rgbtBlue * gx[row - i + 1][col - i + 1]);
+                        sobyBlue += (imageCpy[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
 
                     }
 
@@ -130,19 +130,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 sobBlue = 255;
             }
-            imageCpy[i][j].rgbtRed = sobRed;
-            imageCpy[i][j].rgbtGreen = sobGreen;
-            imageCpy[i][j].rgbtBlue = sobBlue;
+            image[i][j].rgbtRed = sobRed;
+            image[i][j].rgbtGreen = sobGreen;
+            image[i][j].rgbtBlue = sobBlue;
         }
     }
-    //memcpy(image, imageCpy, sizeof(RGBTRIPLE) * (height * width));
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            image[i][j] = imageCpy[i][j];
-        }
-    }
+    
+
 
 
     return;
