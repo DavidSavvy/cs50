@@ -37,8 +37,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         { 1,  2,  1}
     };
 
+
+
     RGBTRIPLE imageCpy[height][width] = NULL;
 
+    memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
+
+    /*
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -46,6 +51,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             imageCpy[i][j] = image[i][j];
         }
     }
+    */
 
     for (int i = 0; i < height; i++)
     {
