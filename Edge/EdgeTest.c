@@ -20,13 +20,16 @@ typedef struct
     BYTE  rgbtBlue;
     BYTE  rgbtGreen;
     BYTE  rgbtRed;
-} 
+}
 RGBTRIPLE;
 
 
 int main(int argc, char *argv[])
 {
-    int
+    RGBTRIPLE image[3][3];
+    image[0][0].rgbtBlue = 255;
+    image[0][0].rgbtGreen = 0;
+    image[0][0].rgbtRed = 0;
 }
 
 
