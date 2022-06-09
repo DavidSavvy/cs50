@@ -30,7 +30,42 @@ int main(int argc, char *argv[])
     image[0][0].rgbtBlue = 255;
     image[0][0].rgbtGreen = 0;
     image[0][0].rgbtRed = 0;
+
+    image[0][1].rgbtBlue = 128;
+    image[0][1].rgbtGreen = 0;
+    image[0][1].rgbtRed = 128;
+
+    image[0][2].rgbtBlue = 0;
+    image[0][2].rgbtGreen = 0;
+    image[0][2].rgbtRed = 255;
+
+    image[1][0].rgbtBlue = 255;
+    image[1][0].rgbtGreen = 0;
+    image[1][0].rgbtRed = 0;
+
+    image[1][1].rgbtBlue = 128;
+    image[1][1].rgbtGreen = 0;
+    image[1][1].rgbtRed = 128;
+
+    image[1][2].rgbtBlue = 0;
+    image[1][2].rgbtGreen = 0;
+    image[1][2].rgbtRed = 255;
+
+    image[2][0].rgbtBlue = 255;
+    image[2][0].rgbtGreen = 0;
+    image[2][0].rgbtRed = 0;
+
+    image[2][1].rgbtBlue = 128;
+    image[2][1].rgbtGreen = 0;
+    image[2][1].rgbtRed = 128;
+
+    image[2][2].rgbtBlue = 0;
+    image[2][2].rgbtGreen = 0;
+    image[2][2].rgbtRed = 255;
+
+    edges(3,3,image);
 }
+
 
 
 
