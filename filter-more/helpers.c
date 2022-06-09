@@ -41,7 +41,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            for (row )
+            for (int row = i - 1; row <= i + 1; row++)
+            {
+                for (int col = j - 1; col <= i + 1; col++)
+                {
+                    
+                }
+            }
         }
     }
 
