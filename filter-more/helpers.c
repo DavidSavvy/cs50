@@ -86,7 +86,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         sobxRed += (image[row][col].rgbtRed * gx[row - i + 1][col - i + 1]);
                         sobyRed += (image[row][col].rgbtRed * gy[row - i + 1][col - i + 1]);
-                        sobRed = sqrt(sobxRed^2 + sobyRed^2);
+                        sobRed = sqrt((double)(sobxRed^2 + sobyRed^2));
                         sobRed = round(sobRed);
                         if (sobRed > 255)
                         {
@@ -95,7 +95,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                         sobxGreen += (image[row][col].rgbtGreen * gx[row - i + 1][col - i + 1]);
                         sobyGreen += (image[row][col].rgbtGreen * gy[row - i + 1][col - i + 1]);
-                        sobGreen = sqrt(sobxGreen^2 + sobyGreen^2);
+                        sobGreen = sqrt((double)(sobxGreen^2 + sobyGreen^2));
                         sobGreen = round(sobGreen);
                         if (sobGreen > 255)
                         {
@@ -104,7 +104,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                         sobxBlue += (image[row][col].rgbtBlue * gx[row - i + 1][col - i + 1]);
                         sobyBlue += (image[row][col].rgbtBlue * gy[row - i + 1][col - i + 1]);
-                        sobBlue = sqrt(sobxBlue^2 + sobyBlue^2);
+                        sobBlue = sqrt((double)(sobxBlue^2 + sobyBlue^2));
                         sobBlue = round(sobBlue);
                         if (sobBlue > 255)
                         {
