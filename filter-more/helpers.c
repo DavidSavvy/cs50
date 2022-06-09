@@ -42,9 +42,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
     RGBTRIPLE imageCpy[height][width];
 
-    memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
+    //memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
 
-    /*
+
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -52,12 +52,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             imageCpy[i][j] = image[i][j];
         }
     }
-    */
-    int sobxRed ;
+
+    int sobxRed;
     int sobxGreen;
     int sobxBlue;
 
-    int sobyRed ;
+    int sobyRed;
     int sobyGreen;
     int sobyBlue;
 
@@ -119,8 +119,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             imageCpy[i][j].rgbtBlue = sobBlue;
         }
     }
-    memcpy(image, imageCpy, sizeof(RGBTRIPLE) * (height * width));
-
+    //memcpy(image, imageCpy, sizeof(RGBTRIPLE) * (height * width));
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = imageCpy[i][j];
+        }
+    }
 
 
     return;
