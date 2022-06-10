@@ -35,7 +35,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-
     int gx[3][3] =
     {
         {-1, 0, 1},
@@ -50,20 +49,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         { 1,  2,  1}
     };
 
-
-
     RGBTRIPLE imageCpy[height][width];
 
-    //memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
-
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            imageCpy[i][j] = image[i][j];
-        }
-    }
+    memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (height * width));
 
     int sobxRed;
     int sobxGreen;
@@ -101,13 +89,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         sobxGreen += (imageCpy[row][col].rgbtGreen * gx[row - i + 1][col - j + 1]);
                         sobyGreen += (imageCpy[row][col].rgbtGreen * gy[row - i + 1][col - j + 1]);
 
-
-
                         sobxBlue += (imageCpy[row][col].rgbtBlue * gx[row - i + 1][col - j + 1]);
                         sobyBlue += (imageCpy[row][col].rgbtBlue * gy[row - i + 1][col - j + 1]);
-
                     }
-
                 }
             }
             sobRed = pow(sobxRed, 2) + pow(sobyRed, 2);
@@ -130,14 +114,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 sobBlue = 255;
             }
+
             image[i][j].rgbtRed = sobRed;
             image[i][j].rgbtGreen = sobGreen;
             image[i][j].rgbtBlue = sobBlue;
         }
     }
-
-
-
-
     return;
 }
