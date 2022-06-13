@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     char *name = malloc(8);
     FILE *image = NULL;
-    BOOL isJPG = false;
+    bool isJPG = false;
     while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
     {
         if (buffer[0] == 0xFF && buffer[1] == 0xD8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
