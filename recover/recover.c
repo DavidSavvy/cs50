@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     int isJPG = 0;
     while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
     {
+        printf()
         if (buffer[0] == 0xFF && buffer[1] == 0xD8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
         {
             if (!isJPG)
