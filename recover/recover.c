@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
                 char *name = malloc(8);
                 sprintf(name, "%03i.jpg", jpgN);
                 FILE *image = fopen(name, "w");
-                fwrite(file, sizeof(BYTE), BLOCKSIZE, image);
+                fwrite(file, sizeof(BYTE), BLOCKSIZE, image); //might need to take next block
                 free(name);
                 jpgN++;
             }
