@@ -21,5 +21,6 @@ int main(int argc, char *argv[])
     {
         return 1;
     }
-    fread(buffer, sizeof(BYTE), BLOCKSIZE, file);
+    while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
+
 }
