@@ -37,8 +37,12 @@ int main(int argc, char *argv[])
                 free(name);
                 jpgN++;
             }
+            else if (isJPG)
+            {
+                fclose
+            }
 
-            isJPG = true;
+
 
         }
         else if (isJPG)
