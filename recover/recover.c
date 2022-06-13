@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         {
             char *name = malloc(8);
             jpgN++;
-            isJPG = !isJPG;
+            isJPG = true;
             if (!isJPG)
             {
 
