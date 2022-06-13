@@ -41,6 +41,10 @@ int main(int argc, char *argv[])
             isJPG = true;
 
         }
+        else if (isJPG)
+        {
+            
+        }
     }
 
 }
