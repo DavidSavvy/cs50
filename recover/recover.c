@@ -30,11 +30,12 @@ int main(int argc, char *argv[])
     int isJPG = 0;
     while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
     {
-        printf("%i\n", ftell(file));
+        printf("%li\n", ftell(file));
         if (buffer[0] == 0xFF && buffer[1] == 0xD8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
         {
             if (!isJPG)
             {
+                printf("%li\n", ftell(file));
                 sprintf(name, "%03i.jpg", jpgN);
                 image = fopen(name, "w");
                 fwrite(file, sizeof(BYTE), BLOCKSIZE, image); //might need to take next block
