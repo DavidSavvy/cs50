@@ -50,7 +50,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE imageCpy[height][width];
-    memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (width * height));
+    //memcpy(imageCpy, image, sizeof(RGBTRIPLE) * (width * height));
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            imageCpy[i][j] = image[i][j];
+        }
+    }
 
     for (int i = 0; i < height; i++)
     {
@@ -86,7 +93,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 avgG = 255;
             }
             avgB = round(avgB /= (double)count);
-            
+
             if (avgB > 255)
             {
                 avgB = 255;
