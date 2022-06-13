@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
                 fclose(image);
                 sprintf(name, "%03i.jpg", jpgN);
                 image = fopen(name, "w");
+                fwrite(file, sizeof(BYTE), BLOCKSIZE, image);
+                jpgN++;
             }
 
 
