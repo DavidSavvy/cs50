@@ -74,23 +74,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             avgR /= count;
+            avgR = round(avgR);
             if (avgR > 255)
             {
                 avgR = 255;
             }
             avgG /= count;
+            avgG = round(avgG);
             if (avgG > 255)
             {
                 avgG = 255;
             }
             avgB /= count;
+            avgB = round(avgB);
             if (avgB > 255)
             {
                 avgB = 255;
             }
-            image[i][j].rgbtRed = round(avgR);
-            image[i][j].rgbtGreen = round(avgG);
-            image[i][j].rgbtBlue = round(avgB);
+            image[i][j].rgbtRed = avgR;
+            image[i][j].rgbtGreen = avgG;
+            image[i][j].rgbtBlue = avgB;
         }
     }
     return;
