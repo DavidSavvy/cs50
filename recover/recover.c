@@ -9,8 +9,9 @@ int main(int argc, char *argv[])
         return 1;
     }
     FILE *file = fopen(argv[1], "r");
-    if (*file == NULL)
+    if (file == NULL)
     {
-        
+        printf("Invalid file");
+        return 1;
     }
 }
