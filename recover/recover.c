@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    char *name = malloc(8);
+    FILE *image == NULL;
     bool isJPG = false;
     while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
     {
@@ -30,9 +32,8 @@ int main(int argc, char *argv[])
         {
             if (!isJPG)
             {
-                char *name = malloc(8);
                 sprintf(name, "%03i.jpg", jpgN);
-                FILE *image = fopen(name, "w");
+                image = fopen(name, "w");
                 fwrite(file, sizeof(BYTE), BLOCKSIZE, image); //might need to take next block
                 jpgN++;
             }
