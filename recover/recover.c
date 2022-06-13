@@ -3,6 +3,7 @@
 
 int main(int argc, char *argv[])
 {
+    typedef uint8_t BYTE;
     const int BLOCKSIZE = 512;
     if (argc != 2)
     {
@@ -15,5 +16,5 @@ int main(int argc, char *argv[])
         printf("Invalid file");
         return 1;
     }
-    
+    BYTE 
 }
