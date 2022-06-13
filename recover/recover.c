@@ -16,5 +16,10 @@ int main(int argc, char *argv[])
         printf("Invalid file");
         return 1;
     }
-    BYTE 
+    BYTE *buffer = malloc(BLOCKSIZE);
+    if (buffer == NULL)
+    {
+        return 1;
+    }
+    fread(buffer, sizeof(BYTE), BLOCKSIZE, file);
 }
