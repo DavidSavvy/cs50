@@ -21,6 +21,13 @@ int main(int argc, char *argv[])
     {
         return 1;
     }
+
     while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
+    {
+        if (buffer[0] == 0xFF && buffer[1] == 0xd8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
+        {
+            
+        }
+    }
 
 }
