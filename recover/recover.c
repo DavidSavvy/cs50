@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     char *name = malloc(8);
     FILE *image = NULL;
-    bool isJPG = false;
+    int isJPG = 0;
     while (fread(buffer, sizeof(BYTE), BLOCKSIZE, file) == BLOCKSIZE)
     {
         if (buffer[0] == 0xFF && buffer[1] == 0xD8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
                 image = fopen(name, "w");
                 fwrite(file, sizeof(BYTE), BLOCKSIZE, image); //might need to take next block
                 jpgN++;
+                isJPG = 1;
             }
             else if (isJPG)
             {
