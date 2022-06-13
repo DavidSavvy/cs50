@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
         }
         else if (isJPG)
         {
-            fwrite(file, sizeof(BYTE), BLOCKSIZE, image);
+            fwrite(buffer, sizeof(BYTE), BLOCKSIZE, image);
             //printf("%li\n", ftell(file));
         }
     }
