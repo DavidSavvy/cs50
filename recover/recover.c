@@ -54,5 +54,6 @@ int main(int argc, char *argv[])
             fwrite(file, sizeof(BYTE), BLOCKSIZE, image);
         }
     }
+    free(name);
 
 }
