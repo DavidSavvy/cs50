@@ -3,6 +3,7 @@
 
 int main(int argc, char *argv[])
 {
+    const int BLOCKSIZE = 512;
     if (argc != 2)
     {
         printf("Usage: ./recover infile.raw");
@@ -14,5 +15,5 @@ int main(int argc, char *argv[])
         printf("Invalid file");
         return 1;
     }
-    malloc
+    
 }
