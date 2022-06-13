@@ -31,11 +31,12 @@ int main(int argc, char *argv[])
             if (!isJPG)
             {
                 char *name = malloc(8);
+                sprintf(name, "%03i.jpg", jpgN);
                 jpgN++;
             }
 
             isJPG = true;
-            
+
         }
     }
 
