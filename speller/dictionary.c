@@ -132,7 +132,7 @@ bool unload(void)
         node *temp = table[i];
         unloadHelper(temp);
     }
-    return false;
+    return true;
 }
 
 void unloadHelper(node *pointer)
