@@ -28,19 +28,23 @@ bool check(const char *word)
     // TODO
     int hashN = hash(word);
 
-    if (table[hash] == NULL)
+    if (table[hashN] == NULL)
     {
         return false;
     }
 
-    node temp = *table[hash];
-    if (strcmp(temp.word, word) == 0)
+    node *temp = table[hashN];
+    if (strcmp(temp->word, word) == 0)
     {
         return true;
     }
-    while (temp.next != NULL)
+    while (temp->next != NULL)
     {
-        
+        temp = temp->next;
+        if (strcmp(temp->word, word) == 0)
+        {
+            return true;
+        }
     }
 
     return false;
