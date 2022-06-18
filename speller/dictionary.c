@@ -49,7 +49,7 @@ bool load(const char *dictionary)
 
     while (fscanf(file, "%s", word) != EOF) //might have to reset word array
     {
-        int hashN = hash(word) - 1;
+        int hashN = hash(word);
 
         if (table[hashN]->next == NULL)
         {
