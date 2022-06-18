@@ -45,10 +45,14 @@ bool load(const char *dictionary)
 
     char *word[LENGTH + 1];
 
-    while (fscanf(file, %s) != EOF)
+    while (fscanf(file, %s) != EOF) //might have to reset word array
     {
         fscanf(file, %s, word);
-        
+
+        unsigned int hash = hash(word);
+
+        char *pWord = malloc(sizeof(node));
+        table[hash]
     }
 
 
