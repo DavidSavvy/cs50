@@ -85,7 +85,6 @@ bool load(const char *dictionary)
             strcpy(pWord->word, word);
             pWord->next = NULL;
             table[hashN] = pWord;
-            free(pWord);
             continue;
         }
 
@@ -93,7 +92,6 @@ bool load(const char *dictionary)
         strcpy(pWord->word, word);
         pWord->next = table[hashN];
         table[hashN] = pWord;
-        free(pWord);
     }
     return true;
 }
