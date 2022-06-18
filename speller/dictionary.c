@@ -8,7 +8,7 @@
 
 #include "dictionary.h"
 
-void unloadHelper(node *pointer);
+
 
 // Represents a node in a hash table
 typedef struct node
@@ -17,6 +17,8 @@ typedef struct node
     struct node *next;
 }
 node;
+
+void unloadHelper(node *pointer);
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 52;
