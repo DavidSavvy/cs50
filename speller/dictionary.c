@@ -45,7 +45,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char *word; //might have to allocate memory
+    char *word = malloc(LENGTH + 1); //might have to allocate memory
 
     while (fscanf(file, "%s", word) != EOF) //might have to reset word array
     {
