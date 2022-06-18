@@ -125,7 +125,11 @@ bool unload(void)
     // TODO
     for (int i = 0; i < N; i++)
     {
-        if ()
+        if (table[i] == NULL)
+        {
+            continue;
+        }
+        
     }
     return false;
 }
