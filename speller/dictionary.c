@@ -57,11 +57,12 @@ bool load(const char *dictionary)
             continue;
         }
 
-
         node *pWord = malloc(sizeof(node));
         strcpy(pWord->word, word);
         pWord->next = table[hash]->next;
-        
+        table[hash]->next = pWord;
+        free(pWord);
+
     }
 
 
