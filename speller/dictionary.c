@@ -27,7 +27,13 @@ bool check(const char *word)
 {
     // TODO
     int hashN = hash(word);
-    
+
+    if (table[hash] == NULL)
+    {
+        return false;
+    }
+
+    if ()
     return false;
 }
 
