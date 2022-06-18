@@ -30,6 +30,11 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+
+    for (int i = 0; i < strlen(word); i++)
+    {
+        tolower(word[i]);
+    }
     int hashN = hash(word);
 
     if (table[hashN] == NULL)
@@ -45,7 +50,7 @@ bool check(const char *word)
     while (temp->next != NULL)
     {
         temp = temp->next;
-        char *lowercas
+
         if (strcmp(temp->word, word) == 0)
         {
             return true;
