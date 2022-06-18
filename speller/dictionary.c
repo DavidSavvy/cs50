@@ -142,4 +142,10 @@ bool unload(void)
     return false;
 }
 
-
+void unloadHelper(node *pointer)
+{
+    if (pointer->next == NULL)
+    {
+        free(pointer);
+    }
+}
