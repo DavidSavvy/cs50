@@ -33,7 +33,16 @@ bool check(const char *word)
         return false;
     }
 
-    if ()
+    node temp = *table[hash];
+    if (strcmp(temp.word, word) == 0)
+    {
+        return true;
+    }
+    while (temp.next != NULL)
+    {
+        
+    }
+
     return false;
 }
 
