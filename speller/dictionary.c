@@ -68,6 +68,7 @@ bool load(const char *dictionary)
         free(pWord);
 
     }
+    return true;
 
 
 
