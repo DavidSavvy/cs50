@@ -51,6 +51,10 @@ bool load(const char *dictionary)
 
         unsigned int hash = hash(word);
 
+        if (table[hash]->next == NULL)
+        {
+            strcpy
+        }
         char *pWord = malloc(sizeof(node));
         table[hash]
     }
