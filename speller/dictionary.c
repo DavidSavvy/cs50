@@ -45,6 +45,7 @@ bool check(const char *word)
     while (temp->next != NULL)
     {
         temp = temp->next;
+        char *lowercase = (temp->word
         if (strcmp(temp->word, word) == 0)
         {
             return true;
