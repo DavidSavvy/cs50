@@ -102,9 +102,19 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
+    int numberWord = 0;
     for (int i = 0; i < N; i++)
     {
-        
+        if (table[i] != NULL)
+        {
+            numberWord++;
+            node *temp = table[i];
+            while (temp->next != NULL)
+            {
+                numberWord++;
+                temp = temp->next;
+            }
+        }
     }
     return 0;
 }
