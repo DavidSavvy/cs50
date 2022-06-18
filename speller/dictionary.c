@@ -8,6 +8,8 @@
 
 #include "dictionary.h"
 
+void unloadHelper(node *pointer);
+
 // Represents a node in a hash table
 typedef struct node
 {
@@ -145,5 +147,9 @@ void unloadHelper(node *pointer)
     if (pointer->next == NULL)
     {
         free(pointer);
+        return;
     }
+
+    unloadHelper(pointer->next);
+    free(pointer);
 }
