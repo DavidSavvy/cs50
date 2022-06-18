@@ -116,12 +116,16 @@ unsigned int size(void)
             }
         }
     }
-    return 0;
+    return numberWord; //implement the else 0 if needed
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
     // TODO
+    for (int i = 0; i < N; i++)
+    {
+        if ()
+    }
     return false;
 }
