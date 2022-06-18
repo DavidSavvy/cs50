@@ -129,7 +129,17 @@ bool unload(void)
         {
             continue;
         }
-        
+        node *temp = table[i];
+        if (temp->next == NULL)
+        {
+            free(temp);
+        }
+        else
+        {
+            unload();
+        }
     }
     return false;
 }
+
+
