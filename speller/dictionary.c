@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -42,7 +43,14 @@ bool load(const char *dictionary)
         return false;
     }
 
-    
+    char *word[LENGTH + 1];
+
+    while (fscanf(file, %s) != EOF)
+    {
+        
+    }
+
+
 
 
     // TODO
