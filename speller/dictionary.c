@@ -47,9 +47,9 @@ bool load(const char *dictionary)
 
     const char *word = malloc(sizeof(char) * (LENGTH + 1)); //might have to allocate memory
 
-    while (fscanf(file, %s) != EOF) //might have to reset word array
+    while (fscanf(file, "%s") != EOF) //might have to reset word array
     {
-        fscanf(file, %s, word);
+        fscanf(file, "%s", word);
 
         unsigned int hash = hash(word);
 
