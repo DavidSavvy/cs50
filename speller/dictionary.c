@@ -55,6 +55,7 @@ bool load(const char *dictionary)
         {
             node *pWord = malloc(sizeof(node));
             strcpy(pWord->word, word);
+            pWord->next = NULL;
             table[hash]->next = pWord;
             free(pWord);
             continue;
@@ -72,7 +73,7 @@ bool load(const char *dictionary)
 
 
     // TODO
-    return false;
+
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
