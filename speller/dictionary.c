@@ -51,7 +51,7 @@ bool load(const char *dictionary)
     {
         fscanf(file, "%s", word);
 
-        unsigned int hash = hash(word);
+        int hash = hash(word);
 
         if (table[hash]->next == NULL)
         {
