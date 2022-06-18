@@ -45,7 +45,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char *word[LENGTH + 1];
+    const char *word[LENGTH + 1];
 
     while (fscanf(file, %s) != EOF) //might have to reset word array
     {
