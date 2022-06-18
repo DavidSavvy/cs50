@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -70,10 +71,6 @@ bool load(const char *dictionary)
     }
     return true;
 
-
-
-
-    // TODO
 
 }
 
