@@ -41,12 +41,14 @@ bool check(const char *word)
 
     if (table[hashN] == NULL)
     {
+        free(wordCpy);
         return false;
     }
 
     node *temp = table[hashN];
     if (strcmp(temp->word, word) == 0)
     {
+        free(wordCpy);
         return true;
     }
     while (temp->next != NULL)
@@ -82,6 +84,7 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
+        fclose(file);
         return false;
     }
 
