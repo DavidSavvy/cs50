@@ -55,10 +55,11 @@ bool check(const char *word)
 
         if (strcmp(temp->word, wordCpy) == 0)
         {
+            free(wordCpy);
             return true;
         }
     }
-
+    free(wordCpy);
     return false;
 }
 
