@@ -49,7 +49,7 @@ bool check(const char *word)
     {
         temp = temp->next;
 
-        if (strcmp(temp->word, word) == 0)
+        if (strcmp(temp->word, wordCpy) == 0)
         {
             return true;
         }
