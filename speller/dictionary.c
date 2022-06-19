@@ -106,6 +106,7 @@ bool load(const char *dictionary)
         pWord->next = table[hashN];
         table[hashN] = pWord;
     }
+    fclose(file);
     return true;
 }
 
