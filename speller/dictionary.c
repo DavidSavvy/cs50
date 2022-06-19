@@ -19,7 +19,7 @@ node;
 void unloadHelper(node *pointer);
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 104;
+const unsigned int N = 1024;
 
 // Hash table
 node *table[N];
@@ -71,7 +71,7 @@ unsigned int hash(const char *word)
     {
         sum += word[i];
     }
-    sum %= 208;
+    sum %= 1024;
     return sum;
 }
 
