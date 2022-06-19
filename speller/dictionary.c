@@ -31,8 +31,12 @@ bool check(const char *word)
 {
     // TODO
     char *wordCpy = malloc(LENGTH + 1);
-    strcpy(wordCpy, word);
 
+    strcpy(wordCpy, word);
+    for (int i = 0; i < strlen(wordCpy); i++)
+    {
+        wordCpy[i] = tolower(wordCpy[i]);
+    }
     int hashN = hash(wordCpy);
 
     if (table[hashN] == NULL)
