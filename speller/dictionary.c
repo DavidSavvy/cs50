@@ -46,7 +46,7 @@ bool check(const char *word)
     }
 
     node *temp = table[hashN];
-    if (strcmp(temp->word, word) == 0)
+    if (strcmp(temp->word, wordCpy) == 0)
     {
         free(wordCpy);
         return true;
