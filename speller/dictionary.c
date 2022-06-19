@@ -8,8 +8,6 @@
 
 #include "dictionary.h"
 
-
-
 // Represents a node in a hash table
 typedef struct node
 {
@@ -29,7 +27,6 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
     char *wordCpy = malloc(LENGTH + 1);
 
     strcpy(wordCpy, word);
@@ -37,6 +34,7 @@ bool check(const char *word)
     {
         wordCpy[i] = tolower(wordCpy[i]);
     }
+
     int hashN = hash(wordCpy);
 
     if (table[hashN] == NULL)
