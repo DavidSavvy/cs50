@@ -33,7 +33,7 @@ bool check(const char *word)
     char *wordCpy = malloc(LENGTH + 1);
 
     strcpy(wordCpy, word);
-    for (int i = 0; i < strlen(wordCpy); i++)
+    for (int i = 0; i < strlen(wordCpy) + 1; i++)
     {
         wordCpy[i] = tolower(wordCpy[i]);
     }
