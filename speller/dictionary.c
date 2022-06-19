@@ -30,12 +30,10 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    char *wordCpy = malloc(LENGTH + 1);
+    strcpy(wordCpy, word);
 
-    for (int i = 0; i < strlen(word); i++)
-    {
-        tolower(word[i]);
-    }
-    int hashN = hash(word);
+    int hashN = hash(wordCpy);
 
     if (table[hashN] == NULL)
     {
