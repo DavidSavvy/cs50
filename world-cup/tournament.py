@@ -70,9 +70,9 @@ def simulate_tournament(teams):
     for i in range(0, len(teamsCpy), 2):
         if len(teamsCpy) == 1:
             return teamsCpy[0]["team"]
-        teamsCpy = simulate_game(teamsCpy)
+        teamsCpy = simulate_round(teamsCpy)
 
-    
+
 
 
 
