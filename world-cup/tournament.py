@@ -23,8 +23,6 @@ def main():
             row["rating"] = int(row["rating"])
             teams.append(row)
 
-
-
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     for team in teams:
@@ -33,10 +31,6 @@ def main():
     for i in range(N):
         name = simulate_tournament(teams)
         counts[name] += 1
-
-
-
-
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -61,26 +55,16 @@ def simulate_round(teams):
             winners.append(teams[i])
         else:
             winners.append(teams[i + 1])
-
     return winners
 
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-
-    #while len(teams) > 1:
-        #teams = simulate_round(teams)
-    #return teams[0]["team"]
-
     for i in range(len(teams)):
         if len(teams) == 1:
             return teams[0]["team"]
         teams = simulate_round(teams)
-
-
-
-
 
 
 if __name__ == "__main__":
