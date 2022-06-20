@@ -68,9 +68,11 @@ def simulate_tournament(teams):
     # TODO
     teamsCpy = teams
     for i in range(0, len(teamsCpy), 2):
+        if len(teamsCpy) == 1:
+            return teamsCpy[0]["team"]
         teamsCpy = simulate_game(teamsCpy)
 
-    return teamsCpy[0]["team"]
+    
 
 
 
