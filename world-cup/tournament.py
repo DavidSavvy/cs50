@@ -34,12 +34,7 @@ def main():
         name = simulate_tournament(teams)
         counts[name] += 1
 
-    #for i in range(N):
-        #winner = simulate_tournament(teams)
-        #if winner in counts:
-            #counts[winner] += 1
-        #else:
-            #counts[winner] = 1
+
 
 
 
@@ -74,9 +69,14 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
 
-    while len(teams) > 1:
+    #while len(teams) > 1:
+        #teams = simulate_round(teams)
+    #return teams[0]["team"]
+
+    for i in range(len(teams)):
+        if len(teams) == 1:
+            return teams[0]["team"]
         teams = simulate_round(teams)
-    return teams[0]["team"]
 
 
 
