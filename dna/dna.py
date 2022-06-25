@@ -6,8 +6,8 @@ def main():
 
     # TODO: Check for command-line usage
 
-    if len(sys.argv) != 2:
-        print("Usage: python dna.py data.csv sequence.csv")
+    if len(sys.argv) != 3:
+        print("Usage: python dna.py data.csv sequence.txt")
         exit(1)
 
     # TODO: Read database file into a variable
@@ -31,8 +31,10 @@ def main():
 
     for row in dictReader:
         if row["name"] == key["name"]:
-        
+            print(row.key())
 
+
+    print("No match")
     return
 
 
