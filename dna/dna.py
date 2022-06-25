@@ -24,13 +24,14 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
 
+    values = []
     for i in range(len(key["name"])):
-        key["name"][i] = longest_match(sequence, key["name"][i])
+        values.append(longest_match(sequence, key["name"][i]))
 
     # TODO: Check database for matching profiles
 
     for row in dictReader:
-        if row["name"] == key["name"]:
+        if row[name] == values:
             print(row.key())
 
 
