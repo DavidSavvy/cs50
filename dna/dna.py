@@ -31,7 +31,7 @@ def main():
     # TODO: Check database for matching profiles
 
     for row in dictReader:
-        if row[name] == values:
+        if row['name'] == values:
             print(row.key())
 
 
