@@ -12,7 +12,7 @@ def main():
 
     # TODO: Read database file into a variable
     dataFile = open(sys.argv[1], 'r')
-    reader = csv.DictReader(dataFile)
+    reader = csv.reader(dataFile)
     dictReader = csv.DictReader(dataFile)
     key = next(reader)
 
@@ -32,9 +32,10 @@ def main():
     # TODO: Check database for matching profiles
 
     for row in dictReader:
-        
+
         if row['name'] == values:
             print(row.key())
+            return
 
 
     print("No match")
