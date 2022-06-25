@@ -6,13 +6,13 @@ def main():
 
     # TODO: Check for command-line usage
 
-    if sys.argc != 2:
+    if len(sys.argv) != 2:
         print("Usage: python dna.py data.csv sequence.csv")
         exit(1)
 
     # TODO: Read database file into a variable
 
-    file = open(sys.argv[0], 'r')
+    file = DictReader(open(sys.argv[1], 'r'))
 
     # TODO: Read DNA sequence file into a variable
 
