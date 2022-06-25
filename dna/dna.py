@@ -28,6 +28,7 @@ def main():
 
     values = []
     for i in range(len(key[1:])):
+        print(key[i])
         values.append(longest_match(sequence, key[i]))
     print(values)
 
@@ -37,14 +38,14 @@ def main():
         print(row)
         match = False
         for i in range(len(key[1:])):
-            if key[i] == values[i]:
+            if row[i] == values[i]:
                 match = True
                 continue
             else:
                 match = False
                 break
         if match == True:
-            print(row["name"])
+            print(row[0])
             return
 
 
