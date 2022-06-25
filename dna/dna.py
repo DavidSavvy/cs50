@@ -13,29 +13,22 @@ def main():
     # TODO: Read database file into a variable
     dataFile = open(sys.argv[1], 'r')
     reader = csv.reader(dataFile)
-    dictReader = csv.reader(dataFile)
+    #dictReader = csv.reader(dataFile)
     key = next(reader)
     #print(key)
 
 
     # TODO: Read DNA sequence file into a variable
-
     sequenceFile = open(sys.argv[2], 'r')
     sequence = sequenceFile.read()
 
-
     # TODO: Find longest match of each STR in DNA sequence
-
     values = []
     for i in range(1, len(key)):
-        #print(key[i])
         values.append(longest_match(sequence, key[i]))
-    #print(values)
 
     # TODO: Check database for matching profiles
-
-    for row in dictReader:
-        #print(row)
+    for row in reader:
         match = False
         for i in range(len(values)):
             if row[i + 1] == str(values[i]):
@@ -47,7 +40,6 @@ def main():
         if match == True:
             print(row[0])
             return
-
 
     print("No match")
     return
