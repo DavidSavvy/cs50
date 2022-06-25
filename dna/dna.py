@@ -15,7 +15,7 @@ def main():
     reader = csv.reader(dataFile)
     dictReader = csv.reader(dataFile)
     key = next(reader)
-    print(key)
+    #print(key)
 
 
     # TODO: Read DNA sequence file into a variable
@@ -28,17 +28,17 @@ def main():
 
     values = []
     for i in range(1, len(key)):
-        print(key[i])
+        #print(key[i])
         values.append(longest_match(sequence, key[i]))
-    print(values)
+    #print(values)
 
     # TODO: Check database for matching profiles
 
     for row in dictReader:
-        print(row)
+        #print(row)
         match = False
-        for i in range(len(key[1:])):
-            if row[i] == values[i]:
+        for i in range(len(values)):
+            if row[i + 1] == str(values[i]):
                 match = True
                 continue
             else:
