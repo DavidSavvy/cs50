@@ -33,7 +33,8 @@ def main():
 
     for row in dictReader:
 
-        for i in 
+        for i in range(len(key["name"])):
+            
 
         if row['name'] == values:
             print(row.key())
