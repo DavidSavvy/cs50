@@ -13,7 +13,7 @@ def main():
     # TODO: Read database file into a variable
     dataFile = open(sys.argv[1], 'r')
     reader = csv.reader(dataFile)
-    dictReader = csv.DictReader(dataFile)
+    dictReader = csv.reader(dataFile)
     key = next(reader)
     for i in key:
         print(i)
