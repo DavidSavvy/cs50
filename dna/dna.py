@@ -32,15 +32,15 @@ def main():
     # TODO: Check database for matching profiles
 
     for row in dictReader:
-
+        match = False
         for i in range(len(key["name"])):
             if key["name"][i] == values[i]:
+                match = True
                 continue
             else:
+                match = False
                 break
-            
-
-        if row['name'] == values:
+        if match == True:
             print(row["name"])
             return
 
