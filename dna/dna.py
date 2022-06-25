@@ -12,7 +12,7 @@ def main():
 
     # TODO: Read database file into a variable
     dataFile = open(sys.argv[1], 'r')
-    reader = csv.reader(dataFile)
+    reader = csv.DictReader(dataFile)
     dictReader = csv.DictReader(dataFile)
     key = next(reader)
 
