@@ -34,10 +34,14 @@ def main():
     for row in dictReader:
 
         for i in range(len(key["name"])):
-            if 
+            if key["name"][i] == values[i]:
+                continue
+            else:
+                break
+            
 
         if row['name'] == values:
-            print(row.key())
+            print(row["name"])
             return
 
 
