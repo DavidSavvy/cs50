@@ -30,7 +30,8 @@ def main():
     # TODO: Check database for matching profiles
 
     for row in dictReader:
-        if row
+        if row["name"] == key["name"]:
+        return 
 
     return
 
