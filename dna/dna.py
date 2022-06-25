@@ -31,7 +31,7 @@ def main():
 
     for row in dictReader:
         if row["name"] == key["name"]:
-        return 
+        
 
     return
 
