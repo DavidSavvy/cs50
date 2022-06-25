@@ -24,9 +24,13 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
 
-    for 
+    for i in len(key["name"]):
+        key["name"][i] = longest_match(sequence, key["name"][i])
 
     # TODO: Check database for matching profiles
+
+    for row in dictReader:
+        
 
     return
 
