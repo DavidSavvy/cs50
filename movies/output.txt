@@ -1,9 +1,9 @@
-+-----------------------+
-|         title         |
-+-----------------------+
-| The Kill Hole         |
-| Gods of Egypt         |
-| Message from the King |
-| 21 Bridges            |
-| Draft Day             |
-+-----------------------+
++--------------------------+
+|          title           |
++--------------------------+
+| 42                       |
+| Black Panther            |
+| Marshall                 |
+| Ma Rainey's Black Bottom |
+| Get on Up                |
++--------------------------+
