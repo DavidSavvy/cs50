@@ -1,1 +1,1 @@
-SELECT COUNT(title) FROM movies WHERE 
+SELECT COUNT(title) FROM movies JOIN 
