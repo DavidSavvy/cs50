@@ -21,6 +21,8 @@ SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND 
 --Returns flight id of earliest flight from Fiftyville the day after the crime
 SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1;
 
+SELECT name FROM people WHERE passport_number IN (SELECT passport_number FROM passengers WHERE flight_id = 36);
+
 SELECT DISTINCT name
   FROM people
        JOIN bank_accounts
