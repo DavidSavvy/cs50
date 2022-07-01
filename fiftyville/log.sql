@@ -8,3 +8,6 @@ SELECT id, description FROM crime_scene_reports WHERE year = 2021 AND month = 7 
 --Theif got into car at bakery parking lot within 10 minutes of the theft
 --Theif made a call and said they were taking the earliest flight next morning, asked the other person to purchase the ticket (accomplice)
 SELECT transcript FROM interviews WHERE year = 2021 AND month = 7 AND day = 28;
+
+--Returns license plate and allows me to see people who left the parking lot within the time the interviewee mentioned
+SELECT license_plate, minute, activity FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10;
