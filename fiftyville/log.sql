@@ -70,3 +70,5 @@ SELECT DISTINCT name
                  ORDER BY hour
                  LIMIT 1));
 
+--Now that main theif is clear, 
+
