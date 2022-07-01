@@ -23,7 +23,8 @@ SELECT name
        JOIN bank_accounts
          ON people.id = bank_accounts.person_id
 
-       JOIN 
+       JOIN phone_calls
+         ON people.phone_number = phone_calls.caller
  WHERE bank_accounts.account_number IN
        (SELECT account_number
           FROM atm_transactions
@@ -32,3 +33,20 @@ SELECT name
            AND day = 28
            AND atm_location = "Leggett Street"
            AND transaction_type = "withdraw")
+   AND people.phone_number IN
+       (SELECT caller
+          FROM phone_calls
+         WHERE year = 2021
+           AND month = 7
+           AND day = 28
+           AND duration < 60)
+   AND people.license_plate IN
+       (SELECT license_plate
+          FROM bakery_security_logs
+         WHERE year = 2021
+           AND month = 7
+           AND day = 28
+           AND hour = 10
+           AND minute > 15
+           AND minute < 25
+           AND activity = "exit");
