@@ -5,8 +5,8 @@ SELECT id, description FROM crime_scene_reports WHERE year = 2021 AND month = 7 
 
 --Returns various transcripts WITH KEY INFORMATION:
 --Thief withdrew ATM money on Leggett Street
---Theif got into car at bakery parking lot within 10 minutes of the theft
---Theif made a call and said they were taking the earliest flight next morning, asked the other person to purchase the ticket (accomplice)
+--Thief got into car at bakery parking lot within 10 minutes of the theft
+--Thief made a call and said they were taking the earliest flight next morning, asked the other person to purchase the ticket (accomplice)
 SELECT transcript FROM interviews WHERE year = 2021 AND month = 7 AND day = 28;
 
 --Returns license plate and allows me to see people who left the parking lot within the time the interviewee mentioned
@@ -21,7 +21,7 @@ SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND 
 --Returns flight id of earliest flight from Fiftyville the day after the crime
 SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1;
 
---Returns person who matches all the queries above (Theif):
+--Returns person who matches all the queries above (Thief):
 --Left bakery lot within 10 minutes of crime
 --Made a call that was less than a minute long
 --Withdrew from ATM on Leggett Street
@@ -67,6 +67,9 @@ SELECT DISTINCT name
                  ORDER BY hour
                  LIMIT 1));
 
---Now that main theif is clear, must find the destination of the flight
-SELECT 
+--Now that main thief is clear, must find the destination of the flight
+--Returns destination city of flight that the thief was on
+SELECT city FROM airports JOIN flights ON airports.id = flights.destination_airport_id WHERE flights.id IN (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1);
 
+--Must find the accomplice based on the phone call that the thief made
+SELECT name FROM people JOIN 
