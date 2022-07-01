@@ -27,7 +27,7 @@ SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hou
 --Withdrew from ATM on Leggett Street
 --Went on first flight from Fiftyville the next morning
 SELECT DISTINCT name
-  FROM people
+  FROM people, 
        JOIN bank_accounts
          ON people.id = bank_accounts.person_id
 
@@ -69,3 +69,4 @@ SELECT DISTINCT name
                    AND day = 29
                  ORDER BY hour
                  LIMIT 1));
+
