@@ -30,9 +30,6 @@ SELECT DISTINCT name
   FROM people
        JOIN bank_accounts
          ON people.id = bank_accounts.person_id
-
-       JOIN phone_calls
-         ON people.phone_number = phone_calls.caller
  WHERE bank_accounts.account_number IN
        (SELECT account_number
           FROM atm_transactions
@@ -70,5 +67,6 @@ SELECT DISTINCT name
                  ORDER BY hour
                  LIMIT 1));
 
---Now that main theif is clear, 
+--Now that main theif is clear, must find the destination of the flight
+SELECT 
 
