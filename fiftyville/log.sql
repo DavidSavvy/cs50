@@ -17,3 +17,7 @@ SELECT caller, receiver, duration FROM phone_calls WHERE year = 2021 AND month =
 
 --Returns account numbers that withdrew from Leggett Street as interviewee mentioned
 SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw";
+
+SELECT name
+  FROM people
+       JOIN 
