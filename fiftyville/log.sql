@@ -21,13 +21,13 @@ SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND 
 --Returns flight id of earliest flight from Fiftyville the day after the crime
 SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1;
 
---Returns person who matches all the queries above:
+--Returns person who matches all the queries above (Theif):
 --Left bakery lot within 10 minutes of crime
 --Made a call that was less than a minute long
 --Withdrew from ATM on Leggett Street
 --Went on first flight from Fiftyville the next morning
 SELECT DISTINCT name
-  FROM people, 
+  FROM people
        JOIN bank_accounts
          ON people.id = bank_accounts.person_id
 
