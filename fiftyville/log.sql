@@ -20,4 +20,5 @@ SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND 
 
 SELECT name
   FROM people
-       JOIN 
+       JOIN bank_accounts
+         ON people.id = bank_accounts.person_id
