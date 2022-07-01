@@ -69,9 +69,33 @@ SELECT DISTINCT name
 
 --Now that main thief is clear, must find the destination of the flight
 --Returns destination city of flight that the thief was on
-SELECT city FROM airports JOIN flights ON airports.id = flights.destination_airport_id WHERE flights.id IN (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1);
+SELECT city
+  FROM airports
+       JOIN flights
+         ON airports.id = flights.destination_airport_id
+ WHERE flights.id IN
+       (SELECT id
+          FROM flights
+         WHERE year = 2021
+           AND month = 7
+           AND day = 29
+         ORDER BY hour
+         LIMIT 1);
 
 --Must find the accomplice based on the phone call that the thief made
-SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60 AND caller IN (SELECT phone_number FROM people WHERE name = "Bruce"));
+--Returns names of person who participated in the phone call with the thief
+SELECT name
+  FROM people
+ WHERE phone_number IN
+       (SELECT receiver
+          FROM phone_calls
+         WHERE year = 2021
+           AND month = 7
+           AND day = 28
+           AND duration < 60
+           AND caller IN
+               (SELECT phone_number
+                  FROM people
+                 WHERE name = "Bruce"));
 
 
