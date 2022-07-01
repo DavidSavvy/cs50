@@ -14,3 +14,6 @@ SELECT license_plate, minute, activity FROM bakery_security_logs WHERE year = 20
 
 --Returns participants in calls under a minute long like the interviewee mentioned
 SELECT caller, receiver, duration  FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+
+--Returns account numbers that withdrew from Leggett Street as interviewee mentioned
+SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street" AND transaction_type = "withdraw";
