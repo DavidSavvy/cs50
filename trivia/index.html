@@ -11,7 +11,7 @@
                 var button = event.srcElement;
                 if (button.innerHTML == "To get to the other side.") {
 
-                    document.button.style.backgroundColor = "green";
+                    document.getElementById('1').style.backgroundColor = "green";
                 }
             }
             function submitButton(event) {
@@ -33,7 +33,7 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>Why did the chicken cross the road?</h3>
                 <button onclick="multipleChoice(event)">To block traffic.</button>
-                <button onclick="multipleChoice(event)">To get to the other side.</button>
+                <button id="1" onclick="multipleChoice(event)">To get to the other side.</button>
                 <button onclick="multipleChoice(event)">To see his friend.</button>
                 <button onclick="multipleChoice(event)">To swing on the swingset.</button>
             </div>
