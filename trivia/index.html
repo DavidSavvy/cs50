@@ -12,10 +12,12 @@
                 if (button.innerHTML == "To get to the other side.") {
 
                     button.style.backgroundColor = "green";
+                    document.getElementById('status').innerHTML = "Correct!";
                 }
                 else {
 
                     button.style.backgroundColor = "red";
+                    document.getElementById('status').innerHTML = "Incorrect!";
                 }
             }
             function submitButton(event) {
@@ -36,6 +38,7 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>Why did the chicken cross the road?</h3>
+                <h3 id="status"></h3>
                 <button onclick="multipleChoice(event)">To block traffic.</button>
                 <button id="1" onclick="multipleChoice(event)">To get to the other side.</button>
                 <button onclick="multipleChoice(event)">To see his friend.</button>
