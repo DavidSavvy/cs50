@@ -8,10 +8,14 @@
         <script>
             function multipleChoice(event) {
 
-                var button = event.target;
+                var button = event.srcElement;
                 if (button.innerHTML == "To get to the other side.") {
 
-                    document.target.style.backgroundColor = "green";
+                    button.style.backgroundColor = "green";
+                }
+                else {
+
+                    button.style.backgroundColor = "red";
                 }
             }
             function submitButton(event) {
