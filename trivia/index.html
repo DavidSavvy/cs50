@@ -30,8 +30,9 @@
 
                 if (document.getElementById('textBox').value == "Springfield") {
 
+                    var box = document.getElementById('textBox');
                     document.getElementById('status2').innerHTML = "Correct!";
-                    document.getElementById('textBox').style.backgroundColor = "green";
+                    box.style.backgroundColor = 'green';
                 }
                 else {
 
@@ -69,7 +70,7 @@
                 <h3>What is the capital of Illinois?</h3>
                 <div>
                     <h3 id="status2"></h3>
-                    <input id="textBox" type="text" placeholder="Type your answer...">
+                    <input id="textBox" type="text" placeholder="Type your answer..."/>
                     <button onclick="submitButton(event)">Submit</button>
                 </div>
             </div>
