@@ -31,6 +31,10 @@
                 if (document.getElementById('textBox').value == "Springfield") {
                     document.getElementById('status2').innerHTML = "Correct!";
                 }
+                else {
+
+                    document.getElementById('status2').innerHTML = "Incorrect!";
+                }
             }
             // TODO: Add code to check answers to questions
         </script>
@@ -61,11 +65,11 @@
                 <hr>
                 <!-- TODO: Add free response question here -->
                 <h3>What is the capital of Illinois?</h3>
-                <form>
+                <div>
                     <h3 id="status2"></h3>
                     <input id="textBox" placeholder="Type your answer...">
                     <button onclick="submitButton(event)">Submit</button>
-                </form>
+                </div>
             </div>
         </div>
     </body>
