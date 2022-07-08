@@ -32,11 +32,15 @@
 
                     var box = document.getElementById('textBox');
                     document.getElementById('status2').innerHTML = "Correct!";
+                    box.value = "";
                     box.style.backgroundColor = 'green';
                 }
                 else {
 
+                    var box = document.getElementById('textBox');
                     document.getElementById('status2').innerHTML = "Incorrect!";
+                    box.value = "";
+                    box.style.backgroundColor = 'red';
                 }
             }
             // TODO: Add code to check answers to questions
