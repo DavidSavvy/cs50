@@ -8,10 +8,10 @@
         <script>
             function multipleChoice(event) {
 
-                var buttons = document.querySelectorAll("answers");
+                var buttons = document.querySelectorAll(".answers");
                 for (var button of buttons) {
 
-                    button.style.backgroundColor = "purple";
+                    button.style.backgroundColor = "#d9edff";
                 }
 
                 var button = event.srcElement;
@@ -45,11 +45,11 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>Why did the chicken cross the road?</h3>
                 <h3 id="status"></h3>
-                <div class="answers">
-                    <button onclick="multipleChoice(event)">To block traffic.</button>
-                    <button id="1" onclick="multipleChoice(event)">To get to the other side.</button>
-                    <button onclick="multipleChoice(event)">To see his friend.</button>
-                    <button onclick="multipleChoice(event)">To swing on the swingset.</button>
+                <div>
+                    <button class="answers" onclick="multipleChoice(event)">To block traffic.</button>
+                    <button class="answers" id="1" onclick="multipleChoice(event)">To get to the other side.</button>
+                    <button class="answers" onclick="multipleChoice(event)">To see his friend.</button>
+                    <button class="answers" onclick="multipleChoice(event)">To swing on the swingset.</button>
                 </div>
 
             </div>
