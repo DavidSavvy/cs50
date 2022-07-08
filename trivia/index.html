@@ -8,8 +8,10 @@
         <script>
             function multipleChoice(event) {
 
-                if event == "To get to the other side." {
-                    alert("bruh");
+                var button = event.srcElement;
+                if (button.innerHTML == "To get to the other side.") {
+
+                    button.
                 }
             }
             function submitButton(event) {
@@ -30,10 +32,10 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>Why did the chicken cross the road?</h3>
-                <button onclick="multipleChoice(this.innerHTML)">To block traffic.</button>
-                <button onclick="multipleChoice(this.innerHTML)">To get to the other side.</button>
-                <button onclick="multipleChoice(this.innerHTML)">To see his friend.</button>
-                <button onclick="multipleChoice(this.innerHTML)">To swing on the swingset.</button>
+                <button onclick="multipleChoice(event)">To block traffic.</button>
+                <button onclick="multipleChoice(event)">To get to the other side.</button>
+                <button onclick="multipleChoice(event)">To see his friend.</button>
+                <button onclick="multipleChoice(event)">To swing on the swingset.</button>
             </div>
 
             <div class="section">
