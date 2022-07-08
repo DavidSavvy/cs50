@@ -9,7 +9,11 @@
             function multipleChoice(event) {
 
                 var buttons = document.querySelectorAll("answers");
-                buttons.style.color = "revert";
+                for (var button of buttons) {
+
+                    button.style.backgroundColor = "revert";
+                }
+
                 var button = event.srcElement;
                 if (button.innerHTML == "To get to the other side.") {
 
