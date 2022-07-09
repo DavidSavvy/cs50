@@ -9,13 +9,14 @@
 }
 
 #welcome {
-    width: 325px;
+    width: 100%;
     height: 60px;
     color: blue;
     font-weight: bold;
     font-family: "Comic Sans MS";
     outline-style: dotted;
     outline-color: red;
+    align-content: center;
 }
 
 #troll {
@@ -24,5 +25,6 @@
 }
 
 .maindiv {
-    align-content: center;
+
+    text-align: center;
 }
