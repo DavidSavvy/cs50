@@ -21,3 +21,13 @@ ul {
     outline-style: dotted;
     outline-color: red;
 }
+
+#troll {
+    margin: 50px;
+    align-content: center;
+
+}
+
+.maindiv {
+    align-content: center;
+}
