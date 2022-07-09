@@ -11,8 +11,6 @@
             var isGaming = false;
             var anime = document.getElementById("anime");
             var gaming = document.getElementById("gaming");
-            document.getElementById("gaming").style.display = "none";
-            anime.style.display = "none";
             function anime(event) {
 
                 if (isGaming == true){
@@ -60,10 +58,10 @@
                 Gaming
             </button>
         </div>
-        <div id="anime">
+        <div style="display: none;" id="anime">
             test
         </div>
-        <div id="gaming">
+        <div style="display: none;" id="gaming">
             test
         </div>
     </body>
