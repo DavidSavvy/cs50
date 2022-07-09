@@ -14,4 +14,6 @@ ul {
 
 #welcome {
     color: blue;
+    font-weight: bold;
+    font-family: "Comic Sans";
 }
