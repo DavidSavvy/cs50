@@ -7,19 +7,32 @@
         <link href="styles.css" rel="stylesheet">
         <title>Media</title>
         <script>
-            
             function anime() {
                 var anime = document.getElementById("anime");
                 var gaming = document.getElementById("gaming");
-                if (anime.style.display === "none"){
-
-                    anime.style.display = "";
+                if (anime.style.display === "none") {
+                    if (gaming.style.display === "none") {
+                        anime.style.display = "";
+                    }
+                    else {
+                        gaming.style.display = "none";
+                        anime.style.display = "";
+                    }
                 }
-
-
             }
-            function gaming() {
 
+            function gaming() {
+                var anime = document.getElementById("anime");
+                var gaming = document.getElementById("gaming");
+                if (gaming.style.display === "none") {
+                    if (anime.style.display === "none") {
+                        gaming.style.display = "";
+                    }
+                    else {
+                        anime.style.display = "none";
+                        gaming.style.display = "";
+                    }
+                }
             }
         </script>
     </head>
@@ -54,7 +67,7 @@
             </button>
         </div>
         <div style="display: none;" id="anime">
-            test
+            test1
         </div>
         <div style="display: none;" id="gaming">
             test
