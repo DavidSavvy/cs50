@@ -15,5 +15,6 @@ ul {
 #welcome {
     color: blue;
     font-weight: bold;
-    font-family: "Comic Sans";
+    font-family: "Comic Sans MS";
+    outline-style: dotted;
 }
