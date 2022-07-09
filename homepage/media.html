@@ -7,20 +7,18 @@
         <link href="styles.css" rel="stylesheet">
         <title>Media</title>
         <script>
-            var isAnime = false;
-            var isGaming = false;
-            var anime = document.getElementById("anime");
-            var gaming = document.getElementById("gaming");
-            function anime(event) {
-
+            
+            function anime() {
+                var anime = document.getElementById("anime");
+                var gaming = document.getElementById("gaming");
                 if (anime.style.display === "none"){
 
-                    anime.style.display = "block";
+                    anime.style.display = "";
                 }
-                
+
 
             }
-            function gaming(event) {
+            function gaming() {
 
             }
         </script>
@@ -48,10 +46,10 @@
             <p>
                 Pick a media type.
             </p>
-            <button onclick="anime(event)" type="button">
+            <button onclick="anime()" type="button">
                 Anime
             </button>
-            <button onclick="gaming(event)" type="button">
+            <button onclick="gaming()" type="button">
                 Gaming
             </button>
         </div>
