@@ -19,4 +19,5 @@ ul {
     outline-style: dotted;
     outline-offset: 5px;
     outline-color: red;
+    word-wrap: normal;
 }
