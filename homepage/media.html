@@ -7,11 +7,11 @@
         <link href="styles.css" rel="stylesheet">
         <title>Media</title>
         <script>
-            function anime {
+            function anime(event) {
 
             }
-            function gaming {
-                
+            function gaming(event) {
+
             }
         </script>
     </head>
@@ -38,10 +38,10 @@
             <p>
                 Pick a media type.
             </p>
-            <button type="button">
+            <button onclick="anime(event)" type="button">
                 Anime
             </button>
-            <button type="button">
+            <button onclick="gaming(event)" type="button">
                 Gaming
             </button>
         </div>
