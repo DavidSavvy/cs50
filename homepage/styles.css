@@ -3,4 +3,5 @@ ul {
 }
 .nav-link {
     color: black;
+    margin-left: 5px;
 }
