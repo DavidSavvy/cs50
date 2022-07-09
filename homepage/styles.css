@@ -11,3 +11,7 @@ ul {
 .nav-link:hover {
     background-color: lightgrey;
 }
+
+#welcome {
+    color: blue;
+}
