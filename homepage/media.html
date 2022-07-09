@@ -11,14 +11,17 @@
             var isGaming = false;
             var anime = document.getElementById("anime");
             var gaming = document.getElementById("gaming");
-            gaming.style.display = "none";
+            document.getElementById("gaming").style.display = "none";
             anime.style.display = "none";
             function anime(event) {
 
                 if (isGaming == true){
                     gaming.style.display = "none";
                     isGaming = false;
-                    anime.style.display = "block"
+                    anime.style.display = "block";
+                }
+                else {
+                    anime.style.display = "block";
                 }
 
             }
