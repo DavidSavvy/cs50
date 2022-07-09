@@ -1,7 +1,13 @@
 ul {
 
 }
+
 .nav-link {
     color: black;
     margin-left: 5px;
+    display: block;
+}
+
+.nav-link:hover {
+    background-color: lightgrey;
 }
