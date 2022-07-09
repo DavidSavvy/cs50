@@ -1,13 +1,7 @@
-/*
 ul {
-    list-style-type: none;
-
 
 }
-li {
-    float: left;
-    padding: 16px;
-    text-align: center;
-
+li a {
+    color: black;
+    text-decoration: none;
 }
-*/
