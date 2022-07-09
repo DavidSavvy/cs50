@@ -13,11 +13,9 @@ ul {
 }
 
 #welcome {
+    width: 275px;
     color: blue;
     font-weight: bold;
     font-family: "Comic Sans MS";
-    outline-style: dotted;
-    outline-offset: 5px;
-    outline-color: red;
-    word-wrap: normal;
+    border:  dotted blue;
 }
