@@ -6,6 +6,7 @@
 
 .nav-link:hover {
     background-color: lightgrey;
+    color: black;
 }
 
 #welcome {
@@ -14,6 +15,7 @@
     color: blue;
     font-weight: bold;
     font-family: "Comic Sans MS";
+    font-size: 40px;
     outline-style: dotted;
     outline-color: red;
     align-content: center;
@@ -21,11 +23,9 @@
 
 #troll {
     margin: 50px;
-
 }
 
 .maindiv {
-
     text-align: center;
 }
 
@@ -33,15 +33,33 @@ button {
     width: 150px;
     height: 50px;
     margin: 10px;
+    background-color: lightblue;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: lightgrey;
+    cursor: pointer;
 }
 
 p {
-    font-size: 300%;
+    font-size: 200%;
     font-weight: bold;
     color: blue;
     font-family: "Comic Sans MS";
 }
+
+audio {
+    padding: 15px;
+}
+
+.size {
+    width: 50%;
+    height: auto;
+}
+
+#gif {
+    margin-top: 15px;
+}
+
+
