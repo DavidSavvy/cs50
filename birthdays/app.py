@@ -26,12 +26,14 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    all_birthdays = db.execute("SELECT * FROM birthdays")
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
 
         if not request.form.get("name") or request.form.get("month") not in MONTHS or request.form.get("day") not in DAYS:
-            return redirect("/")
+            db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", request.form.get("name"), request.form.get("month"), request.form.get("day"))
+            return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
         else:
             db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", request.form.get("name"), request.form.get("month"), request.form.get("day"))
             return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
@@ -40,7 +42,7 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
-        all_birthdays = db.execute("SELECT * FROM birthdays")
+
         return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
 
 
