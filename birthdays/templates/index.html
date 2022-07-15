@@ -7,7 +7,7 @@
         <title>Birthdays</title>
         <script>
             async function button() {
-                 await document.getElementById("deletebtn").value = "delete";
+                 document.getElementById("deletebtn").value = "delete";
             }
         </script>
     </head>
@@ -66,7 +66,7 @@
                             </td>
                             <td width="50">
                                 <form action="/" method="POST">
-                                    <input name="id" type="hidden" value="{{ birthday["id"] }}">
+                                    <input name="id" type="hidden" value="{{ birthday['id'] }}">
                                     <button onclick="button()" value="blank" name="delete" type="submit">Delete</button>
                                 </form>
                             </td>
