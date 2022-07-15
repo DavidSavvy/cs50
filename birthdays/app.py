@@ -29,7 +29,8 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
-
+        if not request.form.get("name") or request.form.get("month") not in MONTHS or request.form.get("day") not in DAYS:
+            return redirect("/")
         return redirect("/")
 
     else:
