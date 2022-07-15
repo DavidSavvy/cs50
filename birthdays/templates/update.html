@@ -16,6 +16,7 @@
                 <h2>Update a Birthday</h2>
                 <form action="/update" method="POST">
                     <input type="text" placeholder="Name" name="name">
+                    <input name="id" type="hidden" value="{{ id }}">
                     <select name="month">
                         <option disable selected>Month</option>
                         {% for month in months %}
