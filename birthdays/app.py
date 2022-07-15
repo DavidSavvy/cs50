@@ -12,6 +12,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
+MONTHS = {1, 2, 3, 4, 5, 6, 7, 8, 9}
 
 @app.after_request
 def after_request(response):
