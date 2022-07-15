@@ -31,8 +31,8 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for birthday in all_birthdays %}
 
-                        <td>{{birthday}}</td>
-                        
+                        <tr>{{birthday["name"]}}</tr>
+
                         {% endfor %}
                     </tbody>
                 </table>
