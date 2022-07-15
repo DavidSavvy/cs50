@@ -13,6 +13,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 db = SQL("sqlite:///birthdays.db")
 
 MONTHS = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+DAYS = range(1, 32)
 
 @app.after_request
 def after_request(response):
@@ -35,6 +36,6 @@ def index():
 
         # TODO: Display the entries in the database on index.html
         all_birthdays = db.execute("SELECT * FROM birthdays")
-        return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS)
+        return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
 
 

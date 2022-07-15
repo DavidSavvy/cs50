@@ -24,8 +24,16 @@
 
                         {% endfor %}
                     </select>
+                    <select>
+                        <option disable selected>Day</option>
+                        {% for day in days %}
 
-                    <input type="text">
+                        <option>{{day}}</option>
+
+                        {% endfor %}
+                    </select>
+
+                    <input type="submit">
                 </form>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
             </div>
