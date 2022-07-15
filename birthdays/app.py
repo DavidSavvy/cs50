@@ -55,7 +55,7 @@ def delete():
 
 @app.route("/update", methods=["POST"])
 def update():
-    
+    return render_template("update.html")
 
 
 
