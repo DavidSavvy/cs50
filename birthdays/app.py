@@ -58,7 +58,9 @@ def update():
     if request.method == "GET":
         return render_template("update.html")
     else:
-        
+        db.execute("UPDATE birthdays SET )
+
+
 
 
 
