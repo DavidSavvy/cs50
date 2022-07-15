@@ -31,6 +31,8 @@ def index():
         # TODO: Add the user's entry into the database
         if not request.form.get("name") or request.form.get("month") not in MONTHS or request.form.get("day") not in DAYS:
             return redirect("/")
+        else:
+            db.execute("INSERT )
         return redirect("/")
 
     else:
