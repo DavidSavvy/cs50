@@ -60,13 +60,17 @@
                                 {{birthday["month"]}}-{{birthday["day"]}}
                             </td>
                             <td width="50">
+                                <form action="/update" method="POST">
+                                    <input name="id" type="hidden" value="{{ birthday['id'] }}">
+                                    <button type="submit">Update</button>
+                                </form>
+                            </td>
+                            <td width="50">
                                 <form action="/delete" method="POST">
                                     <input name="id" type="hidden" value="{{ birthday['id'] }}">
                                     <button type="submit">Delete</button>
                                 </form>
-                                <form action="/update" method="POST">
-                                    <input name 
-                                </form>
+
                             </td>
                         </tr>
 
