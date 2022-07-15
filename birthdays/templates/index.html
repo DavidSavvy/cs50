@@ -20,7 +20,7 @@
                         <option disable selected>Month</option>
                         {% for month in months %}
 
-                        <option value="{{month}}">{{month}}</option>
+                        <option value="{{ month }}">{{ month }}</option>
 
                         {% endfor %}
                     </select>
@@ -28,7 +28,7 @@
                         <option disable selected>Day</option>
                         {% for day in days %}
 
-                        <option value="{{day}}">{{day}}</option>
+                        <option value="{{ day }}">{{ day }}</option>
 
                         {% endfor %}
                     </select>
@@ -54,10 +54,10 @@
 
                         <tr>
                             <td>
-                                {{birthday["name"]}}
+                                {{ birthday["name"] }}
                             </td>
                             <td>
-                                {{birthday["month"]}}-{{birthday["day"]}}
+                                {{ birthday["month"] }}-{{ birthday["day"] }}
                             </td>
                             <td width="50">
                                 <form action="/update" method="GET">

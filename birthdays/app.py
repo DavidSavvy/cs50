@@ -55,7 +55,6 @@ def delete():
 
 @app.route("/update", methods=["GET", "POST"])
 def update():
-
     if request.method == "GET":
         id = request.args.get("id")
         return render_template("update.html", months=MONTHS, days=DAYS, id=id)
