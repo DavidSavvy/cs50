@@ -34,7 +34,7 @@ def index():
             return redirect("/")
         else:
             db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", (request.form.get("name"), request.form.get("month"), request.form.get("day")))
-            
+            return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
         return redirect("/")
 
     else:
