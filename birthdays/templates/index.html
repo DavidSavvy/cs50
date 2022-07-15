@@ -16,19 +16,19 @@
                 <h2>Add a Birthday</h2>
                 <form action="/" method="POST">
                     <input type="text" placeholder="Name" name="name">
-                    <select name="month">
+                    <select>
                         <option disable selected>Month</option>
                         {% for month in months %}
 
-                        <option>{{month}}</option>
+                        <option name="month">{{month}}</option>
 
                         {% endfor %}
                     </select>
-                    <select name="day">
+                    <select>
                         <option disable selected>Day</option>
                         {% for day in days %}
 
-                        <option>{{day}}</option>
+                        <option name="day">{{day}}</option>
 
                         {% endfor %}
                     </select>
