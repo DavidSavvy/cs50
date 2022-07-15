@@ -33,7 +33,7 @@ def index():
         if not request.form.get("name") or request.form.get("month") not in MONTHS or request.form.get("day") not in DAYS:
             return redirect("/")
         else:
-            db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", (request.form.get("name"), request.form.get("month"), request.form.get("day")))
+            db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", request.form.get("name"), request.form.get("month"), request.form.get("day"))
             return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
         return redirect("/")
 
