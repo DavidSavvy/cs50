@@ -55,10 +55,14 @@ def delete():
 
 @app.route("/update", methods=["GET", "POST"])
 def update():
+    id = request.args.get("id")
     if request.method == "GET":
         return render_template("update.html")
     else:
-        db.execute("UPDATE birthdays SET )
+        name = request.form.get("name")
+        month = request.form.get("month")
+        day = request.form.get("day")
+        db.execute("UPDATE birthdays SET name = {?}, month = {?}, day = {?} WHERE id = {?}", name, month, day, id)
 
 
 
