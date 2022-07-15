@@ -61,7 +61,8 @@
                             </td>
                             <td width="50">
                                 <form action="/" method="POST">
-                                    <button name="delete" value="{{birthday["id"]}}" type="submit">Delete</button>
+                                    <input name="id" type="hidden" value="{{ birthday["id"] }}">
+                                    <button name="delete" type="submit">Delete</button>
                                 </form>
                             </td>
                         </tr>
