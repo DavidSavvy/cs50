@@ -31,7 +31,7 @@ def index():
 
         # TODO: Add the user's entry into the database
         if request.form.get("name") == "delete":
-            db.execute("DELETE FROM birthdays WHERE id = {?}", request.form.get("delete"))
+            db.execute("DELETE FROM birthdays WHERE id={?}", request.form.get("delete"))
 
         if (not request.form.get("name")) or (int(request.form.get("month")) not in MONTHS) or (int(request.form.get("day")) not in DAYS):
             return redirect("/")
