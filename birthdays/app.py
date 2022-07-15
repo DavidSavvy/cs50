@@ -53,9 +53,12 @@ def delete():
         db.execute("DELETE FROM birthdays WHERE id = ?", id)
     return redirect("/")
 
-@app.route("/update", methods=["POST"])
+@app.route("/update", methods=["GET", "POST"])
 def update():
-    return render_template("update.html")
+    if request.method == "GET":
+        return render_template("update.html")
+    else:
+        
 
 
 

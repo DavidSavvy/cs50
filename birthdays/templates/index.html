@@ -60,7 +60,7 @@
                                 {{birthday["month"]}}-{{birthday["day"]}}
                             </td>
                             <td width="50">
-                                <form action="/update" method="POST">
+                                <form action="/update" method="GET">
                                     <input name="id" type="hidden" value="{{ birthday['id'] }}">
                                     <button type="submit">Update</button>
                                 </form>
