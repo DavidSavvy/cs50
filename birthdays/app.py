@@ -28,23 +28,16 @@ def after_request(response):
 def index():
     all_birthdays = db.execute("SELECT * FROM birthdays")
     if request.method == "POST":
-
         # TODO: Add the user's entry into the database
-
         if (not request.form.get("name")) or (int(request.form.get("month")) not in MONTHS) or (int(request.form.get("day")) not in DAYS):
             return redirect("/")
         else:
             db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", request.form.get("name"), request.form.get("month"), request.form.get("day"))
             return redirect("/")
-
-
-
-
     else:
-
         # TODO: Display the entries in the database on index.html
-
         return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
+
 
 @app.route("/delete", methods=["POST"])
 def delete():
@@ -52,6 +45,7 @@ def delete():
     if id:
         db.execute("DELETE FROM birthdays WHERE id = ?", id)
     return redirect("/")
+
 
 @app.route("/update", methods=["GET", "POST"])
 def update():
@@ -65,8 +59,3 @@ def update():
         day = request.form.get("day")
         db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, int(month), int(day), id)
         return redirect("/")
-
-
-
-
-
