@@ -5,6 +5,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="/static/styles.css" rel="stylesheet">
         <title>Birthdays</title>
+        <script>
+            function button() {
+                document.getElementById("deletebtn").value = "delete";
+            }
+        </script>
     </head>
     <body>
         <div class="header">
@@ -62,7 +67,7 @@
                             <td width="50">
                                 <form action="/" method="POST">
                                     <input name="id" type="hidden" value="{{ birthday["id"] }}">
-                                    <button name="delete" type="submit">Delete</button>
+                                    <button onclick="button()" value="blank" name="delete" type="submit">Delete</button>
                                 </form>
                             </td>
                         </tr>
