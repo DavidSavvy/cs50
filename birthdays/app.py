@@ -57,7 +57,7 @@ def delete():
 def update():
     id = request.args.get("id")
     if request.method == "GET":
-        return render_template("update.html")
+        return render_template("update.html", months=MONTHS, days=DAYS)
     else:
         name = request.form.get("name")
         month = request.form.get("month")
