@@ -62,7 +62,7 @@ def update():
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
-        db.execute("UPDATE birthdays SET name = {?}, month = {?}, day = {?} WHERE id = {?}", name, month, day, id)
+        db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
         return redirect("/")
 
 
