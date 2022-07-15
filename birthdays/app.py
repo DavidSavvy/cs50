@@ -30,8 +30,6 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
-        if request.form.get("delete") == "delete":
-            db.execute("DELETE FROM birthdays WHERE id={?}", request.form.get("id"))
 
         if (not request.form.get("name")) or (int(request.form.get("month")) not in MONTHS) or (int(request.form.get("day")) not in DAYS):
             return redirect("/")
@@ -47,5 +45,12 @@ def index():
         # TODO: Display the entries in the database on index.html
 
         return render_template("index.html", all_birthdays=all_birthdays, months=MONTHS, days=DAYS)
+
+@app.route("/delete", methods=["POST"])
+def delete():
+    id = request.form.get("id")
+    if id:
+        db.execute("DELETE FROM birthdays WHERE id = ?", id)
+    return redirect("/")
 
 
