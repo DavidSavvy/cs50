@@ -74,7 +74,8 @@ def buy():
 
         price = lookup(symbol)["price"]
         available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
-        
+        if not available_money > price * shares:
+            return apology("not enough money")
 
 
 
