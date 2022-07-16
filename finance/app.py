@@ -62,7 +62,8 @@ def buy():
 
         if not shares:
             return apology("must provide shares")
-        elif 
+        elif not shares.isnumeric():
+            return 
 
 
 @app.route("/history")
