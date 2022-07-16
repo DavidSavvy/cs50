@@ -60,14 +60,9 @@ def buy():
         elif not lookup(symbol):
             return apology("invalid symbol")
 
-        if not shares:
-            return apology("must provide shares")
-        if shares.isnumeric():
-            if shares > 0:
-                pass
-            else:
-                return apology("invalid shares")
-        else:
+        try:
+            shares = int(shares)
+        except TypeError:
             return apology("invalid shares")
 
 
