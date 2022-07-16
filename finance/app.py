@@ -51,8 +51,11 @@ def index():
 def buy():
     if request.method == "GET":
         return render_template("buy.html")
-    """Buy shares of stock"""
-    return apology("TODO")
+    else:
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+        
+        if
 
 
 @app.route("/history")
