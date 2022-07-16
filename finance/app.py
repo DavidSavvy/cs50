@@ -77,6 +77,8 @@ def buy():
         if not available_money > price * shares:
             return apology("not enough money")
 
+        
+
 
 
 
