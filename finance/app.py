@@ -140,13 +140,16 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
-        dict = db.execute("SELECT username FROM users")
-        list2 = list(dict.keys() for d in dict)
-        print(list2)
+
+        ldict = db.execute("SELECT username FROM users")
+        usernames = []
+        for dict in ldict:
+            usernames.append(dict.get("username"))
+        print(usernames)
 
         if not username:
             return apology("must provide username")
-        elif username in ((db.execute("SELECT username FROM users"))):
+        elif username in usernames:
             return apology("username taken")
 
         if not password or not confirmation:
