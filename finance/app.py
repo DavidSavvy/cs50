@@ -51,6 +51,7 @@ def index():
     stock = {}
     stock.fromkeys(all_symbols, 0)
 
+    print(stock)
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
         for dict in shares_dict:
