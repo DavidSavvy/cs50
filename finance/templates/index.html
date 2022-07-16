@@ -19,10 +19,10 @@
             {% for symbol, shares in stock.items() %}
                 <tr>
                     <th class="text-start">{{ symbol }}</th>
-                    <th class="text-start">{{ name }}</th>
+                    <th class="text-start">{{ lookup(symbol)["name"] }}</th>
                     <th class="text-end">{{ shares }}</th>
                     <th class="text-end">{{ lookup(symbol)["price"] | usd }}</th>
-                    <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) usd}}</th>
+                    <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
                 </tr>
             {% endfor %}
         </tbody>
