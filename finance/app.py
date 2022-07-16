@@ -57,6 +57,8 @@ def index():
         for dict in shares_dict:
             stock[symbol] += dict["shares"]
 
+    
+
     return render_template("index.html", stock=stock, lookup=lookup)
 
 
