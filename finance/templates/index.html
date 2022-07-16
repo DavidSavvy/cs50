@@ -25,12 +25,13 @@
                     <th class="text-end">{{ lookup(symbol)["price"] | usd }}</th>
                     <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
                 </tr>
-                
+
             {% endfor %}
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="4" class="border-0 fw-bold text-end">Cash</td>
+                <td colspan="4" class="border-0 fw-bold text-end">{{ cash }}</td>
             </tr>
             <tr>
                 <td colspan="4" class="border-0 fw-bold text-end">Total</td>
