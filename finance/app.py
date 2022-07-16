@@ -73,9 +73,12 @@ def buy():
             return apology("invalid shares")
 
         price = lookup(symbol)["price"]
+        total_cost = price * shares
         available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
         if not available_money > price * shares:
             return apology("not enough money")
+
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money - total_cost,session["user_id"])
 
         #make sure foreign key works right
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)
