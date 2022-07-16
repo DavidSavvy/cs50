@@ -54,8 +54,13 @@ def buy():
     else:
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        
-        if
+
+        if not symbol:
+            return apology("must provide symbol")
+        elif not lookup(symbol):
+            return apology("invalid symbol")
+
+        if not shares
 
 
 @app.route("/history")
