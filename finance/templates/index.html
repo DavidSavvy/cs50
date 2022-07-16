@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for row in index_list %}
+            {% for symbol, shares in stock.items() %}
                 <tr>
                     <th class="text-start">{{ symbol }}</th>
                     <th class="text-start">{{ name }}</th>

@@ -51,13 +51,13 @@ def index():
     stock = {}
     stock = dict.fromkeys(all_symbols, 0)
 
-    print(stock)
+
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
         for dict in shares_dict:
             stock[symbol] += dict["shares"]
-    print(stock)
-    return render_template("index.html")
+
+    return render_template("index.html", stock=stock)
 
 
 
