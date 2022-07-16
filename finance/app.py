@@ -143,7 +143,7 @@ def register():
 
         if not username:
             return apology("must provide username")
-        elif username in list((db.execute("SELECT username FROM users"))):
+        elif username in ((db.execute("SELECT username FROM users"))):
             return apology("username taken")
 
         if not password or not confirmation:
