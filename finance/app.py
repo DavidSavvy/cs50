@@ -62,8 +62,13 @@ def buy():
 
         if not shares:
             return apology("must provide shares")
-        elif not shares.isnumeric():
-            return 
+        if shares.isnumeric():
+            if shares > 0:
+                pass
+            else:
+                return apology("invalid shares")
+        else:
+            return apology("invalid shares")
 
 
 @app.route("/history")
