@@ -47,8 +47,14 @@ def index():
     for dict in all_symbols_dict:
         all_symbols.add(dict["symbol"])
 
+    #make all stock symbols purchased into a dict
+    stock = {}
+    stock.fromkeys(all_symbols, 0)
+
     for symbol in all_symbols:
-        stock_dict = db.execute("SELECT shares")
+        shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
+        for dict in shares_dict:
+            stock[symbol] += dict["shares"]
     return render_template("index.html")
 
 
