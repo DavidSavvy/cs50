@@ -63,12 +63,17 @@ def buy():
         if not shares:
             return apology("must provide shares")
 
+        #might be a problem if fractional shares are allowed
         try:
             shares = int(shares)
         except ValueError:
             return apology("invalid shares")
 
-        if shares <
+        if shares < 1:
+            return apology("invalid shares")
+
+        price = lookup(symbol)["price"]
+        available_money = db.execute("SELECT )
 
 
 
