@@ -49,14 +49,16 @@ def index():
 
     #make all stock symbols purchased into a dict
     stock = {}
-    stock.fromkeys(all_symbols, 0)
+    stock = dict.fromkeys(all_symbols, 0)
 
     print(stock)
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
         for dict in shares_dict:
             stock[symbol] += dict["shares"]
+    print(stock)
     return render_template("index.html")
+
 
 
 @app.route("/buy", methods=["GET", "POST"])
