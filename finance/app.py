@@ -60,10 +60,20 @@ def buy():
         elif not lookup(symbol):
             return apology("invalid symbol")
 
+        if not shares:
+            return apology("must provide shares")
+
         try:
             shares = int(shares)
-        except TypeError:
+        except ValueError:
             return apology("invalid shares")
+
+        if shares <
+
+
+
+
+
 
 
 @app.route("/history")
