@@ -73,7 +73,7 @@ def buy():
             return apology("invalid shares")
 
         price = lookup(symbol)["price"]
-        available_money = db.execute("SELECT cash FROM users WHERE username = ?", username)
+        available_money = db.execute("SELECT cash FROM users WHERE username = ?", session["user_id"])
 
 
 
