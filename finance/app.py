@@ -42,7 +42,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
+    
     return render_template("index.html")
 
 
