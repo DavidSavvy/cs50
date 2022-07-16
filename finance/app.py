@@ -77,7 +77,9 @@ def buy():
         if not available_money > price * shares:
             return apology("not enough money")
 
-        
+        db.execute("INSERT INTO purchases (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)
+
+        return redirect("/buy")
 
 
 
