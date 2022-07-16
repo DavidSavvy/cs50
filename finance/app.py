@@ -43,10 +43,12 @@ def after_request(response):
 @login_required
 def index():
     all_symbols_dict = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", session["user_id"])
-    all_symbols = {}
+    all_symbols = set()
     for dict in all_symbols_dict:
         all_symbols.add(dict["symbol"])
-    print(all_symbols)
+
+    for symbol in all_symbols:
+        stock_dict = db.execute("SELECT shares")
     return render_template("index.html")
 
 
