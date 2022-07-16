@@ -42,7 +42,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    
+    all_symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", session["user_id"])
     return render_template("index.html")
 
 
