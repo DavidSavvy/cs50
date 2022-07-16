@@ -77,6 +77,7 @@ def buy():
         if not available_money > price * shares:
             return apology("not enough money")
 
+        #make sure foreign key works right
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)
 
         return redirect("/buy")
