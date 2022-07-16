@@ -140,6 +140,7 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+        print(db.execute("SELECT username FROM users"))
 
         if not username:
             return apology("must provide username")
