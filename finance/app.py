@@ -86,9 +86,6 @@ def buy():
         return redirect("/buy")
 
 
-
-
-
 @app.route("/history")
 @login_required
 def history():
