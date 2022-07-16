@@ -17,7 +17,13 @@
         </thead>
         <tbody>
             {% for row in index_list %}
-
+                <tr>
+                    <th class="text-start">{{ symbol }}</th>
+                    <th class="text-start">{{ name }}</th>
+                    <th class="text-end">{{ shares }}</th>
+                    <th class="text-end">{{ price }}</th>
+                    <th class="text-end">{{ total }}</th>
+                </tr>
             {% endfor %}
         </tbody>
         <tfoot>
