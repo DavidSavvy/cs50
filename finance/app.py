@@ -59,6 +59,10 @@ def index():
 
     available_money = usd(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash"))
 
+    """
+    TRY FINDING TOTAL THROUGH JS, IF NOT USE PYTHON
+    """
+
     return render_template("index.html", stock=stock, lookup=lookup, cash=available_money)
 
 
