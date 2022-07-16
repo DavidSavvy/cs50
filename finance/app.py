@@ -53,9 +53,9 @@ def index():
 
 
     for symbol in all_symbols:
-        shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
-        for dict in shares_dict:
-            stock[symbol] += dict["shares"]
+        shares_dict = db.execute("SELECT sum(shares) FROM transactions WHERE symbol = ?", symbol)
+
+        stock[symbol] = shares_dict[0]
 
     available_money = usd(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash"))
 
