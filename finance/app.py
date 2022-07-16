@@ -96,7 +96,7 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money - total_cost,session["user_id"])
 
         #make sure foreign key works right
-        db.execute("INSERT INTO purchases (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)
 
         return redirect("/buy")
 
