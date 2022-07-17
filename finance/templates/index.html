@@ -5,20 +5,6 @@
 {% endblock %}
 
 {% block main %}
-    <script>
-        var total = 0;
-
-        function total() {
-            var subtotal = document.getElementById("total").innerHTML;
-            total += subtotal;
-
-        }
-
-        function load_total() {
-            document.getElementById("final_total").innerHTML = total;
-        }
-    </script>
-
     <table class="table table-striped">
         <thead>
             <tr>
@@ -37,7 +23,7 @@
                     <th class="text-start">{{ lookup(symbol)["name"] }}</th>
                     <th class="text-end">{{ shares }}</th>
                     <th class="text-end">{{ lookup(symbol)["price"] | usd }}</th>
-                    <th onload="total()" id="total" class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
+                    <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
                 </tr>
 
             {% endfor %}
@@ -45,13 +31,12 @@
         <tfoot>
             <tr>
                 <td colspan="4" class="border-0 fw-bold text-end">Cash</td>
-                <td colspan="4" class="border-0 fw-bold text-end">{{ cash }}</td>
+                <td colspan="4" class="border-0 fw-bold text-end">{{ cash | usd }}</td>
             </tr>
             <tr>
                 <td colspan="4" class="border-0 fw-bold text-end">Total</td>
-                <td id="final_total" onload="load_total()" colspan="4" class="border-0 fw-bold text-end">{{ total }}</td>
+                <td colspan="4" class="border-0 fw-bold text-end">{{ total | usd }}</td>
             </tr>
         </tfoot>
-
     </table>
 {% endblock %}
