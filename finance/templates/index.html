@@ -6,7 +6,10 @@
 
 {% block main %}
     <script>
-        
+        function total() {
+            var subtotal = document.getElementById("total").innerHTML;
+            
+        }
     </script>
 
     <table class="table table-striped">
@@ -27,7 +30,7 @@
                     <th class="text-start">{{ lookup(symbol)["name"] }}</th>
                     <th class="text-end">{{ shares }}</th>
                     <th class="text-end">{{ lookup(symbol)["price"] | usd }}</th>
-                    <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
+                    <th onload="total()" id="total" class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
                 </tr>
 
             {% endfor %}
