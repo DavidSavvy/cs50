@@ -231,6 +231,14 @@ def sell():
     else:
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
+
+        if not int(shares) > 0:
+            return apology("invalid share count")
+        if int(stock[symbol]) < int(shares):
+            return apology("invalid share count")
+
+        db.execute("")
+
     """Sell shares of stock"""
 
     return apology("TODO")
