@@ -33,7 +33,7 @@ if not os.environ.get("API_KEY"):
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
-    
+
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
@@ -54,7 +54,7 @@ def index():
     #"dict" may cause issues if other names not changed
 
     for symbol in all_symbols:
-        shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
+        shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])
         for dictionary in shares_dict:
             stock[symbol] += dictionary["shares"]
 
