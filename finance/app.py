@@ -228,5 +228,9 @@ def register():
 def sell():
     if request.method == "GET":
         return render_template("sell.html", stock=stock) #global var stock
+    else:
+        symbol = request.form.get("symbol")
+        print(symbol)
     """Sell shares of stock"""
+
     return apology("TODO")
