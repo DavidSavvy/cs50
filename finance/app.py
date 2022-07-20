@@ -44,18 +44,18 @@ def after_request(response):
 def index():
     all_symbols_dict = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", session["user_id"])
     all_symbols = set()
-    for dicts in all_symbols_dict:
-        all_symbols.add(dicts["symbol"])
+    for dict in all_symbols_dict:
+        all_symbols.add(dict["symbol"])
 
     #make all stock symbols purchased into a dict
     stock = {}
     stock = dict.fromkeys(all_symbols, 0)
-
+    #"dict" may cause issues
 
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
-        for dicts in shares_dict:
-            stock[symbol] += dicts["shares"]
+        for dict in shares_dict:
+            stock[symbol] += dict["shares"]
 
     available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
 
