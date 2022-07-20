@@ -238,7 +238,8 @@ def sell():
             return apology("invalid share count")
 
         price = lookup(symbol)["price"]
-        total_cost = price * shares
+        total_cost = price * int(shares)
+        available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
         db.execute("")
 
     """Sell shares of stock"""
