@@ -9,26 +9,23 @@
         <thead>
             <tr>
                 <th class="text-start">Symbol</th>
-                <th class="text-start">Shares</th>
+                <th class="text-end">Shares</th>
                 <th class="text-end">Price</th>
                 <th class="text-end">Transacted</th>
             </tr>
         </thead>
         <tbody>
-            <!--
-            {% for symbol, shares in stock.items() %}
+            {% for dict in transaction_list %}
 
                 <tr>
-                    <th class="text-start">{{ symbol }}</th>
-                    <th class="text-start">{{ lookup(symbol)["name"] }}</th>
-                    <th class="text-end">{{ shares }}</th>
-                    <th class="text-end">{{ lookup(symbol)["price"] | usd }}</th>
-                    <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
+                    <th class="text-start">{{ dict["symbol"] }}</th>
+                    <th class="text-end">{{ dict["shares"] }}</th>
+                    <th class="text-end">{{ dict["price"] | usd }}</th>
+                    <th class="text-end">{{ dict["dt"] }}</th>
                 </tr>
 
             {% endfor %}
-            -->
         </tbody>
-        
+
     </table>
 {% endblock %}
