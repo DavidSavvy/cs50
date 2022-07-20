@@ -48,7 +48,7 @@ def index():
         all_symbols.add(dict["symbol"])
 
     #make all stock symbols purchased into a dict
-    stock = {}
+    global stock 
     stock = dict.fromkeys(all_symbols, 0)
     #"dict" may cause issues
 
@@ -226,5 +226,7 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+    if request.method == "GET":
+        return render_template("sell.html")
     """Sell shares of stock"""
     return apology("TODO")
