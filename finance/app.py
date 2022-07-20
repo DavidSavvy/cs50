@@ -44,8 +44,8 @@ def after_request(response):
 def index():
     all_symbols_dict = db.execute("SELECT symbol FROM transactions WHERE user_id = ?", session["user_id"])
     all_symbols = set()
-    for dict in all_symbols_dict:
-        all_symbols.add(dict["symbol"])
+    for dictionary in all_symbols_dict:
+        all_symbols.add(dictionary["symbol"])
 
     #make all stock symbols purchased into a dict
     global stock
@@ -54,8 +54,8 @@ def index():
 
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
-        for dict in shares_dict:
-            stock[symbol] += dict["shares"]
+        for dictionary in shares_dict:
+            stock[symbol] += dictionary["shares"]
 
     available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
 
@@ -107,7 +107,7 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money - total_cost, session["user_id"])
 
         #make sure foreign key works right
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))", session["user_id"], symbol, shares, price)
 
         return redirect("/buy")
 
@@ -243,7 +243,7 @@ def sell():
         price = lookup(symbol)["price"]
         total_return = price * int(shares)
         available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, -int(shares), price)
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))", session["user_id"], symbol, -int(shares), price)
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money + total_return, session["user_id"])
 
         return redirect("/sell")
