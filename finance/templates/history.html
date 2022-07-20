@@ -15,6 +15,7 @@
             </tr>
         </thead>
         <tbody>
+            <!--
             {% for symbol, shares in stock.items() %}
 
                 <tr>
@@ -26,16 +27,8 @@
                 </tr>
 
             {% endfor %}
+            -->
         </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="4" class="border-0 fw-bold text-end">Cash</td>
-                <td colspan="4" class="border-0 fw-bold text-end">{{ cash | usd }}</td>
-            </tr>
-            <tr>
-                <td colspan="4" class="border-0 fw-bold text-end">Total</td>
-                <td colspan="4" class="border-0 fw-bold text-end">{{ total | usd }}</td>
-            </tr>
-        </tfoot>
+        
     </table>
 {% endblock %}
