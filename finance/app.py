@@ -115,8 +115,10 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
+    transaction_list = db.execute
+    return render_template("history.html")
     """Show history of transactions"""
-    return apology("TODO")
+
 
 
 @app.route("/login", methods=["GET", "POST"])
