@@ -240,8 +240,9 @@ def sell():
         price = lookup(symbol)["price"]
         total_cost = price * int(shares)
         available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, shares, price)")
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now'))", session["user_id"], symbol, -int(shares), price)
 
+        return redirect("/sell")
     """Sell shares of stock"""
 
-    return apology("TODO")
+
