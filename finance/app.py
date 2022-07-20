@@ -33,6 +33,7 @@ if not os.environ.get("API_KEY"):
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
+    
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
@@ -50,7 +51,7 @@ def index():
     #make all stock symbols purchased into a dict
     global stock
     stock = dict.fromkeys(all_symbols, 0)
-    #"dict" may cause issues
+    #"dict" may cause issues if other names not changed
 
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ?", symbol)
@@ -64,17 +65,14 @@ def index():
         total += float(lookup(symbol)["price"] * shares)
     total += available_money
 
-    """
-    TRY FINDING TOTAL THROUGH JS, IF NOT USE PYTHON
-    """
-
     return render_template("index.html", stock=stock, lookup=lookup, cash=available_money, total=total)
-
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
+    """Buy shares of stock"""
+
     if request.method == "GET":
         return render_template("buy.html")
     else:
@@ -115,10 +113,11 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
+    """Show history of transactions"""
+
     transaction_list = db.execute("SELECT symbol, shares, price, dt FROM transactions WHERE user_id = ?", session["user_id"])
     print(transaction_list)
     return render_template("history.html", transaction_list=transaction_list)
-    """Show history of transactions"""
 
 
 
@@ -172,6 +171,8 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
+    """Get stock quote."""
+
     if request.method == "GET":
         return render_template("quote.html")
     else:
@@ -189,13 +190,12 @@ def quote():
             symbol = response["symbol"]
 
             return render_template("quoted.html", name=name, symbol=symbol, price=price)
-    """Get stock quote."""
-
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
+
     if request.method == "GET":
         return render_template("register.html")
     else:
@@ -229,6 +229,8 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+    """Sell shares of stock"""
+
     if request.method == "GET":
         return render_template("sell.html", stock=stock) #global var stock
     else:
@@ -247,6 +249,6 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money + total_return, session["user_id"])
 
         return redirect("/sell")
-    """Sell shares of stock"""
+
 
 
