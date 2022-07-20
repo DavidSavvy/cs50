@@ -230,7 +230,7 @@ def sell():
         return render_template("sell.html", stock=stock) #global var stock
     else:
         symbol = request.form.get("symbol")
-        print(symbol)
+        shares = request.form.get("shares")
     """Sell shares of stock"""
 
     return apology("TODO")
