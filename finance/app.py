@@ -218,7 +218,7 @@ def register():
         elif password != confirmation:
             return apology("passwords must match")
 
-        reg = re.compile("")
+        reg = re.compile("^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$")
 
         hash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
