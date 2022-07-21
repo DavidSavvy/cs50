@@ -59,7 +59,6 @@ def index():
             stock[symbol] += dictionary["shares"]
 
     available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
-    available_money = round(available_money, 2)
 
     total = 0
     for symbol, shares in stock.items():
