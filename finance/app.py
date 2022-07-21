@@ -218,6 +218,8 @@ def register():
         elif password != confirmation:
             return apology("passwords must match")
 
+        reg = re.compile("")
+
         hash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
