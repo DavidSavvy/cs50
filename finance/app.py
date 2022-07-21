@@ -167,6 +167,14 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+@app.route("/addfunds", methods=["GET", "POST"])
+def addfunds():
+    if request.method == "GET":
+        return render_template("addfunds.html")
+    else:
+        amount = request.form.get("amount")
+
+
 
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
