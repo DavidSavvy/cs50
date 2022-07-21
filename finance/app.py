@@ -248,7 +248,7 @@ def sell():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))", session["user_id"], symbol, -int(shares), price)
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money + total_return, session["user_id"])
 
-        return redirect("/sell")
+        return redirect("/")
 
 
 
