@@ -5,6 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
+from re import fullmatch
 
 from helpers import apology, login_required, lookup, usd
 
@@ -218,7 +219,7 @@ def register():
         elif password != confirmation:
             return apology("passwords must match")
 
-        reg = re.compile("^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$")
+        reg = re.fullmatch(r"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$")
 
         hash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
