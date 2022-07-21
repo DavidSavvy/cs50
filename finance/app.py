@@ -169,11 +169,14 @@ def logout():
 
 @app.route("/addfunds", methods=["GET", "POST"])
 def addfunds():
+    """Add funds to account"""
+    
     if request.method == "GET":
         return render_template("addfunds.html")
     else:
         amount = request.form.get("amount")
-
+        available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money + amount, session["user_id"])
 
 
 @app.route("/quote", methods=["GET", "POST"])
