@@ -23,7 +23,7 @@
                     <th class="text-start">{{ lookup(symbol)["name"] }}</th>
                     <th class="text-end">{{ shares }}</th>
                     <th class="text-end">{{ lookup(symbol)["price"] | usd }}</th>
-                    <th class="text-end">{{ (lookup(symbol)["price"] * shares | float) | usd }}</th>
+                    <th class="text-end">{{ (lookup(symbol)["price"] * shares) | usd }}</th>
                 </tr>
 
             {% endfor %}
