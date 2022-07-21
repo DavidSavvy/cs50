@@ -60,7 +60,7 @@ def index():
 
     available_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0].get("cash")
     available_money = round(available_money, 2)
-    
+
     total = 0
     for symbol, shares in stock.items():
         total += float(lookup(symbol)["price"] * shares)
@@ -108,7 +108,7 @@ def buy():
         #make sure foreign key works right
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))", session["user_id"], symbol, shares, price)
 
-        return redirect("/buy")
+        return redirect("/")
 
 
 @app.route("/history")
