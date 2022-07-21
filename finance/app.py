@@ -116,7 +116,6 @@ def history():
     """Show history of transactions"""
 
     transaction_list = db.execute("SELECT symbol, shares, price, dt FROM transactions WHERE user_id = ?", session["user_id"])
-    print(transaction_list)
     return render_template("history.html", transaction_list=transaction_list)
 
 
