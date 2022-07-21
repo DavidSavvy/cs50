@@ -226,7 +226,7 @@ def register():
         password must contain 1 non-alpha numeric number
         password is 8-16 characters with no space
         """
-        reg = re.fullmatch(r"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$", password)
+        reg = fullmatch(r"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$", password)
         if not reg:
             return apology("invalid password")
 
