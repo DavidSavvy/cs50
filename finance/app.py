@@ -49,10 +49,10 @@ def index():
     for dictionary in all_symbols_dict:
         all_symbols.add(dictionary["symbol"])
 
-    #make all stock symbols purchased into a dict
+    # make all stock symbols purchased into a dict
     global stock
     stock = dict.fromkeys(all_symbols, 0)
-    #"dict" may cause issues if other names not changed
+    # "dict" may cause issues if other names not changed
 
     for symbol in all_symbols:
         shares_dict = db.execute("SELECT shares FROM transactions WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])
@@ -88,7 +88,7 @@ def buy():
         if not shares:
             return apology("must provide shares")
 
-        #might be a problem if fractional shares are allowed
+        # might be a problem if fractional shares are allowed
         try:
             shares = int(shares)
         except ValueError:
@@ -105,7 +105,7 @@ def buy():
 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money - total_cost, session["user_id"])
 
-        #make sure foreign key works right
+        # make sure foreign key works right
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, dt) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))", session["user_id"], symbol, shares, price)
 
         return redirect("/")
@@ -118,7 +118,6 @@ def history():
 
     transaction_list = db.execute("SELECT symbol, shares, price, dt FROM transactions WHERE user_id = ?", session["user_id"])
     return render_template("history.html", transaction_list=transaction_list)
-
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -166,6 +165,7 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
+
 
 @app.route("/addfunds", methods=["GET", "POST"])
 def addfunds():
@@ -256,7 +256,7 @@ def sell():
     """Sell shares of stock"""
 
     if request.method == "GET":
-        return render_template("sell.html", stock=stock) #global var stock
+        return render_template("sell.html", stock=stock) # global var stock
     else:
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
@@ -273,6 +273,4 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", available_money + total_return, session["user_id"])
 
         return redirect("/")
-
-
 
