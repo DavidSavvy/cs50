@@ -1,3 +1,11 @@
-.searchbar {
-    border-radius: 30px;
-}
+.column {
+    float: left;
+  }
+
+  .left, .right {
+    width: 25%;
+  }
+
+  .middle {
+    width: 50%;
+  }
