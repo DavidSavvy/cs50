@@ -1,13 +1,15 @@
 .column {
     float: left;
-  }
+}
 
-  .left, .right {
+.left, .right {
     width: 25%;
-  }
+}
 
-  .middle {
+.middle {
     width: 50%;
-  }
+}
 
- 
+* {
+    box-sizing: border-box;
+}
