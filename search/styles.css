@@ -27,7 +27,7 @@
   .grid {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
+    
   }
 
   .grid > div {
