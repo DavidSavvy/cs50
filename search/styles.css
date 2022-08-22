@@ -27,8 +27,7 @@
   .grid {
     display: grid;
     gap: 20px 20px;
-    background-color: #2196F3;
-    grid-template-rows: 250px 400px 250px;
+    grid-template-rows: 400px 400px auto;
     grid-template-columns: auto 300px auto;
 
   }
