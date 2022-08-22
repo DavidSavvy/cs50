@@ -26,7 +26,8 @@
 
   .grid {
     display: grid;
-    border: 2px;
+    gap: 5px;
+    background-color: black;
 
   }
 
