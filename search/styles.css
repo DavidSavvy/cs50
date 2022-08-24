@@ -28,7 +28,7 @@
     display: grid;
 
     grid-template-rows: 215px 160px 400px auto;
-    background-color: tan;
+
     grid-template-columns: 25% 50% 25%;
 
 
@@ -37,7 +37,7 @@
 
   .grid > div {
     text-align: center;
-    background-color: purple;
+
   }
 
   .mainitem {
