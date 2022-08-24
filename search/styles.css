@@ -26,11 +26,11 @@
 
   .grid {
     display: grid;
-    gap: 20px 20px;
+
     grid-template-rows: 215px 160px 400px auto;
     background-color: tan;
     grid-template-columns: 25% 50% 25%;
-    gap: 5px;
+
 
 
   }
@@ -49,4 +49,8 @@
 
   .search {
     border-radius: 150px;
+  }
+
+  div > a {
+    margin: 10px;
   }
