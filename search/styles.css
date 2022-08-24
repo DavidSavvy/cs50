@@ -29,14 +29,15 @@
     gap: 20px 20px;
     grid-template-rows: 215px 160px 400px auto;
     background-color: tan;
-    grid-template-columns: auto 300px auto;
-    gap: 50px;
-    
+    grid-template-columns: auto 1000px auto;
+    gap: 5px;
+
 
   }
 
   .grid > div {
     text-align: center;
+    background-color: purple;
   }
 
   .mainitem {
