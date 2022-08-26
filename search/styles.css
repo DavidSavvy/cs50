@@ -56,3 +56,9 @@
   .searchsym input {
     background-image: magglass.png;
   }
+
+  .heading {
+    font-weight: light;
+    margin-left: 45px;
+    margin-top: 30px;
+  }
