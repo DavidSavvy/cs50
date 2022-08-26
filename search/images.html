@@ -5,6 +5,11 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            var url = document.getElementById("sform").action;
+
+            
+        </script>
     </head>
     <body>
         <div class="grid">
@@ -22,7 +27,7 @@
             <div></div>
 
             <div class="d-flex justify-content-center">
-                <form method="GET" action="https://google.com/imghp">
+                <form id="sform" method="GET" action="https://google.com/imghp">
                     <input style="border-radius: 25px; width: 500px;" class="form-control form-control-lg" type="text" name="q" >
                     <div>
                         <input class='btn btn-sm' style="margin: 10px; background-color: #eee; border-radius: 2px " type="submit" value="Image Search">
