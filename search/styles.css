@@ -1,48 +1,14 @@
-
-  /* Create three unequal columns that floats next to each other */
-  .column {
-    float: left;
-    padding: 10px;
-    height: 100%;
-  }
-
-  .left, .right {
-    width: 25%;
-  }
-
-  .middle {
-    width: 50%;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
   .grid {
     display: grid;
-
     grid-template-rows: 215px 160px 400px auto;
-
     grid-template-columns: 25% 50% 25%;
-
-
-
   }
 
   .grid > div {
     text-align: center;
-
   }
 
-  .mainitem {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
-  }
+  
 
   .search {
     border-radius: 150px;
@@ -50,7 +16,6 @@
 
   div > a {
     margin: 10px;
-
   }
 
   .searchsym input {
