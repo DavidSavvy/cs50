@@ -8,3 +8,6 @@ def index(request):
         "entries": util.list_entries()
     })
 
+def page(request, title):
+    return render()
+
