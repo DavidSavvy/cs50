@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 
 from . import util
 
@@ -9,7 +10,12 @@ def index(request):
     })
 
 def page(request, title):
-    if not (page = get_entry(title)):
-        raise 
-    return render()
+    page = util.get_entry(title)
+    if not (page):
+        raise Http404
+    else:
+        return render(request, "encyclopedia/pagetemp.html", {
+            "title": title,
+            "page": page
+        })
 
