@@ -19,3 +19,7 @@ def page(request, title):
             "page": page
         })
 
+"""
+markdown2 installed
+find implementation details
+"""
