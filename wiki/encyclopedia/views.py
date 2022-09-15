@@ -9,5 +9,7 @@ def index(request):
     })
 
 def page(request, title):
+    if not (page = get_entry(title)):
+        raise 
     return render()
 
