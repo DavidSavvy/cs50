@@ -13,7 +13,7 @@ def index(request):
 
 def page(request, title):
     page = util.get_entry(title)
-    html = markdown.convert
+    html = markdown.convert(page)
     if not (page):
         raise Http404
     else:
