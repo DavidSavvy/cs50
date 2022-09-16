@@ -22,7 +22,3 @@ def page(request, title):
             "page": html
         })
 
-"""
-markdown2 installed
-find implementation details
-"""
