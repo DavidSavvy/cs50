@@ -13,13 +13,13 @@ def index(request):
 
 def page(request, title):
     page = util.get_entry(title)
-    html = markdown.convert(page)
+    html = markdown2.markdown(page)
     if not (page):
         raise Http404
     else:
         return render(request, "encyclopedia/pagetemp.html", {
             "title": title,
-            "page": page
+            "page": html
         })
 
 """
