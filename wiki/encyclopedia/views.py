@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpRequest
 
 import markdown2
 
@@ -22,5 +22,4 @@ def page(request, title):
             "page": html
         })
 
-def search(request, search):
-    return HttpResponse("hello")
+def search(request):
