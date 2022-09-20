@@ -22,3 +22,5 @@ def page(request, title):
             "page": html
         })
 
+def search(request, search):
+    return HttpsResponse 
