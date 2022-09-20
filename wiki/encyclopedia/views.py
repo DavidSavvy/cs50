@@ -23,5 +23,5 @@ def page(request, title):
         })
 
 def search(request):
-    query = HttpRequest.GET()
+    query = HttpRequest.GET
     return HttpResponse(query)
