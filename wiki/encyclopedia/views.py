@@ -23,11 +23,15 @@ def page(request, title):
         })
 
 def search(request):
-    query = request.GET['q']
+    query = request.GET['q'].lower()
     entries = util.list_entries()
     for entry in entries:
-        if query.lower() in entry.lower():
+        if query == entry.lower():
             return page(request, entry)
-        
+        elif query in entry.lower():
+            
+
+
+
 
 
