@@ -27,5 +27,5 @@ def search(request):
     entries = util.list_entries()
     for entry in entries:
         if query in entry:
-            page(request, entry)
+            return HttpResponse("success")
 
