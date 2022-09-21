@@ -28,6 +28,5 @@ def search(request):
     for entry in entries:
         if query.lower() in entry.lower():
             return page(request, entry)
-        else:
-            raise Http404
+
 
