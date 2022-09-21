@@ -25,5 +25,7 @@ def page(request, title):
 def search(request):
     query = request.GET['q']
     entries = util.list_entries()
-    
+    for entry in entries:
+        if query in entry:
+            page(request, entry)
 
