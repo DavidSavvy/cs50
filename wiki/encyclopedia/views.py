@@ -27,5 +27,6 @@ def search(request):
     entries = util.list_entries()
     for entry in entries:
         if query.lower() in entry.lower():
-            page(request, entry)
+            return page(request, entry)
+        
 
