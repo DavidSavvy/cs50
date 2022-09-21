@@ -26,6 +26,6 @@ def search(request):
     query = request.GET['q']
     entries = util.list_entries()
     for entry in entries:
-        if query in entry:
-            return HttpResponse("success")
+        if query.lower() in entry.lower():
+            page(request, entry)
 
