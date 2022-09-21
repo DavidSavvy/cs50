@@ -23,9 +23,6 @@ def page(request, title):
         })
 
 def search(request):
-    query = request.GET
+    query = request.GET['q']
     return HttpResponse(query)
 
-"""
-Find application of QueryDict object in Django above
-"""
