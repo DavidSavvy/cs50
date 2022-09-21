@@ -24,5 +24,6 @@ def page(request, title):
 
 def search(request):
     query = request.GET['q']
-    return HttpResponse(query)
+    entries = util.list_entries()
+    
 
