@@ -40,12 +40,12 @@ def search(request):
 
 @csrf_exempt
 def create(request):
-    if request.method == "GET":
+    if request.method == 'GET':
         return render(request, "encyclopedia/newpage.html")
     else:
         submission_dict = dict(request.POST)
-        if submission_dict[]
-        util.save_entry(submission_dict["title"][0], submission_dict["post"][0])
+        if submission_dict['title']
+        util.save_entry(submission_dict['title'][0], submission_dict['post'][0])
         return HttpResponse(submission_dict.values())
 
 
