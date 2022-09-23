@@ -52,7 +52,4 @@ def create(request):
             return page(request, title)
 
 
-"""
-check for duplicate pages
-send user to finished page if clear
-"""
+
