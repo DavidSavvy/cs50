@@ -50,7 +50,7 @@ def create(request):
             util.save_entry(title, submission_dict['post'][0])
             return page(request, title)
 
-def edit(request):
+def edit(request, title):
     if request.method == 'GET':
         pass
 
