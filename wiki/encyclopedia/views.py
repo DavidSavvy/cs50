@@ -45,9 +45,10 @@ def create(request):
     else:
         submission_dict = dict(request.POST)
         if submission_dict['title'] in util.list_entries():
-            return 
-        util.save_entry(submission_dict['title'][0], submission_dict['post'][0])
-        return HttpResponse(submission_dict.values())
+            raise Exception("Page already exists.")
+        else:
+            util.save_entry(submission_dict['title'][0], submission_dict['post'][0])
+            return HttpResponse(submission_dict.values())
 
 
 """
