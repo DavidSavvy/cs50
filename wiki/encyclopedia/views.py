@@ -44,7 +44,8 @@ def create(request):
         return render(request, "encyclopedia/newpage.html")
     else:
         submission_dict = dict(request.POST)
-        if submission_dict['title']
+        if submission_dict['title'] in util.list_entries():
+            return 
         util.save_entry(submission_dict['title'][0], submission_dict['post'][0])
         return HttpResponse(submission_dict.values())
 
