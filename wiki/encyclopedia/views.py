@@ -48,11 +48,8 @@ def create(request):
         if submission_dict['title'][0] in util.list_entries():
             raise Exception("Page already exists.")
         else:
-            util.save_entry(submission_dict['title'][0], submission_dict['post'][0])
-            return render(request, "encyclopedia/pagetemp.html", {
-                "title": title,
-                "page": 
-            })
+            util.save_entry(title, submission_dict['post'][0])
+            return page(request, title)
 
 
 """
