@@ -52,6 +52,7 @@ def create(request):
 
 def edit(request, title):
     if request.method == 'GET':
+        
         return render(request, "encyclopedia/editpage.html", {
             "title": title
         })
