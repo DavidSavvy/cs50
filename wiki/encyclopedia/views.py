@@ -52,9 +52,10 @@ def create(request):
 
 def edit(request, title):
     if request.method == 'GET':
-        
+        markdown = str(util.get_entry(title))
         return render(request, "encyclopedia/editpage.html", {
-            "title": title
+            "title": title,
+            "entry": markdown
         })
 
 """

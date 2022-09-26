@@ -10,12 +10,12 @@
     <form action="/edit/{{ title }}" method="POST">
         <div>
             <h6>Title</h6>
-            <input type="text" name="title" style="width: 500px;">
+            <input type="text" name="title" style="width: 500px;" value="{{ title }}">
         </div>
         <br>
         <div>
             <h6>Content</h6>
-            <textarea name="post" style="width: 1000px; height: 600px;"></textarea>
+            <textarea name="post" style="width: 1000px; height: 600px;" value="{{ entry }}"></textarea>
         </div>
         <div>
             <input type="submit">
