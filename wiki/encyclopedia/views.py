@@ -63,5 +63,8 @@ def edit(request, title):
             "entry": markdown
         })
     else:
-        pass
+        submission_text = dict(request.POST)['post'][0]
+        util.save_entry(title, submission_text)
+        return HttpResponse()
+
 
