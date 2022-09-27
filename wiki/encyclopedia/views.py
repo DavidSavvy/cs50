@@ -50,6 +50,7 @@ def create(request):
             util.save_entry(title, submission_dict['post'][0])
             return page(request, title)
 
+@csrf_exempt
 def edit(request, title):
     if request.method == 'GET':
         markdown = util.get_entry(title)
@@ -62,4 +63,5 @@ def edit(request, title):
             "entry": markdown
         })
     else:
-        
+        pass
+
