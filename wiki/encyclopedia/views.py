@@ -72,6 +72,8 @@ def edit(request, title):
 def random_entry(request):
     if request.method == 'GET':
         random_entry = random.choice(util.list_entries())
-        return HttpResponse(random_entry)
-        #return HttpResponseRedirect(f"/wiki/{random_entry}")
-
+        #return HttpResponse(random_entry)
+        return HttpResponseRedirect(f"/wiki/{random_entry}")
+"""
+finish random pages
+"""
