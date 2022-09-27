@@ -3,6 +3,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 
 import markdown2
+import random
 
 from . import util
 
@@ -68,4 +69,8 @@ def edit(request, title):
         util.save_entry(submission_title, submission_text)
         return HttpResponseRedirect(f"/wiki/{title}")
 
+def random_entry(request):
+    random_entry = random.choice(util.list_entries())
+    return HttpResponse(random_entry)
+    #return HttpResponseRedirect(f"/wiki/{random_entry}")
 
