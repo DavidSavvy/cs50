@@ -53,12 +53,15 @@ def create(request):
 def edit(request, title):
     if request.method == 'GET':
         markdown = util.get_entry(title)
+
+        if not markdown:
+            raise Exception
+
         return render(request, "encyclopedia/editpage.html", {
             "title": title,
             "entry": markdown
         })
 
 """
-finish passing to edit page
-complete edit page
+confirm edit submissions
 """
