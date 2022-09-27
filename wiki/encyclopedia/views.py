@@ -65,6 +65,6 @@ def edit(request, title):
     else:
         submission_text = dict(request.POST)['post'][0]
         util.save_entry(title, submission_text)
-        return HttpResponseRedirect("")
+        return HttpResponseRedirect(f"/wiki/{title}")
 
 
