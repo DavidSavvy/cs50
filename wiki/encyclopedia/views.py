@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import Http404, HttpResponse, HttpRequest
+from django.http import Http404, HttpResponse, HttpResponseRedirect, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 
 import markdown2
@@ -65,6 +65,6 @@ def edit(request, title):
     else:
         submission_text = dict(request.POST)['post'][0]
         util.save_entry(title, submission_text)
-        return HttpResponse()
+        return HttpResponseRedirect("")
 
 
