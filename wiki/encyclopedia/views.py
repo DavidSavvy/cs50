@@ -61,7 +61,5 @@ def edit(request, title):
             "title": title,
             "entry": markdown
         })
-
-"""
-confirm edit submissions
-"""
+    else:
+        
