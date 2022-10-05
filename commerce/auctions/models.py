@@ -14,7 +14,8 @@ class Listing(models.Model):
 class Bid(models.Model):
     bid_id = models.IntegerField(primary_key=True)
     bid = models.DecimalField(decimal_places=2)
-    bidder = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bids')
+    bid_item = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='item_bids')
+    bidder = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_bids')
 
 class Comment(models.Model):
     pass
