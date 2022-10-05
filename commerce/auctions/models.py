@@ -7,6 +7,7 @@ class User(AbstractUser):
 
 class Listing(models.Model):
     listing_id = models.IntegerField()
+    price = models.DecimalField(decimal_places=2)
 
 class Bid(models.Model):
     pass
