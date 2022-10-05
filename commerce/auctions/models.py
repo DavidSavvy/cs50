@@ -6,7 +6,7 @@ class User(AbstractUser):
     pass
 
 class Listing(models.Model):
-    listing_id = models.IntegerField()
+    listing_id = models.PrimaryKey()
     price = models.DecimalField(decimal_places=2)
     category = models.CharField(max_length=64)
     lister = models.ForeignKey
