@@ -6,7 +6,7 @@ class User(AbstractUser):
     pass
 
 class Listing(models.Model):
-    pass
+    listing_id = models.IntegerField()
 
 class Bid(models.Model):
     pass
