@@ -9,7 +9,7 @@ class Listing(models.Model):
     listing_id = models.IntegerField(primary_key=True)
     price = models.DecimalField(decimal_places=2)
     category = models.CharField(max_length=64)
-    lister = models.ForeignKey(User, )
+    lister = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Bid(models.Model):
     pass
