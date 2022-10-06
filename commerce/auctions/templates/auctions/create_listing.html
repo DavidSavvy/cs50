@@ -2,8 +2,8 @@
 
 {% block body %}
     <form>
-        <div style="display: inline-block; white-space: nowrap;">
-            <h4>Title<div>*</div></h4>
+        <div>
+            <h4>Title<span style="color: red;">*</span></h4>
             <input type="text" size="50">
         </div>
         <div>
@@ -15,14 +15,20 @@
             <input type="text" size="50">
         </div>
         <div>
-            <h4>Starting Bid</h4>
+            <h4>Starting Bid<span style="color: red;">*</span></h4>
             <input type="number" step="0.01" min="0.00">
         </div>
         <div>
             <div>
-                <h4>Description</h4>
+                <h4>Description<span style="color: red;">*</span></h4>
                 <textarea style="width: 750px;" rows="5"></textarea>
             </div>
+        </div>
+        <div>
+            <br>
+            <h7>
+                Fields marked with an <span style="color: red;">*</span> are required.
+            </h7>
         </div>
     </form>
 {% endblock %}
