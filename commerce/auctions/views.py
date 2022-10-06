@@ -11,7 +11,8 @@ def index(request):
     return render(request, "auctions/index.html")
 
 def create(request):
-    pass
+    if request.method == "GET":
+        return render(request, "auctions/create_listing.html")
 
 def login_view(request):
     if request.method == "POST":
