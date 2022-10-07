@@ -23,10 +23,13 @@ def create(request):
         image_url = request.POST['image_url']
         bid = request.POST['bid']
         description = request.POST['description']
+
         if not title or not bid or not description:
             return render(request, "auctions/create_listing.html", {
-            "success": "false"
-        })
+                "success": "false"
+            })
+        else:
+            
 
 def login_view(request):
     if request.method == "POST":
