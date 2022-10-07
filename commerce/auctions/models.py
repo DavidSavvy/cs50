@@ -24,7 +24,3 @@ class Comment(models.Model):
     text = models.TextField()
     commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_comments')
     comment_item = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='item_comments')
-
-"""
-foreign key mistmatch bug
-"""
