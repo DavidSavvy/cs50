@@ -29,7 +29,7 @@ def create(request):
                 "success": "false"
             })
         else:
-            listing = Listing.objects.create(title=title, bid=bid, description=description)
+            listing = Listing.objects.create(title=title, price=bid, description=description)
             listing.category = category if (category != None) else 'No category'
             listing.image = image_url if (image_url != None) else 'Blank'
 
