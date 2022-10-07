@@ -14,7 +14,9 @@ def index(request):
 @csrf_exempt
 def create(request):
     if request.method == "GET":
-        return render(request, "auctions/create_listing.html")
+        return render(request, "auctions/create_listing.html", {
+            "success": "true"
+        })
     else:
         title = request.POST['title']
         category = request.POST['category']
@@ -22,7 +24,9 @@ def create(request):
         bid = request.POST['bid']
         description = request.POST['description']
         if not title or not bid or not description:
-            return HttpResponse('fail')
+            return render(request, "auctions/create_listing.html", {
+            "success": "false"
+        })
 
 def login_view(request):
     if request.method == "POST":

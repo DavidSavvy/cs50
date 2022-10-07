@@ -3,6 +3,12 @@
 {% block body %}
     <form action="{% url 'create' %}" method="post">
         {% csrf_token %}
+        {% if success == 'false' %}
+        <h6 style="color: red;">
+            **Required fields are not filled in**
+        </h6>
+        <br>
+        {% endif %}
         <div>
             <h4>Title<span style="color: red;">*</span></h4>
             <input type="text" size="50" name="title">
