@@ -12,7 +12,7 @@ class Listing(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=64)
     lister = models.ForeignKey(User, on_delete=models.CASCADE, related_name='listings')
-    image = models.TextField()
+    image_url = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
 class Bid(models.Model):
