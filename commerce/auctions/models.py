@@ -7,7 +7,7 @@ class User(AbstractUser):
 
 class Listing(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=64)
+    listing_title = models.CharField(max_length=64)
     price = models.DecimalField(decimal_places=2, max_digits=10)
     description = models.TextField()
     category = models.CharField(max_length=64)
