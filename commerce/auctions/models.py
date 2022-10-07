@@ -10,7 +10,8 @@ class Listing(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=64)
     lister = models.ForeignKey(User, on_delete=models.CASCADE, related_name='listings')
-    date = models.DateTimeField()
+    image = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
 
 class Bid(models.Model):
     bid = models.DecimalField(decimal_places=2, max_digits=10)
