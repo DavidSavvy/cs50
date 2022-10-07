@@ -21,7 +21,7 @@ def create(request):
         image_url = request.POST['image_url']
         bid = request.POST['bid']
         description = request.POST['description']
-        if not [title, bid, description]:
+        if not title or not bid or not description:
             return HttpResponse('fail')
 
 def login_view(request):
