@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='listing',
             name='image',
-            field=models.TextField(default=1),
+            field=models.TextField(default=None),
             preserve_default=False,
         ),
         migrations.AlterField(
