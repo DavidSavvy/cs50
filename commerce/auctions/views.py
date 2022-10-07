@@ -16,8 +16,8 @@ def create(request):
     if request.method == "GET":
         return render(request, "auctions/create_listing.html")
     else:
-        
-        return HttpResponse('test')
+        query_dict = request.POST
+        return HttpResponse(query_dict)
 
 def login_view(request):
     if request.method == "POST":
