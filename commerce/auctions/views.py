@@ -31,9 +31,11 @@ def create(request):
         else:
             listing = Listing.objects.create(title=title, bid=bid, description=description)
             listing.category = category if (category != None) else 'No category'
-            listing.image
+            listing.image = image_url if (image_url != None) else 'Blank'
 
-
+"""
+Finish passing objects to SQL
+"""
 
 def login_view(request):
     if request.method == "POST":
