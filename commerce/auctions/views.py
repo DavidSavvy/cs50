@@ -30,7 +30,7 @@ def create(request):
             })
         else:
             listing = Listing.objects.create(title=title, bid=bid, description=description)
-            (listing.category = category) if category != none 
+            (listing.category = category) if (category != None) else listing.category = 
 
 
 
