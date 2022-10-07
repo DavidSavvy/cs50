@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import User
+from .models import *
 
 
 def index(request):
@@ -29,7 +29,10 @@ def create(request):
                 "success": "false"
             })
         else:
-            
+            listing = Listing.objects.create(title=title, bid=bid, description=description)
+            (listing.category = category) if category != none 
+
+
 
 def login_view(request):
     if request.method == "POST":
