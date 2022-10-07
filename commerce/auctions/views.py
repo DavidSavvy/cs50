@@ -3,7 +3,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 from .models import *
 
@@ -37,6 +37,7 @@ def create(request):
 Finish passing objects to SQL
 """
 
+@csrf_protect
 def login_view(request):
     if request.method == "POST":
 
