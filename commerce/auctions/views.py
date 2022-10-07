@@ -3,6 +3,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import User
 
@@ -10,10 +11,12 @@ from .models import User
 def index(request):
     return render(request, "auctions/index.html")
 
+@csrf_exempt
 def create(request):
     if request.method == "GET":
         return render(request, "auctions/create_listing.html")
     else:
+        
         return HttpResponse('test')
 
 def login_view(request):
