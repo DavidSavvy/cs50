@@ -20,6 +20,7 @@ class Bid(models.Model):
     bidder = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_bids')
 
 class Comment(models.Model):
+    comment_id = models.
     text = models.TextField()
     commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_comments')
     comment_item = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='item_comments')
