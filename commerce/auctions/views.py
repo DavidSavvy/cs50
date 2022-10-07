@@ -17,7 +17,12 @@ def create(request):
         return render(request, "auctions/create_listing.html")
     else:
         title = request.POST['title']
-        return HttpResponse(query_dict)
+        category = request.POST['category']
+        image_url = request.POST['image_url']
+        bid = request.POST['bid']
+        description = request.POST['description']
+        if not [title, bid, description]:
+            return HttpResponse('fail')
 
 def login_view(request):
     if request.method == "POST":
