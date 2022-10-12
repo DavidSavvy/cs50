@@ -19,7 +19,7 @@ def create(request):
         })
     else:
         title = request.POST['title']
-        selected_category = request.POST['category']
+        category = request.POST['category']
         image_url = request.POST['image_url']
         bid = request.POST['bid']
         description = request.POST['description']
@@ -30,8 +30,8 @@ def create(request):
             })
         else:
             listing = Listing.objects.create(listing_title=title, price=bid, description=description, lister=request.user)
-            (listing.category = selected_category) if (category != None) else 'No category'
-            (listing.image_url = image_url) if (image_url != None) else 'Blank'
+            listing.category = selected_category if (category != None) else 'No category'
+            listing.image_url = image_url if (image_url != None) else 'Blank'
 
 @csrf_protect
 def login_view(request):
