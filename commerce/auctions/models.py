@@ -16,11 +16,13 @@ class Listing(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
 class Bid(models.Model):
+    bid_id = models.AutoField(primary_key=True)
     bid = models.DecimalField(decimal_places=2, max_digits=10)
     bid_item = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='item_bids')
     bidder = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_bids')
 
 class Comment(models.Model):
+    comment_id = models.AutoField(primary_key=True)
     text = models.TextField()
     commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_comments')
     comment_item = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='item_comments')
