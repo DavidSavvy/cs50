@@ -75,3 +75,7 @@ class Migration(migrations.Migration):
             ],
         ),
     ]
+
+"""
+fucking table sucks fix it
+"""
