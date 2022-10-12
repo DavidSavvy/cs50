@@ -34,6 +34,8 @@ def create(request):
             listing.image_url = image_url if (image_url != None) else 'Blank'
             listing.save()
 
+            return render
+
 @csrf_protect
 def login_view(request):
     if request.method == "POST":
