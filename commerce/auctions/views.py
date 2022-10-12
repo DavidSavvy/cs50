@@ -33,10 +33,6 @@ def create(request):
             listing.category = category if (category != None) else 'No category'
             listing.image_url = image_url if (image_url != None) else 'Blank'
 
-"""
-Finish passing objects to SQL
-"""
-
 @csrf_protect
 def login_view(request):
     if request.method == "POST":
