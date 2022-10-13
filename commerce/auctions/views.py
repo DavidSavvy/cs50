@@ -33,7 +33,7 @@ def create(request):
         else:
             listing = Listing.objects.create(listing_title=title, price=bid, description=description, lister=request.user)
             listing.category = category if (category != None) else 'No category'
-            listing.image_url = image_url if (image_url != None) else 'Blank'
+            listing.image_url = image_url if (image_url != None) else None
             listing.save()
 
             return index(request)
