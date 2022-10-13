@@ -9,14 +9,19 @@
             margin-bottom: 18px;
             border-radius: 5px;
         }
+        .grid {
+            display: grid;
+            grid-template-columns: 25% 50% 25%;
+        }
+
     </style>
-    
+
     <h2>Active Listings</h2>
 
 
     {% for listing in listings %}
 
-        <div id="listing">{{ listing.listing_title }}</div>
+        <div class="grid" id="listing">{{ listing.listing_title }}</div>
 
     {% endfor %}
 
