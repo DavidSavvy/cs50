@@ -11,7 +11,11 @@
         }
         .grid {
             display: grid;
+            border-style: solid;
             grid-template-columns: 25% 50% 25%;
+        }
+        .grid > div {
+            text-align: center;
         }
 
     </style>
@@ -21,7 +25,14 @@
 
     {% for listing in listings %}
 
-        <div class="grid" id="listing">{{ listing.listing_title }}</div>
+        <div class="grid" id="listing">
+            <div>
+
+            </div>
+            <div>
+                
+            </div>
+        </div>
 
     {% endfor %}
 
