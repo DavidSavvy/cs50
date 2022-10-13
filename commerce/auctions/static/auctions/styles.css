@@ -2,7 +2,7 @@ body {
     padding: 10px;
 }
 
-.listing {
+#listing {
     border-style: solid;
     border-width: 2px;
     height: 250px;
