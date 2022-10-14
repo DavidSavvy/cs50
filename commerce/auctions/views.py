@@ -36,7 +36,7 @@ def create(request):
             listing.image_url = image_url if (image_url != None) else None
             listing.save()
 
-            return HttpResponseRedirect(reverse())
+            return HttpResponseRedirect(reverse('index'))
 
 @csrf_protect
 def login_view(request):
