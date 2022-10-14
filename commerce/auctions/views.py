@@ -36,7 +36,7 @@ def create(request):
             listing.image_url = image_url if (image_url != None) else None
             listing.save()
 
-            index(request)
+            return index(request)
 
 @csrf_protect
 def login_view(request):
