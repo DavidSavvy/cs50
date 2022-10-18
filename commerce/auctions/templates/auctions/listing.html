@@ -3,5 +3,7 @@
 {% block body %}
 
     <h1>Listing: {{ listing.listing_title }}</h1>
-
+    <img src="{{ listing.image_url }}" height="300px" style="margin-top: 20px; margin-bottom: 20px;">
+    <p>{{ listing.description }}</p>
+    <h2>${{ listing.price }}</h2>
 {% endblock %}

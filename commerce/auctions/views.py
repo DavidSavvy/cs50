@@ -90,8 +90,8 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-def listing(request, title):
+def listing(request, id):
     if request.method == "GET":
         return render(request, "auctions/listing.html", {
-            "listing": Listing.objects.get(listing_title=title)
+            "listing": Listing.objects.get(listing_id=id)
         })
