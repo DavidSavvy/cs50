@@ -38,7 +38,7 @@ def create(request):
 
             return HttpResponseRedirect(reverse('index'))
 
-@csrf_exempt
+@csrf_protect
 def bid(request):
     pass
 
