@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
+from django.contrib.auth.decorators import login_required
 
 from .models import *
 
@@ -41,7 +42,7 @@ def create(request):
 @csrf_exempt
 @login_required
 def bid(request, id):
-
+    return HttpResponseRedirect(reverse('index'))
 
 @csrf_exempt
 def login_view(request):
