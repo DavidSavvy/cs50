@@ -42,6 +42,10 @@ def create(request):
 @csrf_exempt
 @login_required
 def bid(request, id):
+    bid_amt = request.POST["bid"]
+    bid_item = Listing.objects.get(listing_id=id)
+    bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
+    bid_obj.save()
     return HttpResponseRedirect(reverse('index'))
 
 @csrf_exempt
