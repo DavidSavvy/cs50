@@ -44,6 +44,9 @@ def create(request):
 def bid(request, id):
     bid_amt = request.POST["bid"]
     bid_item = Listing.objects.get(listing_id=id)
+    og_price = bid_item.price
+
+    if bid_amt >= og_price and 
     bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
     bid_obj.save()
     return HttpResponseRedirect(reverse('index'))
