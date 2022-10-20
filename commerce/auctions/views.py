@@ -118,5 +118,6 @@ def register(request):
 def listing(request, id):
     if request.method == "GET":
         return render(request, "auctions/listing.html", {
-            "listing": Listing.objects.get(listing_id=id)
+            "listing": Listing.objects.get(listing_id=id),
+            "is_bid_valid": True
         })
