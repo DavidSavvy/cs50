@@ -50,6 +50,8 @@ def bid(request, id):
         bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
         bid_obj.save()
         return HttpResponseRedirect(reverse('index'))
+    else:
+        
 
 """
 finish bid, check highest, set
