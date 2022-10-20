@@ -51,7 +51,12 @@ def bid(request, id):
         bid_obj.save()
         return HttpResponseRedirect(reverse('index'))
     else:
-        
+        return render(request, "auctions/listing.html", {
+            "listing": Listing.objects.get(listing_id=id)
+            "is_bid_valid": False
+        })
+
+
 
 """
 finish bid, check highest, set
