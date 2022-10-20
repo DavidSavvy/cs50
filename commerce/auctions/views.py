@@ -45,7 +45,7 @@ def bid(request, id):
     bid_amt = float(request.POST["bid"])
     bid_item = Listing.objects.get(listing_id=id)
     og_price = bid_item.price
-    current_bid = Bid.objects.order_by("bid")[0].bid
+    current_bid = Bid.objects.order_by("-bid")[0].bid
     if bid_amt >= og_price and bid_amt > current_bid:
         bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
         bid_obj.save()
