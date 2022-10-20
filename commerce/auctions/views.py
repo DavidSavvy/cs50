@@ -46,10 +46,15 @@ def bid(request, id):
     bid_item = Listing.objects.get(listing_id=id)
     og_price = bid_item.price
 
-    if bid_amt >= og_price and 
+    if bid_amt >= og_price and #check if highest bid
     bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
     bid_obj.save()
     return HttpResponseRedirect(reverse('index'))
+
+"""
+finish bid, check highest, set
+need to get list of current bids
+"""
 
 @csrf_exempt
 def login_view(request):
