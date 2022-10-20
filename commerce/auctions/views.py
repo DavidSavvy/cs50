@@ -52,7 +52,7 @@ def bid(request, id):
         return HttpResponseRedirect(reverse('index'))
     else:
         return render(request, "auctions/listing.html", {
-            "listing": Listing.objects.get(listing_id=id)
+            "listing": Listing.objects.get(listing_id=id),
             "is_bid_valid": False
         })
 
