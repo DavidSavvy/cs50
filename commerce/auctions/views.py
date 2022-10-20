@@ -45,11 +45,11 @@ def bid(request, id):
     bid_amt = request.POST["bid"]
     bid_item = Listing.objects.get(listing_id=id)
     og_price = bid_item.price
-    current_bids = 
-    if bid_amt >= og_price and #check if highest bid
-    bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
-    bid_obj.save()
-    return HttpResponseRedirect(reverse('index'))
+    current_bid = Bid.objects.order_by("bid")[0]
+    if bid_amt >= og_price and bid_amt >= current_bid:
+        bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
+        bid_obj.save()
+        return HttpResponseRedirect(reverse('index'))
 
 """
 finish bid, check highest, set
