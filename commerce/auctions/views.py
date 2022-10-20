@@ -42,7 +42,7 @@ def create(request):
 @csrf_exempt
 @login_required
 def bid(request, id):
-    bid_amt = request.POST["bid"]
+    bid_amt = float(request.POST["bid"])
     bid_item = Listing.objects.get(listing_id=id)
     og_price = bid_item.price
     current_bid = Bid.objects.order_by("bid")[0]
