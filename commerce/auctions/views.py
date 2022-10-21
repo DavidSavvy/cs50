@@ -112,12 +112,14 @@ def listing(request, id):
     if request.method == "GET":
         listing = Listing.objects.get(listing_id=id)
         bid_count = Bid.objects.filter(bit_item=listing).count()
+        current_bidder = False
         if bid_count > 0:
             if Bid.objects.filter(bid_item=listing).order_by("-bid")[0].bidder == request.user:
-                pass
-        else:
-            
+                current_bidder = True
+
         return render(request, "auctions/listing.html", {
             "listing": listing,
-            "is_bid_valid": True
+            "is_bid_valid": True,
+            "bid_count": bid_count,
+            "current_bidder": current_bidder
         })
