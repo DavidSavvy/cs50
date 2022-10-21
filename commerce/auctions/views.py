@@ -51,10 +51,13 @@ def bid(request, id):
         bid_obj.save()
         return HttpResponseRedirect(reverse('index'))
     else:
+        return listing(request, id)
+        """
         return render(request, "auctions/listing.html", {
             "listing": Listing.objects.get(listing_id=id),
             "is_bid_valid": False
         })
+        """
 
 @csrf_exempt
 def login_view(request):
