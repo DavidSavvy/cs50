@@ -110,7 +110,9 @@ def register(request):
 
 def listing(request, id):
     if request.method == "GET":
+        listing = Listing.objects.get(listing_id=id)
+        bid_count = Bid.objects.filter(bit_item=listing).count()
         return render(request, "auctions/listing.html", {
-            "listing": Listing.objects.get(listing_id=id),
+            "listing": listing,
             "is_bid_valid": True
         })
