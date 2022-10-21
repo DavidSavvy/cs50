@@ -111,7 +111,7 @@ def register(request):
 def listing(request, id):
     if request.method == "GET":
         listing = Listing.objects.get(listing_id=id)
-        bid_count = Bid.objects.filter(bit_item=listing).count()
+        bid_count = Bid.objects.filter(bid_item=listing).count()
         current_bidder = False
         if bid_count > 0:
             if Bid.objects.filter(bid_item=listing).order_by("-bid")[0].bidder == request.user:
