@@ -45,8 +45,7 @@ def bid(request, id):
     bid_amt = float(request.POST["bid"])
     bid_item = Listing.objects.get(listing_id=id)
     og_price = bid_item.price
-
-    current_bid = Bid.objects.filter(bid_item=bid_item).order_by("-bid")[0].bid if 
+    current_bid = Bid.objects.filter(bid_item=bid_item).order_by("-bid")[0].bid if Bid.objects.filter(bid_item=bid_item) else False
     if bid_amt >= og_price and bid_amt > current_bid:
         bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
         bid_obj.save()
@@ -56,13 +55,6 @@ def bid(request, id):
             "listing": Listing.objects.get(listing_id=id),
             "is_bid_valid": False
         })
-
-
-
-"""
-finish bid, check highest, set
-need to get list of current bids
-"""
 
 @csrf_exempt
 def login_view(request):
