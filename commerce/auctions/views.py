@@ -82,7 +82,7 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
-@csrf_protect
+@csrf_exempt
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -117,6 +117,7 @@ def listing(request, id, is_bid_valid=True):
         if Bid.objects.filter(bid_item=listing).order_by("-bid")[0].bidder == request.user:
             current_bidder = True
 
+    is_lister = False
     (is_lister := True) if listing.lister == request.user else False
     return render(request, "auctions/listing.html", {
         "listing": listing,
