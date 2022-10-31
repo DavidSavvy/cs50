@@ -117,8 +117,7 @@ def listing(request, id, is_bid_valid=True):
         if Bid.objects.filter(bid_item=listing).order_by("-bid")[0].bidder == request.user:
             current_bidder = True
 
-    is_lister = False
-    (is_lister = True) if listing.lister == request.user else False
+    (is_lister := True) if listing.lister == request.user else False
     return render(request, "auctions/listing.html", {
         "listing": listing,
         "is_lister": is_lister,
