@@ -51,7 +51,7 @@ def bid(request, id):
         bid_obj.save()
         return HttpResponseRedirect(reverse('index'))
     else:
-        return listing(request, id)
+        return listing(request, id, is_bid_valid=False)
 
 @csrf_exempt
 def login_view(request):
@@ -105,7 +105,7 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-def listing(request, id):
+def listing(request, id, is_bid_valid):
     listing = Listing.objects.get(listing_id=id)
     bid_count = Bid.objects.filter(bid_item=listing).count()
     current_bidder = False
@@ -115,7 +115,7 @@ def listing(request, id):
 
     return render(request, "auctions/listing.html", {
         "listing": listing,
-        "is_bid_valid": True,
+        "is_bid_valid": is_bid_valid,
         "bid_count": bid_count,
         "current_bidder": current_bidder
     })
