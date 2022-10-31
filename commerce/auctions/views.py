@@ -52,18 +52,6 @@ def bid(request, id):
         return HttpResponseRedirect(reverse('index'))
     else:
         return listing(request, id)
-        """
-        return render(request, "auctions/listing.html", {
-            "listing": Listing.objects.get(listing_id=id),
-            "is_bid_valid": False
-        })
-        """
-
-"""
-fix post error:
-bid is attempting to post req before calling listing(request, id)
-listing() accepts get req
-"""
 
 @csrf_exempt
 def login_view(request):
@@ -118,17 +106,16 @@ def register(request):
         return render(request, "auctions/register.html")
 
 def listing(request, id):
-    if request.method == "GET":
-        listing = Listing.objects.get(listing_id=id)
-        bid_count = Bid.objects.filter(bid_item=listing).count()
-        current_bidder = False
-        if bid_count > 0:
-            if Bid.objects.filter(bid_item=listing).order_by("-bid")[0].bidder == request.user:
-                current_bidder = True
+    listing = Listing.objects.get(listing_id=id)
+    bid_count = Bid.objects.filter(bid_item=listing).count()
+    current_bidder = False
+    if bid_count > 0:
+        if Bid.objects.filter(bid_item=listing).order_by("-bid")[0].bidder == request.user:
+            current_bidder = True
 
-        return render(request, "auctions/listing.html", {
-            "listing": listing,
-            "is_bid_valid": True,
-            "bid_count": bid_count,
-            "current_bidder": current_bidder
-        })
+    return render(request, "auctions/listing.html", {
+        "listing": listing,
+        "is_bid_valid": True,
+        "bid_count": bid_count,
+        "current_bidder": current_bidder
+    })
