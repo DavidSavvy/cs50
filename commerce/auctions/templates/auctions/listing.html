@@ -2,6 +2,9 @@
 
 {% block body %}
 
+    {% if is_lister %}
+    blah
+    {% endif %}
     <h1>Listing: {{ listing.listing_title }}</h1>
 
     {% if listing.image_url %}
