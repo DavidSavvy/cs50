@@ -59,6 +59,12 @@ def bid(request, id):
         })
         """
 
+"""
+fix post error:
+bid is attempting to post req before calling listing(request, id)
+listing() accepts get req
+"""
+
 @csrf_exempt
 def login_view(request):
     if request.method == "POST":
