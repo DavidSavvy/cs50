@@ -39,8 +39,9 @@ def create(request):
 
             return HttpResponseRedirect(reverse('index'))
 
-def delete(request, id):
-    Listing.objects.filter(listing_id=id).delete()
+def close(request, id):
+    
+    #Listing.objects.filter(listing_id=id).delete()
     return index(request)
 
 
