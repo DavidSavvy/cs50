@@ -41,7 +41,7 @@ def create(request):
 
 def close(request, id):
     listing = Listing.objects.get(listing_id=id)
-    bid = listing.item_bids.
+    bid = listing.item_bids.order_by()
     #Listing.objects.filter(listing_id=id).delete()
     return index(request)
 
