@@ -40,7 +40,8 @@ def create(request):
             return HttpResponseRedirect(reverse('index'))
 
 def close(request, id):
-    
+    listing = Listing.objects.get(listing_id=id)
+    bid = listing.item_bids.
     #Listing.objects.filter(listing_id=id).delete()
     return index(request)
 
