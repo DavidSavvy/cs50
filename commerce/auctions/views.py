@@ -43,6 +43,7 @@ def delete(request, id):
     if request.method == "POST":
         
 
+
 @csrf_exempt
 @login_required
 def bid(request, id):
