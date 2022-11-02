@@ -41,7 +41,11 @@ def create(request):
 
 def close(request, id):
     listing = Listing.objects.get(listing_id=id)
-    bid_winner = listing.item_bids.order_by("-bid")[0].bidder
+    bid_winner = None
+    try:
+        bid_winner = listing.item_bids.order_by("-bid")[0].bidder
+    except IndexError:
+        listing.delete()
     return HttpResponse(bid_winner)
     #Listing.objects.filter(listing_id=id).delete()
     return index(request)
