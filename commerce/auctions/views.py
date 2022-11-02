@@ -62,7 +62,8 @@ def bid(request, id):
     if bid_amt >= og_price and bid_amt > current_bid:
         bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
         bid_obj.save()
-        return HttpResponseRedirect(reverse('index'))
+        #return HttpResponseRedirect(reverse('index'))
+        return listing(request, id, is_bid_valid=True)
     else:
         return listing(request, id, is_bid_valid=False)
 

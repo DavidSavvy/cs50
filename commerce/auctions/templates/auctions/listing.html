@@ -12,7 +12,7 @@
     <h2>
         ${{ listing.price }}
         {% if bid_count > 0 %}
-        <span style="color: grey">(${{ current_bid }})</span>
+        <span style="color: grey">(${{ current_bid.bid }})</span>
         {% endif %}
     </h2>
     <form method="POST" action="/listings/{{ listing.listing_id }}/bid" style="margin-top: 15px;">
