@@ -122,8 +122,9 @@ def listing(request, id, is_bid_valid=True):
     listing = Listing.objects.get(listing_id=id)
     bid_count = Bid.objects.filter(bid_item=listing).count()
     current_bidder = False
-    current_bid = Bid.objects.filter(bid_item=listing).order_by("-bid")[0]
+    current_bid = None
     if bid_count > 0:
+        current_bid = Bid.objects.filter(bid_item=listing).order_by("-bid")[0]
         if current_bid.bidder == request.user:
             current_bidder = True
 
@@ -135,5 +136,5 @@ def listing(request, id, is_bid_valid=True):
         "is_bid_valid": is_bid_valid,
         "bid_count": bid_count,
         "current_bidder": current_bidder,
-        "current_bid": current_bid.bid
+        "current_bid": current_bid
     })
