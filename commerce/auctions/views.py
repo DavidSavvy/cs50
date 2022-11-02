@@ -40,8 +40,8 @@ def create(request):
             return HttpResponseRedirect(reverse('index'))
 
 def delete(request, id):
-    if request.method == "POST":
-        Listing.objects.filter(listing_id=id).delete()
+    Listing.objects.filter(listing_id=id).delete()
+    return index(request)
 
 
 

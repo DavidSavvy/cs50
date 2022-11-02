@@ -40,7 +40,7 @@
     </div>
 
     {% if is_lister %}
-    <form action="/{{ listing.id }}/delete">
+    <form action="/listings/{{ listing.listing_id }}/delete">
         <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Delete Listing">
     </form>
     {% endif %}
