@@ -39,6 +39,10 @@ def create(request):
 
             return HttpResponseRedirect(reverse('index'))
 
+def delete(request, id):
+    if request.method == "POST":
+        
+
 @csrf_exempt
 @login_required
 def bid(request, id):
