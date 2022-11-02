@@ -2,9 +2,6 @@
 
 {% block body %}
 
-    {% if is_lister %}
-    blah
-    {% endif %}
     <h1>Listing: {{ listing.listing_title }}</h1>
 
     {% if listing.image_url %}
@@ -41,6 +38,14 @@
             </li>
         </ul>
     </div>
-    <button style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Place Bid">
+
+    {% if is_lister %}
+    <button style="margin-top: 15px;" class="btn btn-primary" type="submit">Delete Listing</button>
+    {% endif %}
+
+    <!--
+        make delete button
+    -->
+
 {% endblock %}
 
