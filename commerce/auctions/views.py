@@ -119,7 +119,7 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-def listing(request, id, is_bid_valid=True):
+def listing(request, id, is_bid_valid=True, is_bid_open=True):
     listing = Listing.objects.get(listing_id=id)
     bid_count = Bid.objects.filter(bid_item=listing).count()
     current_bidder = False
@@ -137,5 +137,6 @@ def listing(request, id, is_bid_valid=True):
         "is_bid_valid": is_bid_valid,
         "bid_count": bid_count,
         "current_bidder": current_bidder,
-        "current_bid": current_bid
+        "current_bid": current_bid,
+        "is_bid_open": is_bid_open
     })
