@@ -41,7 +41,8 @@ def create(request):
 
 def delete(request, id):
     if request.method == "POST":
-        
+        Listing.objects.delete(listing_id=id)
+
 
 
 @csrf_exempt
