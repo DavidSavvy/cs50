@@ -48,7 +48,7 @@ def close(request, id):
         current_listing.delete()
 
     if bid_winner:
-        return listing(request, id, is_bid_open=False)
+        current_listing.is_listing_open = False
     #Listing.objects.filter(listing_id=id).delete()
 
 
