@@ -1,8 +1,13 @@
 {% extends 'auctions/layout.html' %}
 
 {% block body %}
-    
-    <h1>Listing: {{ listing.listing_title }}</h1>
+
+    <h1>
+        Listing: {{ listing.listing_title }}
+        {% if not listing.is_listing_open %}
+        <span style="color: red;">(Closed)</span>
+        {% endif %}
+    </h1>
 
     {% if listing.image_url %}
         <img src="{{ listing.image_url }}" height="300px" style="margin-top: 20px; margin-bottom: 20px;">
@@ -15,6 +20,10 @@
         <span style="color: grey">(${{ current_bid.bid }})</span>
         {% endif %}
     </h2>
+    {% if not listing.is_listing_open %}
+    Bid Winner: {{ current_bid. }}
+    {% endif %}
+    {% if listing.is_listing_open %}
     <form method="POST" action="/listings/{{ listing.listing_id }}/bid" style="margin-top: 15px;">
         {% csrf_token %}
         <h7>{{ bid_count }} bid(s) so far.
@@ -30,6 +39,7 @@
         <br>
         <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Place Bid">
     </form>
+    {% endif %}
     <div style="margin-top: 15px;">
         <h3>Details</h3>
         <ul>
@@ -46,7 +56,7 @@
 
     {% if is_lister %}
     <form action="/listings/{{ listing.listing_id }}/close">
-        <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Delete Listing">
+        <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Close Listing">
     </form>
     {% endif %}
 
