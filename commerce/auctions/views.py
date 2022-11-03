@@ -51,10 +51,6 @@ def close(request, id):
         current_listing.is_listing_open = False
         current_listing.save()
         return listing(request, id)
-    #Listing.objects.filter(listing_id=id).delete()
-
-
-
 
 @csrf_exempt
 @login_required
