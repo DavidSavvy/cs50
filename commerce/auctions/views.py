@@ -49,6 +49,7 @@ def close(request, id):
 
     if bid_winner:
         current_listing.is_listing_open = False
+        current_listing.save()
         return listing(request, id)
     #Listing.objects.filter(listing_id=id).delete()
 
@@ -126,7 +127,7 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-def listing(request, id, is_bid_valid=True, is_bid_open=True):
+def listing(request, id, is_bid_valid=True):
     listing = Listing.objects.get(listing_id=id)
     bid_count = Bid.objects.filter(bid_item=listing).count()
     current_bidder = False
@@ -144,6 +145,5 @@ def listing(request, id, is_bid_valid=True, is_bid_open=True):
         "is_bid_valid": is_bid_valid,
         "bid_count": bid_count,
         "current_bidder": current_bidder,
-        "current_bid": current_bid,
-        "is_bid_open": is_bid_open
+        "current_bid": current_bid
     })
