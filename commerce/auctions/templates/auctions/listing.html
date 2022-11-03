@@ -1,7 +1,7 @@
 {% extends 'auctions/layout.html' %}
 
 {% block body %}
-    {% if not is_bid_open %}
+    {% if not listing.is_listing_open %}
     bruh?
     {% endif %}
     <h1>Listing: {{ listing.listing_title }}</h1>
