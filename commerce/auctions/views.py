@@ -48,7 +48,7 @@ def close(request, id):
         listing.delete()
     return HttpResponse(bid_winner)
     #Listing.objects.filter(listing_id=id).delete()
-    return index(request)
+    
 
 
 
