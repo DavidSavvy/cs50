@@ -40,15 +40,17 @@ def create(request):
             return HttpResponseRedirect(reverse('index'))
 
 def close(request, id):
-    listing = Listing.objects.get(listing_id=id)
+    current_listing = Listing.objects.get(listing_id=id)
     bid_winner = None
     try:
-        bid_winner = listing.item_bids.order_by("-bid")[0].bidder
+        bid_winner = current_listing.item_bids.order_by("-bid")[0].bidder
     except IndexError:
-        listing.delete()
-    return HttpResponse(bid_winner)
+        current_listing.delete()
+
+    if bid_winner:
+        return listing(request, id, is_bid_open=False)
     #Listing.objects.filter(listing_id=id).delete()
-    
+
 
 
 
