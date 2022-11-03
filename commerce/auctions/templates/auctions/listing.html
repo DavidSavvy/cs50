@@ -21,7 +21,10 @@
         {% endif %}
     </h2>
     {% if not listing.is_listing_open %}
-    Bid Winner: {{ current_bid.bidder }}
+    <h2 style="color: blue;">
+        Bid Winner: {{ current_bid.bidder }}
+    </h2>
+
     {% endif %}
     {% if listing.is_listing_open %}
     <form method="POST" action="/listings/{{ listing.listing_id }}/bid" style="margin-top: 15px;">
