@@ -64,8 +64,9 @@
     </form>
     {% endif %}
 
-    <form>
-        <input type="text">
+
+    <form action="/listings/{{ listing.listing_id }}/comment" style="margin-top: 25px;">
+        <input type="text" style="border-style: solid; border-width: 1px; border-radius: 4px; height: 35px; width: 500px">
         <input type="submit" class="btn btn-primary" value="Post Comment">
     </form>
 
