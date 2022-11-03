@@ -54,6 +54,13 @@ def close(request, id):
 
 @csrf_exempt
 @login_required
+def comment(request, id):
+    current_listing = Listing.objects.get(listing_id=id)
+    current_comment = Comment.objects.create(text=request.comment_text, commenter=request.user, comment_item=current_listing)
+    return HttpResponse("ha")
+
+@csrf_exempt
+@login_required
 def bid(request, id):
     try:
         bid_amt = float(request.POST["bid"])
