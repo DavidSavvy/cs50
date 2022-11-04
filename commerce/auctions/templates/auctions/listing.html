@@ -97,7 +97,7 @@
     <ul style="list-style-type: none; padding-left: 1px; padding-top: 15px;">
         {% for comment in comment_list.all %}
         <li class="grid" style="margin-bottom: 8px;">
-            <div class="grid_div">
+            <div class="grid_div" style="width: 500px">
                 {{ comment.text }}
                 <br>
                 <span style="color: grey; font-size: 13px;">-{{ comment.commenter}}</span>
