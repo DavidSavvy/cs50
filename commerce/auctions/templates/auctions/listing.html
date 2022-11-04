@@ -73,6 +73,7 @@
         {% for comment in comment_list.all %}
         <li>
             {{ comment.text }}
+            {{ comment.commenter}}
         </li>
         {% endfor %}
     </ul>
