@@ -133,6 +133,7 @@ def register(request):
 
 def listing(request, id, is_bid_valid=True):
     listing = Listing.objects.get(listing_id=id)
+    comments = listing.item_comments
     bid_count = Bid.objects.filter(bid_item=listing).count()
     current_bidder = False
     current_bid = None
@@ -149,7 +150,8 @@ def listing(request, id, is_bid_valid=True):
         "is_bid_valid": is_bid_valid,
         "bid_count": bid_count,
         "current_bidder": current_bidder,
-        "current_bid": current_bid
+        "current_bid": current_bid,
+        "comment_list": comments
     })
 
 """
