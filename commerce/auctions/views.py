@@ -58,7 +58,7 @@ def comment(request, id):
     comment_text = request.GET["comment_text"]
     current_listing = Listing.objects.get(listing_id=id)
     current_comment = Comment.objects.create(text=comment_text, commenter=request.user, comment_item=current_listing)
-    return HttpResponseRedirect(reverse('listing'), id=id)
+    return HttpResponseRedirect(reverse('listing'), kwargs={'id': id})
 
 @csrf_exempt
 @login_required
