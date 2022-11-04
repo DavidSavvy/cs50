@@ -95,8 +95,8 @@
     </form>
     <ul style="list-style-type: none;">
         {% for comment in comment_list.all %}
-        <li>
-            <div style="grid">
+        <li class="grid">
+            <div class="grid_div">
                 {{ comment.text }}
                 {{ comment.commenter}}
             </div>
