@@ -18,6 +18,7 @@
             text-align: left;
             outline: 1px solid grey;
             padding: 10px;
+            border-radius: 4px;
         }
         ul.grid {
             display: grid;
@@ -93,12 +94,13 @@
         <input type="text" name="comment_text" style="border-style: solid; border-width: 1px; border-radius: 4px; height: 35px; width: 500px">
         <input type="submit" class="btn btn-primary" value="Post Comment">
     </form>
-    <ul style="list-style-type: none;">
+    <ul style="list-style-type: none; padding-left: 1px; padding-top: 15px;">
         {% for comment in comment_list.all %}
-        <li class="grid">
+        <li class="grid" style="margin-bottom: 8px;">
             <div class="grid_div">
                 {{ comment.text }}
-                {{ comment.commenter}}
+                <br>
+                <span style="color: grey; font-size: 13px;">-{{ comment.commenter}}</span>
             </div>
 
         </li>
