@@ -55,7 +55,7 @@ def close(request, id):
 @csrf_exempt
 @login_required
 def comment(request, id):
-    comment_text = request.POST["comment_text"]
+    comment_text = request.POST["comment_text"][0]
     current_listing = Listing.objects.get(listing_id=id)
     current_comment = Comment.objects.create(text=comment_text, commenter=request.user, comment_item=current_listing)
     current_comment.save()
