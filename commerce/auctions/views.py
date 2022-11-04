@@ -58,7 +58,7 @@ def comment(request, id):
     comment_text = request.GET["comment_text"]
     current_listing = Listing.objects.get(listing_id=id)
     current_comment = Comment.objects.create(text=comment_text, commenter=request.user, comment_item=current_listing)
-    return HttpResponse("ha")
+    return listing(request, id)
 
 @csrf_exempt
 @login_required
@@ -154,7 +154,3 @@ def listing(request, id, is_bid_valid=True):
         "comment_list": comments
     })
 
-"""
-finish comment system
-pass into listing function??
-"""
