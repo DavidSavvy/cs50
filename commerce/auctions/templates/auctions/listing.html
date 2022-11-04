@@ -70,7 +70,7 @@
         <input type="submit" class="btn btn-primary" value="Post Comment">
     </form>
     <ul>
-        {% for comment in listing.item_comments %}
+        {% for comment in comment_list.all %}
         <li>
             {{ comment.text }}
         </li>
