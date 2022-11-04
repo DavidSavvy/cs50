@@ -155,5 +155,4 @@ def listing(request, id, is_bid_valid=True):
 """
 finish comment system
 pass into listing function??
-fuck you
 """
