@@ -151,3 +151,9 @@ def listing(request, id, is_bid_valid=True):
         "current_bidder": current_bidder,
         "current_bid": current_bid
     })
+
+"""
+finish comment system
+pass into listing function??
+fuck you
+"""
