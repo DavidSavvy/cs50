@@ -35,9 +35,9 @@
     </h1>
 
     <form action="/listings/{{ listing.listing_id }}/watchlist">
-        <input type="submit">
+        <input type="submit" value="Watchlist" class="btn btn-primary">
     </form>
-    
+
     {% if listing.image_url %}
         <img src="{{ listing.image_url }}" height="300px" style="margin-top: 20px; margin-bottom: 20px;">
     {% endif %}
