@@ -82,6 +82,10 @@ def bid(request, id):
     else:
         return listing(request, id, is_bid_valid=False)
 
+@login_required
+def watchlist(request, id):
+    pass
+
 @csrf_exempt
 def login_view(request):
     if request.method == "POST":
