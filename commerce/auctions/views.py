@@ -159,7 +159,3 @@ def listing(request, id, is_bid_valid=True):
 
 
 
-"""
-comment trying to get req
-change to post req
-"""
