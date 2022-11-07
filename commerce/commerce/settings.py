@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS=['https://davidsavvy-code50-103088195-pjqpqwgp7fr9v-8000.preview.app.github.dev/']
 
 # Application definition
 
