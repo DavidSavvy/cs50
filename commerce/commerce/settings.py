@@ -27,9 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
-CSRF_COOKIE_SECURE=False
-CSRF_TRUSTED_ORIGINS=['https://davidsavvy-code50-103088195-pjqpqwgp7fr9v-8000.preview.app.github.dev/']
+CSRF_TRUSTED_ORIGINS=['https://davidsavvy-code50-103088195-pjqpqwgp7fr9v-8000.preview.app.github.dev']
 
 # Application definition
 
