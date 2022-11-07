@@ -157,3 +157,9 @@ def listing(request, id, is_bid_valid=True):
         "comment_list": comments
     })
 
+
+
+"""
+comment trying to get req
+change to post req
+"""
