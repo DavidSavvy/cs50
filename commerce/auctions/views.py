@@ -102,7 +102,7 @@ def login_view(request):
     else:
         return render(request, "auctions/login.html")
 
-
+@csrf_exempt
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
