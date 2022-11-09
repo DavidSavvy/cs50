@@ -84,9 +84,12 @@ def bid(request, id):
 
 @login_required
 def watchlist(request, id):
-    current_listing = Listing.objects.get(listing_id=id)
-    current_listing.watch_list_users.add(request.user)
-    return listing(request, id)
+    if request.method == "POST":
+        current_listing = Listing.objects.get(listing_id=id)
+        current_listing.watch_list_users.add(request.user)
+        return listing(request, id)
+    else:
+        pass
 
 @csrf_protect
 def login_view(request):
