@@ -89,7 +89,7 @@ def watchlist(request, id=-1):
         current_listing.watch_list_users.add(request.user)
         return listing(request, id)
     else:
-        pass
+        return render(request, "auctions/watchlist.html")
 
 @csrf_protect
 def login_view(request):
