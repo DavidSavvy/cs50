@@ -14,7 +14,7 @@ def index(request):
         "listings": Listing.objects.all()
     })
 
-@csrf_exempt
+@csrf_protect
 def create(request):
     if request.method == "GET":
         return render(request, "auctions/create_listing.html", {
@@ -52,7 +52,7 @@ def close(request, id):
         current_listing.save()
         return listing(request, id)
 
-@csrf_exempt
+@csrf_protect
 @login_required
 def comment(request, id):
     if request.method == "POST":
@@ -63,7 +63,7 @@ def comment(request, id):
         current_comment.save()
         return HttpResponseRedirect(reverse('listing', kwargs={'id': id}))
 
-@csrf_exempt
+@csrf_protect
 @login_required
 def bid(request, id):
     try:
@@ -86,7 +86,7 @@ def bid(request, id):
 def watchlist(request, id):
     pass
 
-@csrf_exempt
+@csrf_protect
 def login_view(request):
     if request.method == "POST":
 
@@ -106,12 +106,12 @@ def login_view(request):
     else:
         return render(request, "auctions/login.html")
 
-@csrf_exempt
+@csrf_protect
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
-@csrf_exempt
+@csrf_protect
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
