@@ -3,7 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    pass
+    watch_list = models.ForeignKey(Listing)
 
 class Listing(models.Model):
     listing_id = models.AutoField(primary_key=True)
