@@ -3,7 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    watch_list = models.ForeignKey(Listing)
+    watch_list = models.ManyToManyField(Listing)
 
 class Listing(models.Model):
     listing_id = models.AutoField(primary_key=True)
