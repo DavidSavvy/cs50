@@ -84,7 +84,7 @@ def bid(request, id):
 
 @login_required
 def watchlist(request, id):
-    pass
+    
 
 @csrf_protect
 def login_view(request):
