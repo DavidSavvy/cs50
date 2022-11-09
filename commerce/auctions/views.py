@@ -83,7 +83,7 @@ def bid(request, id):
         return listing(request, id, is_bid_valid=False)
 
 @login_required
-def watchlist(request, id):
+def watchlist(request, id=-1):
     if request.method == "POST":
         current_listing = Listing.objects.get(listing_id=id)
         current_listing.watch_list_users.add(request.user)
