@@ -4,6 +4,9 @@
 <h1>Watchlist</h1>
 <ul>
     {% for watchlist_item in watch_list %}
+    <li>
+        <a href="listings/{{ watchlist_item.listing_id }}">{{ watchlist_item.listing_title }}</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}

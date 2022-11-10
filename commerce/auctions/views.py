@@ -89,7 +89,7 @@ def watchlist(request, id=-1):
         current_listing.watch_list_users.add(request.user)
         return listing(request, id)
     else:
-        watch_list = list(request.user.watch_list)
+        watch_list = request.user.watch_list.all()
         return render(request, "auctions/watchlist.html", {
             "watch_list": watch_list
         })
