@@ -93,9 +93,7 @@ def watchlist(request, id=-1):
         return render(request, "auctions/watchlist.html", {
             "watch_list": watch_list.all()
         })
-"""
-watch_list is a ManyRelatedManager, not iterable, fix
-"""
+
 
 @csrf_protect
 def login_view(request):
