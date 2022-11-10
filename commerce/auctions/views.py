@@ -95,6 +95,9 @@ def watchlist(request, id=-1):
             "watch_list": watch_list
         })
 
+"""
+id set default -1, does not request proper object
+"""
 
 @csrf_protect
 def login_view(request):
