@@ -89,9 +89,9 @@ def watchlist(request, id=-1):
         current_listing.watch_list_users.add(request.user)
         return listing(request, id)
     else:
-        watch_list = request.user.watch_list.all()
+        watch_list = request.user.watch_list
         return render(request, "auctions/watchlist.html", {
-            "watch_list": watch_list
+            "watch_list": watch_list.all()
         })
 """
 watch_list is a ManyRelatedManager, not iterable, fix
