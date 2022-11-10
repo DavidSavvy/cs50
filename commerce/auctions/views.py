@@ -87,6 +87,7 @@ def watchlist(request, id=-1):
     if request.method == "POST":
         current_listing = Listing.objects.get(listing_id=id)
         current_listing.watch_list_users.add(request.user)
+        current_listing.save()
         return listing(request, id)
     else:
         watch_list = request.user.watch_list
