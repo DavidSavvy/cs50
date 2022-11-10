@@ -89,10 +89,13 @@ def watchlist(request, id=-1):
         current_listing.watch_list_users.add(request.user)
         return listing(request, id)
     else:
-        watch_list = Listing.watch_list_users.filter()
+        watch_list = list(request.user.watch_list)
         return render(request, "auctions/watchlist.html", {
             "watch_list": watch_list
         })
+"""
+watch_list is a ManyRelatedManager, not iterable, fix
+"""
 
 @csrf_protect
 def login_view(request):
