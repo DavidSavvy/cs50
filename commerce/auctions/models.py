@@ -15,7 +15,7 @@ class Listing(models.Model):
     image_url = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     is_listing_open = models.BooleanField(default=True)
-    watch_list_users = models.ManyToManyField(User, related_name='watch_list')
+    watch_list_users = models.ManyToManyField(User, related_name='watch_list', unique=False)
 
 class Bid(models.Model):
     bid_id = models.AutoField(primary_key=True)
