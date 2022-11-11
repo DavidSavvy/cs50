@@ -63,6 +63,9 @@ def comment(request, id):
         current_comment.save()
         return HttpResponseRedirect(reverse('listing', kwargs={'id': id}))
 
+def categories(request):
+    
+
 @csrf_protect
 @login_required
 def bid(request, id):
