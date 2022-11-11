@@ -65,7 +65,8 @@ def comment(request, id):
 
 def categories(request):
     listings = Listing.objects.values_list("category")
-    return HttpResponse(type(listings))
+    print(type(listings))
+    return HttpResponse(listings)
 
 
 @csrf_protect
