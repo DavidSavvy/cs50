@@ -70,6 +70,8 @@ def categories(request):
         "category_list": categories
     })
 
+def category(request):
+
 
 @csrf_protect
 @login_required
