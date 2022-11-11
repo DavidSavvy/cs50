@@ -14,6 +14,11 @@ def index(request):
         "listings": Listing.objects.all()
     })
 
+def index_modified(request, category):
+    return render(request, "auctions/index.html", {
+        "listings": Listing.objects.filter(category=category)
+    })
+
 @csrf_protect
 def create(request):
     if request.method == "GET":
