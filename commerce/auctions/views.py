@@ -64,7 +64,8 @@ def comment(request, id):
         return HttpResponseRedirect(reverse('listing', kwargs={'id': id}))
 
 def categories(request):
-    listings = Listing.objects.
+    listings = Listing.objects.all()("category")
+    return HttpResponse(listings)
 
 
 @csrf_protect
