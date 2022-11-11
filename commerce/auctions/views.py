@@ -64,9 +64,11 @@ def comment(request, id):
         return HttpResponseRedirect(reverse('listing', kwargs={'id': id}))
 
 def categories(request):
-    listings = {category for category in set(Listing.objects.values_list("category")) if category != }
-    print(type(listings))
-    return HttpResponse(listings)
+    #listings = {category for category in set(Listing.objects.values_list("category")) if category != }
+    categories = set(Listing.objects.values_list("category").exclude(category=''))
+    return render(request, "auctions/categories.html", {
+        "category_list": categories
+    })
 
 
 @csrf_protect

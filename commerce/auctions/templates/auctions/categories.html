@@ -3,9 +3,9 @@
 {% block body %}
 <h1>Categories</h1>
 <ul>
-    {% for watchlist_item in watch_list %}
+    {% for category in category_list %}
     <li>
-        
+        {{ category[0] }}
     </li>
     {% endfor %}
 </ul>
