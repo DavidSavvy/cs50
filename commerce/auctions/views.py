@@ -14,10 +14,12 @@ def index(request):
         "listings": Listing.objects.all()
     })
 
+
 def index_modified(request, category):
     return render(request, "auctions/index.html", {
         "listings": Listing.objects.filter(category=category)
     })
+
 
 @csrf_protect
 def create(request):
@@ -44,6 +46,7 @@ def create(request):
 
             return HttpResponseRedirect(reverse('index'))
 
+
 def close(request, id):
     current_listing = Listing.objects.get(listing_id=id)
     bid_winner = None
@@ -57,6 +60,7 @@ def close(request, id):
         current_listing.save()
         return listing(request, id)
 
+
 @csrf_protect
 @login_required
 def comment(request, id):
@@ -67,6 +71,7 @@ def comment(request, id):
         current_comment = Comment.objects.create(text=comment_text, commenter=request.user, comment_item=current_listing)
         current_comment.save()
         return HttpResponseRedirect(reverse('listing', kwargs={'id': id}))
+
 
 def categories(request):
     #listings = {category for category in set(Listing.objects.values_list("category")) if category != }
@@ -95,6 +100,7 @@ def bid(request, id):
     else:
         return listing(request, id, is_bid_valid=False)
 
+
 @login_required
 def watchlist(request, id=-1):
     if request.method == "POST":
@@ -107,6 +113,7 @@ def watchlist(request, id=-1):
         return render(request, "auctions/watchlist.html", {
             "watch_list": watch_list
         })
+
 
 @login_required
 def remove_watchlist(request):
@@ -141,10 +148,12 @@ def login_view(request):
     else:
         return render(request, "auctions/login.html")
 
+
 @csrf_protect
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
+
 
 @csrf_protect
 def register(request):
@@ -172,6 +181,7 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/register.html")
+
 
 def listing(request, id, is_bid_valid=True):
     listing = Listing.objects.get(listing_id=id)
