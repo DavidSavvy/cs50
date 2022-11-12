@@ -23,6 +23,7 @@ def index_modified(request, category):
 
 @csrf_protect
 def create(request):
+    # renders creation page
     if request.method == "GET":
         return render(request, "auctions/create_listing.html", {
             "success": "true"
@@ -34,6 +35,7 @@ def create(request):
         bid = request.POST['bid']
         description = request.POST['description']
 
+        
         if not title or not bid or not description:
             return render(request, "auctions/create_listing.html", {
                 "success": "false"
@@ -50,11 +52,14 @@ def create(request):
 def close(request, id):
     current_listing = Listing.objects.get(listing_id=id)
     bid_winner = None
+
+    # tries to find bid winner, if no winner, listing is permanently deleted
     try:
         bid_winner = current_listing.item_bids.order_by("-bid")[0].bidder
     except IndexError:
         current_listing.delete()
 
+    # case for if there is a bid winner, loads a modified listing page
     if bid_winner:
         current_listing.is_listing_open = False
         current_listing.save()
@@ -65,7 +70,6 @@ def close(request, id):
 @login_required
 def comment(request, id):
     if request.method == "POST":
-
         comment_text = request.POST["comment_text"]
         current_listing = Listing.objects.get(listing_id=id)
         current_comment = Comment.objects.create(text=comment_text, commenter=request.user, comment_item=current_listing)
@@ -74,6 +78,7 @@ def comment(request, id):
 
 
 def categories(request):
+    # lists all categories of listings
     #listings = {category for category in set(Listing.objects.values_list("category")) if category != }
     categories = set(Listing.objects.values_list("category").exclude(category=''))
     return render(request, "auctions/categories.html", {
@@ -84,14 +89,18 @@ def categories(request):
 @csrf_protect
 @login_required
 def bid(request, id):
+    # makes sure entered bid is valid
     try:
         bid_amt = float(request.POST["bid"])
     except ValueError:
         return listing(request, id, is_bid_valid=False)
 
+    # finds current highest bid
     bid_item = Listing.objects.get(listing_id=id)
     og_price = bid_item.price
     current_bid = Bid.objects.filter(bid_item=bid_item).order_by("-bid")[0].bid if Bid.objects.filter(bid_item=bid_item) else False
+
+    # checks whether bid is valid compared to previous bids
     if bid_amt >= og_price and bid_amt > current_bid:
         bid_obj = Bid.objects.create(bid=bid_amt, bid_item=bid_item, bidder=request.user)
         bid_obj.save()
@@ -104,11 +113,13 @@ def bid(request, id):
 @login_required
 def watchlist(request, id=-1):
     if request.method == "POST":
+        # for adding to the watchlist
         current_listing = Listing.objects.get(listing_id=id)
         current_listing.watch_list_users.add(request.user)
         current_listing.save()
         return listing(request, id)
     else:
+        # GET for accessing watchlist
         watch_list = request.user.watch_list.all()
         return render(request, "auctions/watchlist.html", {
             "watch_list": watch_list
@@ -189,13 +200,17 @@ def listing(request, id, is_bid_valid=True):
     bid_count = Bid.objects.filter(bid_item=listing).count()
     current_bidder = False
     current_bid = None
+
+    # make sure there are bids and whether user is the current one
     if bid_count > 0:
         current_bid = Bid.objects.filter(bid_item=listing).order_by("-bid")[0]
         if current_bid.bidder == request.user:
             current_bidder = True
 
+    # check whether current user is the lister
     is_lister = False
     (is_lister := True) if listing.lister == request.user else False
+
     return render(request, "auctions/listing.html", {
         "listing": listing,
         "is_lister": is_lister,
