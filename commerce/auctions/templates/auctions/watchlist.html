@@ -2,22 +2,19 @@
 
 {% block body %}
 <h1>Watchlist</h1>
-<ul>
-    {% for watchlist_item in watch_list %}
-    <li>
-        <div>
-            <a style="display: inline-block; margin-right: 12px;" href="../../{% url 'listing' id=watchlist_item.listing_id %}">{{ watchlist_item.listing_title }}</a>
-            <form style="display: inline-block" method="post" action="/remove_watchlist">
-                {% csrf_token %}
-                <button type="submit" name="watchlist_item" value="{{ watchlist_item.listing_id }}" class="btn btn-secondary py-0" style="height: 22px; padding: 3 3;">
-                Remove
-                </button>
-            </form>
-        </div>
-
-
-
-    </li>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for watchlist_item in watch_list %}
+            <li>
+                <div>
+                    <a style="display: inline-block; margin-right: 12px;" href="../../{% url 'listing' id=watchlist_item.listing_id %}">{{ watchlist_item.listing_title }}</a>
+                    <form style="display: inline-block" method="post" action="/remove_watchlist">
+                        {% csrf_token %}
+                        <button type="submit" name="watchlist_item" value="{{ watchlist_item.listing_id }}" class="btn btn-secondary py-0" style="height: 22px; padding: 3 3;">
+                        Remove
+                        </button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

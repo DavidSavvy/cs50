@@ -1,7 +1,6 @@
 {% extends 'auctions/layout.html' %}
 
 {% block body %}
-
     <style>
         #listing {
             border-style: solid;
@@ -30,7 +29,7 @@
     <h1>
         Listing: {{ listing.listing_title }}
         {% if not listing.is_listing_open %}
-        <span style="color: red;">(Closed)</span>
+            <span style="color: red;">(Closed)</span>
         {% endif %}
     </h1>
 
@@ -47,32 +46,32 @@
     <h2>
         ${{ listing.price }}
         {% if bid_count > 0 %}
-        <span style="color: grey">(${{ current_bid.bid }})</span>
+            <span style="color: grey">(${{ current_bid.bid }})</span>
         {% endif %}
     </h2>
     {% if not listing.is_listing_open %}
-    {% if current_bid.bidder == user %}
-    <h2 style="color: blue;">
-        You are the bid winner.
-    </h2>
-    {% endif %}
+        {% if current_bid.bidder == user %}
+            <h2 style="color: blue;">
+                You are the bid winner.
+            </h2>
+        {% endif %}
     {% endif %}
     {% if listing.is_listing_open %}
-    <form method="POST" action="/listings/{{ listing.listing_id }}/bid" style="margin-top: 15px;">
-        {% csrf_token %}
-        <h7>{{ bid_count }} bid(s) so far.
-            {% if current_bidder == True %}
-            Your bid is the current bid.
+        <form method="POST" action="/listings/{{ listing.listing_id }}/bid" style="margin-top: 15px;">
+            {% csrf_token %}
+            <h7>{{ bid_count }} bid(s) so far.
+                {% if current_bidder == True %}
+                    Your bid is the current bid.
+                {% endif %}
+            </h7>
+            <br>
+            <input style="border-style: solid; border-width: 1px; border-radius: 4px; height: 35px;" type="number" step="0.01" name="bid">
+            {% if not is_bid_valid %}
+                <div style="color: red; height: 5px;">Invalid bid</div>
             {% endif %}
-        </h7>
-        <br>
-        <input style="border-style: solid; border-width: 1px; border-radius: 4px; height: 35px;" type="number" step="0.01" name="bid">
-        {% if not is_bid_valid %}
-            <div style="color: red; height: 5px;">Invalid bid</div>
-        {% endif %}
-        <br>
-        <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Place Bid">
-    </form>
+            <br>
+            <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Place Bid">
+        </form>
     {% endif %}
     <div style="margin-top: 15px;">
         <h3>Details</h3>
@@ -89,10 +88,10 @@
     </div>
 
     {% if is_lister %}
-    <form action="/listings/{{ listing.listing_id }}/close">
-        {% csrf_token %}
-        <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Close Listing">
-    </form>
+        <form action="/listings/{{ listing.listing_id }}/close">
+            {% csrf_token %}
+            <input style="margin-top: 15px;" class="btn btn-primary" type="submit" value="Close Listing">
+        </form>
     {% endif %}
 
 
@@ -103,17 +102,15 @@
     </form>
     <ul style="list-style-type: none; padding-left: 1px; padding-top: 15px;">
         {% for comment in comment_list.all %}
-        <li class="grid" style="margin-bottom: 8px;">
-            <div class="grid_div" style="width: 500px">
-                {{ comment.text }}
-                <br>
-                <span style="color: grey; font-size: 13px;">-{{ comment.commenter}}</span>
-            </div>
+            <li class="grid" style="margin-bottom: 8px;">
+                <div class="grid_div" style="width: 500px">
+                    {{ comment.text }}
+                    <br>
+                    <span style="color: grey; font-size: 13px;">-{{ comment.commenter}}</span>
+                </div>
 
-        </li>
+            </li>
         {% endfor %}
     </ul>
-
-
 {% endblock %}
 
