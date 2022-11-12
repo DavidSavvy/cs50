@@ -112,7 +112,7 @@ def watchlist(request, id=-1):
 def remove_watchlist(request):
     if request.method == "POST":
         current_id = request.POST["watchlist_item"]
-        current_listing = Listing.objects.get(id=current_id)
+        current_listing = Listing.objects.get(listing_id=current_id)
         current_listing.watch_list_users.remove(request.user)
         current_listing.save()
         watch_list = request.user.watch_list.all()
