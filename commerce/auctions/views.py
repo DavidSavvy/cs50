@@ -111,7 +111,8 @@ def watchlist(request, id=-1):
 @login_required
 def remove_watchlist(request):
     if request.method == "POST":
-        
+        current_item = request.POST["watchlist_item"]
+
 
 @csrf_protect
 def login_view(request):
