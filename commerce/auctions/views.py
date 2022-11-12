@@ -111,7 +111,11 @@ def watchlist(request, id=-1):
 @login_required
 def remove_watchlist(request):
     if request.method == "POST":
-        current_item = request.POST["watchlist_item"]
+        current_id = request.POST["watchlist_item"]
+        current_listing = Listing.objects.get(id=current_id)
+        current_listing.watch_list_users.remove(request.user)
+        current_listing.save()
+        return 
 
 
 @csrf_protect
