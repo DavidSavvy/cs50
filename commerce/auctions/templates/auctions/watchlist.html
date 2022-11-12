@@ -6,7 +6,10 @@
     {% for watchlist_item in watch_list %}
     <li>
         <a href="../../{% url 'listing' id=watchlist_item.listing_id %}">{{ watchlist_item.listing_title }}</a>
-        
+        <form method="post" action="/delete_watchlist">
+            {% csrf_token %}
+            <input type="submit" value="Watchlist" class="btn btn-secondary py-0" style="height: 24px; padding: 3 3;">
+        </form>
     </li>
     {% endfor %}
 </ul>

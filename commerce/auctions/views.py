@@ -108,9 +108,10 @@ def watchlist(request, id=-1):
             "watch_list": watch_list
         })
 
-"""
-id set default -1, does not request proper object
-"""
+@login_required
+def remove_watchlist(request):
+    if request.method == "POST":
+        
 
 @csrf_protect
 def login_view(request):
