@@ -115,7 +115,10 @@ def remove_watchlist(request):
         current_listing = Listing.objects.get(id=current_id)
         current_listing.watch_list_users.remove(request.user)
         current_listing.save()
-        return 
+        watch_list = request.user.watch_list.all()
+        return render(request, "auctions/watchlist.html", {
+            "watch_list": watch_list
+        })
 
 
 @csrf_protect
