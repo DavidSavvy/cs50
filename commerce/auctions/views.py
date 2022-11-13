@@ -35,7 +35,7 @@ def create(request):
         bid = request.POST['bid']
         description = request.POST['description']
 
-        
+        # makes sure user inputs the required fields
         if not title or not bid or not description:
             return render(request, "auctions/create_listing.html", {
                 "success": "false"
