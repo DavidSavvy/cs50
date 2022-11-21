@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#compose').addEventListener('click', compose_email);
 
   // By default, load the inbox
+  console.log("error test2222");
   load_mailbox('inbox');
 });
 
 function compose_email() {
-
+  console.log("error test");
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
@@ -33,8 +34,9 @@ function compose_email() {
     .then(response => response.json())
     .then(result => {
       console.log(result);
+      load_mailbox('sent');
     })
-    load_mailbox('sent');
+
   };
 
 }
