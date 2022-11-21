@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function compose_email() {
-  console.log("fail");
+
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
@@ -19,12 +19,12 @@ function compose_email() {
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
-  document.querySelector('#compose-body').value = 'dsfsdf';
+  document.querySelector('#compose-body').value = '';
 
   document.querySelector('#compose-form').onsubmit = () => {
     console.log("success");
   };
-  console.log("fail");
+  
 }
 
 function load_mailbox(mailbox) {
