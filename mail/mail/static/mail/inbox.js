@@ -34,10 +34,11 @@ function compose_email() {
     .then(response => response.json())
     .then(result => {
       console.log(result);
-      load_mailbox('sent');
+
     })
 
   };
+  load_mailbox('sent');
 
 }
 
