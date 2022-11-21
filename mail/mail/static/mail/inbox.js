@@ -40,12 +40,11 @@ function compose_email() {
     })
 
   };
+
+  console.log("?", success);
   if (success == true) {
     console.log("green");
   }
-
-
-
 
 }
 
