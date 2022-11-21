@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('bruh');
-  window.alert("Hello\nHow are you?");
+
   // Use buttons to toggle between views
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function compose_email() {
-
+  console.log("fail");
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
@@ -20,7 +19,7 @@ function compose_email() {
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
-  document.querySelector('#compose-body').value = '';
+  document.querySelector('#compose-body').value = 'dsfsdf';
 
   document.querySelector('#compose-form').onsubmit = () => {
     console.log("success");
