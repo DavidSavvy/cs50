@@ -21,7 +21,9 @@ function compose_email() {
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 
-  document.querySelector('#compose-form').onsubmit = console.log("success");
+  document.querySelector('#compose-form').onsubmit = () => {
+    console.log("success");
+  };
 }
 
 function load_mailbox(mailbox) {
