@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log('bruh');
+  window.alert("Hello\nHow are you?");
   // Use buttons to toggle between views
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
