@@ -35,14 +35,15 @@ function compose_email() {
     .then(response => response.json())
     .then(result => {
       success = true;
-      console.log(result);
+      console.log(success);
 
     })
 
   };
-  if (success === true) {
+  if (success == true) {
     load_mailbox('sent');
   }
+
 
 
 
