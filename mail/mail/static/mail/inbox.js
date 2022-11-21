@@ -23,7 +23,7 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 
   var success = false;
-  document.querySelector('#compose-form').onsubmit = () => {
+  document.querySelector('#compose-form').addEventListener('submit', = () => {
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
@@ -39,7 +39,7 @@ function compose_email() {
 
     })
 
-  };
+  });
 
   console.log("?", success);
   if (success == true) {
