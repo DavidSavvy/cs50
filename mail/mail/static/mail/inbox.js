@@ -33,12 +33,17 @@ function compose_email() {
     })
     .then(response => response.json())
     .then(result => {
+      mailbox();
       console.log(result);
 
     })
 
   };
-  load_mailbox('sent');
+  
+  function mailbox() {
+    load_mailbox('sent');
+  }
+
 
 }
 
