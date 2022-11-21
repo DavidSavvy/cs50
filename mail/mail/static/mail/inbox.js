@@ -22,10 +22,7 @@ function compose_email() {
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 
-  function mailbox() {
-    load_mailbox('sent');
-  }
-
+  let success = false;
   document.querySelector('#compose-form').onsubmit = () => {
     fetch('/emails', {
       method: 'POST',
@@ -37,12 +34,15 @@ function compose_email() {
     })
     .then(response => response.json())
     .then(result => {
-      mailbox();
+      success = true;
       console.log(result);
 
     })
 
   };
+  if (success === true) {
+    load_mailbox('sent');
+  }
 
 
 
