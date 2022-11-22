@@ -34,12 +34,13 @@ function compose_email() {
     .then(result => {
       success = true;
       console.log(result);
-      if (result.keys()[0] === "error") {
-        alert("bruh");
+      if (Object.keys(result)[0] === "error") {
+        throw new error();
       }
       load_mailbox('sent');
 
     })
+    .catch (error => alert("Invalid email"))
 
     return false;
   };
