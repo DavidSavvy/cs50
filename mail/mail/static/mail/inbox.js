@@ -34,6 +34,9 @@ function compose_email() {
     .then(result => {
       success = true;
       console.log(result);
+      if (result.keys()[0] === "error") {
+        alert("bruh");
+      }
       load_mailbox('sent');
 
     })
