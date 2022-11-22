@@ -2,6 +2,6 @@ textarea {
     min-height: 400px;
 }
 
-#emails-view > div {
+div > div {
     border-style: solid;
 }
