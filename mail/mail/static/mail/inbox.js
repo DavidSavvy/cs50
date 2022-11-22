@@ -68,7 +68,7 @@ function load_mailbox(mailbox) {
       if (mailbox === "sent"){
         child.innerHTML = email["recipients"];
       } else {
-        child.innterHTML = email["sender"];
+        child.innerHTML = email["sender"];
       }
 
       child.style.borderStyle = "solid";
