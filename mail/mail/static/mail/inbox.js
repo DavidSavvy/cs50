@@ -39,7 +39,9 @@ function compose_email() {
       load_mailbox('sent');
 
     })
-    .catch 
+    .catch(error => {
+      alert("bruh");
+    })
     return false;
   };
 
