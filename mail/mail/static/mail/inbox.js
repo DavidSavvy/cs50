@@ -65,6 +65,7 @@ function load_mailbox(mailbox) {
     emails.forEach((email) => {
       child = document.createElement("div");
       child.innerHTML = email;
+      child.style.border-style = "solid";
       document.querySelector('#emails-view').append(child);
     })
     console.log(emails);
