@@ -64,7 +64,8 @@ function load_mailbox(mailbox) {
   .then(emails => {
     emails.forEach((email) => {
       child = document.createElement("div");
-      document.querySelector('#emails-view').append(child)
+      child.innerHTML = email;
+      document.querySelector('#emails-view').append(child);
     })
     console.log(emails);
   })
