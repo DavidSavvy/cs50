@@ -20,8 +20,9 @@ function compose_email() {
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 
-  var success = false;
+  // POST email using API when form is submitted
   document.querySelector('#compose-form').onsubmit = () => {
+    // See API details
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
@@ -32,8 +33,8 @@ function compose_email() {
     })
     .then(response => response.json())
     .then(result => {
-      success = true;
       console.log(result);
+      // Sends error 
       if (Object.keys(result)[0] === "error") {
         throw new error();
       }
@@ -42,6 +43,7 @@ function compose_email() {
     })
     .catch (error => alert("Invalid email"))
 
+    // Prevents page refresh
     return false;
   };
 
