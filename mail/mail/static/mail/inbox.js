@@ -59,7 +59,7 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
 
-  fetch('/emails/sent')
+  fetch('/emails/{0}'.format(mailbox))
   .then(response => response.json())
   .then(emails => {
     console.log(emails);
