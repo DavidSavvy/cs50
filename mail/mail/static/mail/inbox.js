@@ -39,7 +39,7 @@ function compose_email() {
       after_post();
 
     })
-
+    return false;
   });
 
   function after_post() {
