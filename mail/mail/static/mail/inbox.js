@@ -36,15 +36,19 @@ function compose_email() {
     .then(result => {
       success = true;
       console.log(success);
-      load_mailbox('sent')
+      after_post();
 
     })
 
   });
 
-  console.log("?", success);
-  if (success == true) {
-    console.log("green");
+  function after_post() {
+    console.log("?", success);
+    if (success == true) {
+      console.log("green");
+      load_mailbox('sent');
+    }
+
   }
 
 }
