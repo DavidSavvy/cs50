@@ -66,6 +66,7 @@ function load_mailbox(mailbox) {
       child = document.createElement("div");
       child.innerHTML = email;
       child.style.borderStyle = "solid";
+      child.style.height = "50px";
       document.querySelector('#emails-view').append(child);
     })
     console.log(emails);
