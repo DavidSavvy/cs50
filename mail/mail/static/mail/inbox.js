@@ -62,7 +62,7 @@ function load_mailbox(mailbox) {
   fetch(`/emails/${mailbox}`)
   .then(response => response.json())
   .then(emails => {
-    emails.forEach(() => {
+    emails.forEach((email) => {
       child = document.createElement("div");
       parent = document.getElementById('#emails-view');
       parent.appendChild(child);
