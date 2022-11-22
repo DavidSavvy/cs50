@@ -62,5 +62,6 @@ function load_mailbox(mailbox) {
 /*
 Next:
 Get emails a json
-
+Render a new div for each email
+div background white if unread, grey if read
 */
