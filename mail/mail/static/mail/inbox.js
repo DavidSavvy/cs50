@@ -35,7 +35,7 @@ function compose_email() {
     .then(response => response.json())
     .then(result => {
       success = true;
-      console.log(success);
+      console.log(response);
       load_mailbox('sent');
 
     })
