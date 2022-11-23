@@ -90,6 +90,8 @@ function load_mailbox(mailbox) {
       child.onclick = () => {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
+
+        
       }
     })
     console.log(emails);
