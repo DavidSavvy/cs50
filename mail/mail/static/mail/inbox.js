@@ -88,7 +88,11 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(child);
 
 
-      
+      const fromTag = document.querySelector('#from').innerHTML;
+      const toTag = document.querySelector('#to').innerHTML;
+      const subjectTag = document.querySelector('#subject').innerHTML;
+      const timestampTag = document.querySelector('#timestamp').innerHTML;
+      const bodyTag = document.querySelector('#body').innerHTML;
       child.onclick = () => {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
