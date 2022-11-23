@@ -92,6 +92,14 @@ function load_mailbox(mailbox) {
 
 
       child.onclick = () => {
+
+        fetch(`/emails/${email["id"]}`, {
+          method: 'PUT',
+          body: JSON.stringify({
+            read: true
+          })
+        })
+
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
