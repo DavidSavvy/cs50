@@ -91,7 +91,7 @@ function load_mailbox(mailbox) {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
-        
+        document.querySelector('#from')
       }
     })
     console.log(emails);
