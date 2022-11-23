@@ -66,7 +66,7 @@ function load_mailbox(mailbox) {
       child = document.createElement("div");
 
       if (mailbox === "sent"){
-        child.innerHTML = email["recipients"];
+        child.innerHTML = `${email["recipients"]} ${email["subject"]}`;
       } else {
         child.innerHTML = email["sender"];
       }
@@ -81,8 +81,5 @@ function load_mailbox(mailbox) {
 }
 
 /*
-Next:
-Get emails a json
-Render a new div for each email
-div background white if unread, grey if read
+Finish DOM manipulation for elements
 */
