@@ -58,25 +58,28 @@ function load_mailbox(mailbox) {
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
-
+  // Fetches list of emails based on mailbox inputted
   fetch(`/emails/${mailbox}`)
   .then(response => response.json())
   .then(emails => {
     emails.forEach((email) => {
       child = document.createElement("div");
 
+      // Changes display if mailbox chosen is "sent"
       if (mailbox === "sent"){
         child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["recipients"]}</span> ${email["subject"]} <span style="float: right; margin-right: 10px;">${email["timestamp"]}</span>`;
       } else {
         child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["sender"]}</span> ${email["subject"]} <span style="float: right; margin-right: 10px;">${email["timestamp"]}</span>`;
       }
 
+      // Checks if email has been read or not
       if (email["read"] === true) {
-        child.style.background = "grey";
+        child.style.background = "lightgrey";
       } else {
         child.style.background = "white";
       }
 
+      // Div styling
       child.style.borderStyle = "solid";
       child.style.borderWidth = "thin";
       child.style.height = "40px";
@@ -85,6 +88,8 @@ function load_mailbox(mailbox) {
     })
     console.log(emails);
   })
+
+  
 
 }
 
