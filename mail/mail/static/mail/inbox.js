@@ -68,12 +68,19 @@ function load_mailbox(mailbox) {
       if (mailbox === "sent"){
         child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["recipients"]}</span> ${email["subject"]} <span style="float: right; margin-right: 10px;">${email["timestamp"]}</span>`;
       } else {
-        child.innerHTML = email["sender"];
+        child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["sender"]}</span> ${email["subject"]} <span style="float: right; margin-right: 10px;">${email["timestamp"]}</span>`;
+      }
+
+      if (email["read"]) {
+        child.style.background = "grey";
+      } else {
+        child.style.background = "white";
       }
 
       child.style.borderStyle = "solid";
       child.style.borderWidth = "thin";
       child.style.height = "40px";
+      child.style.paddingTop = "5px";
       document.querySelector('#emails-view').append(child);
     })
     console.log(emails);
@@ -81,6 +88,3 @@ function load_mailbox(mailbox) {
 
 }
 
-/*
-Finish DOM manipulation for elements
-*/
