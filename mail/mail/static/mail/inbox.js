@@ -71,7 +71,7 @@ function load_mailbox(mailbox) {
         child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["sender"]}</span> ${email["subject"]} <span style="float: right; margin-right: 10px;">${email["timestamp"]}</span>`;
       }
 
-      if (email["read"]) {
+      if (email["read"] === true) {
         child.style.background = "grey";
       } else {
         child.style.background = "white";
