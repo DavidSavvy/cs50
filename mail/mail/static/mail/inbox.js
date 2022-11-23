@@ -93,6 +93,14 @@ function load_mailbox(mailbox) {
 
       child.onclick = () => {
 
+        // Removes reply button if user is looking at sent email
+        if (mailbox === "sent"){
+          document.querySelector('#reply').style.display = 'none';
+        } else {
+          document.querySelector('#reply').style.display = 'block';
+        }
+
+        // Marks an email read
         fetch(`/emails/${email["id"]}`, {
           method: 'PUT',
           body: JSON.stringify({
