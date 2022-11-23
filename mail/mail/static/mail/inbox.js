@@ -89,7 +89,7 @@ function load_mailbox(mailbox) {
     console.log(emails);
   })
 
-  
+  document.querySelectorAll('div').addEventListener('click', () => load_mailbox('inbox'));
 
 }
 
