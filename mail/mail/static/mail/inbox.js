@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+  const fromTag = document.querySelector('#from').innerHTML;
+  const toTag = document.querySelector('#to').innerHTML;
+  const subjectTag = document.querySelector('#subject').innerHTML;
+  const timestampTag = document.querySelector('#timestamp').innerHTML;
+  const bodyTag = document.querySelector('#body').innerHTML;
+
   // Use buttons to toggle between views
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
@@ -59,6 +65,8 @@ function load_mailbox(mailbox) {
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
+
+
   // Fetches list of emails based on mailbox inputted
   fetch(`/emails/${mailbox}`)
   .then(response => response.json())
@@ -88,14 +96,16 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(child);
 
 
-      const fromTag = document.querySelector('#from').innerHTML;
-      const toTag = document.querySelector('#to').innerHTML;
-      const subjectTag = document.querySelector('#subject').innerHTML;
-      const timestampTag = document.querySelector('#timestamp').innerHTML;
-      const bodyTag = document.querySelector('#body').innerHTML;
+
       child.onclick = () => {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
+
+        document.querySelector('#from').innerHTML = fromTag;
+        document.querySelector('#to').innerHTML = toTag;
+        document.querySelector('#subject').innerHTML = subjectTag;
+        document.querySelector('#timestamp').innerHTML = timestampTag;
+        document.querySelector('#body').innerHTML = bodyTag;
 
         document.querySelector('#from').innerHTML += email["sender"];
         document.querySelector('#to').innerHTML += email["recipients"];
