@@ -1,11 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  const fromTag = document.querySelector('#from').innerHTML;
-  const toTag = document.querySelector('#to').innerHTML;
-  const subjectTag = document.querySelector('#subject').innerHTML;
-  const timestampTag = document.querySelector('#timestamp').innerHTML;
-  const bodyTag = document.querySelector('#body').innerHTML;
-
   // Use buttons to toggle between views
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
@@ -101,18 +95,11 @@ function load_mailbox(mailbox) {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
-        /*
-        document.querySelector('#from').innerHTML = fromTag;
-        document.querySelector('#to').innerHTML = toTag;
-        document.querySelector('#subject').innerHTML = subjectTag;
-        document.querySelector('#timestamp').innerHTML = timestampTag;
-        document.querySelector('#body').innerHTML = bodyTag;
-        */
-        document.querySelector('#from').innerHTML += email["sender"];
-        document.querySelector('#to').innerHTML += email["recipients"];
-        document.querySelector('#subject').innerHTML += email["subject"];
-        document.querySelector('#timestamp').innerHTML += email["timestamp"];
-        document.querySelector('#body').innerHTML += email["body"];
+        document.querySelector('#from').innerHTML = email["sender"];
+        document.querySelector('#to').innerHTML = email["recipients"];
+        document.querySelector('#subject').innerHTML = email["subject"];
+        document.querySelector('#timestamp').innerHTML = email["timestamp"];
+        document.querySelector('#body').innerHTML = email["body"];
       }
     })
     console.log(emails);
