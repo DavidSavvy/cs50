@@ -66,7 +66,7 @@ function load_mailbox(mailbox) {
       child = document.createElement("div");
 
       if (mailbox === "sent"){
-        child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["recipients"]}</span> ${email["subject"]} <span style="text-align: left;">date</span>`;
+        child.innerHTML = `<span style="font-weight: bold; margin: 0px 15px 0px 10px;">${email["recipients"]}</span> ${email["subject"]} <span style="float: right; margin-right: 10px;">${email["timestamp"]}</span>`;
       } else {
         child.innerHTML = email["sender"];
       }
