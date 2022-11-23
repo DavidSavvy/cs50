@@ -87,12 +87,14 @@ function load_mailbox(mailbox) {
       child.style.paddingTop = "5px";
       document.querySelector('#emails-view').append(child);
 
+
+      
       child.onclick = () => {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
         document.querySelector('#from').innerHTML += email["sender"];
-        document.querySelector('#to').innerHTML += email["recipents"];
+        document.querySelector('#to').innerHTML += email["recipients"];
         document.querySelector('#subject').innerHTML += email["subject"];
         document.querySelector('#timestamp').innerHTML += email["timestamp"];
         document.querySelector('#body').innerHTML += email["body"];
