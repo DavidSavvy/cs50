@@ -54,6 +54,7 @@ function load_mailbox(mailbox) {
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
+  document.querySelector('#individual-view').style.display = 'none';
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
@@ -85,11 +86,17 @@ function load_mailbox(mailbox) {
       child.style.height = "40px";
       child.style.paddingTop = "5px";
       document.querySelector('#emails-view').append(child);
+
+      child.onclick = () => {
+        document.querySelector('#emails-view').style.display = 'none';
+        document.querySelector('#individual-view').style.display = 'block';
+      }
     })
     console.log(emails);
+
   })
 
-  document.querySelectorAll('div').addEventListener('click', () => load_mailbox('inbox'));
+
 
 }
 
