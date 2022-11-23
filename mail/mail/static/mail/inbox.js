@@ -101,12 +101,13 @@ function load_mailbox(mailbox) {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
+        /*
         document.querySelector('#from').innerHTML = fromTag;
         document.querySelector('#to').innerHTML = toTag;
         document.querySelector('#subject').innerHTML = subjectTag;
         document.querySelector('#timestamp').innerHTML = timestampTag;
         document.querySelector('#body').innerHTML = bodyTag;
-
+        */
         document.querySelector('#from').innerHTML += email["sender"];
         document.querySelector('#to').innerHTML += email["recipients"];
         document.querySelector('#subject').innerHTML += email["subject"];
