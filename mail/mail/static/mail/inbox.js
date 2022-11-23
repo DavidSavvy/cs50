@@ -91,10 +91,11 @@ function load_mailbox(mailbox) {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
-        document.querySelector('#from').innerHTML += "";
-        document.querySelector('#to').innerHTML += "";
-        document.querySelector('#subject').innerHTML += "";
-        document.querySelector('#timestamp').innerHTML += "";
+        document.querySelector('#from').innerHTML += email["sender"];
+        document.querySelector('#to').innerHTML += email["recipents"];
+        document.querySelector('#subject').innerHTML += email["subject"];
+        document.querySelector('#timestamp').innerHTML += email["timestamp"];
+        document.querySelector('#body').innerHTML += email["body"];
       }
     })
     console.log(emails);
