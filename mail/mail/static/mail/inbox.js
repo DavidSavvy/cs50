@@ -72,6 +72,7 @@ function load_mailbox(mailbox) {
       }
 
       child.style.borderStyle = "solid";
+      child.style.borderWidth = "thin";
       child.style.height = "40px";
       document.querySelector('#emails-view').append(child);
     })
