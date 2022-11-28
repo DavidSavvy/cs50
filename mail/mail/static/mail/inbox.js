@@ -104,6 +104,17 @@ function load_mailbox(mailbox) {
         if (mailbox === "inbox"){
           document.querySelector('#archive').style.display = 'inline-block';
           // Adds archive button functionality
+          document.querySelector('#compose').addEventListener('click', () => {
+            fetch(`/emails/${email["id"]}`, {
+              method: 'PUT',
+              body: JSON.stringify({
+                archived: true
+              })
+            })
+          });
+        }
+
+          /*
           querySelector('#archive').onclick = () => {
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
@@ -112,6 +123,7 @@ function load_mailbox(mailbox) {
               })
             })
           }
+          */
         } else {
           document.querySelector('#archive').style.display = 'none';
         }
