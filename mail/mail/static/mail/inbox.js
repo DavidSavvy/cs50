@@ -103,6 +103,15 @@ function load_mailbox(mailbox) {
         // Adds archive button if user is looking at inbox
         if (mailbox === "inbox"){
           document.querySelector('#archive').style.display = 'inline-block';
+          // Adds archive button functionality
+          querySelector('#archive').onclick = () => {
+            fetch(`/emails/${email["id"]}`, {
+              method: 'PUT',
+              body: JSON.stringify({
+                archived: true
+              })
+            })
+          }
         } else {
           document.querySelector('#archive').style.display = 'none';
         }
@@ -114,27 +123,19 @@ function load_mailbox(mailbox) {
           document.querySelector('#unarchive').style.display = 'none';
         }
 
-        /*
-        // Adds archive button functionality
-        querySelector('#archive').onclick = () => {
-          fetch(`/emails/${email["id"]}`, {
-            method: 'PUT',
-            body: JSON.stringify({
-              archive: true
-            })
-          })
-        }
+
+
 
         // Adds unarchive button functionality
         querySelector('#unarchive').onclick = () => {
           fetch(`/emails/${email["id"]}`, {
             method: 'PUT',
             body: JSON.stringify({
-              archive: false
+              archived: false
             })
           })
         }
-        */
+
 
         // Marks an email read
         fetch(`/emails/${email["id"]}`, {
