@@ -114,7 +114,27 @@ function load_mailbox(mailbox) {
           document.querySelector('#unarchive').style.display = 'none';
         }
 
-        // 
+        /*
+        // Adds archive button functionality
+        querySelector('#archive').onclick = () => {
+          fetch(`/emails/${email["id"]}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+              archive: true
+            })
+          })
+        }
+
+        // Adds unarchive button functionality
+        querySelector('#unarchive').onclick = () => {
+          fetch(`/emails/${email["id"]}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+              archive: false
+            })
+          })
+        }
+        */
 
         // Marks an email read
         fetch(`/emails/${email["id"]}`, {
