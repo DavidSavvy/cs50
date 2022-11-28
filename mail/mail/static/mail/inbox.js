@@ -114,6 +114,8 @@ function load_mailbox(mailbox) {
           document.querySelector('#unarchive').style.display = 'none';
         }
 
+        // 
+
         // Marks an email read
         fetch(`/emails/${email["id"]}`, {
           method: 'PUT',
