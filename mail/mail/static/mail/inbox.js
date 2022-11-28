@@ -122,6 +122,9 @@ function load_mailbox(mailbox) {
 
   })
 
+  /*
+  figure out archiving and unarchiving emails
+  */
 
 
 }
