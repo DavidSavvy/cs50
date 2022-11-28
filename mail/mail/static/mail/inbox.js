@@ -97,7 +97,21 @@ function load_mailbox(mailbox) {
         if (mailbox === "sent"){
           document.querySelector('#reply').style.display = 'none';
         } else {
-          document.querySelector('#reply').style.display = 'block';
+          document.querySelector('#reply').style.display = 'inline-block';
+        }
+
+        // Adds archive button if user is looking at inbox
+        if (mailbox === "inbox"){
+          document.querySelector('#archive').style.display = 'inline-block';
+        } else {
+          document.querySelector('#archive').style.display = 'none';
+        }
+
+        // Adds unarchive button if user is looking at archived emails
+        if (mailbox === "archive"){
+          document.querySelector('#unarchive').style.display = 'inline-block';
+        } else {
+          document.querySelector('#unarchive').style.display = 'none';
         }
 
         // Marks an email read
