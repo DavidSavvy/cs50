@@ -89,8 +89,6 @@ function load_mailbox(mailbox) {
       child.style.paddingTop = "5px";
       document.querySelector('#emails-view').append(child);
 
-
-
       child.onclick = () => {
 
         // Removes reply button if user is looking at sent email
@@ -103,8 +101,9 @@ function load_mailbox(mailbox) {
         // Adds archive button if user is looking at inbox
         if (mailbox === "inbox"){
           document.querySelector('#archive').style.display = 'inline-block';
+
           // Adds archive button functionality
-          document.querySelector('#compose').addEventListener('click', () => {
+          document.querySelector('#archive').addEventListener('click', () => {
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
               body: JSON.stringify({
@@ -112,18 +111,6 @@ function load_mailbox(mailbox) {
               })
             })
           });
-        }
-
-          /*
-          querySelector('#archive').onclick = () => {
-            fetch(`/emails/${email["id"]}`, {
-              method: 'PUT',
-              body: JSON.stringify({
-                archived: true
-              })
-            })
-          }
-          */
         } else {
           document.querySelector('#archive').style.display = 'none';
         }
@@ -131,24 +118,19 @@ function load_mailbox(mailbox) {
         // Adds unarchive button if user is looking at archived emails
         if (mailbox === "archive"){
           document.querySelector('#unarchive').style.display = 'inline-block';
+
           // Adds unarchive button functionality
-          querySelector('#unarchive').onclick = () => {
+          document.querySelector('#unarchive').addEventListener('click', () => {
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
               body: JSON.stringify({
                 archived: false
               })
             })
-          }
+          });
         } else {
           document.querySelector('#unarchive').style.display = 'none';
         }
-
-
-
-
-
-
 
         // Marks an email read
         fetch(`/emails/${email["id"]}`, {
