@@ -90,7 +90,7 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(child);
 
       child.onclick = () => {
-        console.log("test", email);
+        console.log("test", email["id"]);
         // Removes reply button if user is looking at sent email
         if (mailbox === "sent"){
           document.querySelector('#reply').style.display = 'none';
@@ -103,7 +103,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#archive').style.display = 'inline-block';
 
           // Adds archive button functionality
-          document.querySelector('#archive').addEventListener('click', () => {
+          document.querySelector('#archive').addEventListener('keyup', () => {
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
               body: JSON.stringify({
