@@ -117,6 +117,9 @@ function load_mailbox(mailbox) {
           document.querySelector('#archive').style.display = 'none';
         }
 
+        /*
+        put request running too many times? random....
+        */
         // Adds unarchive button if user is looking at archived emails
         if (mailbox === "archive"){
           document.querySelector('#unarchive').style.display = 'inline-block';
