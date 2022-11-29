@@ -111,6 +111,7 @@ function load_mailbox(mailbox) {
               })
             })
           });
+          load_mailbox('inbox')
         } else {
           document.querySelector('#archive').style.display = 'none';
         }
@@ -128,6 +129,7 @@ function load_mailbox(mailbox) {
               })
             })
           });
+          load_mailbox('inbox')
         } else {
           document.querySelector('#unarchive').style.display = 'none';
         }
