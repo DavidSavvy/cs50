@@ -103,7 +103,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#archive').style.display = 'inline-block';
 
           // Adds archive button functionality
-          document.querySelector('#archive').addEventListener('keyup', () => {
+          document.querySelector('#archive').addEventListener('mouseup', () => {
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
               body: JSON.stringify({
@@ -121,7 +121,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#unarchive').style.display = 'inline-block';
 
           // Adds unarchive button functionality
-          document.querySelector('#unarchive').addEventListener('click', () => {
+          document.querySelector('#unarchive').addEventListener('mouseup', () => {
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
               body: JSON.stringify({
