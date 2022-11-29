@@ -90,7 +90,7 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(child);
 
       child.onclick = () => {
-
+        console.log("test", email);
         // Removes reply button if user is looking at sent email
         if (mailbox === "sent"){
           document.querySelector('#reply').style.display = 'none';
