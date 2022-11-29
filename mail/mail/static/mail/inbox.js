@@ -104,6 +104,7 @@ function load_mailbox(mailbox) {
 
           // Adds archive button functionality
           document.querySelector('#archive').addEventListener('mouseup', () => {
+            console.log("inner", email["id"]);
             fetch(`/emails/${email["id"]}`, {
               method: 'PUT',
               body: JSON.stringify({
