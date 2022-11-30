@@ -111,7 +111,7 @@ function load_mailbox(mailbox) {
                 archived: true
               })
             })
-            return false;
+
           });
 
 
@@ -134,7 +134,7 @@ function load_mailbox(mailbox) {
                 archived: false
               })
             })
-            return false;
+
           });
 
 
