@@ -89,6 +89,7 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(child);
 
       child.onclick = () => {
+        id = email["id"];
         console.log("test", email["id"]);
         // Removes reply button if user is looking at sent email
         if (mailbox === "sent"){
@@ -104,7 +105,7 @@ function load_mailbox(mailbox) {
           // Adds archive button functionality
           document.querySelector('#archive').addEventListener('mouseup', () => {
             console.log("inner", email["id"]);
-            fetch(`/emails/${email["id"]}`, {
+            fetch(`/emails/${id}`, {
               method: 'PUT',
               body: JSON.stringify({
                 archived: true
@@ -127,7 +128,7 @@ function load_mailbox(mailbox) {
 
           // Adds unarchive button functionality
           document.querySelector('#unarchive').addEventListener('mouseup', () => {
-            fetch(`/emails/${email["id"]}`, {
+            fetch(`/emails/${id}`, {
               method: 'PUT',
               body: JSON.stringify({
                 archived: false
