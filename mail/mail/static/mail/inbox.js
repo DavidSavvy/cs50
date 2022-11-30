@@ -106,7 +106,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#reply').style.display = 'inline-block';
 
           // Adds reply button functionality
-          document.querySelector('#reply').addEventListener('click', compose_email);
+          document.querySelector('#reply').addEventListener('click', () => {compose_email(email)});
         }
 
         // Adds archive button if user is looking at inbox
