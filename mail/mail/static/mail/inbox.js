@@ -111,7 +111,7 @@ function load_mailbox(mailbox) {
                 archived: true
               })
             })
-            load_mailbox('inbox');
+            return false;
           });
 
         } else {
@@ -133,7 +133,7 @@ function load_mailbox(mailbox) {
                 archived: false
               })
             })
-            load_mailbox('inbox');
+            return false;
           });
 
         } else {
