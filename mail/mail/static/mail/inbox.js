@@ -22,9 +22,9 @@ function compose_email(email = null) {
     document.querySelector('#compose-subject').value = '';
     document.querySelector('#compose-body').value = '';
   } else {
-    document.querySelector('#compose-recipients').value = email['];
-    document.querySelector('#compose-subject').value = '';
-    document.querySelector('#compose-body').value = '';
+    document.querySelector('#compose-recipients').value = email["recipients"];
+    document.querySelector('#compose-subject').value = email["subject"];
+    document.querySelector('#compose-body').value = email["body"];
   }
 
 
@@ -106,7 +106,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#reply').style.display = 'inline-block';
 
           // Adds reply button functionality
-          document.querySelector('#reply').onclick = compose_email(email);
+          document.querySelector('#reply').addEventListener('click', compose_email);
         }
 
         // Adds archive button if user is looking at inbox
