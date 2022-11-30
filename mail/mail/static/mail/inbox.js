@@ -90,7 +90,7 @@ function load_mailbox(mailbox) {
 
       child.onclick = () => {
         const id = email["id"];
-        console.log("test", email["id"]);
+        console.log("test", id);
         // Removes reply button if user is looking at sent email
         if (mailbox === "sent"){
           document.querySelector('#reply').style.display = 'none';
@@ -122,7 +122,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#unarchive').style.display = 'inline-block';
 
           // Adds unarchive button functionality
-          document.querySelector('#unarchive').addEventListener('mouseup', () => {
+          document.querySelector('#unarchive').onclick = () => {
             fetch(`/emails/${id}`, {
               method: 'PUT',
               body: JSON.stringify({
@@ -130,7 +130,7 @@ function load_mailbox(mailbox) {
               })
             })
 
-          });
+          };
         } else {
           document.querySelector('#unarchive').style.display = 'none';
         }
