@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   load_mailbox('inbox');
 });
 
-function compose_email(reply = false) {
+function compose_email(email = null) {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
@@ -99,7 +99,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#reply').style.display = 'inline-block';
 
           // Adds reply button functionality
-          document.querySelector('#reply').onclick = compose_email;
+          document.querySelector('#reply').onclick = compose_email(email);
         }
 
         // Adds archive button if user is looking at inbox
