@@ -22,9 +22,9 @@ function compose_email(email = null) {
     document.querySelector('#compose-subject').value = '';
     document.querySelector('#compose-body').value = '';
   } else {
-    document.querySelector('#compose-recipients').value = email["recipients"];
-    document.querySelector('#compose-subject').value = email["subject"];
-    document.querySelector('#compose-body').value = email["body"];
+    document.querySelector('#compose-recipients').value = email["sender"];
+    document.querySelector('#compose-subject').value = `Re: ${email["subject"]}`;
+    document.querySelector('#compose-body').value = `On ${email['timestamp']}, ${email['sender']} wrote: \n${email["body"]}`;
   }
 
 
