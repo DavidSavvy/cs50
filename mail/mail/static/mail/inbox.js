@@ -24,8 +24,8 @@ function compose_email(email = null) {
   } else {
     document.querySelector('#compose-recipients').value = email["sender"];
     //document.querySelector('#compose-subject').value = `Re: ${email["subject"]}` ? (document.querySelector('#compose-subject').value.slice(0,2) !== 'Re:') : email["subject"];
-    console.log(email['subject'].slice(0,2));
-    (document.querySelector('#compose-subject').value.slice(0,2) != 'Re:') ? (document.querySelector('#compose-subject').value = `Re: ${email["subject"]}`) : (document.querySelector('#compose-subject').value = email["subject"])
+    console.log(email['subject'].slice(0,3));
+    (email['subject'].slice(0,3) != 'Re:') ? (document.querySelector('#compose-subject').value = `Re: ${email["subject"]}`) : (document.querySelector('#compose-subject').value = email["subject"])
     document.querySelector('#compose-body').value = `On ${email['timestamp']}, ${email['sender']} wrote: \n${email["body"]}`;
   }
 
