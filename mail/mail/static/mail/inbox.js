@@ -103,7 +103,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#archive').style.display = 'inline-block';
 
           // Adds archive button functionality
-          document.querySelector('#archive').addEventListener('mouseup', () => {
+          document.querySelector('#archive').onclick = () => {
             console.log("inner", id);
             fetch(`/emails/${id}`, {
               method: 'PUT',
@@ -112,7 +112,7 @@ function load_mailbox(mailbox) {
               })
             })
 
-          });
+          };
         } else {
           document.querySelector('#archive').style.display = 'none';
         }
@@ -129,7 +129,7 @@ function load_mailbox(mailbox) {
                 archived: false
               })
             })
-            
+
           });
         } else {
           document.querySelector('#unarchive').style.display = 'none';
