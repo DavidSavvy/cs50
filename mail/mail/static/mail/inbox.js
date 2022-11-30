@@ -16,10 +16,17 @@ function compose_email(email = null) {
   document.querySelector('#compose-view').style.display = 'block';
   document.querySelector('#individual-view').style.display = 'none';
 
-  // Clear out composition fields
-  document.querySelector('#compose-recipients').value = '';
-  document.querySelector('#compose-subject').value = '';
-  document.querySelector('#compose-body').value = '';
+  // Clear out composition fields or fill if reply
+  if (email === null){
+    document.querySelector('#compose-recipients').value = '';
+    document.querySelector('#compose-subject').value = '';
+    document.querySelector('#compose-body').value = '';
+  } else {
+    document.querySelector('#compose-recipients').value = email['];
+    document.querySelector('#compose-subject').value = '';
+    document.querySelector('#compose-body').value = '';
+  }
+
 
   // POST email using API when form is submitted
   document.querySelector('#compose-form').onsubmit = () => {
