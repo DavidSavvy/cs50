@@ -60,7 +60,6 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
 
-
   // Fetches list of emails based on mailbox inputted
   fetch(`/emails/${mailbox}`)
   .then(response => response.json())
