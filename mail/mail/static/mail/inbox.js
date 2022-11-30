@@ -96,10 +96,10 @@ function load_mailbox(mailbox) {
           document.querySelector('#reply').style.display = 'none';
         } else {
           document.querySelector('#reply').style.display = 'inline-block';
-        }
 
-        // Adds reply button functionality
-        
+          // Adds reply button functionality
+          
+        }
 
         // Adds archive button if user is looking at inbox
         if (mailbox === "inbox"){
