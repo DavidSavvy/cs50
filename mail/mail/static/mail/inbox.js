@@ -14,6 +14,7 @@ function compose_email(reply = false) {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
+  document.querySelector('#individual-view').style.display = 'none';
 
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
@@ -98,7 +99,7 @@ function load_mailbox(mailbox) {
           document.querySelector('#reply').style.display = 'inline-block';
 
           // Adds reply button functionality
-          
+          document.querySelector('#reply').onclick = compose_email;
         }
 
         // Adds archive button if user is looking at inbox
