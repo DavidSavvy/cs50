@@ -89,7 +89,7 @@ function load_mailbox(mailbox) {
       document.querySelector('#emails-view').append(child);
 
       child.onclick = () => {
-        id = email["id"];
+        const id = email["id"];
         console.log("test", email["id"]);
         // Removes reply button if user is looking at sent email
         if (mailbox === "sent"){
@@ -104,7 +104,7 @@ function load_mailbox(mailbox) {
 
           // Adds archive button functionality
           document.querySelector('#archive').addEventListener('mouseup', () => {
-            console.log("inner", email["id"]);
+            console.log("inner", id);
             fetch(`/emails/${id}`, {
               method: 'PUT',
               body: JSON.stringify({
@@ -113,15 +113,10 @@ function load_mailbox(mailbox) {
             })
 
           });
-
-
         } else {
           document.querySelector('#archive').style.display = 'none';
         }
 
-        /*
-        put request running too many times? random....
-        */
         // Adds unarchive button if user is looking at archived emails
         if (mailbox === "archive"){
           document.querySelector('#unarchive').style.display = 'inline-block';
@@ -134,10 +129,7 @@ function load_mailbox(mailbox) {
                 archived: false
               })
             })
-
           });
-
-
         } else {
           document.querySelector('#unarchive').style.display = 'none';
         }
