@@ -96,6 +96,7 @@ function load_mailbox(mailbox) {
       child.style.borderWidth = "thin";
       child.style.height = "40px";
       child.style.paddingTop = "5px";
+      child.style.cursor = "pointer";
       document.querySelector('#emails-view').append(child);
 
       child.onclick = () => {
