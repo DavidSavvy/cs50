@@ -17,11 +17,11 @@ function compose_email(email = null) {
   document.querySelector('#individual-view').style.display = 'none';
 
   // Clear out composition fields or fill if reply
-  if (!email){
-    document.querySelector('#compose-recipients').value = '';
-    document.querySelector('#compose-subject').value = '';
-    document.querySelector('#compose-body').value = '';
-  } else {
+
+  document.querySelector('#compose-recipients').value = '';
+  document.querySelector('#compose-subject').value = '';
+  document.querySelector('#compose-body').value = '';
+  if (email != null){
     document.querySelector('#compose-recipients').value = email["sender"];
     console.log(email['subject'].slice(0,3));
     (email['subject'].slice(0,3) != 'Re:') ? (document.querySelector('#compose-subject').value = `Re: ${email["subject"]}`) : (document.querySelector('#compose-subject').value = email["subject"])
