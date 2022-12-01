@@ -17,7 +17,7 @@ function compose_email(email = null) {
   document.querySelector('#individual-view').style.display = 'none';
 
   // Clear out composition fields or fill if reply
-  if (email == null){
+  if (!email){
     document.querySelector('#compose-recipients').value = '';
     document.querySelector('#compose-subject').value = '';
     document.querySelector('#compose-body').value = '';
