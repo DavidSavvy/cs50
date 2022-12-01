@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
   document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
-  document.querySelector('#compose').addEventListener('click', compose_email);
+  document.querySelector('#compose').addEventListener('click', compose_email());
 
   // By default, load the inbox
   load_mailbox('inbox');
 });
 
 function compose_email(email) {
-  email || email
+  email = email || null;
 
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
@@ -19,7 +19,6 @@ function compose_email(email) {
   document.querySelector('#individual-view').style.display = 'none';
 
   // Clear out composition fields or fill if reply
-
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
