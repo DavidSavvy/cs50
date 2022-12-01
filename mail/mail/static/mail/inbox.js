@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
   document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
-  document.querySelector('#compose').addEventListener('click', compose_email());
+  document.querySelector('#compose').addEventListener('click', () => compose_email());
 
   // By default, load the inbox
   load_mailbox('inbox');
 });
 
-function compose_email(email) {
-  email = email || null;
+function compose_email(email = null) {
+  //email = email || null;
 
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
