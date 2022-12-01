@@ -57,7 +57,6 @@ function compose_email(email = null) {
     // Prevents page refresh
     return false;
   };
-
 }
 
 function load_mailbox(mailbox) {
@@ -162,7 +161,7 @@ function load_mailbox(mailbox) {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
-        // 
+        // Fills email information
         document.querySelector('#from').innerHTML = email["sender"];
         document.querySelector('#to').innerHTML = email["recipients"];
         document.querySelector('#subject').innerHTML = email["subject"];
@@ -171,8 +170,6 @@ function load_mailbox(mailbox) {
       }
     })
     console.log(emails);
-
   })
-
 }
 
