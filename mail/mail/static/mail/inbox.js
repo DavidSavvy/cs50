@@ -18,17 +18,18 @@ function compose_email(email = null) {
   document.querySelector('#compose-view').style.display = 'block';
   document.querySelector('#individual-view').style.display = 'none';
 
-  // Clear out composition fields or fill if reply
+  // Clear out composition fields
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
+
+  // Fill fields if reply
   if (email != null){
     document.querySelector('#compose-recipients').value = email["sender"];
     console.log(email['subject'].slice(0,3));
     (email['subject'].slice(0,3) != 'Re:') ? (document.querySelector('#compose-subject').value = `Re: ${email["subject"]}`) : (document.querySelector('#compose-subject').value = email["subject"])
     document.querySelector('#compose-body').value = `On ${email['timestamp']}, ${email['sender']} wrote: \n${email["body"]}`;
   }
-
 
   // POST email using API when form is submitted
   document.querySelector('#compose-form').onsubmit = () => {
@@ -69,7 +70,6 @@ function load_mailbox(mailbox) {
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
-
   // Fetches list of emails based on mailbox inputted
   fetch(`/emails/${mailbox}`)
   .then(response => response.json())
@@ -99,6 +99,7 @@ function load_mailbox(mailbox) {
       child.style.cursor = "pointer";
       document.querySelector('#emails-view').append(child);
 
+      // Adds email clickability
       child.onclick = () => {
         const id = email["id"];
         console.log("selected", id);
@@ -161,6 +162,7 @@ function load_mailbox(mailbox) {
         document.querySelector('#emails-view').style.display = 'none';
         document.querySelector('#individual-view').style.display = 'block';
 
+        // 
         document.querySelector('#from').innerHTML = email["sender"];
         document.querySelector('#to').innerHTML = email["recipients"];
         document.querySelector('#subject').innerHTML = email["subject"];
