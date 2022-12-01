@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
   load_mailbox('inbox');
 });
 
-function compose_email(email = "none") {
+function compose_email(email = null) {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
   document.querySelector('#individual-view').style.display = 'none';
 
   // Clear out composition fields or fill if reply
-  if (email === "none"){
+  if (email == null){
     document.querySelector('#compose-recipients').value = '';
     document.querySelector('#compose-subject').value = '';
     document.querySelector('#compose-body').value = '';
