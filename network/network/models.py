@@ -3,7 +3,6 @@ from django.db import models
 
 
 class User(AbstractUser):
-    user_id = models.AutoField(primary_key=True)
     following = models.ManyToManyField("self")
     followers = models.ManyToManyField("self")
 
