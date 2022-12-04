@@ -12,7 +12,7 @@ def index(request):
 
 def post(request):
     if request.method == "POST":
-        Post.objects.create()
+        Post.objects.create(poster=request.user)
         return index(request)
 
 def login_view(request):
