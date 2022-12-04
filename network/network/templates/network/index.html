@@ -30,13 +30,13 @@
         </form>
     </div>
     {% for post in posts %}
-        <div class="post">
-            <h5 style="margin: 15px 0px 15px 15px">{{ post.poster }}</h5>
-            <a style="margin: 15px 0px 0px 15px">Edit</a>
+        <div class="post" style="padding: 15px 15px 15px 15px;">
+            <h5>{{ post.poster }}</h5>
+            <a href="#">Edit</a>
             <br>
-            <text style="margin: 15px 0px 0px 15px">{{ post.body }}</text>
+            <text >{{ post.body }}</text>
             <br>
-            <text style="margin: 15px 0px 0px 15px">{{ post.timestamp }}</text>
+            <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
     {% endfor %}
 {% endblock %}
