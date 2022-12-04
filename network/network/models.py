@@ -6,4 +6,4 @@ class User(AbstractUser):
     following = models.ManyToManyField()
 
 class Post(models.Model):
-    poster = models.ForeignKey(User, related_name="posts")
+    poster = models.ForeignKey(User, on_delete=models.CASCADE ,related_name="posts")
