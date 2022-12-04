@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User
+from .models import User, Post
 
 
 def index(request):
@@ -12,6 +12,7 @@ def index(request):
 
 def post(request):
     if request.method == "POST":
+        Post.objects.create()
         return index(request)
 
 def login_view(request):
