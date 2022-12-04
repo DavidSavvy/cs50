@@ -2,12 +2,12 @@
 
 {% block body %}
     <style>
-        #listing {
+        #new_post {
             border-style: solid;
-            border-width: 2px;
+            border-width: 1px;
             height: 250px;
-            margin-bottom: 18px;
-            border-radius: 5px;
+            margin: 0px 18px 10px 18px;
+            border-radius: 3px;
         }
         .grid {
             display: grid;
@@ -21,5 +21,11 @@
 
     </style>
     <h1>All Posts</h1>
-    <div></div>
+    <div id="new_post">
+        <h4 style="margin: 15px 0px 0px 15px">New Post</h4>
+        <form>
+            <input style="margin: 15px 0px 0px 15px" type="textarea">
+            <input type="submit">
+        </form>
+    </div>
 {% endblock %}
