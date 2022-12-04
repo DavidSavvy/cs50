@@ -23,9 +23,10 @@
     <h1>All Posts</h1>
     <div id="new_post">
         <h4 style="margin: 15px 0px 0px 15px">New Post</h4>
-        <form>
-            <textarea style="margin: 15px 0px 0px 15px"></textarea>
-            <input type="submit">
+        <form method="POST" action="/post">
+            <textarea cols="333" rows="5" style="margin: 15px 0px 0px 15px"></textarea>
+            <br>
+            <input style="margin: 0px 0px 0px 15px" class="btn btn-primary" type="submit" value="Post">
         </form>
     </div>
 {% endblock %}
