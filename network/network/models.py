@@ -12,4 +12,4 @@ class Post(models.Model):
     poster = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
     likers = models.ManyToManyField(User, related_name="liked_posts")
     timestamp = models.DateTimeField(auto_now_add=True)
-    body = models.TextField()
+    body = models.TextField(blank=True, null=True)
