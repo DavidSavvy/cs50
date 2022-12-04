@@ -6,4 +6,4 @@ class User(AbstractUser):
     following = models.ManyToManyField()
 
 class Post(models.Model):
-    pass
+    poster = models.ForeignKey(User, related_name="posts")
