@@ -20,13 +20,13 @@
 
     </style>
     <h1>All Posts</h1>
-    <div class="post" style="height: 250px;">
-        <h4 style="margin: 15px 0px 0px 15px">New Post</h4>
+    <div class="post" style="height: 250px; padding: 15px 15px 15px 15px;">
+        <h4 style="">New Post</h4>
         <form method="POST" action="/post">
             {% csrf_token %}
-            <textarea cols="331" rows="5" style="margin: 15px 0px 0px 15px" name="body"></textarea>
+            <textarea rows="5" style="width: 100%;" name="body"></textarea>
             <br>
-            <input style="margin: 0px 0px 0px 15px" class="btn btn-primary" type="submit" value="Post">
+            <input style="" class="btn btn-primary" type="submit" value="Post">
         </form>
     </div>
     {% for post in posts %}
