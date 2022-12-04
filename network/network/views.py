@@ -12,7 +12,7 @@ def index(request):
 
 def post(request):
     if request.method == "POST":
-        if request.POST["body"]:
+        if request.POST['body']:
 
             Post.objects.create(poster=request.user, body=request.POST["body"])
         else:
