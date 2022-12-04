@@ -3,7 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    
+    following = models.ManyToManyField()
 
 class Post(models.Model):
     pass
