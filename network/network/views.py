@@ -8,13 +8,15 @@ from .models import User, Post
 
 
 def index(request):
-    return render(request, "network/index.html")
+    return render(request, "network/index.html", {
+        "posts": Post.objects.all()
+    })
 
 def post(request):
     if request.method == "POST":
         body = request.POST['body']
         Post.objects.create(poster=request.user, body=body)
-        return index(request)
+        return HttpResponseRedirect(reverse("index"))
 
 def login_view(request):
     if request.method == "POST":

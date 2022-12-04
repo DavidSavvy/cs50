@@ -2,10 +2,9 @@
 
 {% block body %}
     <style>
-        #new_post {
+        .post {
             border-style: solid;
             border-width: 1px;
-            height: 250px;
             margin: 0px 18px 10px 18px;
             border-radius: 3px;
         }
@@ -21,7 +20,7 @@
 
     </style>
     <h1>All Posts</h1>
-    <div id="new_post">
+    <div class="post" style="height: 250px;">
         <h4 style="margin: 15px 0px 0px 15px">New Post</h4>
         <form method="POST" action="/post">
             {% csrf_token %}
@@ -30,4 +29,14 @@
             <input style="margin: 0px 0px 0px 15px" class="btn btn-primary" type="submit" value="Post">
         </form>
     </div>
+    {% for post in posts %}
+        <div class="post">
+            <h5 style="margin: 15px 0px 15px 15px">{{ post.poster }}</h5>
+            <a style="margin: 15px 0px 0px 15px">Edit</a>
+            <br>
+            <text style="margin: 15px 0px 0px 15px">{{ post.body }}</text>
+            <br>
+            <text style="margin: 15px 0px 0px 15px">{{ post.timestamp }}</text>
+        </div>
+    {% endfor %}
 {% endblock %}
