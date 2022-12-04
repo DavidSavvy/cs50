@@ -8,4 +8,4 @@ class User(AbstractUser):
 
 class Post(models.Model):
     poster = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
-    likers = models.ManyToManyField(User, on_delete=models.CASCADE, related_name="liked_posts")
+    likers = models.ManyToManyField(User, related_name="liked_posts")
