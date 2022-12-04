@@ -13,10 +13,7 @@ def index(request):
 def post(request):
     if request.method == "POST":
         body = request.POST['body']
-        if body:
-            Post.objects.create(poster=request.user, body=body)
-        else:
-            pass
+        Post.objects.create(poster=request.user, body=body)
         return index(request)
 
 def login_view(request):
