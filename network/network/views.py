@@ -14,7 +14,6 @@ def post(request):
     if request.method == "POST":
         body = request.POST['body']
         if body:
-
             Post.objects.create(poster=request.user, body=body)
         else:
             pass
