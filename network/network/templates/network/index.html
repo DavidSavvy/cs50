@@ -32,11 +32,11 @@
         </div>
     {% endif %}
     {% for post in posts reversed %}
-        <div class="post" style="padding: 15px 15px 15px 15px;">
+        <div id="post" class="post" style="padding: 15px 15px 15px 15px;">
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated %}
                 {% if user.id == post.poster.id %}
-                    <a href="#">Edit</a>
+                    <a id="edit_link" href="#">Edit</a>
                 {% endif %}
             {% endif %}
             <br>

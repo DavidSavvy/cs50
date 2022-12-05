@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    for ()
+    for (let post in )
 
   });
