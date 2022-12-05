@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login, logout
+kfrom django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -17,6 +17,10 @@ def post(request):
         body = request.POST['body']
         Post.objects.create(poster=request.user, body=body)
         return HttpResponseRedirect(reverse("index"))
+
+"""
+Move on with clicking on a users page
+"""
 
 def login_view(request):
     if request.method == "POST":
