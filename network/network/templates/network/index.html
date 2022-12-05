@@ -37,9 +37,10 @@
             {% if user.is_authenticated %}
                 {% if user.id == post.poster.id %}
                     <a id="edit_link" href="#">Edit</a>
+                    <br>
                 {% endif %}
             {% endif %}
-            <br>
+
             <text>{{ post.body }}</text>
             <br>
             <text id="like_button">&#10084; {{ post.likers.count }}</text>
