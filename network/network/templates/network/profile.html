@@ -23,8 +23,8 @@
     {% if user.is_authenticated %}
 
     {% endif %}
-    <!--
-    {% for post in user.posts reversed %}
+
+    {% for post in user.posts.all reversed %}
         <div class="post" style="padding: 15px 15px 15px 15px;">
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated %}
@@ -38,6 +38,6 @@
             <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
     {% endfor %}
-    -->
+
 
 {% endblock %}
