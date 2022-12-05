@@ -86,7 +86,7 @@ AUTH_USER_MODEL = "network.User"
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
-
+CSRF_TRUSTED_ORIGINS = ["https://davidsavvy-code50-103088195-pjqpqwgp7fr9v-8000.preview.app.github.dev"]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
