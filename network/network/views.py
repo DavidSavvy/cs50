@@ -18,9 +18,8 @@ def post(request):
         Post.objects.create(poster=request.user, body=body)
         return HttpResponseRedirect(reverse("index"))
 
-"""
-Move on with clicking on a users page
-"""
+def user(request, id):
+    pass
 
 def login_view(request):
     if request.method == "POST":
