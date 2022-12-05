@@ -19,7 +19,9 @@ def post(request):
         return HttpResponseRedirect(reverse("index"))
 
 def user(request, id):
-    pass
+    return render(request, "network/profile.html", {
+        "user": User.objects.get(id=id)
+    })
 
 def login_view(request):
     if request.method == "POST":

@@ -19,19 +19,12 @@
         }
 
     </style>
-    <h1>All Posts</h1>
+    <h1>User: {{ user }}</h1>
     {% if user.is_authenticated %}
-        <div class="post" style="height: 250px; padding: 15px 15px 15px 15px;">
-            <h4 style="">New Post</h4>
-            <form method="POST" action="/post">
-                {% csrf_token %}
-                <textarea rows="5" style="width: 100%;" name="body"></textarea>
-                <br>
-                <input style="" class="btn btn-primary" type="submit" value="Post">
-            </form>
-        </div>
+
     {% endif %}
-    {% for post in posts reversed %}
+    <!--
+    {% for post in user.posts reversed %}
         <div class="post" style="padding: 15px 15px 15px 15px;">
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated %}
@@ -45,4 +38,6 @@
             <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
     {% endfor %}
+    -->
+
 {% endblock %}
