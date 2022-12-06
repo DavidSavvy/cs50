@@ -26,7 +26,15 @@
     <label style="margin-right: 15px;">Followers: {{ user.followers.count }}</label>
     <label>Following: {{ user.following.count }}</label>
     {% if user.is_authenticated %}
-        {% if }
+        {% if post.poster in user.following %}
+            <form>
+                <input type="submit" class="btn btn-primary" >
+            </form>
+        {% else %}
+            <form>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        {% endif %}
     {% endif %}
 
     {% for post in user.posts.all reversed %}
