@@ -22,22 +22,24 @@
         }
 
     </style>
-    <h1>User: {{ user }}</h1>
+    <h1>User: {{ poster }}</h1>
     <label style="margin-right: 15px;">Followers: {{ poster.followers.count }}</label>
     <label>Following: {{ poster.following.count }}</label>
     {% if user.is_authenticated %}
         {% if poster in user.following %}
-            <form method="POST" action="/following/{{ post.poster.id }}">
+            <form method="POST" action="/following/{{ poster.id }}">
+                {% csrf_token %}
                 <input id="following_btn" value="Unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
             </form>
         {% else %}
-            <form method="POST" action="/following/{{ post.poster.id }}">
+            <form method="POST" action="/following/{{ poster.id }}">
+                {% csrf_token %}
                 <input id="following_btn" value="Follow" type="submit" class="btn btn-outline-primary" style="padding: 0; width: 10%;">
             </form>
         {% endif %}
     {% endif %}
 
-    {% for post in user.posts.all reversed %}
+    {% for post in poster.posts.all reversed %}
         <div class="post" style="padding: 15px 15px 15px 15px;">
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated %}
