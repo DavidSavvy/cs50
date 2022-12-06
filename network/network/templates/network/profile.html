@@ -5,7 +5,7 @@
         .post {
             border-style: solid;
             border-width: 1px;
-            margin: 0px 18px 10px 18px;
+            margin: 10px 18px 0px 18px;
             border-radius: 3px;
         }
         .grid {
@@ -27,12 +27,12 @@
     <label>Following: {{ user.following.count }}</label>
     {% if user.is_authenticated %}
         {% if post.poster in user.following %}
-            <form>
-                <input type="submit" class="btn btn-primary" style="width: 50px;">
+            <form method="POST">
+                <input id="unfollow_btn" value="unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
             </form>
         {% else %}
-            <form>
-                <input type="submit" class="btn btn-outline-primary" style="width: 205px;">
+            <form method="POST" action="/">
+                <input id="follow_btn" value="follow" type="submit" class="btn btn-outline-primary" style="padding: 0; width: 10%;">
             </form>
         {% endif %}
     {% endif %}
