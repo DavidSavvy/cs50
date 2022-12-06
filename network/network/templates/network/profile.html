@@ -28,11 +28,11 @@
     {% if user.is_authenticated %}
         {% if poster in user.following %}
             <form method="POST" action="/following/{{ post.poster.id }}">
-                <input id="following_btn" value="unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
+                <input id="following_btn" value="Unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
             </form>
         {% else %}
             <form method="POST" action="/following/{{ post.poster.id }}">
-                <input id="following_btn" value="follow" type="submit" class="btn btn-outline-primary" style="padding: 0; width: 10%;">
+                <input id="following_btn" value="Follow" type="submit" class="btn btn-outline-primary" style="padding: 0; width: 10%;">
             </form>
         {% endif %}
     {% endif %}

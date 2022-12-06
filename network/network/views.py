@@ -26,7 +26,7 @@ def user(request, id):
 def following(request, poster_id):
     if request.method == "POST":
         button = request.POST["following"]
-        if button.value == "follow":
+        if button.value == "Follow":
             print(button.value)
         else:
             pass
