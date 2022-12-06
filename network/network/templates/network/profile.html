@@ -20,6 +20,8 @@
 
     </style>
     <h1>User: {{ user }}</h1>
+    <label style="margin-right: 10px;">Followers: {{ user.followers.count }}</label>
+    <label>Following: {{ user.following.count }}</label>
     {% if user.is_authenticated %}
 
     {% endif %}
