@@ -22,6 +22,9 @@ def user(request, id):
     return render(request, "network/profile.html", {
         "user": User.objects.get(id=id)
     })
+"""
+add follow/unfollow buttons and functionality
+"""
 
 def login_view(request):
     if request.method == "POST":
