@@ -23,6 +23,13 @@ def user(request, id):
         "user": User.objects.get(id=id)
     })
 
+def following(request, poster_id):
+    if request.method == "POST":
+        button = request.POST["following"]
+        if button.value == "follow":
+            print(button.value)
+        else:
+            pass
 
 def login_view(request):
     if request.method == "POST":
