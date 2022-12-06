@@ -28,11 +28,11 @@
     {% if user.is_authenticated %}
         {% if post.poster in user.following %}
             <form>
-                <input type="submit" class="btn btn-primary" >
+                <input type="submit" class="btn btn-primary" style="width: 50px;">
             </form>
         {% else %}
             <form>
-                <input type="submit" class="btn btn-outline-primary">
+                <input type="submit" class="btn btn-outline-primary" style="width: 205px;">
             </form>
         {% endif %}
     {% endif %}
