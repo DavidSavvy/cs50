@@ -20,7 +20,7 @@ def post(request):
 
 def user(request, id):
     return render(request, "network/profile.html", {
-        "user": User.objects.get(id=id)
+        "poster": User.objects.get(id=id)
     })
 
 def following(request, poster_id):
