@@ -25,11 +25,15 @@ def user(request, id):
 
 def following(request, poster_id):
     if request.method == "POST":
-        button = request.POST["following"]
+        button = request.POST["following_btn"]
         if button.value == "Follow":
             print(button.value)
         else:
             pass
+"""
+finish follow/unfollow buttons (multivaluedictkeyerror line 28)
+"""
+
 
 def login_view(request):
     if request.method == "POST":
