@@ -23,6 +23,7 @@ def user(request, id):
         "poster": User.objects.get(id=id)
     })
 
+
 def following(request, poster_id):
     if request.method == "POST":
         button = request.POST["following_btn"]
@@ -30,6 +31,7 @@ def following(request, poster_id):
             print(button.value)
         else:
             pass
+
 """
 finish follow/unfollow buttons (multivaluedictkeyerror line 28)
 """
