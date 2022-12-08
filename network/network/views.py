@@ -27,13 +27,20 @@ def user(request, id):
 def following(request, poster_id):
     if request.method == "POST":
         button = request.POST["following_btn"]
-        if button.value == "Follow":
-            print(button.value)
+        current_user = User.objects.get(id=request.user.id)
+        poster = User.objects.get(id=poster_id)
+        if button == "Follow":
+            print(button)
+            current_user.following.add(poster)
+            poster.followers.add(current_user)
+            return user(request, poster_id)
         else:
-            pass
+            current_user.following.remove(poster)
+            poster.followers.remove(current_user)
+            return user(request, poster_id)
 
 """
-finish follow/unfollow buttons (multivaluedictkeyerror line 28)
+finish unfollow button implementation, not showing up at all
 """
 
 

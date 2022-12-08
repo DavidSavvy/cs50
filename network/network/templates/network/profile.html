@@ -29,12 +29,12 @@
         {% if poster in user.following %}
             <form method="POST" action="/following/{{ poster.id }}">
                 {% csrf_token %}
-                <input id="following_btn" value="Unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
+                <input name="following_btn" value="Unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
             </form>
         {% else %}
             <form method="POST" action="/following/{{ poster.id }}">
                 {% csrf_token %}
-                <input id="following_btn" value="Follow" type="submit" class="btn btn-outline-primary" style="padding: 0; width: 10%;">
+                <input name="following_btn" value="Follow" type="submit" class="btn btn-outline-primary" style="padding: 0; width: 10%;">
             </form>
         {% endif %}
     {% endif %}
