@@ -23,13 +23,6 @@
     {% for post in posts reversed %}
         <div id="post" class="post" style="padding: 15px 15px 15px 15px;">
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
-            {% if user.is_authenticated %}
-                {% if user.id == post.poster.id %}
-                    <a id="edit_link" href="#">Edit</a>
-                    <br>
-                {% endif %}
-            {% endif %}
-
             <text>{{ post.body }}</text>
             <br>
             <text id="like_button">&#10084; {{ post.likers.count }}</text>
