@@ -19,6 +19,7 @@ def post(request):
         return HttpResponseRedirect(reverse("index"))
 
 def user(request, id):
+    
     return render(request, "network/profile.html", {
         "poster": User.objects.get(id=id)
     })
