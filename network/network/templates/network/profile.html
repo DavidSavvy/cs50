@@ -26,7 +26,7 @@
     <label style="margin-right: 15px;">Followers: {{ poster.followers.count }}</label>
     <label>Following: {{ poster.following.count }}</label>
     {% if user.is_authenticated %}
-        {% if poster in user.following %}
+        {% if poster in user.following.all %}
             <form method="POST" action="/following/{{ poster.id }}">
                 {% csrf_token %}
                 <input name="following_btn" value="Unfollow" type="submit" class="btn btn-primary" style="padding: 0; width: 10%;">
