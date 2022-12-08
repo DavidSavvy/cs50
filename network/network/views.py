@@ -25,7 +25,9 @@ def user(request, id):
     })
 
 def following(request):
-    return render(request, "network/index.html")
+    user_following = request.user.following.all()
+    print(user_following)
+    return index(request)
 
 def follow_unfollow(request, poster_id):
     if request.method == "POST":
