@@ -19,13 +19,15 @@ def post(request):
         return HttpResponseRedirect(reverse("index"))
 
 def user(request, id):
-    
+
     return render(request, "network/profile.html", {
         "poster": User.objects.get(id=id)
     })
 
+def following(request):
+    return render(request, ")
 
-def following(request, poster_id):
+def follow_unfollow(request, poster_id):
     if request.method == "POST":
         button = request.POST["following_btn"]
         current_user = User.objects.get(id=request.user.id)
@@ -39,11 +41,6 @@ def following(request, poster_id):
             current_user.following.remove(poster)
             poster.followers.remove(current_user)
             return user(request, poster_id)
-
-"""
-finish unfollow button implementation, not showing up at all
-"""
-
 
 def login_view(request):
     if request.method == "POST":
