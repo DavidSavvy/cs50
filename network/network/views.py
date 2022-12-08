@@ -32,6 +32,7 @@ def following(request):
         for post in posts:
             following_posts.append(post)
     print(user_following)
+    
     return render(request, "network/index.html", {
         "posts": following_posts
     })
