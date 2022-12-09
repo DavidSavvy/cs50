@@ -28,11 +28,7 @@ def post(request):
         return HttpResponseRedirect(reverse("index"))
 
 def user(request, id):
-    posts = Post.objects.all()
-    paginator = Paginator(posts, 10)
 
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
     return render(request, "network/profile.html", {
         "poster": User.objects.get(id=id)
     })
@@ -46,8 +42,13 @@ def following(request):
             following_posts.append(post)
     print(user_following)
 
+    paginator = Paginator(following_posts, 10)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     return render(request, "network/following.html", {
-        "posts": following_posts
+        "posts": following_posts,
+        "page_obj": page_obj
     })
 
 """
