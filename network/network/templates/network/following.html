@@ -51,6 +51,10 @@
             <li class="page-item">
               <span class="page-link"><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
             </li>
+            {% else %}
+            <li class="page-item">
+                <span class="page-link disabled"><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
+              </li>
             {% endif %}
         </ul>
         <ul class="pagination">
