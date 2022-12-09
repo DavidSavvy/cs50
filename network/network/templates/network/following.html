@@ -34,8 +34,13 @@
         <ul class="pagination">
             <li class="page-item">
                 {% if page_obj.has_previous %}
-                    <a href="?page=1" class="page_link">&laquo; first</a>
-                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    <li class="page-item">
+                        <a href="?page=1" class="page_link">&laquo; first</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    </li>
+
                 {% endif %}
 
                 <span class="current">
