@@ -37,6 +37,10 @@ def following(request):
         "posts": following_posts
     })
 
+"""
+check user.authentication in following tab
+"""
+
 def follow_unfollow(request, poster_id):
     if request.method == "POST":
         button = request.POST["following_btn"]

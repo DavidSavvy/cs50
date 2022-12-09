@@ -20,14 +20,16 @@
 
     </style>
     <h1>Following</h1>
-    {% for post in posts reversed %}
-        <div id="post" class="post" style="padding: 15px 15px 15px 15px;">
-            <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
-            <text>{{ post.body }}</text>
-            <br>
-            <text id="like_button">&#10084; {{ post.likers.count }}</text>
-            <br>
-            <text style="color: grey;">{{ post.timestamp }}</text>
-        </div>
-    {% endfor %}
+    {% if user.is_authenticated %}
+        {% for post in posts reversed %}
+            <div id="post" class="post" style="padding: 15px 15px 15px 15px;">
+                <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
+                <text>{{ post.body }}</text>
+                <br>
+                <text id="like_button">&#10084; {{ post.likers.count }}</text>
+                <br>
+                <text style="color: grey;">{{ post.timestamp }}</text>
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
