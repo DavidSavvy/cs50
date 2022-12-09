@@ -49,7 +49,7 @@
 
             {% if page_obj.has_next %}
             <li class="page-item">
-              <a class="page-link" href="#">Next</a>
+              <span class="page-link"><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
             </li>
             {% endif %}
         </ul>
