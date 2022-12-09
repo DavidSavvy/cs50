@@ -32,9 +32,9 @@
             </div>
         {% endfor %}
         <div class="pagination">
-            <span class="step-links">
+            <span class="step-links page-item">
                 {% if page_obj.has_previous %}
-                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page=1" class="page_link">&laquo; first</a>
                     <a href="?page={{ page_obj.previous_page_number }}">previous</a>
                 {% endif %}
 
