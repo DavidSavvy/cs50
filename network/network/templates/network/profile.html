@@ -53,7 +53,7 @@
             <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
     {% endfor %}
-    <ul class="pagination" style="margin-left: 18px; margin-t">
+    <ul class="pagination" style="margin-left: 18px; margin-top: 10px;">
         {% if page_obj.has_previous %}
             <li class="page-item">
                 <span class="page-link"><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
