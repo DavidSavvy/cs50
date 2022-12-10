@@ -36,7 +36,8 @@ def user(request, id):
     page_obj = paginator.get_page(page_number)
 
     return render(request, "network/profile.html", {
-        "poster": User.objects.get(id=id),
+        "poster": poster,
+        "page_obj": page_obj,
         "page_number": range(1, paginator.num_pages+1)
     })
 
