@@ -37,6 +37,10 @@
               <span class="page-link"><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
             </li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
             {% endif %}
 
             <li class="page-item active" aria-current="page">
