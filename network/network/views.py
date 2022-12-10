@@ -62,10 +62,6 @@ def following(request):
         "page_number": range(1, paginator.num_pages+1)
     })
 
-"""
-check user.authentication in following tab
-"""
-
 @login_required
 def follow_unfollow(request, poster_id):
     if request.method == "POST":
