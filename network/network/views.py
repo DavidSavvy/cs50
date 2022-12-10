@@ -72,7 +72,7 @@ def follow_unfollow(request, poster_id):
             print(button)
             current_user.following.add(poster)
             poster.followers.add(current_user)
-            return user(request, poster_id)
+            return HttpResponseRedirect(reverse("user"))
         else:
             current_user.following.remove(poster)
             poster.followers.remove(current_user)
