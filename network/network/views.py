@@ -10,11 +10,13 @@ from .models import User, Post
 
 
 def index(request):
+    # Gets posts and sets up paginator
     posts = Post.objects.all()
     paginator = Paginator(posts, 10)
-
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
+    # Renders page with paginator information
     return render(request, "network/index.html", {
         "posts": posts,
         "page_obj": page_obj,
@@ -24,18 +26,24 @@ def index(request):
 @login_required
 def post(request):
     if request.method == "POST":
+        # Creates a new post object from submitted form and redirects to index
         body = request.POST['body']
         Post.objects.create(poster=request.user, body=body)
         return HttpResponseRedirect(reverse("index"))
 
 def user(request, id):
+    # Gets a specific user's posts
     poster = User.objects.get(id=id)
     poster_posts = poster.posts.all()
+
+    # Sets up paginator into 10 pages (see docs)
     paginator = Paginator(poster_posts, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     print(page_obj)
     print(paginator.num_pages)
+
+    # Renders page with paginator information
     return render(request, "network/profile.html", {
         "poster": poster,
         "page_obj": page_obj,
@@ -45,17 +53,21 @@ def user(request, id):
 def following(request):
     user_following = request.user.following.all()
     following_posts = []
+
+    # Makes list of all the followed users' posts (probably not an efficient way to do this)
     for user_followed in user_following:
         posts = user_followed.posts.all()
         for post in posts:
             following_posts.append(post)
     print(user_following)
 
+    # Sets up paginator into 10 pages (see Django paginator docs)
     paginator = Paginator(following_posts, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     print(paginator.num_pages)
 
+    # Renders page with paginator information
     return render(request, "network/following.html", {
         "posts": following_posts,
         "page_obj": page_obj,
@@ -64,10 +76,15 @@ def following(request):
 
 @login_required
 def follow_unfollow(request, poster_id):
+    # Checks request
     if request.method == "POST":
+        # Gets button which could can have one of two values
         button = request.POST["following_btn"]
+
         current_user = User.objects.get(id=request.user.id)
         poster = User.objects.get(id=poster_id)
+
+        # Checks type of button, either follows or unfollows, respectively
         if button == "Follow":
             print(button)
             current_user.following.add(poster)
