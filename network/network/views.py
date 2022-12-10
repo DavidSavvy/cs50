@@ -49,7 +49,8 @@ def following(request):
 
     return render(request, "network/following.html", {
         "posts": following_posts,
-        "page_obj": page_obj
+        "page_obj": page_obj,
+        "page_number": paginator.num_pages
     })
 
 """
