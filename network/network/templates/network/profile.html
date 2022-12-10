@@ -43,7 +43,7 @@
         <div class="post" style="padding: 15px 15px 15px 15px;">
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated %}
-            <a href="#">Edit</a>
+                <a href="#">Edit</a>
             {% endif %}
             <br>
             <text>{{ post.body }}</text>
@@ -53,7 +53,7 @@
             <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
     {% endfor %}
-    <ul class="pagination" style="margin-left: 18px;">
+    <ul class="pagination" style="margin-left: 18px; margin-t">
         {% if page_obj.has_previous %}
             <li class="page-item">
                 <span class="page-link"><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
