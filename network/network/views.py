@@ -17,7 +17,8 @@ def index(request):
     page_obj = paginator.get_page(page_number)
     return render(request, "network/index.html", {
         "posts": posts,
-        "page_obj": page_obj
+        "page_obj": page_obj,
+        "page_number": range(1, paginator.num_pages+1)
     })
 
 @login_required
