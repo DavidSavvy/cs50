@@ -61,10 +61,8 @@ def following(request):
         for post in posts:
             following_posts.append(post)
 
-    following_posts = sorted(following_posts, key=lambda post : post.timestamp)
-    print(user_following)
-    print(type(following_posts[0]))
-    print(type(following_posts))
+    # Sorts followed posts by timestamp
+    following_posts = sorted(following_posts, key=lambda post : post.timestamp, reverse=True)
     # Sets up paginator into 10 pages (see Django paginator docs)
     paginator = Paginator(following_posts, 10)
     page_number = request.GET.get('page')
