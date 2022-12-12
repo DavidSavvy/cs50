@@ -34,7 +34,7 @@ def post(request):
 def user(request, id):
     # Gets a specific user's posts
     poster = User.objects.get(id=id)
-    poster_posts = poster.posts.all()
+    poster_posts = poster.posts.all().order_by('-timestamp')
 
     # Sets up paginator into 10 pages (see docs)
     paginator = Paginator(poster_posts, 10)
