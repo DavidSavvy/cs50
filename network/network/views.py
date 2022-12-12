@@ -11,7 +11,7 @@ from .models import User, Post
 
 def index(request):
     # Gets posts and sets up paginator
-    posts = reverse(Post.objects.all())
+    posts = Post.objects.all().order_by('-timestamp')
     paginator = Paginator(posts, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
