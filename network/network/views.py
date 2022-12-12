@@ -60,7 +60,7 @@ def following(request):
         for post in posts:
             following_posts.append(post)
     print(user_following)
-
+    print(type(following_posts[0]))
     print(type(following_posts))
     # Sets up paginator into 10 pages (see Django paginator docs)
     paginator = Paginator(following_posts, 10)
