@@ -61,7 +61,7 @@ def following(request):
         for post in posts:
             following_posts.append(post)
 
-    following_posts = sorted(following_posts, key=itemgetter('timestamp'))
+    following_posts = sorted(following_posts, key=lambda post : post.timestamp)
     print(user_following)
     print(type(following_posts[0]))
     print(type(following_posts))
