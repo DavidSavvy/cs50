@@ -59,6 +59,8 @@ def following(request):
         posts = user_followed.posts.all()
         for post in posts:
             following_posts.append(post)
+
+    following_posts = sorted(following_posts, key=)
     print(user_following)
     print(type(following_posts[0]))
     print(type(following_posts))
