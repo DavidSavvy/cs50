@@ -21,7 +21,7 @@
     </style>
     <h1>Following</h1>
     {% if user.is_authenticated %}
-        {% for post in page_obj reversed %}
+        {% for post in page_obj %}
             <div id="post" class="post" style="padding: 15px 15px 15px 15px;">
                 <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
                 <text>{{ post.body }}</text>
