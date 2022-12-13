@@ -1,6 +1,6 @@
 function test(event){
   alert('test');
 
-  event.target.parentNode.innerHTML = "<div><label>bruh</label></div>";
+  event.target.parentElement.innerHTML = "<div><label>bruh</label></div>";
 }
 
