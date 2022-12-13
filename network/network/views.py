@@ -9,7 +9,6 @@ from operator import itemgetter
 
 from .models import User, Post
 
-
 def index(request):
     # Gets posts and sets up paginator
     posts = Post.objects.all().order_by('-timestamp')
