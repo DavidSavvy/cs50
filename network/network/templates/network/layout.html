@@ -44,10 +44,9 @@
             }
             document.addEventListener('DOMContentLoaded', () => {
                 alert("tesxt1");
-                document.querySelector("#edit_form").onsubmit = () => {
+                document.querySelector("#edit_form").addEventListener("submit", () => {
                     alert("bruh");
-                    return false;
-                }
+                })
             });
 
 
