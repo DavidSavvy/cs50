@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 function Testfunc(event){
 
-  ReactDOM.render(<Edit/>, event.target.parentElement);
+  ReactDOM.render(<EditText/>, event.target.parentElement);
 }
 
 

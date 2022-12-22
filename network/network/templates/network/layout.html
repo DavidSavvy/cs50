@@ -9,11 +9,20 @@
         <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <script type="text/babel" src="{% static 'network/network.js' %}"></script>
+        
     </head>
     <body>
         <script>
-            
+            function EditText(){
+                return (
+                    <h5>bruh</h5>
+                );
+            }
+            function Testfunc(event){
+
+                ReactDOM.render(<EditText/>, event.target.parentElement);
+            }
+
         </script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Network</a>
