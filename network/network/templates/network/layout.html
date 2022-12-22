@@ -23,13 +23,13 @@
         </style>
 
         <script type="text/babel">
-            function EditText(){
+            function EditText(props){
                 return (
                     <div>
                         <h4>Edit Post</h4>
 
 
-                        <textarea id="edit_text" rows="5" name="body" value=""></textarea>
+                        <textarea id="edit_text" rows="5" name="body" value={{ props.body }}></textarea>
                         <br/>
                         <input class="btn btn-primary" type="submit" value="Submit Edit"/>
 
@@ -37,8 +37,8 @@
                 );
             }
             function test(event){
-
-                ReactDOM.render(<EditText/>, event.target.parentElement);
+                let body = event.target.parentElement.querySelector("#body");
+                ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
 
         </script>
