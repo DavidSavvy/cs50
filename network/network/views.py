@@ -10,7 +10,7 @@ from operator import itemgetter
 from .models import User, Post
 
 """
-Create an API in this file
+Create an API in this file, then simply use the API in JS to post email without submitting the form.
 """
 
 def index(request):
