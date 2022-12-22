@@ -41,9 +41,13 @@
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
                 ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
-            document.querySelector("#edit_form").onsubmit = () => {
-                
-            }
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector("#edit_form").onsubmit = () => {
+                    alert("bruh");
+                    return false;
+                }
+            });
+
 
         </script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
