@@ -29,7 +29,7 @@
                         <h4>Edit Post</h4>
 
 
-                        <textarea id="edit_text" rows="5" name="body" value={{ props.body }}></textarea>
+                        <textarea id="edit_text" rows="5" name="body" value={ props.body }></textarea>
                         <br/>
                         <input class="btn btn-primary" type="submit" value="Submit Edit"/>
 
@@ -37,7 +37,7 @@
                 );
             }
             function test(event){
-                let body = event.target.parentElement.querySelector("#body");
+                let body = event.target.parentElement.querySelector("#body").innnerHTML;
                 ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
 
