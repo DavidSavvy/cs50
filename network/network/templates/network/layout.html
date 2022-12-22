@@ -25,7 +25,7 @@
         <script type="text/babel">
             function EditText(){
                 return (
-                    <div id="edit_post" class="post">
+                    <div>
                         <h4>Edit Post</h4>
 
 
@@ -38,7 +38,7 @@
             }
             function test(event){
 
-                ReactDOM.render(<EditText/>, event.target.parentElement);
+                ReactDOM.render(<EditText/>, event.target.parentElement.parentElement);
             }
 
         </script>
