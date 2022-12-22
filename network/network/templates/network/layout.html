@@ -40,14 +40,15 @@
 
                     </div>
                 );
-                document.querySelector("#edit_form").addEventListener("submit", () => {
-                    alert("bruh");
-                });
+
             }
             function test(event){
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
                 ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
+            document.querySelector("#edit_form").addEventListener("submit", () => {
+                    alert("bruh");
+            });
 
 
 
