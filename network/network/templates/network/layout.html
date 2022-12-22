@@ -23,18 +23,18 @@
         </style>
 
         <script type="text/babel">
-            function submit_edit(event){
-                console.log("test");
-            }
+
 
             // setup queryselector properly, does not hear submit
             function EditText(props){
-
+                function submit_edit(event){
+                    console.log("test");
+                }
                 return (
                     <div>
                         <h4>Edit Post</h4>
 
-                        <form id="edit_form" onsubmit="{this.submit_edit}" action="#">
+                        <form id="edit_form" onsubmit="{submit_edit}" action="#">
 
                             <textarea id="edit_text" rows="5" name="edit_body" defaultValue={props.body}></textarea>
                             <br/>
