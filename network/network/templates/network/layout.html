@@ -24,7 +24,9 @@
 
         <script type="text/babel">
 
-
+            function submit_edit(event){
+                console.log("test");
+            }
             // setup queryselector properly, does not hear submit
             function EditText(props){
                 return (
@@ -33,7 +35,7 @@
 
                         <form id="edit_form" onsubmit="submit_edit(event)">
 
-                            <textarea id="edit_text" rows="5" name="edit_body" defaultValue={ props.body }></textarea>
+                            <textarea id="edit_text" rows="5" name="edit_body" defaultValue={props.body}></textarea>
                             <br/>
                             <input class="btn btn-primary" type="submit" value="Save"/>
                         </form>
@@ -46,9 +48,7 @@
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
                 ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
-            function submit_edit(event){
-                alert("test");
-            }
+
 
 
 
