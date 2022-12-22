@@ -6,16 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+class EditMessage extends React.Component {
+  function test(event){
+    //alert('test');
 
-function test(event){
-  //alert('test');
+    //event.target.parentElement.innerHTML = "";
+    ReactDOM.render(<Edit/>, event.target.parentElement);
+  }
 
-  //event.target.parentElement.innerHTML = "";
-  ReactDOM.render(<Edit/>, event.target.parentElement);
-}
-
-function Edit(){
-  return (
-    <h5>bruh</h5>
-  );
+  function Edit(){
+    return (
+      <h5>bruh</h5>
+    );
+  }
 }
