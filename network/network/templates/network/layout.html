@@ -23,6 +23,11 @@
         </style>
 
         <script type="text/babel">
+
+            document.querySelector("#edit_form").addEventListener("submit", () => {
+                alert("bruh");
+            });
+
             function EditText(props){
                 return (
                     <div>
@@ -42,12 +47,7 @@
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
                 ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
-            document.addEventListener('DOMContentLoaded', () => {
-                console.log("test");
-                document.querySelector("#edit_form").addEventListener("submit", () => {
-                    alert("bruh");
-                })
-            });
+
 
 
         </script>
