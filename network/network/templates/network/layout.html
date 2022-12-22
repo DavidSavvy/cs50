@@ -24,9 +24,7 @@
 
         <script type="text/babel">
 
-            document.querySelector("#edit_form").addEventListener("submit", () => {
-                alert("bruh");
-            });
+
 
             function EditText(props){
                 return (
@@ -42,6 +40,9 @@
 
                     </div>
                 );
+                document.querySelector("#edit_form").addEventListener("submit", () => {
+                    alert("bruh");
+                });
             }
             function test(event){
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
