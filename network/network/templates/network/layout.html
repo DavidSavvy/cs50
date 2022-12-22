@@ -12,14 +12,24 @@
 
     </head>
     <body>
+        <style>
+            #edit_post {
+                height: 250px;
+                padding: 15px 15px 15px 15px;
+            }
+            #edit_text {
+                width: 100%;
+            }
+        </style>
+
         <script type="text/babel">
             function EditText(){
                 return (
-                    <div id="new_post" class="post" style="height: 250px; padding: 15px 15px 15px 15px;">
-                        <h4 style="">New Post</h4>
+                    <div id="edit_post" class="post">
+                        <h4>Edit Post</h4>
 
 
-                        <textarea rows="5" name="body"></textarea>
+                        <textarea rows="5"  name="body"></textarea>
                         <br/>
                         <input class="btn btn-primary" type="submit" value="Post"/>
 
