@@ -34,9 +34,9 @@
                     <div>
                         <h4>Edit Post</h4>
 
-                        <form id="edit_form" onsubmit="{submit_edit}" action="#">
+                        <form id="edit_form" onSubmit={submit_edit} action="#">
 
-                            <textarea id="edit_text" rows="5" name="edit_body" defaultValue={props.body}></textarea>
+                            <textarea id="edit_text" rows="5" defaultValue={props.body}></textarea>
                             <br/>
                             <input class="btn btn-primary" type="submit" value="Save"/>
                         </form>
