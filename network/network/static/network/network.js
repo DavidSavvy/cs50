@@ -13,7 +13,7 @@ function Testfunc(event){
 
 class EditMessage extends React.Component {
 
-  function Edit(){
+  function EditText(){
     return (
       <h5>bruh</h5>
     );
