@@ -1,10 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
 })
 
 
 function test(event){
-  alert('test');
+  //alert('test');
 
   //event.target.parentElement.innerHTML = "";
   ReactDOM.render(<Edit/>, event.target.parentElement);
