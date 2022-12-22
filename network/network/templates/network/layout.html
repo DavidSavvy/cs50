@@ -37,7 +37,7 @@
                 );
             }
             function test(event){
-                let body = event.target.parentElement.querySelector("#body").innnerHTML;
+                let body = event.target.parentElement.querySelector("#body").innerHTML;
                 ReactDOM.render(<EditText body = {body} />, event.target.parentElement);
             }
 
