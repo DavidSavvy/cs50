@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 class EditMessage extends React.Component {
-  function test(event){
+  function Testfunc(event){
     //alert('test');
 
     //event.target.parentElement.innerHTML = "";
