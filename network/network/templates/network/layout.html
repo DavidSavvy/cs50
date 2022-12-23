@@ -47,7 +47,7 @@
                     .then(response => response.json())
                     .then(post => {
                         if (Object.keys(post)[0] === "error") {
-                            throw new error(post);
+                            throw new error("Error message");
                         }
                         ReactDOM.render(<Display_edit post_id={post["post_id"]} poster={post["poster"]} poster_id={post["poster_id"]} likers={post["likers"]} timestamp={post["timestamp"]} body={post["body"]}/>, props.target);
                     })
