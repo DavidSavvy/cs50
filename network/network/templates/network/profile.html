@@ -44,9 +44,10 @@
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated and user == post.poster %}
                 <a href="#" onclick="edit_post(event)">Edit</a>
+                <br>
             {% endif %}
-            <br>
-            <text>{{ post.body }}</text>
+            <input type="hidden" id="post_id" name="post_id" value="{{ post.post_id }}">
+            <text id="body">{{ post.body }}</text>
             <br>
             <text id="like_button">&#10084; {{ post.likers.count }}</text>
             <br>
