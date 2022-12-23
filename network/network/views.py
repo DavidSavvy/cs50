@@ -107,6 +107,9 @@ def edit(request, post_id):
     except Post.DoesNotExist:
         return JsonResponse({"error": "Post not found."}, status=404)
 
+    if post.poster.id != 5:
+        return JsonResponse({"error": "You cannot edit this post."})
+
     # Allows two option for dealing with posts, GET to request and PUT to edit
     if request.method == "GET":
         return JsonResponse(post.serialize())
