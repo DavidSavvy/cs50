@@ -1,6 +1,7 @@
+import json
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -100,6 +101,21 @@ def follow_unfollow(request, poster_id):
             current_user.following.remove(poster)
             poster.followers.remove(current_user)
             return HttpResponseRedirect(reverse("user", kwargs={"id": poster_id}))
+
+def edit(request, post_id):
+    try:
+        post = Post.objects.get(post_id=post_id)
+    except Post.DoesNotExist:
+        return JsonResponse({"error": "Post not found."}, status=404)
+
+    if request.method == "GET":
+        pass
+    elif request.method == "PUT":
+        pass
+    else:
+        return JsonResponse({
+            "error": "GET or PUT request required."
+        }, status=400)
 
 def login_view(request):
     if request.method == "POST":
