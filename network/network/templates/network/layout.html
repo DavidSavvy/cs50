@@ -46,8 +46,12 @@
                     })
                     .then(response => response.json())
                     .then(post => {
+                        if (Object.keys(post)[0] === "error") {
+                            throw new error();
+                        }
                         ReactDOM.render(<Display_edit post_id={post["post_id"]} poster={post["poster"]} poster_id={post["poster_id"]} likers={post["likers"]} timestamp={post["timestamp"]} body={post["body"]}/>, props.target);
                     })
+                    .catch(error => alert(error))
                 }
 
                 // Standard react div return
@@ -75,6 +79,12 @@
                         body: JSON.stringify({
                             text: event.target.querySelector("#edit_text").value
                         })
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (Object.keys(result)[0] === "error") {
+                            throw new error();
+                        }
                     })
                     .catch (error => alert(error))
 
