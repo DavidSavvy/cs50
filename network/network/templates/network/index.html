@@ -36,7 +36,7 @@
             <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
             {% if user.is_authenticated %}
                 {% if user.id == post.poster.id %}
-                    <a id="edit_link" href="#" onclick="test(event)">Edit</a>
+                    <a id="edit_link" href="#" onclick="edit_post(event)">Edit</a>
                     <br>
                 {% endif %}
             {% endif %}
