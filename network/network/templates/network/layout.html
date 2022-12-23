@@ -27,7 +27,7 @@
             function Display_editor(props){
 
                 async function get_post(){
-                    fetch(`/edit/${props.post_id}`, {
+                    await fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
                     .then(response => response.json())
@@ -41,7 +41,7 @@
                 function Display_edit(props){
                     let post_contents = props.post_contents;
                     return (
-                        <div>{post_contents}</div>
+                        <div>Test</div>
                     )
                 }
                 // Handles the PUT request to submit edit
@@ -60,7 +60,7 @@
                     event.preventDefault();
 
                     //Display_edit();
-                    let post_contents = await get_post();
+                    let post_contents = get_post();
                     alert(post_contents);
                     ReactDOM.render(<Display_edit post_contents={post_contents}/>, event.target.parentElement);
                 }
