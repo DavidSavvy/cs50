@@ -32,16 +32,16 @@
                     })
                     .then(response => response.json())
                     .then(post => {
-                        alert(post);
+                        alert("success");
                         return post;
                     })
                     alert("fail");
                 }
 
                 function Display_edit(props){
-                    post_contents = props.post_contents;
+                    let post_contents = props.post_contents;
                     return (
-                        <div>post_contents</div>
+                        <div>{post_contents}</div>
                     )
                 }
                 // Handles the PUT request to submit edit
