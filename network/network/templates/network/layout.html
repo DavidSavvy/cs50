@@ -33,6 +33,7 @@
                     .then(response => response.json())
                     .then(post => {
                         alert("success");
+                        alert(post);
                         return post;
                     })
                     alert("fail");
@@ -41,7 +42,7 @@
                 function Display_edit(props){
                     let post_contents = props.post_contents;
                     return (
-                        <div>Test</div>
+                        <div>{post_contents}</div>
                     )
                 }
                 // Handles the PUT request to submit edit
@@ -60,7 +61,7 @@
                     event.preventDefault();
 
                     //Display_edit();
-                    let post_contents = get_post();
+                    let post_contents = await get_post();
                     alert(post_contents);
                     ReactDOM.render(<Display_edit post_contents={post_contents}/>, event.target.parentElement);
                 }
