@@ -26,6 +26,10 @@
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
 
+                function display_edit(){
+                    
+                }
+
                 // Handles the PUT request to submit edit
                 function submit_edit(event){
                     alert(props.post_id);
@@ -41,7 +45,7 @@
                     // Blocks submit refresh
                     event.preventDefault();
 
-                    display_edit(even)
+                    display_edit();
                 }
                 // Sends the proper editing div
                 return (
