@@ -30,7 +30,7 @@
             function Display_editor(props){
 
                 function submit_edit(event){
-                    alert(event.target);
+                    alert(props.post_id);
                     // Blocks submit refresh
                     event.preventDefault();
                 }
@@ -47,8 +47,9 @@
             }
 
             function edit_post(event){
+                let post_id = event.target.parentElement.querySelector("#post_id").value;
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
-                ReactDOM.render(<Display_editor body={body} />, event.target.parentElement);
+                ReactDOM.render(<Display_editor body={body} post_id={post_id}/>, event.target.parentElement);
             }
 
 
