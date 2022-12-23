@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 from operator import itemgetter
 
@@ -102,6 +103,8 @@ def follow_unfollow(request, poster_id):
             poster.followers.remove(current_user)
             return HttpResponseRedirect(reverse("user", kwargs={"id": poster_id}))
 
+@csrf_exempt
+@login_required
 def edit(request, post_id):
     try:
         post = Post.objects.get(post_id=post_id)
@@ -115,6 +118,7 @@ def edit(request, post_id):
         if data.get("text") is not None:
             post.body = data["text"]
             post.save()
+        return HttpResponse(status=204)
     else:
         return JsonResponse({
             "error": "GET or PUT request required."
