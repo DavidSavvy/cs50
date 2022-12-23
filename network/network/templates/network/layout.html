@@ -31,7 +31,7 @@
                     fetch(`/edit/${props.post_id}`, {
                         method: 'PUT',
                         body: JSON.stringify({
-                            text: //finish putting to API
+                            text: event.target.querySelector("#edit_text").value
                         })
                     })
 
