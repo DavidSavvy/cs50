@@ -37,6 +37,7 @@
             {% if user.is_authenticated %}
                 {% if user.id == post.poster.id %}
                     <a id="edit_link" href="#" onclick="edit_post(event)">Edit</a>
+                    <input type="hidden" id="post_id" name="post_id" value="{{ post.post_id }}">
                     <br>
                 {% endif %}
             {% endif %}
