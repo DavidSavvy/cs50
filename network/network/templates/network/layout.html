@@ -21,11 +21,7 @@
                 width: 100%;
             }
         </style>
-
         <script type="text/babel">
-            // Pass post info into submit_edit function to submit to API
-
-
             // Must be capitalized for some reason
             function Display_editor(props){
 
@@ -51,10 +47,7 @@
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
                 ReactDOM.render(<Display_editor body={body} post_id={post_id}/>, event.target.parentElement);
             }
-
-
-
-
+            
         </script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Network</a>
