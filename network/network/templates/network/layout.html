@@ -38,6 +38,7 @@
             // Must be capitalized for some reason
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
+                // Function t
                 async function get_post(){
                     await fetch(`/edit/${props.post_id}`, {
                         method: "GET"
@@ -76,6 +77,7 @@
                     // Blocks submit refresh
                     event.preventDefault();
 
+                    // Runs function to GET and display the updated post
                     get_post();
                 }
                 // Sends the proper editing div
