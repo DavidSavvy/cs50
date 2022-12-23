@@ -34,7 +34,7 @@
                     .then(post => {
                         alert("success");
                         alert(post);
-                        return post;
+                        ReactDOM.render(<Display_edit post_contents={post}/>, props.target.parentElement);
                     })
                     alert("fail");
                 }
@@ -61,9 +61,9 @@
                     event.preventDefault();
 
                     //Display_edit();
-                    let post_contents = await get_post();
-                    alert(post_contents);
-                    ReactDOM.render(<Display_edit post_contents={post_contents}/>, event.target.parentElement);
+                    //let post_contents = await get_post();
+                    //alert(post_contents);
+
                 }
                 // Sends the proper editing div
                 return (
@@ -85,7 +85,7 @@
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
 
                 // Renders the above function/object thingy passing necessary values
-                ReactDOM.render(<Display_editor body={body} post_id={post_id}/>, event.target.parentElement);
+                ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target}/>, event.target.parentElement);
             }
 
         </script>
