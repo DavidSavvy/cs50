@@ -106,11 +106,13 @@ def follow_unfollow(request, poster_id):
 @csrf_exempt
 @login_required
 def edit(request, post_id):
+    # Queries for post, exception just in case
     try:
         post = Post.objects.get(post_id=post_id)
     except Post.DoesNotExist:
         return JsonResponse({"error": "Post not found."}, status=404)
 
+    # Allows two option for dealing with posts, GET to request and PUT to edit
     if request.method == "GET":
         pass
     elif request.method == "PUT":
