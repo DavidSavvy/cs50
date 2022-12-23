@@ -13,6 +13,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     body = models.TextField(blank=True, null=True)
 
+    
     def serialize(self):
         return {
             "post_id": self.post_id,

@@ -38,7 +38,8 @@
             // Must be capitalized for some reason
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
-                // Function t
+
+                // Function that asynchronously fetches updated post and runs the render function below
                 async function get_post(){
                     await fetch(`/edit/${props.post_id}`, {
                         method: "GET"
@@ -49,6 +50,7 @@
                     })
                 }
 
+                // Standard react div return
                 function Display_edit(props){
                     return (
                         <div id="post">
@@ -64,6 +66,7 @@
                         </div>
                     )
                 }
+
                 // Handles the PUT request to submit edit
                 function submit_edit(event){
                     // API call to edit post with PUT
@@ -102,7 +105,6 @@
                 // Renders the above function/object thingy passing necessary values
                 ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
             }
-
         </script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Network</a>
