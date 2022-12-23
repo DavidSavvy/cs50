@@ -76,6 +76,7 @@
                             text: event.target.querySelector("#edit_text").value
                         })
                     })
+                    .catch (error => alert(error))
 
                     // Blocks submit refresh
                     event.preventDefault();
