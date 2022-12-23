@@ -42,7 +42,17 @@
                 function Display_edit(props){
                     let post_contents = props.body;
                     return (
-                        <div>{post_contents}</div>
+                        <div id="post" class="post" style="padding: 15px 15px 15px 15px;">
+                            <h5><a style="color: black;" href="/user/{{ post.poster.id }}">{{ post.poster }}</a></h5>
+                            <a id="edit_link" href="#" onclick="edit_post(event)">Edit</a>
+                            <br>
+                            <input type="hidden" id="post_id" name="post_id" value={props.post_id}>
+                            <text id="body">{props.body}</text>
+                            <br>
+                            <text id="like_button">&#10084; {props.likers}</text>
+                            <br>
+                            <text style="color: grey;">{props.timestamp}</text>
+                        </div>
                     )
                 }
                 // Handles the PUT request to submit edit
