@@ -27,7 +27,7 @@
             function Display_editor(props){
 
                 function Display_edit(){
-                    let post_contents = null;
+                    var post_contents = null;
                     fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
@@ -36,6 +36,7 @@
                         alert(post);
                         post_contents = post;
                     })
+                    alert(post_contents);
                     return (
                         <div>{post_contents}</div>
                     )
