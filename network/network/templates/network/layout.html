@@ -27,7 +27,9 @@
             function submit_edit(event){
                 alert("bruh");
             }
-            function display_editor(props){
+
+            // Must be capitalized for some reason
+            function Display_editor(props){
                 return (
                     <div>
                         <h4>Edit Post</h4>
@@ -42,7 +44,7 @@
 
             function edit_post(event){
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
-                ReactDOM.render(<display_editor body = {body} />, event.target.parentElement);
+                ReactDOM.render(<Display_editor body = {body} />, event.target.parentElement);
             }
 
 
