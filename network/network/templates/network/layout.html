@@ -26,7 +26,7 @@
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
 
-                async function get_post(){
+                function get_post(){
                     fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
@@ -45,7 +45,7 @@
                     )
                 }
                 // Handles the PUT request to submit edit
-                function submit_edit(event){
+                async function submit_edit(event){
                     alert(props.post_id);
 
                     // API call to edit post with PUT
