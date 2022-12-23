@@ -51,7 +51,7 @@
                     return (
                         <div id="post">
                             <h5><a color="black">{props.poster}</a></h5>
-                            <a id="edit_link" href="#" onclick="edit_post(event)">Edit</a>
+                            <a id="edit_link" href="#" onclick={edit_post}>Edit</a>
                             <br/>
                             <input type="hidden" id="post_id" name="post_id" value={props.post_id}/>
                             <text id="body">{props.body}</text>
