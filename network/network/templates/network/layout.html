@@ -26,14 +26,16 @@
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
 
-                function display_edit(){
+                function Display_edit(){
                     fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
                     .then(response => response.json())
                     .then(post => {
                         alert(post["body"]);
-                        
+                        return (
+                            <div>{post["body"]}</div>
+                        )
                     })
                 }
 
@@ -53,6 +55,7 @@
                     event.preventDefault();
 
                     display_edit();
+                    ReactDOM.render(<Display_edit/>, event.target.parentElement);
                 }
                 // Sends the proper editing div
                 return (
