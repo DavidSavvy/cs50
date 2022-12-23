@@ -33,7 +33,7 @@
                     .then(response => response.json())
                     .then(post => {
                         alert("success");
-                        alert(post);
+                        alert(props.target);
                         ReactDOM.render(<Display_edit post_contents={post}/>, props.target.parentElement);
                     })
                     alert("fail");
@@ -84,9 +84,9 @@
                 // Grabs necessary information from HTML
                 let post_id = event.target.parentElement.querySelector("#post_id").value;
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
-
+                
                 // Renders the above function/object thingy passing necessary values
-                ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target}/>, event.target.parentElement);
+                ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
             }
 
         </script>
