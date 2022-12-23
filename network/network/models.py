@@ -17,7 +17,7 @@ class Post(models.Model):
         return {
             "post_id": self.post_id,
             "poster": self.poster,
-            "likers": self.likers,
+            "likers": self.likers.count,
             "timestamp": self.timestamp.strftime("%b %d %Y, %I:%M %p"),
             "body": self.body
         }
