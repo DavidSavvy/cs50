@@ -111,7 +111,10 @@ def edit(request, post_id):
     if request.method == "GET":
         pass
     elif request.method == "PUT":
-        pass
+        data = json.loads(request.body)
+        if data.get("text") is not None:
+            post.body = data["text"]
+            post.save()
     else:
         return JsonResponse({
             "error": "GET or PUT request required."
