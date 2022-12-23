@@ -27,7 +27,13 @@
             function Display_editor(props){
 
                 function display_edit(){
-                    
+                    fetch(`/edit/${props.post_id}`, {
+                        method: "GET"
+                    })
+                    .then(response => response.json())
+                    .then(email => {
+                        alert(email);
+                    })
                 }
 
                 // Handles the PUT request to submit edit
