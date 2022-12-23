@@ -107,7 +107,8 @@ def edit(request, post_id):
     except Post.DoesNotExist:
         return JsonResponse({"error": "Post not found."}, status=404)
 
-    if post.poster.id != 5:
+    # Checks if user is attempting to edit their own post, sends error response otherwise
+    if post.poster.id != request.user.id:
         return JsonResponse({"error": "You cannot edit this post."}, status=403)
 
     # Allows two option for dealing with posts, GET to request and PUT to edit

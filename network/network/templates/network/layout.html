@@ -46,11 +46,13 @@
                     })
                     .then(response => response.json())
                     .then(post => {
+                        // Checks if JsonResponse gave an error message, and throws error if needed
                         if (Object.keys(post)[0] === "error") {
-                            throw new Error(post.values());
+                            throw new Error(post["error"]);
                         }
                         ReactDOM.render(<Display_edit post_id={post["post_id"]} poster={post["poster"]} poster_id={post["poster_id"]} likers={post["likers"]} timestamp={post["timestamp"]} body={post["body"]}/>, props.target);
                     })
+                    // Catches error thrown and reloads page
                     .catch(error => {
                         alert(error);
                         document.location.reload();
