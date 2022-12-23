@@ -26,23 +26,24 @@
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
 
-                function Display_edit(){
-                    var post_contents = null;
+                async function get_post(){
                     fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
                     .then(response => response.json())
                     .then(post => {
                         alert(post);
-                        post_contents = post;
+                        return post;
                     })
-                    alert(post_contents);
-                    return (
-                        <div>{post_contents}</div>
-                    )
+                    alert("fail");
                 }
 
-                function Display_edit()
+                function Display_edit(props){
+                    post_contents = props.post_contents;
+                    return (
+                        <div>post_contents</div>
+                    )
+                }
                 // Handles the PUT request to submit edit
                 function submit_edit(event){
                     alert(props.post_id);
@@ -59,7 +60,8 @@
                     event.preventDefault();
 
                     //Display_edit();
-                    ReactDOM.render(<Display_edit/>, event.target.parentElement);
+                    let post_contents = await get_post();
+                    ReactDOM.render(<Display_edit post_contents={post_contents}/>, event.target.parentElement);
                 }
                 // Sends the proper editing div
                 return (
