@@ -24,14 +24,16 @@
 
         <script type="text/babel">
 
-            function submit_edit(event){
-                alert(event);
-                // Blocks submit refresh
-                event.preventDefault();
-            }
+
 
             // Must be capitalized for some reason
             function Display_editor(props){
+
+                function submit_edit(event){
+                    alert(event.target);
+                    // Blocks submit refresh
+                    event.preventDefault();
+                }
                 return (
                     <div>
                         <h4>Edit Post</h4>
