@@ -116,10 +116,15 @@ def edit(request, post_id):
     if request.method == "GET":
         return JsonResponse(post.serialize())
     elif request.method == "PUT":
+        # Grabs JSON data from request
         data = json.loads(request.body)
+
+        # Checks if text is present and updates post object
         if data.get("text") is not None:
             post.body = data["text"]
             post.save()
+
+        # Returns 204 meaning success but don't refresh
         return HttpResponse(status=204)
     else:
         return JsonResponse({
