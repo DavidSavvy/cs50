@@ -49,7 +49,7 @@
                 function Display_edit(props){
                     return (
                         <div id="post">
-                            <h5><a color="black" href={"/user/" + {props.poster_id}}>{props.poster}</a></h5>
+                            <h5><a color="black" href={"/user/" + props.poster_id}>{props.poster}</a></h5>
                             <a id="edit_link" href="#" onClick={edit_post}>Edit</a>
                             <br/>
                             <input type="hidden" id="post_id" name="post_id" value={props.post_id}/>
