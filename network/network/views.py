@@ -114,7 +114,7 @@ def edit(request, post_id):
 
     # Allows two option for dealing with posts, GET to request and PUT to edit
     if request.method == "GET":
-        pass
+        return JsonResponse(post.serialize())
     elif request.method == "PUT":
         data = json.loads(request.body)
         if data.get("text") is not None:
