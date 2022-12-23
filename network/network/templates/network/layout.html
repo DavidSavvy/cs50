@@ -38,18 +38,14 @@
             // Must be capitalized for some reason
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
-
                 async function get_post(){
                     await fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
                     .then(response => response.json())
                     .then(post => {
-                        alert("success");
-                        alert(props.target);
                         ReactDOM.render(<Display_edit post_id={post["post_id"]} poster={post["poster"]} poster_id={post["poster_id"]} likers={post["likers"]} timestamp={post["timestamp"]} body={post["body"]}/>, props.target);
                     })
-                    alert("fail");
                 }
 
                 function Display_edit(props){
@@ -69,8 +65,6 @@
                 }
                 // Handles the PUT request to submit edit
                 function submit_edit(event){
-                    alert(props.post_id);
-
                     // API call to edit post with PUT
                     fetch(`/edit/${props.post_id}`, {
                         method: 'PUT',
@@ -83,10 +77,6 @@
                     event.preventDefault();
 
                     get_post();
-                    //Display_edit();
-                    //let post_contents = await get_post();
-                    //alert(post_contents);
-
                 }
                 // Sends the proper editing div
                 return (
