@@ -26,7 +26,7 @@
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
 
-                function get_post(){
+                async function get_post(){
                     fetch(`/edit/${props.post_id}`, {
                         method: "GET"
                     })
@@ -61,6 +61,7 @@
 
                     //Display_edit();
                     let post_contents = await get_post();
+                    alert(post_contents);
                     ReactDOM.render(<Display_edit post_contents={post_contents}/>, event.target.parentElement);
                 }
                 // Sends the proper editing div
