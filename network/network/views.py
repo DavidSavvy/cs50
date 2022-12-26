@@ -145,9 +145,13 @@ def like(request, post_id):
 
     if post in request.user.liked_posts.all():
         print("already liked. unlike")
-        post.likers.add(request.user)
+        post.likers.remove(request.user)
+        print(post.likers.count())
     else:
         print("not liked. like")
+        post.likers.add(request.user)
+        print(post.likers.count())
+
 
 
 def login_view(request):
