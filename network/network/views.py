@@ -130,6 +130,8 @@ def edit(request, post_id):
             "error": "GET or PUT request required."
         }, status=400)
 
+@csrf_exempt
+@login_required
 def like(request, post_id):
     # Queries for post, exception just in case
     try:
@@ -140,8 +142,11 @@ def like(request, post_id):
     if post.poster.id == request.user.id:
         return JsonResponse({"error": "You cannot like this post."}, status=403)
 
-    print(request.user.liked_posts)
-    #if post in request.user.liked_posts:
+
+    if post in request.user.liked_posts:
+        print("already liked. unlike")
+    else:
+        print("not liked. like")
 
 
 def login_view(request):
