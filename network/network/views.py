@@ -137,6 +137,9 @@ def like(request, post_id):
     except Post.DoesNotExist:
         return JsonResponse({"error": "Post not found."}, status=404)
 
+    if post.poster.id == request.user.id:
+        return JsonResponse({"error": "You cannot like this post."}, status=403)
+
 def login_view(request):
     if request.method == "POST":
 
