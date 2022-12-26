@@ -140,6 +140,10 @@ def like(request, post_id):
     if post.poster.id == request.user.id:
         return JsonResponse({"error": "You cannot like this post."}, status=403)
 
+    print(request.user.liked_posts)
+    #if post in request.user.liked_posts:
+
+
 def login_view(request):
     if request.method == "POST":
 
