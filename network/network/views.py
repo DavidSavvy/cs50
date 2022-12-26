@@ -143,8 +143,9 @@ def like(request, post_id):
         return JsonResponse({"error": "You cannot like this post."}, status=403)
 
 
-    if post in request.user.liked_posts:
+    if post in request.user.liked_posts.all():
         print("already liked. unlike")
+        
     else:
         print("not liked. like")
 
