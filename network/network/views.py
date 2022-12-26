@@ -130,6 +130,13 @@ def edit(request, post_id):
             "error": "GET or PUT request required."
         }, status=400)
 
+def like(request, post_id):
+    # Queries for post, exception just in case
+    try:
+        post = Post.objects.get(post_id=post_id)
+    except Post.DoesNotExist:
+        return JsonResponse({"error": "Post not found."}, status=404)
+
 def login_view(request):
     if request.method == "POST":
 
