@@ -116,7 +116,12 @@
             }
 
             function like_post(event){
-                alert("bruh");
+                let post_id = event.target.parentElement
+
+                // API call to like/unlike post with PUT
+                fetch(`/edit/${post_id}`, {
+                    method: 'PUT'
+                })
             }
         </script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
