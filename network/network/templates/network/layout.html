@@ -115,10 +115,14 @@
                 ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
             }
 
-            function Display_likes(props){
-                return
-            }
+
             function like_post(event){
+
+                function Display_likes(props){
+                    return (
+                        <text id="like_button" onClick={like_post}>&#10084; {props.likers}</text>
+                    )
+                }
                 let post_id = event.target.parentElement.querySelector("#post_id").value;
 
                 // API call to like/unlike post with PUT
@@ -128,7 +132,7 @@
                     if (Object.keys(post)[0] === "error") {
                             throw new Error(post["error"]);
                         }
-                        ReactDOM.render(<Display_edit likers={post["likers"]}/>, props.target);
+                        ReactDOM.render(<Display_likes likers={post["likers"]}/>, event.target);
                 })
             }
         </script>
