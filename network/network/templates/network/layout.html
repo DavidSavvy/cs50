@@ -123,6 +123,10 @@
                         <text id="like_button" onClick={like_post}>&#10084; {props.likers}</text>
                     )
                 }
+
+                /*
+                error here "cannot read properties of null. move on from here.
+                */
                 let post_id = event.target.parentElement.querySelector("#post_id").value;
 
                 // API call to like/unlike post with PUT
