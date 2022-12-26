@@ -116,7 +116,7 @@
             }
 
             function like_post(event){
-                let post_id = event.target.parentElement
+                let post_id = event.target.parentElement.querySelector("#post_id").value;
 
                 // API call to like/unlike post with PUT
                 fetch(`/edit/${post_id}`, {
