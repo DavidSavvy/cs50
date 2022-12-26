@@ -33,7 +33,7 @@
             <input type="hidden" id="post_id" name="post_id" value="{{ post.post_id }}">
             <text id="body">{{ post.body }}</text>
             <br>
-            <text id="like_button">&#10084; {{ post.likers.count }}</text>
+            <text id="like_button" onclick="like_post(event)">&#10084; {{ post.likers.count }}</text>
             <br>
             <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
