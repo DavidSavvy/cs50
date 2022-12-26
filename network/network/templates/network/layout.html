@@ -115,12 +115,20 @@
                 ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
             }
 
+            function Display_likes(props){
+                return
+            }
             function like_post(event){
                 let post_id = event.target.parentElement.querySelector("#post_id").value;
 
                 // API call to like/unlike post with PUT
-                fetch(`/like/${post_id}`, {
-                    method: 'PUT'
+                fetch(`/like/${post_id}`)
+                .then(response => response.json())
+                .then(post => {
+                    if (Object.keys(post)[0] === "error") {
+                            throw new Error(post["error"]);
+                        }
+                        ReactDOM.render(<Display_edit likers={post["likers"]}/>, props.target);
                 })
             }
         </script>
