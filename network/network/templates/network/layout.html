@@ -125,22 +125,21 @@
                 ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
             }
 
-
+            // Original call function when like div is clicked
             function like_post(event){
-
+                // React element return function
                 function Display_likes(props){
                     return (
                         <text id="like_button" onClick={like_post}>&#10084; {props.likers}</text>
                     )
                 }
-
-
                 let post_id = event.target.parentElement.parentElement.querySelector("#post_id").value;
 
                 // API call to like/unlike post with PUT
                 fetch(`/like/${post_id}`)
                 .then(response => response.json())
                 .then(post => {
+                    // Checks if API returned a JsonResponse error
                     if (Object.keys(post)[0] === "error") {
                             throw new Error(post["error"]);
                         }
@@ -179,7 +178,6 @@
               </ul>
             </div>
           </nav>
-
         <div class="body">
             {% block body %}
             {% endblock %}
