@@ -150,8 +150,6 @@ def like(request, post_id):
         post.likers.add(request.user)
         return JsonResponse(post.serialize())
 
-
-
 def login_view(request):
     if request.method == "POST":
 

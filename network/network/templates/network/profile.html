@@ -49,8 +49,15 @@
             <input type="hidden" id="post_id" name="post_id" value="{{ post.post_id }}">
             <text id="body">{{ post.body }}</text>
             <br>
-            <text id="like_button">&#10084; {{ post.likers.count }}</text>
-            <br>
+            {% if user.is_authenticated and user != post.poster%}
+                <div id="like_div">
+                    <text id="like_button" onclick="like_post(event)">&#10084; {{ post.likers.count }}</text>
+                </div>
+            {% else %}
+                <div>
+                    <text id="like_button">&#10084; {{ post.likers.count }}</text>
+                </div>
+            {% endif %}
             <text style="color: grey;">{{ post.timestamp }}</text>
         </div>
     {% endfor %}
