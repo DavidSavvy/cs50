@@ -125,7 +125,7 @@
                 }
 
 
-                let post_id = event.target.parentElement.querySelector("#post_id").value;
+                let post_id = event.target.parentElement.parentElement.querySelector("#post_id").value;
 
                 // API call to like/unlike post with PUT
                 fetch(`/like/${post_id}`)
@@ -134,7 +134,7 @@
                     if (Object.keys(post)[0] === "error") {
                             throw new Error(post["error"]);
                         }
-                        ReactDOM.render(<Display_likes likers={post["likers"]}/>, event.target);
+                        ReactDOM.render(<Display_likes likers={post["likers"]}/>, event.target.parentElement);
                 })
             }
         </script>
