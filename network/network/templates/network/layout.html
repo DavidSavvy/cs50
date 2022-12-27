@@ -136,6 +136,7 @@
                         }
                         ReactDOM.render(<Display_likes likers={post["likers"]}/>, event.target.parentElement);
                 })
+                .catch(error => alert(error))
             }
         </script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
