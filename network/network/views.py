@@ -144,14 +144,10 @@ def like(request, post_id):
 
 
     if post in request.user.liked_posts.all():
-        print("already liked. unlike")
         post.likers.remove(request.user)
-        print(post.likers.count())
         return JsonResponse(post.serialize())
     else:
-        print("not liked. like")
         post.likers.add(request.user)
-        print(post.likers.count())
         return JsonResponse(post.serialize())
 
 
