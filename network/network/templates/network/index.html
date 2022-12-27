@@ -8,6 +8,10 @@
             margin: 0px 18px 10px 18px;
             border-radius: 3px;
         }
+        #like_div:hover{
+            width: 2%;
+            background-color: lightgrey;
+        }
     </style>
     <h1>All Posts</h1>
     {% if user.is_authenticated %}
@@ -34,7 +38,7 @@
             <text id="body">{{ post.body }}</text>
             <br>
             {% if user.is_authenticated and user != post.poster%}
-                <div style="width: 2%; background-color: lightgrey; radius: 15px;">
+                <div id="like_div">
                     <text id="like_button" onclick="like_post(event)">&#10084; {{ post.likers.count }}</text>
                 </div>
             {% else %}
