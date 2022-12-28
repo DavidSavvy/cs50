@@ -15,7 +15,6 @@ from .models import User, Post
 """
 Minor issues for next time:
 -Clicking edit forces page to the top
--Editing two posts at the same time doesn't work, disable it
 """
 
 def index(request):
