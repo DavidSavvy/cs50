@@ -45,10 +45,13 @@
             }
         </style>
         <script type="text/babel">
+            var is_editing = false;
             // Must be capitalized for some reason
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
-                var is_editing = false;
+                is_editing = true;
+                    console.log(is_editing);
+
                 // Function that asynchronously fetches updated post and runs the render function below
                 async function get_post(){
                     await fetch(`/edit/${props.post_id}`, {
@@ -120,7 +123,7 @@
                 // Grabs necessary information from HTML
                 let post_id = event.target.parentElement.querySelector("#post_id").value;
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
-
+                console.log(is_editing);
                 // Renders the above function/object thingy passing necessary values
                 ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
             }
