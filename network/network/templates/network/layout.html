@@ -50,7 +50,7 @@
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
                 is_editing = true;
-                    console.log(is_editing);
+                console.log(is_editing);
 
                 // Function that asynchronously fetches updated post and runs the render function below
                 async function get_post(){
@@ -74,6 +74,8 @@
 
                 // Standard react div return
                 function Display_edit(props){
+                    is_editing = false;
+                    console.log(is_editing);
                     return (
                         <div id="post">
                             <h5><a id="user_link" href={"/user/" + props.poster_id}>{props.poster}</a></h5>
