@@ -48,7 +48,7 @@
             // Must be capitalized for some reason
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
-
+                var is_editing = false;
                 // Function that asynchronously fetches updated post and runs the render function below
                 async function get_post(){
                     await fetch(`/edit/${props.post_id}`, {
