@@ -45,7 +45,9 @@
             }
         </style>
         <script type="text/babel">
+            // Variable to only allow one post to be edited at a time
             var is_editing = false;
+
             // Must be capitalized for some reason
             // Primary edit function that handles the page view and API requests
             function Display_editor(props){
@@ -127,11 +129,11 @@
                 let body = event.target.parentElement.querySelector("#body").innerHTML;
                 console.log(is_editing);
 
+                // Makes sure only one post is edited at a time
                 if (is_editing == false){
                     // Renders the above function/object thingy passing necessary values
                     ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
                 }
-
             }
 
             // Original call function when like div is clicked
