@@ -35,6 +35,7 @@
                         <text id="like_button">&#10084; {{ post.likers.count }}</text>
                     </div>
                 {% endif %}
+                <input type="hidden" id="post_id" name="post_id" value="{{ post.post_id }}">
                 <text style="color: grey;">{{ post.timestamp }}</text>
             </div>
         {% endfor %}
