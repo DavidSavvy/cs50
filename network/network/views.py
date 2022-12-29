@@ -139,10 +139,11 @@ def like(request, post_id):
     except Post.DoesNotExist:
         return JsonResponse({"error": "Post not found."}, status=404)
 
+    # Makes sure user can't like their own post
     if post.poster.id == request.user.id:
         return JsonResponse({"error": "You cannot like this post."}, status=403)
 
-
+    # If user has previously liked, removes like. Otherwise, addds like
     if post in request.user.liked_posts.all():
         post.likers.remove(request.user)
         return JsonResponse(post.serialize())
