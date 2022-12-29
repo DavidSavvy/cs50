@@ -107,7 +107,7 @@
                     // Runs function to GET and display the updated post
                     get_post();
                 }
-                
+
                 // Sends the proper editing div
                 return (
                     <div>
@@ -131,6 +131,7 @@
                 if (is_editing == false){
                     // Renders the above function/object thingy passing necessary values
                     ReactDOM.render(<Display_editor body={body} post_id={post_id} target={event.target.parentElement}/>, event.target.parentElement);
+                    event.preventDefault();
                 }
             }
 
