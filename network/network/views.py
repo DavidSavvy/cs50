@@ -12,11 +12,6 @@ from operator import itemgetter
 from .models import User, Post
 
 
-"""
-Minor issues for next time:
--Clicking edit forces page to the top
-"""
-
 def index(request):
     # Gets posts and sets up paginator
     posts = Post.objects.all().order_by('-timestamp')
