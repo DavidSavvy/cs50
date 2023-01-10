@@ -97,8 +97,9 @@ def shortest_path(source, target):
     while True:
         # Check if goal acheived
 
-        for set in relations:
-            node = Node(set[2], source[])
+        for star_set in relations:
+            node = Node(star_set[1], starting_node, star_set[0])
+            queue_frontier.add(node)
 
 
 
