@@ -92,11 +92,13 @@ def shortest_path(source, target):
     If no possible path, returns None.
     """
     queue_frontier = QueueFrontier()
+    relations = neighbors_for_person(source)
     while True:
         # Check if goal acheived
 
-        relations = neighbors_for_person(source)
-        
+        for set in relations:
+            node = Node()
+
 
 
 def person_id_for_name(name):
