@@ -100,10 +100,9 @@ def shortest_path(source, target):
         relations = neighbors_for_person(working_node.state)
         for star_set in relations:
             node = Node(star_set[1], starting_node, star_set[0])
-            queue_frontier.add(node)
             if node.state == target:
                 return True
-
+            queue_frontier.add(node)
 
 
 def person_id_for_name(name):
