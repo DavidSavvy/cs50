@@ -97,7 +97,7 @@ def shortest_path(source, target):
         # Check if goal acheived
 
         for set in relations:
-            node = Node()
+            node = Node(set[2], )
 
 
 
