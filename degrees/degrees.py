@@ -91,9 +91,9 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
-
-    # TODO
-    raise NotImplementedError
+    queue_frontier = QueueFrontier()
+    while True:
+        
 
 
 def person_id_for_name(name):
