@@ -95,6 +95,7 @@ def shortest_path(source, target):
     while True:
         # Check if goal acheived
 
+        relations = neighbors_for_person(source)
         
 
 
