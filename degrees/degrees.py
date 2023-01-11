@@ -102,7 +102,11 @@ def shortest_path(source, target):
             node = Node(star_set[1], starting_node, star_set[0])
             if node.state == target:
                 path = []
-                while 
+                current_node = node
+                while node.parent != None:
+                    path.append(current_node)
+                    current_node = node.parent
+                print(path)
             queue_frontier.add(node)
 
 
