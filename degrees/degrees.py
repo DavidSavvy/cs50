@@ -96,10 +96,7 @@ def shortest_path(source, target):
     starting_node = Node(source, None, None)
     queue_frontier.add(starting_node)
     print(starting_node.parent)
-    while True:
-        if queue_frontier.empty():
-            print("done")
-            break
+    while not queue_frontier.empty():
         working_node = queue_frontier.remove()
         relations = list(neighbors_for_person(working_node.state))
         print(relations)
