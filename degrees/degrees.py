@@ -121,7 +121,7 @@ def shortest_path(source, target):
                     print(current_node.parent.action)
                     current_node = current_node.parent
                     #print(current_node.parent is not None)
-                    path.reverse()
+                    #path.reverse()
 
                 print(path)
                 return path
