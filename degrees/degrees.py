@@ -126,9 +126,8 @@ def shortest_path(source, target):
 
 
             queue_frontier.add(node)
-            explored_nodes.append(working_node)
-            print(explored_nodes)
-            return
+        explored_nodes.append(working_node)
+        print(explored_nodes)
         starting_node = working_node
     return None
 
