@@ -107,6 +107,7 @@ def shortest_path(source, target):
                     path.append(current_node)
                     current_node = node.parent
                 print(path)
+                return True
             queue_frontier.add(node)
 
         starting_node = working_node
