@@ -120,7 +120,7 @@ def shortest_path(source, target):
                     current_node = current_node.parent
                     print(current_node.parent is not None)
                     path.reverse()
-                    
+
                 print(path)
                 return path
 
@@ -128,7 +128,7 @@ def shortest_path(source, target):
             queue_frontier.add(node)
             explored_nodes.append(working_node)
             print(explored_nodes)
-
+            return
         starting_node = working_node
     return None
 
