@@ -108,7 +108,7 @@ def shortest_path(source, target):
             star_set = list(star_set)
             #print(star_set)
             #print(starting_node)
-            node = Node(star_set[1], starting_node, star_set[0])
+            node = Node(star_set[1], working_node, star_set[0])
             #print(node)
             #print(node.state)
             #print(node.action)
@@ -138,7 +138,7 @@ def shortest_path(source, target):
             queue_frontier.add(node)
         explored_nodes.append(working_node)
         #print(explored_nodes)
-        starting_node = working_node
+        #starting_node = working_node
     return None
 
 
