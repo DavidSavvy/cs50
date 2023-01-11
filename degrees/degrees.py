@@ -96,7 +96,7 @@ def shortest_path(source, target):
     starting_node = Node(source, None, None)
     queue_frontier.add(starting_node)
     print(starting_node.parent)
-    while not queue_frontier.empty():
+    while True:
         if queue_frontier.empty():
             print("done")
             break
