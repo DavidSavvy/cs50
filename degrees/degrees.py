@@ -95,7 +95,7 @@ def shortest_path(source, target):
     explored_nodes = []
     starting_node = Node(source, None, None)
     queue_frontier.add(starting_node)
-    print(starting_node.parent)
+    #print(starting_node.parent)
     while not queue_frontier.empty():
         working_node = queue_frontier.remove()
         if working_node in explored_nodes:
@@ -104,7 +104,7 @@ def shortest_path(source, target):
         print(relations)
         for star_set in relations:
             star_set = list(star_set)
-            print(star_set)
+            #print(star_set)
             #print(starting_node)
             node = Node(star_set[1], starting_node, star_set[0])
             #print(node)
