@@ -112,6 +112,7 @@ def shortest_path(source, target):
                     print(current_node.parent.state)
                     path.append(current_node)
                     current_node = current_node.parent
+                    print(current_node.parent.state)
                     return
                 print(path)
 
