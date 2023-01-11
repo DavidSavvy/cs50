@@ -114,7 +114,7 @@ def shortest_path(source, target):
                 while current_node.parent is not None:
                     print(current_node.state)
                     print(current_node.parent.state)
-                    if current_node.state == source:
+                    if current_node.parent.state == source:
                         print("done")
                     path.append((current_node.action, current_node.state))
                     print(current_node.parent.state)
