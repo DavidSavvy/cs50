@@ -130,7 +130,7 @@ def shortest_path(source, target):
                 """
                 Bunch of problems:
                 -Inconsistent responses, not always best solution
-                -Wrong answer
+                -Wrong answer, incorrect parent node?
                 """
             queue_frontier.add(node)
         explored_nodes.append(working_node)
