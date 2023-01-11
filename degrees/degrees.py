@@ -97,13 +97,13 @@ def shortest_path(source, target):
     queue_frontier.add(starting_node)
     #print(starting_node.parent)
     while not queue_frontier.empty():
-        print(queue_frontier.frontier)
+        #print(queue_frontier.frontier)
         working_node = queue_frontier.remove()
-        print(working_node)
+        #print(working_node)
         if working_node in explored_nodes:
             continue
         relations = list(neighbors_for_person(working_node.state))
-        #print(relations)
+        print(relations)
         for star_set in relations:
             star_set = list(star_set)
             #print(star_set)
