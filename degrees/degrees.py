@@ -100,7 +100,6 @@ def shortest_path(source, target):
         relations = list(neighbors_for_person(working_node.state))
         print(relations)
         for star_set in relations:
-            print(star_set)
             star_set = list(star_set)
             print(star_set)
             node = Node(star_set[1], starting_node, star_set[0])
@@ -110,9 +109,10 @@ def shortest_path(source, target):
                 current_node = node
                 print(node.parent.state)
                 while current_node.parent != None:
-                    print(current_node.parent)
+                    print(current_node.parent.state)
                     path.append(current_node)
                     current_node = current_node.parent
+                    return
                 print(path)
 
             queue_frontier.add(node)
