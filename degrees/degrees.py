@@ -94,35 +94,34 @@ def shortest_path(source, target):
     queue_frontier = QueueFrontier()
     starting_node = Node(source, None, None)
     queue_frontier.add(starting_node)
-    print(starting_node.parent)
+    #print(starting_node.parent)
     while not queue_frontier.empty():
         if queue_frontier.empty():
             break
         working_node = queue_frontier.remove()
         relations = list(neighbors_for_person(working_node.state))
-        print(relations)
+        #print(relations)
         for star_set in relations:
             star_set = list(star_set)
-            print(star_set)
+            #print(star_set)
             node = Node(star_set[1], starting_node, star_set[0])
-            print(node)
+            #print(node)
             if node.state == target:
                 path = []
                 current_node = node
-                print(node.parent.state)
+                #print(node.parent.state)
                 while current_node.parent is not None:
-                    print(current_node.state)
-                    print(current_node.parent.state)
-                    path.append(current_node)
-                    print(current_node.parent.state)
-                    print(current_node.parent.parent)
+                    #print(current_node.state)
+                    #print(current_node.parent.state)
+                    path.append((current_node.action, current_node.state))
+                    #print(current_node.parent.state)
+                    #print(current_node.parent.parent)
                     current_node = current_node.parent
-                    print(current_node.parent is not None)
-                    if current_node.parent == None:
-                        break
+                    #print(current_node.parent is not None)
 
-                    return
-                print(path)
+                print(path.reverse())
+                return path
+
 
             queue_frontier.add(node)
 
