@@ -101,7 +101,6 @@ def shortest_path(source, target):
         for star_set in relations:
             star_set = list(star_set)
             node = Node(star_set[1], starting_node, star_set[0])
-            starting_node = node
             if node.state == target:
                 path = []
                 current_node = node
@@ -110,6 +109,8 @@ def shortest_path(source, target):
                     current_node = node.parent
                 print(path)
             queue_frontier.add(node)
+
+        starting_node = working_node
 
 
 def person_id_for_name(name):
