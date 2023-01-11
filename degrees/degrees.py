@@ -127,7 +127,11 @@ def shortest_path(source, target):
                 print(path)
                 return path
 
-
+                """
+                Bunch of problems:
+                -Inconsistent responses, not always best solution
+                -Wrong answer
+                """
             queue_frontier.add(node)
         explored_nodes.append(working_node)
         print(explored_nodes)
