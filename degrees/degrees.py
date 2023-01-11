@@ -111,6 +111,7 @@ def shortest_path(source, target):
             queue_frontier.add(node)
 
         starting_node = working_node
+    return None
 
 
 def person_id_for_name(name):
