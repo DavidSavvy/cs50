@@ -103,7 +103,7 @@ def shortest_path(source, target):
         if working_node in explored_nodes:
             continue
         relations = list(neighbors_for_person(working_node.state))
-        print(relations)
+        #print(relations)
         for star_set in relations:
             star_set = list(star_set)
             #print(star_set)
@@ -127,7 +127,7 @@ def shortest_path(source, target):
 
 
                 path.reverse()
-                print(path)
+                #print(path)
                 return path
 
                 """
