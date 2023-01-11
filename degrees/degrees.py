@@ -92,6 +92,7 @@ def shortest_path(source, target):
     If no possible path, returns None.
     """
     queue_frontier = QueueFrontier()
+    explored_nodes = []
     starting_node = Node(source, None, None)
     queue_frontier.add(starting_node)
     print(starting_node.parent)
@@ -125,6 +126,8 @@ def shortest_path(source, target):
 
 
             queue_frontier.add(node)
+            explored_nodes.append(node)
+            print(explored_nodes)
 
         starting_node = working_node
     return None
