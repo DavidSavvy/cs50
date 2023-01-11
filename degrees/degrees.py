@@ -101,7 +101,8 @@ def shortest_path(source, target):
         for star_set in relations:
             node = Node(star_set[1], starting_node, star_set[0])
             if node.state == target:
-                return True
+                path = []
+                while 
             queue_frontier.add(node)
 
 
