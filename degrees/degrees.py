@@ -105,7 +105,7 @@ def shortest_path(source, target):
         for star_set in relations:
             star_set = list(star_set)
             print(star_set)
-            print(starting_node)
+            #print(starting_node)
             node = Node(star_set[1], starting_node, star_set[0])
             #print(node)
             #print(node.state)
