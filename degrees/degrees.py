@@ -103,6 +103,7 @@ def shortest_path(source, target):
             star_set = list(star_set)
             print(star_set)
             node = Node(star_set[1], starting_node, star_set[0])
+            print(node)
             if node.state == target:
                 path = []
                 current_node = node
