@@ -107,18 +107,19 @@ def shortest_path(source, target):
             print(star_set)
             node = Node(star_set[1], starting_node, star_set[0])
             print(node)
+            print(node.state)
             if node.state == target:
                 path = []
                 current_node = node
-                print(node.parent.state)
+                #print(node.parent.state)
                 while current_node.parent.state != source:
-                    print(current_node.state)
-                    print(current_node.parent.state)
+                    #print(current_node.state)
+                    #print(current_node.parent.state)
                     path.append((current_node.action, current_node.state))
-                    print(current_node.parent.state)
-                    print(current_node.parent.parent)
+                    #print(current_node.parent.state)
+                    #print(current_node.parent.parent)
                     current_node = current_node.parent
-                    print(current_node.parent is not None)
+                    #print(current_node.parent is not None)
                     path.reverse()
 
                 print(path)
