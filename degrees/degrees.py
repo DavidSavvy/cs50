@@ -115,9 +115,9 @@ def shortest_path(source, target):
                     print(current_node.parent.state)
                     print(current_node.parent.parent)
                     current_node = current_node.parent
-                    print(current_node.parent)
+                    print(current_node.parent == None)
 
-
+                    return
                 print(path)
 
             queue_frontier.add(node)
