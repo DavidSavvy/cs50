@@ -97,6 +97,7 @@ def shortest_path(source, target):
     queue_frontier.add(starting_node)
     #print(starting_node.parent)
     while not queue_frontier.empty():
+        print(queue_frontier.frontier)
         working_node = queue_frontier.remove()
         if working_node in explored_nodes:
             continue
