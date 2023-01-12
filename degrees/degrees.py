@@ -91,54 +91,39 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
+    # Creates QueueFrontier and sets up source node
     queue_frontier = QueueFrontier()
     explored_nodes = []
     starting_node = Node(source, None, None)
     queue_frontier.add(starting_node)
-    #print(starting_node.parent)
+
+    # Runs the function for the entirety of the frontier
     while not queue_frontier.empty():
-        #print(queue_frontier.frontier)
         working_node = queue_frontier.remove()
-        #print(working_node)
+
+        # Checks if node was explored, to not waste time. Might not actually work since two identical nodes might be different objects.
         if working_node in explored_nodes:
             continue
         relations = list(neighbors_for_person(working_node.state))
-        #print(relations)
+
+        # Runs through every set that's related to the source
         for star_set in relations:
             star_set = list(star_set)
-            #print(star_set)
-            #print(starting_node)
             node = Node(star_set[1], working_node, star_set[0])
-            #print(node)
-            #print(node.state)
-            #print(node.action)
+
+            # Checks whether the node is the target early to save time
             if node.state == target:
                 path = []
                 current_node = node
-                #print(node.parent.state)
+
+                # Uses parent nodes to find final path and reverse it
                 while current_node.state != source:
-                    #print(current_node.state)
-                    #print(current_node.parent.state)
                     path.append((current_node.action, current_node.state))
-                    #print(current_node.parent.state)
-                    #print(current_node.parent.action)
                     current_node = current_node.parent
-                    #print(current_node.parent is not None)
-
-
                 path.reverse()
-                #print(path)
                 return path
-
-                """
-                Bunch of problems:
-                -Inconsistent responses, not always best solution
-                -Wrong answer, incorrect parent node?
-                """
             queue_frontier.add(node)
         explored_nodes.append(working_node)
-        #print(explored_nodes)
-        #starting_node = working_node
     return None
 
 
